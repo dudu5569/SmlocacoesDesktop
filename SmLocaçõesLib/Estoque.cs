@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmLocaçõesLib
 {
-    internal class Estoque
+    public class Estoque
     {
     }
 }
