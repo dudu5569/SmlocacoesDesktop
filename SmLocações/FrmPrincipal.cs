@@ -19,7 +19,17 @@ namespace SmLocações
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
