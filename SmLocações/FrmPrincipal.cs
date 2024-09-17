@@ -26,15 +26,15 @@ namespace SmLocações
         {
             frmTransicaoPedido frmTransicaopedido = new();
             //frmTransicaopedido.MdiParent = this;
-            frmTransicaopedido.Show();
-            
+            frmTransicaopedido.ShowDialog();
+
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
         {
             frmTransicaoCadastro frmTransicaoCadastro = new();
             //frmTransicaoCadastro.MdiParent = this;
-            frmTransicaoCadastro.Show();
+            frmTransicaoCadastro.ShowDialog();
 
         }
 
@@ -42,7 +42,12 @@ namespace SmLocações
         {
             FrmTransicaoVizualizar frmTransicaoVizualizar = new();
             //frmTransicaoVizualizar .MdiParent = this;
-            frmTransicaoVizualizar.Show();
+            frmTransicaoVizualizar.ShowDialog();
+
+        }
+
+        private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
 
         }
     }
