@@ -44,6 +44,7 @@
             novoToolStripMenuItem1 = new ToolStripMenuItem();
             novoToolStripMenuItem2 = new ToolStripMenuItem();
             novoToolStripMenuItem3 = new ToolStripMenuItem();
+            editarToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             // 
             // usuárioToolStripMenuItem
             // 
-            usuárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem3 });
+            usuárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem3, editarToolStripMenuItem });
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
             usuárioToolStripMenuItem.Size = new Size(180, 22);
             usuárioToolStripMenuItem.Text = "&Usuário";
@@ -153,6 +154,12 @@
             novoToolStripMenuItem3.Size = new Size(180, 22);
             novoToolStripMenuItem3.Text = "&Novo";
             // 
+            // editarToolStripMenuItem
+            // 
+            editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            editarToolStripMenuItem.Size = new Size(180, 22);
+            editarToolStripMenuItem.Text = "&Editar";
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -189,5 +196,6 @@
         private ToolStripMenuItem usuáriosToolStripMenuItem;
         private ToolStripMenuItem novoToolStripMenuItem2;
         private ToolStripMenuItem novoToolStripMenuItem3;
+        private ToolStripMenuItem editarToolStripMenuItem;
     }
 }
