@@ -28,137 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            cadastroToolStripMenuItem = new ToolStripMenuItem();
-            clienteToolStripMenuItem = new ToolStripMenuItem();
-            funcionarioToolStripMenuItem = new ToolStripMenuItem();
-            usuarioToolStripMenuItem = new ToolStripMenuItem();
-            pedidoToolStripMenuItem = new ToolStripMenuItem();
-            vizualizarToolStripMenuItem = new ToolStripMenuItem();
-            estoqueToolStripMenuItem = new ToolStripMenuItem();
-            cLientesToolStripMenuItem = new ToolStripMenuItem();
-            funcionáriosToolStripMenuItem = new ToolStripMenuItem();
-            endereçosToolStripMenuItem = new ToolStripMenuItem();
-            novoToolStripMenuItem = new ToolStripMenuItem();
-            consultarToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            btnCadastro = new Button();
+            btnPedidos = new Button();
+            btnVizualizar = new Button();
             SuspendLayout();
             // 
-            // menuStrip1
+            // btnCadastro
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, pedidoToolStripMenuItem, vizualizarToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1084, 24);
-            menuStrip1.TabIndex = 0;
+            btnCadastro.Location = new Point(341, 190);
+            btnCadastro.Name = "btnCadastro";
+            btnCadastro.Size = new Size(134, 73);
+            btnCadastro.TabIndex = 0;
+            btnCadastro.Text = "&Cadastro";
+            btnCadastro.UseVisualStyleBackColor = true;
+            btnCadastro.Click += btnCadastro_Click;
             // 
-            // cadastroToolStripMenuItem
+            // btnPedidos
             // 
-            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, funcionarioToolStripMenuItem, usuarioToolStripMenuItem });
-            cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(66, 20);
-            cadastroToolStripMenuItem.Text = "&Cadastro";
+            btnPedidos.Location = new Point(510, 190);
+            btnPedidos.Name = "btnPedidos";
+            btnPedidos.Size = new Size(134, 73);
+            btnPedidos.TabIndex = 1;
+            btnPedidos.Text = "&Pedidos";
+            btnPedidos.UseVisualStyleBackColor = true;
+            btnPedidos.Click += btnPedidos_Click;
             // 
-            // clienteToolStripMenuItem
+            // btnVizualizar
             // 
-            clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
-            clienteToolStripMenuItem.Text = "&Cliente";
-            // 
-            // funcionarioToolStripMenuItem
-            // 
-            funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
-            funcionarioToolStripMenuItem.Size = new Size(137, 22);
-            funcionarioToolStripMenuItem.Text = "&Funcionário";
-            funcionarioToolStripMenuItem.Click += funcionarioToolStripMenuItem_Click;
-            // 
-            // usuarioToolStripMenuItem
-            // 
-            usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            usuarioToolStripMenuItem.Size = new Size(180, 22);
-            usuarioToolStripMenuItem.Text = "&Usuário";
-            usuarioToolStripMenuItem.Click += usuarioToolStripMenuItem_Click;
-            // 
-            // pedidoToolStripMenuItem
-            // 
-            pedidoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, consultarToolStripMenuItem });
-            pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            pedidoToolStripMenuItem.Size = new Size(56, 20);
-            pedidoToolStripMenuItem.Text = "&Pedido";
-            // 
-            // vizualizarToolStripMenuItem
-            // 
-            vizualizarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { estoqueToolStripMenuItem, cLientesToolStripMenuItem, funcionáriosToolStripMenuItem, endereçosToolStripMenuItem });
-            vizualizarToolStripMenuItem.Name = "vizualizarToolStripMenuItem";
-            vizualizarToolStripMenuItem.Size = new Size(68, 20);
-            vizualizarToolStripMenuItem.Text = "&Vizualizar";
-            // 
-            // estoqueToolStripMenuItem
-            // 
-            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(180, 22);
-            estoqueToolStripMenuItem.Text = "&Estoque";
-            // 
-            // cLientesToolStripMenuItem
-            // 
-            cLientesToolStripMenuItem.Name = "cLientesToolStripMenuItem";
-            cLientesToolStripMenuItem.Size = new Size(180, 22);
-            cLientesToolStripMenuItem.Text = "&Clientes";
-            // 
-            // funcionáriosToolStripMenuItem
-            // 
-            funcionáriosToolStripMenuItem.Name = "funcionáriosToolStripMenuItem";
-            funcionáriosToolStripMenuItem.Size = new Size(180, 22);
-            funcionáriosToolStripMenuItem.Text = "&Funcionários";
-            // 
-            // endereçosToolStripMenuItem
-            // 
-            endereçosToolStripMenuItem.Name = "endereçosToolStripMenuItem";
-            endereçosToolStripMenuItem.Size = new Size(180, 22);
-            endereçosToolStripMenuItem.Text = "&Endereços";
-            // 
-            // novoToolStripMenuItem
-            // 
-            novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            novoToolStripMenuItem.Size = new Size(180, 22);
-            novoToolStripMenuItem.Text = "&Novo";
-            // 
-            // consultarToolStripMenuItem
-            // 
-            consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(180, 22);
-            consultarToolStripMenuItem.Text = "&Consultar";
+            btnVizualizar.Location = new Point(429, 269);
+            btnVizualizar.Name = "btnVizualizar";
+            btnVizualizar.Size = new Size(134, 73);
+            btnVizualizar.TabIndex = 2;
+            btnVizualizar.Text = "&Vizualizar";
+            btnVizualizar.UseVisualStyleBackColor = true;
+            btnVizualizar.Click += btnVizualizar_Click;
             // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DimGray;
             ClientSize = new Size(1084, 623);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(btnVizualizar);
+            Controls.Add(btnPedidos);
+            Controls.Add(btnCadastro);
+            IsMdiContainer = true;
             Name = "FrmPrincipal";
             Text = "FrmPrincipal";
+            WindowState = FormWindowState.Maximized;
             Load += FrmPrincipal_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem cadastroToolStripMenuItem;
-        private ToolStripMenuItem clienteToolStripMenuItem;
-        private ToolStripMenuItem funcionarioToolStripMenuItem;
-        private ToolStripMenuItem usuarioToolStripMenuItem;
-        private ToolStripMenuItem pedidoToolStripMenuItem;
-        private ToolStripMenuItem vizualizarToolStripMenuItem;
-        private ToolStripMenuItem estoqueToolStripMenuItem;
-        private ToolStripMenuItem cLientesToolStripMenuItem;
-        private ToolStripMenuItem funcionáriosToolStripMenuItem;
-        private ToolStripMenuItem endereçosToolStripMenuItem;
-        private ToolStripMenuItem novoToolStripMenuItem;
-        private ToolStripMenuItem consultarToolStripMenuItem;
+        private Button btnCadastro;
+        private Button btnPedidos;
+        private Button btnVizualizar;
     }
 }

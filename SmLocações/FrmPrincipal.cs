@@ -22,13 +22,27 @@ namespace SmLocações
 
         }
 
-        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnPedidos_Click(object sender, EventArgs e)
         {
+            frmTransicaoPedido frmTransicaopedido = new();
+            //frmTransicaopedido.MdiParent = this;
+            frmTransicaopedido.Show();
+            
+        }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            frmTransicaoCadastro frmTransicaoCadastro = new();
+            //frmTransicaoCadastro.MdiParent = this;
+            frmTransicaoCadastro.Show();
 
         }
 
-        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnVizualizar_Click(object sender, EventArgs e)
         {
+            FrmTransicaoVizualizar frmTransicaoVizualizar = new();
+            //frmTransicaoVizualizar .MdiParent = this;
+            frmTransicaoVizualizar.Show();
 
         }
     }
