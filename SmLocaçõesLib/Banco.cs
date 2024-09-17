@@ -9,5 +9,5 @@ namespace SmLocaçõesLib
 {
     public class Banco
     {
-    }
+    } 
 }
