@@ -1,6 +1,6 @@
 ﻿namespace SmLocações
 {
-    partial class AgendarPedido
+    partial class FrmAgendarPedido
     {
         /// <summary>
         /// Required designer variable.

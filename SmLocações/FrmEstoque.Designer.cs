@@ -1,6 +1,6 @@
 ﻿namespace SmLocações
 {
-    partial class Estoque
+    partial class FrmEstoque
     {
         /// <summary>
         /// Required designer variable.

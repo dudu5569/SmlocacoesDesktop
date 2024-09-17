@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SmLocações
 {
-    public partial class AgendarPedido : Form
+    public partial class FrmAgendarPedido : Form
     {
-        public AgendarPedido()
+        public FrmAgendarPedido()
         {
             InitializeComponent();
         }
