@@ -30,132 +30,166 @@
         {
             label1 = new Label();
             dataGridView1 = new DataGridView();
-            txtId = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            label7 = new Label();
             label3 = new Label();
             label4 = new Label();
-            button1 = new Button();
-            label2 = new Label();
-            checkBox1 = new CheckBox();
+            groupBox1 = new GroupBox();
+            txtSenha = new TextBox();
+            txtEmail = new TextBox();
+            txtID = new TextBox();
+            btnCancelar = new Button();
+            btnEnviar = new Button();
+            chkAtivo = new CheckBox();
+            txtConfSenha = new TextBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(387, 55);
+            label1.Location = new Point(242, 53);
             label1.Name = "label1";
             label1.Size = new Size(232, 45);
-            label1.TabIndex = 0;
+            label1.TabIndex = 1;
             label1.Text = "Editar Usuário";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 433);
+            dataGridView1.Location = new Point(10, 270);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1029, 186);
-            dataGridView1.TabIndex = 1;
+            dataGridView1.Size = new Size(689, 186);
+            dataGridView1.TabIndex = 7;
             // 
-            // txtId
+            // label7
             // 
-            txtId.AutoSize = true;
-            txtId.Location = new Point(95, 250);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(18, 15);
-            txtId.TabIndex = 2;
-            txtId.Text = "ID";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(95, 268);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(241, 268);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(387, 268);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 5;
+            label7.AutoSize = true;
+            label7.Location = new Point(90, 130);
+            label7.Name = "label7";
+            label7.Size = new Size(18, 15);
+            label7.TabIndex = 9;
+            label7.Text = "ID";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(232, 250);
+            label3.Location = new Point(229, 130);
             label3.Name = "label3";
             label3.Size = new Size(36, 15);
-            label3.TabIndex = 6;
+            label3.TabIndex = 2;
             label3.Text = "Email";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(387, 250);
+            label4.Location = new Point(368, 130);
             label4.Name = "label4";
             label4.Size = new Size(39, 15);
             label4.TabIndex = 7;
             label4.Text = "Senha";
             // 
-            // button1
+            // groupBox1
             // 
-            button1.Location = new Point(238, 320);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 31);
-            button1.TabIndex = 8;
-            button1.Text = "&Enviar";
-            button1.UseVisualStyleBackColor = true;
+            groupBox1.Controls.Add(label7);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(txtSenha);
+            groupBox1.Controls.Add(txtEmail);
+            groupBox1.Controls.Add(txtID);
+            groupBox1.Controls.Add(btnCancelar);
+            groupBox1.Controls.Add(btnEnviar);
+            groupBox1.Controls.Add(chkAtivo);
+            groupBox1.Controls.Add(txtConfSenha);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Location = new Point(6, 31);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(705, 476);
+            groupBox1.TabIndex = 1;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Editar Usuário";
             // 
-            // label2
+            // txtSenha
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(95, 314);
-            label2.Name = "label2";
-            label2.Size = new Size(35, 15);
-            label2.TabIndex = 10;
-            label2.Text = "Ativo";
+            txtSenha.Location = new Point(368, 148);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(100, 23);
+            txtSenha.TabIndex = 2;
             // 
-            // checkBox1
+            // txtEmail
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(95, 332);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(54, 19);
-            checkBox1.TabIndex = 11;
-            checkBox1.Text = "Ativo";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            txtEmail.Location = new Point(229, 148);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(100, 23);
+            txtEmail.TabIndex = 1;
+            // 
+            // txtID
+            // 
+            txtID.Location = new Point(90, 148);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(100, 23);
+            txtID.TabIndex = 0;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(368, 200);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(100, 23);
+            btnCancelar.TabIndex = 6;
+            btnCancelar.Text = "&Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnEnviar
+            // 
+            btnEnviar.Location = new Point(229, 200);
+            btnEnviar.Name = "btnEnviar";
+            btnEnviar.Size = new Size(100, 23);
+            btnEnviar.TabIndex = 5;
+            btnEnviar.Text = "&Enviar";
+            btnEnviar.UseVisualStyleBackColor = true;
+            // 
+            // chkAtivo
+            // 
+            chkAtivo.AutoSize = true;
+            chkAtivo.Location = new Point(107, 200);
+            chkAtivo.Name = "chkAtivo";
+            chkAtivo.Size = new Size(54, 19);
+            chkAtivo.TabIndex = 4;
+            chkAtivo.Text = "Ativo";
+            chkAtivo.UseVisualStyleBackColor = true;
+            // 
+            // txtConfSenha
+            // 
+            txtConfSenha.Location = new Point(507, 148);
+            txtConfSenha.Name = "txtConfSenha";
+            txtConfSenha.Size = new Size(100, 23);
+            txtConfSenha.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(507, 130);
+            label5.Name = "label5";
+            label5.Size = new Size(96, 15);
+            label5.TabIndex = 11;
+            label5.Text = "Confirmar Senha";
             // 
             // FrmEditarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1064, 641);
-            Controls.Add(checkBox1);
-            Controls.Add(label2);
-            Controls.Add(button1);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(txtId);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(723, 522);
             Controls.Add(label1);
+            Controls.Add(groupBox1);
             Name = "FrmEditarUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmEditarUsuario";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,14 +198,20 @@
 
         private Label label1;
         private DataGridView dataGridView1;
-        private Label txtId;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private Label label7;
         private Label label3;
         private Label label4;
         private Button button1;
         private Label label2;
         private CheckBox checkBox1;
+        private GroupBox groupBox1;
+        private Label label5;
+        private TextBox txtConfSenha;
+        private Button btnCancelar;
+        private Button btnEnviar;
+        private CheckBox chkAtivo;
+        private TextBox txtSenha;
+        private TextBox txtEmail;
+        private TextBox txtID;
     }
 }

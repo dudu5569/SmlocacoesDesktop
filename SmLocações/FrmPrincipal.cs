@@ -52,5 +52,11 @@ namespace SmLocações
             FrmEditarUsuario frmEditarUsuario = new();
             frmEditarUsuario.ShowDialog();
         }
+
+        private void vizualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        FrmConsultar frmConsultar = new();
+        frmConsultar.ShowDialog();
+        }
     }
 }

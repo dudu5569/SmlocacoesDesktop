@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SmLocações
 {
-    public partial class FrmEstoque : Form
+    public partial class FrmConsultar : Form
     {
-        public FrmEstoque()
+        public FrmConsultar()
         {
             InitializeComponent();
         }

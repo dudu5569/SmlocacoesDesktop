@@ -40,10 +40,10 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(44, 85);
+            tabControl1.Location = new Point(41, 48);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(929, 492);
+            tabControl1.Size = new Size(984, 553);
             tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -51,7 +51,7 @@
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(921, 464);
+            tabPage1.Size = new Size(976, 525);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Cliente";
             tabPage1.UseVisualStyleBackColor = true;
