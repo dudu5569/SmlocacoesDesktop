@@ -36,6 +36,7 @@
             btnEntrar = new Button();
             btnCancelar = new Button();
             groupBox1 = new GroupBox();
+            linkLabel1 = new LinkLabel();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             label2.Location = new Point(46, 98);
             label2.Name = "label2";
             label2.Size = new Size(36, 15);
-            label2.TabIndex = 5;
+            label2.TabIndex = 6;
             label2.Text = "Email";
             // 
             // label3
@@ -102,6 +103,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(linkLabel1);
             groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(txtEmail);
             groupBox1.Controls.Add(btnEntrar);
@@ -111,10 +113,20 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Location = new Point(47, 39);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(361, 268);
+            groupBox1.Size = new Size(352, 293);
             groupBox1.TabIndex = 7;
             groupBox1.TabStop = false;
             groupBox1.Text = "Login";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(46, 259);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(106, 15);
+            linkLabel1.TabIndex = 4;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Esqueceu a Senha?";
             // 
             // FrmLogin
             // 
@@ -142,5 +154,6 @@
         private Button btnEntrar;
         private Button btnCancelar;
         private GroupBox groupBox1;
+        private LinkLabel linkLabel1;
     }
 }
