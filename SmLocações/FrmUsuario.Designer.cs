@@ -42,7 +42,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(298, 53);
+            label1.Location = new Point(314, 44);
             label1.Name = "label1";
             label1.Size = new Size(149, 45);
             label1.TabIndex = 0;
@@ -51,14 +51,14 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(185, 229);
+            txtEmail.Location = new Point(302, 200);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(213, 23);
             txtEmail.TabIndex = 1;
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(185, 284);
+            txtSenha.Location = new Point(302, 255);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(213, 23);
             txtSenha.TabIndex = 2;
@@ -66,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(185, 211);
+            label2.Location = new Point(302, 182);
             label2.Name = "label2";
             label2.Size = new Size(36, 15);
             label2.TabIndex = 3;
@@ -75,7 +75,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(185, 266);
+            label3.Location = new Point(302, 237);
             label3.Name = "label3";
             label3.Size = new Size(39, 15);
             label3.TabIndex = 4;
@@ -84,7 +84,7 @@
             // cmbFuncionarios
             // 
             cmbFuncionarios.FormattingEnabled = true;
-            cmbFuncionarios.Location = new Point(185, 176);
+            cmbFuncionarios.Location = new Point(302, 147);
             cmbFuncionarios.Name = "cmbFuncionarios";
             cmbFuncionarios.Size = new Size(161, 23);
             cmbFuncionarios.TabIndex = 5;
@@ -92,7 +92,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(185, 158);
+            label4.Location = new Point(302, 129);
             label4.Name = "label4";
             label4.Size = new Size(70, 15);
             label4.TabIndex = 6;
@@ -100,7 +100,7 @@
             // 
             // btnInserir
             // 
-            btnInserir.Location = new Point(185, 323);
+            btnInserir.Location = new Point(341, 291);
             btnInserir.Name = "btnInserir";
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1064, 641);
             Controls.Add(btnInserir);
             Controls.Add(label4);
             Controls.Add(cmbFuncionarios);

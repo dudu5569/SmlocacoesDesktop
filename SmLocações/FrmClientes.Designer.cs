@@ -80,7 +80,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1017, 663);
+            ClientSize = new Size(1064, 641);
             Controls.Add(tabControl1);
             Name = "FrmClientes";
             Text = "FrmClientes";

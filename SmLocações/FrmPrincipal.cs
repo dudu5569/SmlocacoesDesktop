@@ -22,33 +22,35 @@ namespace SmLocações
 
         }
 
-        private void btnPedidos_Click(object sender, EventArgs e)
-        {
-            frmTransicaoPedido frmTransicaopedido = new();
-            //frmTransicaopedido.MdiParent = this;
-            frmTransicaopedido.ShowDialog();
-
-        }
-
-        private void btnCadastro_Click(object sender, EventArgs e)
-        {
-            frmTransicaoCadastro frmTransicaoCadastro = new();
-            //frmTransicaoCadastro.MdiParent = this;
-            frmTransicaoCadastro.ShowDialog();
-
-        }
-
-        private void btnVizualizar_Click(object sender, EventArgs e)
-        {
-            FrmTransicaoVizualizar frmTransicaoVizualizar = new();
-            //frmTransicaoVizualizar .MdiParent = this;
-            frmTransicaoVizualizar.ShowDialog();
-
-        }
 
         private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            FrmClientes frmClientes = new();
+            frmClientes.ShowDialog();
+        }
 
+        private void novoToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmFuncionarios frmFuncionarios = new();
+            frmFuncionarios.ShowDialog();
+        }
+
+        private void novoToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frmUsuario = new();
+            frmUsuario.ShowDialog();
+        }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAgendarPedido frmAgendarPedido = new();
+            frmAgendarPedido.ShowDialog();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEditarUsuario frmEditarUsuario = new();
+            frmEditarUsuario.ShowDialog();
         }
     }
 }
