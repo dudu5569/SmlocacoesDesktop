@@ -49,7 +49,7 @@ namespace SmLocações
 
         private void editarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmEditarUsuario frmEditarUsuario = new();
+            FrmEditarUser frmEditarUsuario = new();
             frmEditarUsuario.ShowDialog();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace SmLocações
 {
-    partial class FrmEditarUsuario
+    partial class FrmEditarUser
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            label7 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             groupBox1 = new GroupBox();
+            label7 = new Label();
+            label4 = new Label();
             txtSenha = new TextBox();
             txtEmail = new TextBox();
             txtID = new TextBox();
@@ -41,55 +39,22 @@
             btnEnviar = new Button();
             chkAtivo = new CheckBox();
             txtConfSenha = new TextBox();
+            label3 = new Label();
             label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(242, 53);
+            label1.Location = new Point(281, 44);
             label1.Name = "label1";
             label1.Size = new Size(232, 45);
-            label1.TabIndex = 1;
+            label1.TabIndex = 2;
             label1.Text = "Editar Usuário";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(10, 270);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(689, 186);
-            dataGridView1.TabIndex = 7;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(90, 130);
-            label7.Name = "label7";
-            label7.Size = new Size(18, 15);
-            label7.TabIndex = 9;
-            label7.Text = "ID";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(229, 130);
-            label3.Name = "label3";
-            label3.Size = new Size(36, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Email";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(368, 130);
-            label4.Name = "label4";
-            label4.Size = new Size(39, 15);
-            label4.TabIndex = 7;
-            label4.Text = "Senha";
             // 
             // groupBox1
             // 
@@ -105,12 +70,30 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(6, 31);
+            groupBox1.Location = new Point(45, 22);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(705, 476);
-            groupBox1.TabIndex = 1;
+            groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Editar Usuário";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(90, 130);
+            label7.Name = "label7";
+            label7.Size = new Size(18, 15);
+            label7.TabIndex = 9;
+            label7.Text = "ID";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(368, 130);
+            label4.Name = "label4";
+            label4.Size = new Size(39, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Senha";
             // 
             // txtSenha
             // 
@@ -168,6 +151,15 @@
             txtConfSenha.Size = new Size(100, 23);
             txtConfSenha.TabIndex = 3;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(229, 130);
+            label3.Name = "label3";
+            label3.Size = new Size(36, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Email";
+            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -177,19 +169,26 @@
             label5.TabIndex = 11;
             label5.Text = "Confirmar Senha";
             // 
-            // FrmEditarUsuario
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(10, 270);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(689, 186);
+            dataGridView1.TabIndex = 7;
+            // 
+            // FrmEditarUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(723, 522);
+            ClientSize = new Size(807, 510);
             Controls.Add(label1);
             Controls.Add(groupBox1);
-            Name = "FrmEditarUsuario";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmEditarUsuario";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Name = "FrmEditarUser";
+            Text = "FrmEditarUser";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,21 +196,18 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
-        private Label label7;
-        private Label label3;
-        private Label label4;
-        private Button button1;
-        private Label label2;
-        private CheckBox checkBox1;
         private GroupBox groupBox1;
-        private Label label5;
-        private TextBox txtConfSenha;
-        private Button btnCancelar;
-        private Button btnEnviar;
-        private CheckBox chkAtivo;
+        private Label label7;
+        private Label label4;
         private TextBox txtSenha;
         private TextBox txtEmail;
         private TextBox txtID;
+        private Button btnCancelar;
+        private Button btnEnviar;
+        private CheckBox chkAtivo;
+        private TextBox txtConfSenha;
+        private Label label3;
+        private Label label5;
+        private DataGridView dataGridView1;
     }
 }

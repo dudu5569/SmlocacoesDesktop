@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace SmLocações
 {
-    public partial class FrmEditarUsuario : Form
+    public partial class FrmEditarUser : Form
     {
-        public FrmEditarUsuario()
+        public FrmEditarUser()
         {
             InitializeComponent();
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }

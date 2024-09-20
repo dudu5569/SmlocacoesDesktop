@@ -31,20 +31,27 @@
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btnCancelaFuncionario = new Button();
+            btnInsereFuncionario = new Button();
+            chkAivo = new CheckBox();
+            Data_Cadastro = new DateTimePicker();
+            Data_Nascimento = new DateTimePicker();
+            txtCpf = new TextBox();
+            txtNome = new TextBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             tabPage2 = new TabPage();
-            txtNome = new TextBox();
-            txtCpf = new TextBox();
-            Data_Nascimento = new DateTimePicker();
-            Data_Cadastro = new DateTimePicker();
-            chkAivo = new CheckBox();
-            btnInserir = new Button();
-            btnCancelar = new Button();
+            tabPage3 = new TabPage();
+            btnInsereEndereco = new Button();
+            btnInsereTelefone = new Button();
+            btnCancelaEndereco = new Button();
+            btnCancelaTelefone = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -61,6 +68,7 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
             tabControl1.Location = new Point(151, 103);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -69,8 +77,8 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(btnCancelar);
-            tabPage1.Controls.Add(btnInserir);
+            tabPage1.Controls.Add(btnCancelaFuncionario);
+            tabPage1.Controls.Add(btnInsereFuncionario);
             tabPage1.Controls.Add(chkAivo);
             tabPage1.Controls.Add(Data_Cadastro);
             tabPage1.Controls.Add(Data_Nascimento);
@@ -87,6 +95,64 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Funcionário";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelaFuncionario
+            // 
+            btnCancelaFuncionario.Location = new Point(205, 234);
+            btnCancelaFuncionario.Name = "btnCancelaFuncionario";
+            btnCancelaFuncionario.Size = new Size(114, 23);
+            btnCancelaFuncionario.TabIndex = 10;
+            btnCancelaFuncionario.Text = "&Cancelar";
+            btnCancelaFuncionario.UseVisualStyleBackColor = true;
+            // 
+            // btnInsereFuncionario
+            // 
+            btnInsereFuncionario.Location = new Point(63, 234);
+            btnInsereFuncionario.Name = "btnInsereFuncionario";
+            btnInsereFuncionario.Size = new Size(114, 23);
+            btnInsereFuncionario.TabIndex = 9;
+            btnInsereFuncionario.Text = "&Inserir";
+            btnInsereFuncionario.UseVisualStyleBackColor = true;
+            // 
+            // chkAivo
+            // 
+            chkAivo.AutoSize = true;
+            chkAivo.Location = new Point(353, 177);
+            chkAivo.Name = "chkAivo";
+            chkAivo.Size = new Size(54, 19);
+            chkAivo.TabIndex = 8;
+            chkAivo.Text = "Ativo";
+            chkAivo.UseVisualStyleBackColor = true;
+            // 
+            // Data_Cadastro
+            // 
+            Data_Cadastro.Format = DateTimePickerFormat.Short;
+            Data_Cadastro.Location = new Point(205, 172);
+            Data_Cadastro.Name = "Data_Cadastro";
+            Data_Cadastro.Size = new Size(114, 23);
+            Data_Cadastro.TabIndex = 7;
+            // 
+            // Data_Nascimento
+            // 
+            Data_Nascimento.Format = DateTimePickerFormat.Short;
+            Data_Nascimento.Location = new Point(63, 172);
+            Data_Nascimento.Name = "Data_Nascimento";
+            Data_Nascimento.Size = new Size(114, 23);
+            Data_Nascimento.TabIndex = 6;
+            // 
+            // txtCpf
+            // 
+            txtCpf.Location = new Point(484, 84);
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(157, 23);
+            txtCpf.TabIndex = 5;
+            // 
+            // txtNome
+            // 
+            txtNome.Location = new Point(63, 84);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(341, 23);
+            txtNome.TabIndex = 4;
             // 
             // label5
             // 
@@ -126,6 +192,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnCancelaEndereco);
+            tabPage2.Controls.Add(btnInsereEndereco);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -134,63 +202,53 @@
             tabPage2.Text = "Endereço";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txtNome
+            // tabPage3
             // 
-            txtNome.Location = new Point(63, 84);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(341, 23);
-            txtNome.TabIndex = 4;
+            tabPage3.Controls.Add(btnCancelaTelefone);
+            tabPage3.Controls.Add(btnInsereTelefone);
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(769, 375);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Telefone";
+            tabPage3.UseVisualStyleBackColor = true;
             // 
-            // txtCpf
+            // btnInsereEndereco
             // 
-            txtCpf.Location = new Point(484, 84);
-            txtCpf.Name = "txtCpf";
-            txtCpf.Size = new Size(157, 23);
-            txtCpf.TabIndex = 5;
+            btnInsereEndereco.Location = new Point(147, 252);
+            btnInsereEndereco.Name = "btnInsereEndereco";
+            btnInsereEndereco.Size = new Size(114, 23);
+            btnInsereEndereco.TabIndex = 10;
+            btnInsereEndereco.Text = "&Inserir";
+            btnInsereEndereco.UseVisualStyleBackColor = true;
             // 
-            // Data_Nascimento
+            // btnInsereTelefone
             // 
-            Data_Nascimento.Format = DateTimePickerFormat.Short;
-            Data_Nascimento.Location = new Point(63, 172);
-            Data_Nascimento.Name = "Data_Nascimento";
-            Data_Nascimento.Size = new Size(114, 23);
-            Data_Nascimento.TabIndex = 6;
+            btnInsereTelefone.Location = new Point(215, 201);
+            btnInsereTelefone.Name = "btnInsereTelefone";
+            btnInsereTelefone.Size = new Size(114, 23);
+            btnInsereTelefone.TabIndex = 11;
+            btnInsereTelefone.Text = "&Inserir";
+            btnInsereTelefone.UseVisualStyleBackColor = true;
             // 
-            // Data_Cadastro
+            // btnCancelaEndereco
             // 
-            Data_Cadastro.Format = DateTimePickerFormat.Short;
-            Data_Cadastro.Location = new Point(205, 172);
-            Data_Cadastro.Name = "Data_Cadastro";
-            Data_Cadastro.Size = new Size(114, 23);
-            Data_Cadastro.TabIndex = 7;
+            btnCancelaEndereco.Location = new Point(286, 252);
+            btnCancelaEndereco.Name = "btnCancelaEndereco";
+            btnCancelaEndereco.Size = new Size(114, 23);
+            btnCancelaEndereco.TabIndex = 11;
+            btnCancelaEndereco.Text = "&Cancelar";
+            btnCancelaEndereco.UseVisualStyleBackColor = true;
             // 
-            // chkAivo
+            // btnCancelaTelefone
             // 
-            chkAivo.AutoSize = true;
-            chkAivo.Location = new Point(353, 177);
-            chkAivo.Name = "chkAivo";
-            chkAivo.Size = new Size(54, 19);
-            chkAivo.TabIndex = 8;
-            chkAivo.Text = "Ativo";
-            chkAivo.UseVisualStyleBackColor = true;
-            // 
-            // btnInserir
-            // 
-            btnInserir.Location = new Point(63, 234);
-            btnInserir.Name = "btnInserir";
-            btnInserir.Size = new Size(114, 23);
-            btnInserir.TabIndex = 9;
-            btnInserir.Text = "&Inserir";
-            btnInserir.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(205, 234);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(114, 23);
-            btnCancelar.TabIndex = 10;
-            btnCancelar.Text = "&Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelaTelefone.Location = new Point(357, 201);
+            btnCancelaTelefone.Name = "btnCancelaTelefone";
+            btnCancelaTelefone.Size = new Size(114, 23);
+            btnCancelaTelefone.TabIndex = 12;
+            btnCancelaTelefone.Text = "&Cancelar";
+            btnCancelaTelefone.UseVisualStyleBackColor = true;
             // 
             // FrmFuncionarios
             // 
@@ -204,6 +262,8 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -218,12 +278,17 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private Button btnCancelar;
-        private Button btnInserir;
+        private Button btnCancelaFuncionario;
+        private Button btnInsereFuncionario;
         private CheckBox chkAivo;
         private DateTimePicker Data_Cadastro;
         private DateTimePicker Data_Nascimento;
         private TextBox txtCpf;
         private TextBox txtNome;
+        private TabPage tabPage3;
+        private Button btnInsereEndereco;
+        private Button btnInsereTelefone;
+        private Button btnCancelaEndereco;
+        private Button btnCancelaTelefone;
     }
 }
