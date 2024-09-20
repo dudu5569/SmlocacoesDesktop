@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             txtEmail = new TextBox();
             txtSenha = new TextBox();
@@ -93,7 +93,7 @@
             cmbFuncionarios.FormattingEnabled = true;
             cmbFuncionarios.Location = new Point(135, 113);
             cmbFuncionarios.Name = "cmbFuncionarios";
-            cmbFuncionarios.Size = new Size(338, 23);
+            cmbFuncionarios.Size = new Size(280, 23);
             cmbFuncionarios.TabIndex = 0;
             // 
             // label4
@@ -129,7 +129,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges1;
+            btnInserir.CustomizableEdges = customizableEdges5;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -139,7 +139,7 @@
             btnInserir.ForeColor = Color.White;
             btnInserir.Location = new Point(135, 263);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 4;
             btnInserir.Text = "&inserir";
@@ -151,7 +151,7 @@
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges3;
+            btnCancelar.CustomizableEdges = customizableEdges7;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -161,7 +161,7 @@
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(275, 263);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "&Cancelar";
@@ -169,8 +169,10 @@
             // 
             // FrmUsuario
             // 
+            AcceptButton = btnInserir;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancelar;
             ClientSize = new Size(630, 374);
             Controls.Add(groupBox1);
             Name = "FrmUsuario";

@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             groupBox1 = new GroupBox();
+            btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            btnInserir = new Guna.UI2.WinForms.Guna2Button();
             label7 = new Label();
             label4 = new Label();
             txtSenha = new TextBox();
             txtEmail = new TextBox();
             txtID = new TextBox();
-            btnCancelar = new Button();
-            btnEnviar = new Button();
             chkAtivo = new CheckBox();
             txtConfSenha = new TextBox();
             label3 = new Label();
@@ -58,13 +62,13 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnCancelar);
+            groupBox1.Controls.Add(btnInserir);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtSenha);
             groupBox1.Controls.Add(txtEmail);
             groupBox1.Controls.Add(txtID);
-            groupBox1.Controls.Add(btnCancelar);
-            groupBox1.Controls.Add(btnEnviar);
             groupBox1.Controls.Add(chkAtivo);
             groupBox1.Controls.Add(txtConfSenha);
             groupBox1.Controls.Add(label3);
@@ -76,6 +80,48 @@
             groupBox1.TabIndex = 3;
             groupBox1.TabStop = false;
             groupBox1.Text = "Editar Usuário";
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Animated = true;
+            btnCancelar.AutoRoundedCorners = true;
+            btnCancelar.BorderRadius = 10;
+            btnCancelar.BorderThickness = 1;
+            btnCancelar.CustomizableEdges = customizableEdges1;
+            btnCancelar.DisabledState.BorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCancelar.FillColor = Color.Red;
+            btnCancelar.Font = new Font("Segoe UI", 9F);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(368, 200);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCancelar.Size = new Size(122, 23);
+            btnCancelar.TabIndex = 5;
+            btnCancelar.Text = "&Cancelar";
+            // 
+            // btnInserir
+            // 
+            btnInserir.Animated = true;
+            btnInserir.AutoRoundedCorners = true;
+            btnInserir.BorderRadius = 10;
+            btnInserir.BorderThickness = 1;
+            btnInserir.CustomizableEdges = customizableEdges3;
+            btnInserir.DisabledState.BorderColor = Color.DarkGray;
+            btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnInserir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnInserir.FillColor = Color.Green;
+            btnInserir.Font = new Font("Segoe UI", 9F);
+            btnInserir.ForeColor = Color.White;
+            btnInserir.Location = new Point(218, 200);
+            btnInserir.Name = "btnInserir";
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnInserir.Size = new Size(122, 23);
+            btnInserir.TabIndex = 6;
+            btnInserir.Text = "&inserir";
             // 
             // label7
             // 
@@ -115,24 +161,6 @@
             txtID.Name = "txtID";
             txtID.Size = new Size(100, 23);
             txtID.TabIndex = 0;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(368, 200);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(100, 23);
-            btnCancelar.TabIndex = 6;
-            btnCancelar.Text = "&Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnEnviar
-            // 
-            btnEnviar.Location = new Point(229, 200);
-            btnEnviar.Name = "btnEnviar";
-            btnEnviar.Size = new Size(100, 23);
-            btnEnviar.TabIndex = 5;
-            btnEnviar.Text = "&Enviar";
-            btnEnviar.UseVisualStyleBackColor = true;
             // 
             // chkAtivo
             // 
@@ -179,8 +207,10 @@
             // 
             // FrmEditarUser
             // 
+            AcceptButton = btnInserir;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnCancelar;
             ClientSize = new Size(807, 510);
             Controls.Add(label1);
             Controls.Add(groupBox1);
@@ -202,12 +232,12 @@
         private TextBox txtSenha;
         private TextBox txtEmail;
         private TextBox txtID;
-        private Button btnCancelar;
-        private Button btnEnviar;
         private CheckBox chkAtivo;
         private TextBox txtConfSenha;
         private Label label3;
         private Label label5;
         private DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2Button btnInserir;
+        private Guna.UI2.WinForms.Guna2Button btnCancelar;
     }
 }
