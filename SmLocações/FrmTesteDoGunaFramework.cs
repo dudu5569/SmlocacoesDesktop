@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace SmLocações
 {
-    public partial class FrmUsuario : Form
+    public partial class FrmTesteDoGunaFramework : Form
     {
-        public FrmUsuario()
+        public FrmTesteDoGunaFramework()
         {
             InitializeComponent();
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnInserir_Click(object sender, EventArgs e)
-        {
         }
     }
 }

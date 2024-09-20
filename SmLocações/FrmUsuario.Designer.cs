@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             txtEmail = new TextBox();
             txtSenha = new TextBox();
@@ -35,9 +39,9 @@
             label3 = new Label();
             cmbFuncionarios = new ComboBox();
             label4 = new Label();
-            btnInserir = new Button();
             groupBox1 = new GroupBox();
-            btnCancelar = new Button();
+            btnInserir = new Guna.UI2.WinForms.Guna2Button();
+            btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -101,20 +105,11 @@
             label4.TabIndex = 6;
             label4.Text = "Funcionário";
             // 
-            // btnInserir
-            // 
-            btnInserir.Location = new Point(135, 263);
-            btnInserir.Name = "btnInserir";
-            btnInserir.Size = new Size(122, 23);
-            btnInserir.TabIndex = 4;
-            btnInserir.Text = "&Inserir";
-            btnInserir.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnInserir);
             groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(btnInserir);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(cmbFuncionarios);
@@ -128,21 +123,54 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Inserir Usuários";
             // 
+            // btnInserir
+            // 
+            btnInserir.Animated = true;
+            btnInserir.AutoRoundedCorners = true;
+            btnInserir.BorderRadius = 10;
+            btnInserir.BorderThickness = 1;
+            btnInserir.CustomizableEdges = customizableEdges1;
+            btnInserir.DisabledState.BorderColor = Color.DarkGray;
+            btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnInserir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnInserir.FillColor = Color.Green;
+            btnInserir.Font = new Font("Segoe UI", 9F);
+            btnInserir.ForeColor = Color.White;
+            btnInserir.Location = new Point(135, 263);
+            btnInserir.Name = "btnInserir";
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnInserir.Size = new Size(122, 23);
+            btnInserir.TabIndex = 4;
+            btnInserir.Text = "&inserir";
+            btnInserir.Click += btnInserir_Click;
+            // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(273, 263);
+            btnCancelar.Animated = true;
+            btnCancelar.AutoRoundedCorners = true;
+            btnCancelar.BorderRadius = 10;
+            btnCancelar.BorderThickness = 1;
+            btnCancelar.CustomizableEdges = customizableEdges3;
+            btnCancelar.DisabledState.BorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCancelar.FillColor = Color.Red;
+            btnCancelar.Font = new Font("Segoe UI", 9F);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(275, 263);
             btnCancelar.Name = "btnCancelar";
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "&Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmUsuario
             // 
-            AcceptButton = btnInserir;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = btnCancelar;
             ClientSize = new Size(630, 374);
             Controls.Add(groupBox1);
             Name = "FrmUsuario";
@@ -162,8 +190,8 @@
         private Label label3;
         private ComboBox cmbFuncionarios;
         private Label label4;
-        private Button btnInserir;
         private GroupBox groupBox1;
-        private Button btnCancelar;
+        private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private Guna.UI2.WinForms.Guna2Button btnInserir;
     }
 }

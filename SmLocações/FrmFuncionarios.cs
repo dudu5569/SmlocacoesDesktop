@@ -17,6 +17,19 @@ namespace SmLocações
             InitializeComponent();
         }
 
+        private void btnCancelarFuncionario_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnInserirFuncionario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
