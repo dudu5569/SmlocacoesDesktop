@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
@@ -81,6 +81,7 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Cliente";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
             // 
             // tabPage2
             // 
@@ -105,7 +106,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(74, 105);
+            label1.Location = new Point(40, 52);
             label1.Name = "label1";
             label1.Size = new Size(40, 15);
             label1.TabIndex = 0;
@@ -114,7 +115,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(375, 105);
+            label2.Location = new Point(304, 52);
             label2.Name = "label2";
             label2.Size = new Size(28, 15);
             label2.TabIndex = 1;
@@ -123,7 +124,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(207, 189);
+            label3.Location = new Point(189, 136);
             label3.Name = "label3";
             label3.Size = new Size(97, 15);
             label3.TabIndex = 2;
@@ -132,7 +133,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(58, 189);
+            label4.Location = new Point(40, 136);
             label4.Name = "label4";
             label4.Size = new Size(114, 15);
             label4.TabIndex = 3;
@@ -140,14 +141,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(74, 123);
+            textBox1.Location = new Point(40, 70);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(249, 23);
             textBox1.TabIndex = 4;
             // 
             // maskedTextBox1
             // 
-            maskedTextBox1.Location = new Point(375, 123);
+            maskedTextBox1.Location = new Point(304, 70);
             maskedTextBox1.Mask = "___.___.___-__";
             maskedTextBox1.Name = "maskedTextBox1";
             maskedTextBox1.Size = new Size(126, 23);
@@ -156,7 +157,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(58, 207);
+            dateTimePicker1.Location = new Point(40, 154);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(114, 23);
             dateTimePicker1.TabIndex = 9;
@@ -164,7 +165,7 @@
             // dateTimePicker2
             // 
             dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(207, 207);
+            dateTimePicker2.Location = new Point(189, 154);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(114, 23);
             dateTimePicker2.TabIndex = 10;
@@ -185,7 +186,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges5;
+            btnInserir.CustomizableEdges = customizableEdges3;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -193,9 +194,9 @@
             btnInserir.FillColor = Color.Green;
             btnInserir.Font = new Font("Segoe UI", 9F);
             btnInserir.ForeColor = Color.White;
-            btnInserir.Location = new Point(58, 261);
+            btnInserir.Location = new Point(40, 208);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 11;
             btnInserir.Text = "&inserir";
@@ -206,7 +207,7 @@
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges3;
+            btnCancelar.CustomizableEdges = customizableEdges1;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -214,9 +215,9 @@
             btnCancelar.FillColor = Color.Red;
             btnCancelar.Font = new Font("Segoe UI", 9F);
             btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(207, 261);
+            btnCancelar.Location = new Point(189, 208);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "&Cancelar";
