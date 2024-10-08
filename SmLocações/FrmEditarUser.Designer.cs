@@ -215,6 +215,7 @@
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Name = "FrmEditarUser";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmEditarUser";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

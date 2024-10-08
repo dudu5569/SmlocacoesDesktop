@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            btnInserir = new Guna.UI2.WinForms.Guna2Button();
+            dateTimePicker2 = new DateTimePicker();
+            dateTimePicker1 = new DateTimePicker();
+            maskedTextBox1 = new MaskedTextBox();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             tabPage2 = new TabPage();
             tabPage3 = new TabPage();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
             label5 = new Label();
-            btnInserir = new Guna.UI2.WinForms.Guna2Button();
-            btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             SuspendLayout();
@@ -83,102 +83,26 @@
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
             // 
-            // tabPage2
+            // btnCancelar
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(976, 525);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Contato";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            tabPage3.Location = new Point(4, 24);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(976, 525);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Endereço";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(40, 52);
-            label1.Name = "label1";
-            label1.Size = new Size(40, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Nome";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(304, 52);
-            label2.Name = "label2";
-            label2.Size = new Size(28, 15);
-            label2.TabIndex = 1;
-            label2.Text = "CPF";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(189, 136);
-            label3.Name = "label3";
-            label3.Size = new Size(97, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Data de Cadastro";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(40, 136);
-            label4.Name = "label4";
-            label4.Size = new Size(114, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Data de Nascimento";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(40, 70);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(249, 23);
-            textBox1.TabIndex = 4;
-            // 
-            // maskedTextBox1
-            // 
-            maskedTextBox1.Location = new Point(304, 70);
-            maskedTextBox1.Mask = "___.___.___-__";
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(126, 23);
-            maskedTextBox1.TabIndex = 8;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(40, 154);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(114, 23);
-            dateTimePicker1.TabIndex = 9;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(189, 154);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(114, 23);
-            dateTimePicker2.TabIndex = 10;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(304, 23);
-            label5.Name = "label5";
-            label5.Size = new Size(137, 45);
-            label5.TabIndex = 2;
-            label5.Text = "Clientes";
+            btnCancelar.Animated = true;
+            btnCancelar.AutoRoundedCorners = true;
+            btnCancelar.BorderRadius = 10;
+            btnCancelar.BorderThickness = 1;
+            btnCancelar.CustomizableEdges = customizableEdges1;
+            btnCancelar.DisabledState.BorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCancelar.FillColor = Color.Red;
+            btnCancelar.Font = new Font("Segoe UI", 9F);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(189, 208);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCancelar.Size = new Size(122, 23);
+            btnCancelar.TabIndex = 12;
+            btnCancelar.Text = "&Cancelar";
             // 
             // btnInserir
             // 
@@ -201,26 +125,102 @@
             btnInserir.TabIndex = 11;
             btnInserir.Text = "&inserir";
             // 
-            // btnCancelar
+            // dateTimePicker2
             // 
-            btnCancelar.Animated = true;
-            btnCancelar.AutoRoundedCorners = true;
-            btnCancelar.BorderRadius = 10;
-            btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges1;
-            btnCancelar.DisabledState.BorderColor = Color.DarkGray;
-            btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnCancelar.FillColor = Color.Red;
-            btnCancelar.Font = new Font("Segoe UI", 9F);
-            btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(189, 208);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnCancelar.Size = new Size(122, 23);
-            btnCancelar.TabIndex = 12;
-            btnCancelar.Text = "&Cancelar";
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(189, 154);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(114, 23);
+            dateTimePicker2.TabIndex = 10;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(40, 154);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(114, 23);
+            dateTimePicker1.TabIndex = 9;
+            // 
+            // maskedTextBox1
+            // 
+            maskedTextBox1.Location = new Point(304, 70);
+            maskedTextBox1.Mask = "___.___.___-__";
+            maskedTextBox1.Name = "maskedTextBox1";
+            maskedTextBox1.Size = new Size(126, 23);
+            maskedTextBox1.TabIndex = 8;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(40, 70);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(249, 23);
+            textBox1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(40, 136);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Data de Nascimento";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(189, 136);
+            label3.Name = "label3";
+            label3.Size = new Size(97, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Data de Cadastro";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(304, 52);
+            label2.Name = "label2";
+            label2.Size = new Size(28, 15);
+            label2.TabIndex = 1;
+            label2.Text = "CPF";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 52);
+            label1.Name = "label1";
+            label1.Size = new Size(40, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Nome";
+            // 
+            // tabPage2
+            // 
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(708, 361);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Contato";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(708, 361);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Endereço";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(304, 23);
+            label5.Name = "label5";
+            label5.Size = new Size(137, 45);
+            label5.TabIndex = 2;
+            label5.Text = "Clientes";
             // 
             // FrmClientes
             // 
@@ -230,6 +230,7 @@
             Controls.Add(label5);
             Controls.Add(tabControl1);
             Name = "FrmClientes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmClientes";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

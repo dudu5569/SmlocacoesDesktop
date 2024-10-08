@@ -679,6 +679,7 @@
             Controls.Add(tabControl1);
             Controls.Add(label1);
             Name = "FrmFuncionarios";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmFuncionarios";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

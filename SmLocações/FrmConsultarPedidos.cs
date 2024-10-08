@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace SmLocações
 {
-    public partial class FrmAgendarPedido : Form
+    public partial class FrmConsultarPedidos : Form
     {
-        public FrmAgendarPedido()
+        public FrmConsultarPedidos()
         {
             InitializeComponent();
         }
 
-        private void FrmAgendarPedido_Load(object sender, EventArgs e)
+        private void ConsultarPedidos_Load(object sender, EventArgs e)
         {
 
         }
