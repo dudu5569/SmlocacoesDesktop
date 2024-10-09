@@ -326,6 +326,7 @@
             // 
             textBox2.Location = new Point(156, 104);
             textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
             textBox2.Size = new Size(72, 23);
             textBox2.TabIndex = 7;
             // 
