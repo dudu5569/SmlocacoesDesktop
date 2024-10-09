@@ -21,5 +21,20 @@ namespace SmLocações
         {
 
         }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabPage2;
+        }
     }
 }
