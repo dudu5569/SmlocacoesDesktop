@@ -24,12 +24,17 @@ namespace SmLocações
 
         private void btnInserirFuncionario_Click(object sender, EventArgs e)
         {
-
+            this.tabControl1.SelectedTab = tabPage2;
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInsereEndereco_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabPage3;
         }
     }
 }
