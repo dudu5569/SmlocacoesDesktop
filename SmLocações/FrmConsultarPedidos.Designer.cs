@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvVerPedidos = new DataGridView();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvVerPedidos).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvVerPedidos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 123);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1112, 356);
-            dataGridView1.TabIndex = 0;
+            dgvVerPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvVerPedidos.Location = new Point(12, 123);
+            dgvVerPedidos.Name = "dgvVerPedidos";
+            dgvVerPedidos.Size = new Size(1112, 356);
+            dgvVerPedidos.TabIndex = 0;
             // 
             // label1
             // 
@@ -57,19 +57,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1136, 491);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvVerPedidos);
             Name = "FrmConsultarPedidos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ConsultarPedidos";
             Load += ConsultarPedidos_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvVerPedidos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvVerPedidos;
         private Label label1;
     }
 }

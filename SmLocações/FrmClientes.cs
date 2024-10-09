@@ -26,5 +26,10 @@ namespace SmLocações
         {
             this.tabControl1.SelectedTab = tabPage2;
         }
+
+        private void btnInserirContato_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabPage3;
+        }
     }
 }

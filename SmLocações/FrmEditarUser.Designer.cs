@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             groupBox1 = new GroupBox();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
@@ -40,14 +40,14 @@
             label4 = new Label();
             txtSenha = new TextBox();
             txtEmail = new TextBox();
-            txtID = new TextBox();
+            txtIdUsuario = new TextBox();
             chkAtivo = new CheckBox();
             txtConfSenha = new TextBox();
             label3 = new Label();
             label5 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvUsuarios = new DataGridView();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -68,12 +68,12 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtSenha);
             groupBox1.Controls.Add(txtEmail);
-            groupBox1.Controls.Add(txtID);
+            groupBox1.Controls.Add(txtIdUsuario);
             groupBox1.Controls.Add(chkAtivo);
             groupBox1.Controls.Add(txtConfSenha);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Controls.Add(dgvUsuarios);
             groupBox1.Location = new Point(45, 22);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(705, 476);
@@ -87,7 +87,7 @@
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges1;
+            btnCancelar.CustomizableEdges = customizableEdges5;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -97,7 +97,7 @@
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(368, 200);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 5;
             btnCancelar.Text = "&Cancelar";
@@ -108,7 +108,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges3;
+            btnInserir.CustomizableEdges = customizableEdges7;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -118,7 +118,7 @@
             btnInserir.ForeColor = Color.White;
             btnInserir.Location = new Point(218, 200);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 6;
             btnInserir.Text = "&inserir";
@@ -155,12 +155,12 @@
             txtEmail.Size = new Size(100, 23);
             txtEmail.TabIndex = 1;
             // 
-            // txtID
+            // txtIdUsuario
             // 
-            txtID.Location = new Point(90, 148);
-            txtID.Name = "txtID";
-            txtID.Size = new Size(100, 23);
-            txtID.TabIndex = 0;
+            txtIdUsuario.Location = new Point(90, 148);
+            txtIdUsuario.Name = "txtIdUsuario";
+            txtIdUsuario.Size = new Size(100, 23);
+            txtIdUsuario.TabIndex = 0;
             // 
             // chkAtivo
             // 
@@ -197,13 +197,13 @@
             label5.TabIndex = 11;
             label5.Text = "Confirmar Senha";
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(10, 270);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(689, 186);
-            dataGridView1.TabIndex = 7;
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Location = new Point(10, 270);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.Size = new Size(689, 186);
+            dgvUsuarios.TabIndex = 7;
             // 
             // FrmEditarUser
             // 
@@ -219,7 +219,7 @@
             Text = "FrmEditarUser";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,12 +232,12 @@
         private Label label4;
         private TextBox txtSenha;
         private TextBox txtEmail;
-        private TextBox txtID;
+        private TextBox txtIdUsuario;
         private CheckBox chkAtivo;
         private TextBox txtConfSenha;
         private Label label3;
         private Label label5;
-        private DataGridView dataGridView1;
+        private DataGridView dgvUsuarios;
         private Guna.UI2.WinForms.Guna2Button btnInserir;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
     }

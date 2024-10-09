@@ -33,7 +33,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
-            txtEmail = new TextBox();
+            txtUsuario = new TextBox();
             txtSenha = new TextBox();
             label2 = new Label();
             label3 = new Label();
@@ -56,12 +56,12 @@
             label1.Text = "Usuários";
             label1.TextAlign = ContentAlignment.TopCenter;
             // 
-            // txtEmail
+            // txtUsuario
             // 
-            txtEmail.Location = new Point(135, 167);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(280, 23);
-            txtEmail.TabIndex = 1;
+            txtUsuario.Location = new Point(135, 167);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(280, 23);
+            txtUsuario.TabIndex = 1;
             // 
             // txtSenha
             // 
@@ -75,9 +75,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(132, 149);
             label2.Name = "label2";
-            label2.Size = new Size(36, 15);
+            label2.Size = new Size(47, 15);
             label2.TabIndex = 7;
-            label2.Text = "Email";
+            label2.Text = "Usuário";
             // 
             // label3
             // 
@@ -115,7 +115,7 @@
             groupBox1.Controls.Add(cmbFuncionarios);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(txtSenha);
-            groupBox1.Controls.Add(txtEmail);
+            groupBox1.Controls.Add(txtUsuario);
             groupBox1.Location = new Point(12, 33);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(586, 312);
@@ -186,7 +186,7 @@
         #endregion
 
         private Label label1;
-        private TextBox txtEmail;
+        private TextBox txtUsuario;
         private TextBox txtSenha;
         private Label label2;
         private Label label3;
