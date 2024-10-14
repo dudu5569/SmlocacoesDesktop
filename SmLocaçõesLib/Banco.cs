@@ -7,21 +7,26 @@ using MySql.Data.MySqlClient;
 
 namespace SmLocaçõesLib
 {
-    public class Banco
+    public static class Banco
     {
         public static MySqlCommand Abrir()
         {
             string strconn = @"server=127.0.0.1;database=smlocaoesdb;user=root;password;";
             MySqlConnection cn = new MySqlConnection(strconn);
-            MySqlConnection cmd = new();
+            MySqlCommand cmd = new();
 
             try
             {
                 cn.Open();
-                
+                cmd.Connection = cn;
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
             return cmd;
         }
-    
+    }
 }
