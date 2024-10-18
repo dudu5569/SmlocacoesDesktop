@@ -9,14 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="FakesAssemblies\**" />
+    <EmbeddedResource Remove="FakesAssemblies\**" />
+    <None Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.6" />
+    <PackageReference Include="Microsoft.QualityTools.Testing.Fakes" Version="16.11.230815" />
     <PackageReference Include="MySql.Data" Version="8.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="SmLocaçõesLib">
-      <HintPath>..\SmLocaçõesLib\bin\Debug\net8.0\SmLocaçõesLib.dll</HintPath>
-    </Reference>
+    <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmLocaçõesLib\SmLocaçõesLib.csproj" />
   </ItemGroup>
 
 </Project>

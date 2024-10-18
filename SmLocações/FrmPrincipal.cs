@@ -61,8 +61,14 @@ namespace SmLocações
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultarPedidos frmConsultarPedidos= new();
+            FrmConsultarPedidos frmConsultarPedidos = new();
             frmConsultarPedidos.ShowDialog();
+        }
+
+        private void nívelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmInserirNiveis frminsererirniveis = new();
+            frminsererirniveis.ShowDialog();
         }
     }
 }

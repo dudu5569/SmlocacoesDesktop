@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -86,7 +86,7 @@
             label2.Location = new Point(205, 76);
             label2.Name = "label2";
             label2.Size = new Size(201, 15);
-            label2.TabIndex = 1;
+            label2.TabIndex = 8;
             label2.Text = "Funcionário responsável pelo Pedido";
             // 
             // label3
@@ -95,7 +95,7 @@
             label3.Location = new Point(205, 17);
             label3.Name = "label3";
             label3.Size = new Size(97, 15);
-            label3.TabIndex = 2;
+            label3.TabIndex = 7;
             label3.Text = "Nome do Cliente";
             // 
             // label4
@@ -104,7 +104,7 @@
             label4.Location = new Point(205, 128);
             label4.Name = "label4";
             label4.Size = new Size(93, 15);
-            label4.TabIndex = 3;
+            label4.TabIndex = 9;
             label4.Text = "Data de Retirada";
             // 
             // label5
@@ -113,7 +113,7 @@
             label5.Location = new Point(205, 187);
             label5.Name = "label5";
             label5.Size = new Size(90, 15);
-            label5.TabIndex = 4;
+            label5.TabIndex = 0;
             label5.Text = "Data de Entrega";
             // 
             // txtNomeCliente
@@ -121,7 +121,7 @@
             txtNomeCliente.Location = new Point(205, 35);
             txtNomeCliente.Name = "txtNomeCliente";
             txtNomeCliente.Size = new Size(277, 23);
-            txtNomeCliente.TabIndex = 5;
+            txtNomeCliente.TabIndex = 0;
             // 
             // cmbFuncionario
             // 
@@ -129,7 +129,7 @@
             cmbFuncionario.Location = new Point(205, 94);
             cmbFuncionario.Name = "cmbFuncionario";
             cmbFuncionario.Size = new Size(277, 23);
-            cmbFuncionario.TabIndex = 6;
+            cmbFuncionario.TabIndex = 1;
             // 
             // dataRetirada
             // 
@@ -137,7 +137,7 @@
             dataRetirada.Location = new Point(205, 146);
             dataRetirada.Name = "dataRetirada";
             dataRetirada.Size = new Size(277, 23);
-            dataRetirada.TabIndex = 7;
+            dataRetirada.TabIndex = 2;
             // 
             // dataEntrega
             // 
@@ -145,7 +145,7 @@
             dataEntrega.Location = new Point(205, 205);
             dataEntrega.Name = "dataEntrega";
             dataEntrega.Size = new Size(277, 23);
-            dataEntrega.TabIndex = 8;
+            dataEntrega.TabIndex = 3;
             // 
             // tabControl1
             // 
@@ -155,7 +155,7 @@
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(715, 360);
-            tabControl1.TabIndex = 9;
+            tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -184,7 +184,7 @@
             btnCancelarAgendamento.AutoRoundedCorners = true;
             btnCancelarAgendamento.BorderRadius = 10;
             btnCancelarAgendamento.BorderThickness = 1;
-            btnCancelarAgendamento.CustomizableEdges = customizableEdges11;
+            btnCancelarAgendamento.CustomizableEdges = customizableEdges1;
             btnCancelarAgendamento.DisabledState.BorderColor = Color.DarkGray;
             btnCancelarAgendamento.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelarAgendamento.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -194,9 +194,9 @@
             btnCancelarAgendamento.ForeColor = Color.White;
             btnCancelarAgendamento.Location = new Point(380, 267);
             btnCancelarAgendamento.Name = "btnCancelarAgendamento";
-            btnCancelarAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnCancelarAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnCancelarAgendamento.Size = new Size(122, 23);
-            btnCancelarAgendamento.TabIndex = 10;
+            btnCancelarAgendamento.TabIndex = 4;
             btnCancelarAgendamento.Text = "&Cancelar Pedido";
             // 
             // btnInserirAgendamento
@@ -205,7 +205,7 @@
             btnInserirAgendamento.AutoRoundedCorners = true;
             btnInserirAgendamento.BorderRadius = 10;
             btnInserirAgendamento.BorderThickness = 1;
-            btnInserirAgendamento.CustomizableEdges = customizableEdges13;
+            btnInserirAgendamento.CustomizableEdges = customizableEdges3;
             btnInserirAgendamento.DisabledState.BorderColor = Color.DarkGray;
             btnInserirAgendamento.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserirAgendamento.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -215,9 +215,9 @@
             btnInserirAgendamento.ForeColor = Color.White;
             btnInserirAgendamento.Location = new Point(205, 267);
             btnInserirAgendamento.Name = "btnInserirAgendamento";
-            btnInserirAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnInserirAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnInserirAgendamento.Size = new Size(122, 23);
-            btnInserirAgendamento.TabIndex = 9;
+            btnInserirAgendamento.TabIndex = 5;
             btnInserirAgendamento.Text = "&inserir Pedido";
             btnInserirAgendamento.Click += btnInserir_Click;
             // 
@@ -251,7 +251,7 @@
             btnEscolherLocacao.AutoRoundedCorners = true;
             btnEscolherLocacao.BorderRadius = 10;
             btnEscolherLocacao.BorderThickness = 1;
-            btnEscolherLocacao.CustomizableEdges = customizableEdges15;
+            btnEscolherLocacao.CustomizableEdges = customizableEdges5;
             btnEscolherLocacao.DisabledState.BorderColor = Color.DarkGray;
             btnEscolherLocacao.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEscolherLocacao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -261,9 +261,9 @@
             btnEscolherLocacao.ForeColor = Color.White;
             btnEscolherLocacao.Location = new Point(290, 220);
             btnEscolherLocacao.Name = "btnEscolherLocacao";
-            btnEscolherLocacao.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnEscolherLocacao.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnEscolherLocacao.Size = new Size(122, 23);
-            btnEscolherLocacao.TabIndex = 12;
+            btnEscolherLocacao.TabIndex = 7;
             btnEscolherLocacao.Text = "&Escolher Pedido";
             // 
             // btnCancelarProduto
@@ -272,7 +272,7 @@
             btnCancelarProduto.AutoRoundedCorners = true;
             btnCancelarProduto.BorderRadius = 10;
             btnCancelarProduto.BorderThickness = 1;
-            btnCancelarProduto.CustomizableEdges = customizableEdges17;
+            btnCancelarProduto.CustomizableEdges = customizableEdges7;
             btnCancelarProduto.DisabledState.BorderColor = Color.DarkGray;
             btnCancelarProduto.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelarProduto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -282,9 +282,9 @@
             btnCancelarProduto.ForeColor = Color.White;
             btnCancelarProduto.Location = new Point(424, 220);
             btnCancelarProduto.Name = "btnCancelarProduto";
-            btnCancelarProduto.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnCancelarProduto.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnCancelarProduto.Size = new Size(122, 23);
-            btnCancelarProduto.TabIndex = 11;
+            btnCancelarProduto.TabIndex = 5;
             btnCancelarProduto.Text = "&Cancelar Pedido";
             // 
             // btnInserirProduto
@@ -293,7 +293,7 @@
             btnInserirProduto.AutoRoundedCorners = true;
             btnInserirProduto.BorderRadius = 10;
             btnInserirProduto.BorderThickness = 1;
-            btnInserirProduto.CustomizableEdges = customizableEdges19;
+            btnInserirProduto.CustomizableEdges = customizableEdges9;
             btnInserirProduto.DisabledState.BorderColor = Color.DarkGray;
             btnInserirProduto.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserirProduto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -303,9 +303,9 @@
             btnInserirProduto.ForeColor = Color.White;
             btnInserirProduto.Location = new Point(156, 220);
             btnInserirProduto.Name = "btnInserirProduto";
-            btnInserirProduto.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnInserirProduto.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnInserirProduto.Size = new Size(122, 23);
-            btnInserirProduto.TabIndex = 10;
+            btnInserirProduto.TabIndex = 6;
             btnInserirProduto.Text = "&inserir Pedido";
             // 
             // txtValor
@@ -314,14 +314,14 @@
             txtValor.Name = "txtValor";
             txtValor.ReadOnly = true;
             txtValor.Size = new Size(100, 23);
-            txtValor.TabIndex = 9;
+            txtValor.TabIndex = 4;
             // 
             // txtQuantidade
             // 
             txtQuantidade.Location = new Point(156, 165);
             txtQuantidade.Name = "txtQuantidade";
             txtQuantidade.Size = new Size(100, 23);
-            txtQuantidade.TabIndex = 8;
+            txtQuantidade.TabIndex = 3;
             // 
             // txtIdPedido
             // 
@@ -329,7 +329,7 @@
             txtIdPedido.Name = "txtIdPedido";
             txtIdPedido.ReadOnly = true;
             txtIdPedido.Size = new Size(72, 23);
-            txtIdPedido.TabIndex = 7;
+            txtIdPedido.TabIndex = 0;
             // 
             // cmbProduto
             // 
@@ -337,7 +337,7 @@
             cmbProduto.Location = new Point(408, 104);
             cmbProduto.Name = "cmbProduto";
             cmbProduto.Size = new Size(121, 23);
-            cmbProduto.TabIndex = 6;
+            cmbProduto.TabIndex = 2;
             // 
             // cmbCategoriaPedido
             // 
@@ -345,7 +345,7 @@
             cmbCategoriaPedido.Location = new Point(255, 104);
             cmbCategoriaPedido.Name = "cmbCategoriaPedido";
             cmbCategoriaPedido.Size = new Size(121, 23);
-            cmbCategoriaPedido.TabIndex = 5;
+            cmbCategoriaPedido.TabIndex = 1;
             // 
             // label10
             // 
@@ -353,7 +353,7 @@
             label10.Location = new Point(254, 84);
             label10.Name = "label10";
             label10.Size = new Size(58, 15);
-            label10.TabIndex = 4;
+            label10.TabIndex = 10;
             label10.Text = "Categoria";
             // 
             // label9
@@ -362,7 +362,7 @@
             label9.Location = new Point(408, 86);
             label9.Name = "label9";
             label9.Size = new Size(50, 15);
-            label9.TabIndex = 3;
+            label9.TabIndex = 11;
             label9.Text = "Produto";
             // 
             // label8
@@ -371,7 +371,7 @@
             label8.Location = new Point(276, 147);
             label8.Name = "label8";
             label8.Size = new Size(33, 15);
-            label8.TabIndex = 2;
+            label8.TabIndex = 9;
             label8.Text = "Valor";
             // 
             // label7
@@ -380,7 +380,7 @@
             label7.Location = new Point(156, 147);
             label7.Name = "label7";
             label7.Size = new Size(69, 15);
-            label7.TabIndex = 1;
+            label7.TabIndex = 12;
             label7.Text = "Quantidade";
             // 
             // label6
@@ -389,7 +389,7 @@
             label6.Location = new Point(156, 86);
             label6.Name = "label6";
             label6.Size = new Size(18, 15);
-            label6.TabIndex = 0;
+            label6.TabIndex = 9;
             label6.Text = "ID";
             // 
             // FrmAgendarPedido
