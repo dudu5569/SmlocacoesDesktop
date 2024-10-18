@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmLocaçõesLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +25,23 @@ namespace SmLocações
 
         private void btnInserirFuncionario_Click(object sender, EventArgs e)
         {
+
+            bool isAtivo = chkAivo.Checked;
+
+            Funcionario funcionario = new(
+                Niveis.ObterPorId(Convert.ToInt32(cmbNivel.SelectedValue)),
+                txtNome.Text,
+                msktxtCpf.Text,
+                Data_Nascimento.Value,
+                Data_Cadastro.Value = DateTime.Now,
+                isAtivo
+                );
+
+
+
+
+
+
             this.tabControl1.SelectedTab = tabPage2;
         }
 
@@ -35,6 +53,19 @@ namespace SmLocações
         private void btnInsereEndereco_Click(object sender, EventArgs e)
         {
             this.tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void FrmFuncionarios_Load(object sender, EventArgs e)
+        {
+            var niveis = Niveis.ObterLista();
+            cmbNivel.DataSource = niveis;
+            cmbNivel.DisplayMember = "Nome";
+            cmbNivel.ValueMember = "ID";
+        }
+
+        private void mxtdCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            msktxtCpf.Mask = "000.000.000-00";
         }
     }
 }

@@ -76,7 +76,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnCancelar.Size = new Size(122, 23);
-            btnCancelar.TabIndex = 6;
+            btnCancelar.TabIndex = 2;
             btnCancelar.Text = "&Cancelar";
             // 
             // btnInserir
@@ -97,7 +97,7 @@
             btnInserir.Name = "btnInserir";
             btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnInserir.Size = new Size(122, 23);
-            btnInserir.TabIndex = 5;
+            btnInserir.TabIndex = 3;
             btnInserir.Text = "&inserir";
             btnInserir.Click += btnInserir_Click;
             // 
@@ -106,14 +106,14 @@
             txtSiglaNivel.Location = new Point(102, 137);
             txtSiglaNivel.Name = "txtSiglaNivel";
             txtSiglaNivel.Size = new Size(215, 23);
-            txtSiglaNivel.TabIndex = 3;
+            txtSiglaNivel.TabIndex = 1;
             // 
             // txtNomeNivel
             // 
             txtNomeNivel.Location = new Point(102, 87);
             txtNomeNivel.Name = "txtNomeNivel";
             txtNomeNivel.Size = new Size(215, 23);
-            txtNomeNivel.TabIndex = 2;
+            txtNomeNivel.TabIndex = 0;
             // 
             // label3
             // 

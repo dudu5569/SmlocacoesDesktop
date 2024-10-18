@@ -22,19 +22,19 @@ namespace SmLocações
         {
             Niveis niveis = new(
                 txtNomeNivel.Text,
-                txtSiglaNivel.Text
+                txtSiglaNivel.Text.ToUpper()
                 );
 
             niveis.Inserir();
             if (niveis.ID > 0 )
             {
-                MessageBox.Show("a");
+                MessageBox.Show($"Nível {niveis.Nome} foi inserido com sucesso!");
                 txtNomeNivel.Clear();
                 txtSiglaNivel.Clear();
             }
             else
             {
-                MessageBox.Show("falha");
+                MessageBox.Show("Falha ao gravar registro!");
             }
         }
     }

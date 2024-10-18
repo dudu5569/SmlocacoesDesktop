@@ -49,22 +49,8 @@ namespace SmLocaçõesLib
             {
                 ID = dr.GetInt32(0);
             }
+            cmd.Connection.Close(); 
         }
-
-
-
-
-        public void Atualizar()
-        {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_niveis_update";
-            cmd.Parameters.AddWithValue("spnome", Nome);
-            cmd.Parameters.AddWithValue("spsigla", Sigla);
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
-        }
-
 
 
 
@@ -74,6 +60,7 @@ namespace SmLocaçõesLib
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"Delete from niveis where id = {ID}";
             cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
 
 
