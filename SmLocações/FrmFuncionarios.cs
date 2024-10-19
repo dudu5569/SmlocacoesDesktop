@@ -1,4 +1,5 @@
-﻿using SmLocaçõesLib;
+﻿using MySql.Data.MySqlClient;
+using SmLocaçõesLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,24 +26,37 @@ namespace SmLocações
 
         private void btnInserirFuncionario_Click(object sender, EventArgs e)
         {
-
             bool isAtivo = chkAivo.Checked;
-
-            Funcionario funcionario = new(
-                Niveis.ObterPorId(Convert.ToInt32(cmbNivel.SelectedValue)),
+            msktxtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+             Funcionario funcionario = new Funcionario(
+                Niveis.ObterPorId(Convert.ToInt32(cmbNivel.SelectedValue)), // Passando o objeto Niveis
                 txtNome.Text,
                 msktxtCpf.Text,
                 Data_Nascimento.Value,
-                Data_Cadastro.Value = DateTime.Now,
+                DateTime.Now,
                 isAtivo
-                );
+            );
 
 
 
 
 
+            funcionario.Inserir();
 
-            this.tabControl1.SelectedTab = tabPage2;
+            if (funcionario.ID > 0)
+            {
+                MessageBox.Show($"Funcionário {funcionario.Nome}, foi inserido com sucesso!", "SmLocações");
+                this.tabControl1.SelectedTab = tabPage2;
+                txtNome.Clear();
+                msktxtCpf.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao gravar dados!","Smlocações");
+            }
+
+
+
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -57,6 +71,12 @@ namespace SmLocações
 
         private void FrmFuncionarios_Load(object sender, EventArgs e)
         {
+            carregacombobox();
+        }
+
+        public void carregacombobox()
+        {
+
             var niveis = Niveis.ObterLista();
             cmbNivel.DataSource = niveis;
             cmbNivel.DisplayMember = "Nome";
@@ -68,4 +88,6 @@ namespace SmLocações
             msktxtCpf.Mask = "000.000.000-00";
         }
     }
+
+
 }

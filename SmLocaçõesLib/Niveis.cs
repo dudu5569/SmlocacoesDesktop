@@ -21,9 +21,6 @@ namespace SmLocaçõesLib
 
         public Niveis() { }
 
-
-
-
         public Niveis(string? nome, string? sigla)
         {
             Nome = nome;
@@ -101,6 +98,9 @@ namespace SmLocaçõesLib
                         dr.GetString(2)
                         ) );
             }
+
+            dr.Close();
+            cmd.Connection.Close();
             return lista;
         }
 

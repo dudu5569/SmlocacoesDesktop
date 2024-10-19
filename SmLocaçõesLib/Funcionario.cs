@@ -12,24 +12,26 @@ namespace SmLocaçõesLib
     public class Funcionario
     {
 
-        int ID {  get; set; }
+        public int ID {  get; set; }
 
-        Niveis Id_Nivel { get; set; }
+        public Niveis? Nivel { get; set; }
 
-        string? Nome {  get; set; }
-        string? CPF { get; set; }
+        public string? Nome {  get; set; }
+        public string? CPF { get; set; }
 
-        DateTime? Data_Nascimento { get; set; }
+        public DateTime? Data_Nascimento { get; set; }
 
-        DateTime? Data_Cadastro {  get; set; } = DateTime.Now;
+        public DateTime? Data_Cadastro {  get; set; } = DateTime.Now;
 
         bool? Ativo {  get; set; }
 
-        public Funcionario() { }
-        public Funcionario(int iD, Niveis? id_Nivel, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro, bool? ativo)
+        public Funcionario() {
+            Nivel = new();
+        }
+        public Funcionario(int id, Niveis? id_Nivel, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro, bool? ativo)
         {
-            ID = iD;
-            Id_Nivel = id_Nivel;
+            ID = id;
+            Nivel = id_Nivel;
             Nome = nome;
             CPF = cpf;
             Data_Nascimento = data_Nascimento;
@@ -39,51 +41,37 @@ namespace SmLocaçõesLib
 
         public Funcionario(Niveis? id_Nivel, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro, bool? ativo)
         {
-            Id_Nivel = id_Nivel;
+            Nivel = id_Nivel;
             Nome = nome;
             CPF = cpf;
             Data_Nascimento = data_Nascimento;
             Data_Cadastro = data_Cadastro;
             Ativo = ativo;
         }
-
-        public Funcionario(string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro, bool? ativo)
-        {
-            Nome = nome;
-            CPF = cpf;
-            Data_Nascimento = data_Nascimento;
-            Data_Cadastro = data_Cadastro;
-            Ativo = ativo;
-        }
-
-
 
         public void Inserir()
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_insert_funcionarios";
-            cmd.Parameters.AddWithValue("spid_nivel", Id_Nivel);
+            cmd.Parameters.AddWithValue("spid_nivel", Nivel.ID);
             cmd.Parameters.AddWithValue("spnome", Nome);
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("spdata_nasc", Data_Nascimento);
             cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
             cmd.Parameters.AddWithValue("ativo", Ativo);
-            var dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                dr.GetInt32(0);
-            }
 
-            cmd.Connection.Close();
+            ID = Convert.ToInt32(cmd.ExecuteScalar());
         }
+
+
 
         public void Atualizar()
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_update_funcionarios";
-            cmd.Parameters.AddWithValue("spid_nivel", Id_Nivel);
+            cmd.Parameters.AddWithValue("spid_nivel", Nivel);
             cmd.Parameters.AddWithValue("spnome", Nome);
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("spdata_nasc", Data_Nascimento);
