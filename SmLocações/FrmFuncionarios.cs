@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SmLocações
 {
     public partial class FrmFuncionarios : Form
@@ -28,18 +29,14 @@ namespace SmLocações
         {
             bool isAtivo = chkAivo.Checked;
             msktxtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-             Funcionario funcionario = new Funcionario(
-                Niveis.ObterPorId(Convert.ToInt32(cmbNivel.SelectedValue)), // Passando o objeto Niveis
-                txtNome.Text,
-                msktxtCpf.Text,
-                Data_Nascimento.Value,
-                DateTime.Now,
-                isAtivo
-            );
-
-
-
-
+            Funcionario funcionario = new Funcionario(
+               Niveis.ObterPorId(Convert.ToInt32(cmbNivel.SelectedValue)), // Passando o objeto Niveis
+               txtNome.Text,
+               msktxtCpf.Text,
+               Data_Nascimento.Value,
+               DateTime.Now,
+               isAtivo
+           );
 
             funcionario.Inserir();
 
@@ -52,8 +49,10 @@ namespace SmLocações
             }
             else
             {
-                MessageBox.Show("Erro ao gravar dados!","Smlocações");
+                MessageBox.Show("Erro ao gravar dados!", "Smlocações");
             }
+
+            txtIdFuncionário.Text = funcionario.ID.ToString();
 
 
 
@@ -86,6 +85,44 @@ namespace SmLocações
         private void mxtdCpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
             msktxtCpf.Mask = "000.000.000-00";
+        }
+
+
+        private async Task<Endereco> BuscaEndereco(string cep)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    // Faz a requisição para a API ViaCEP
+                    var response = await client.GetStringAsync($"https://viacep.com.br/ws/{cep}/json/");
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<Endereco>(response);
+                }
+                catch
+                {
+                    return null; // Em caso de erro
+                }
+            }
+        }
+
+        private async void txtBusca_Click(object sender, EventArgs e)
+        {
+            string cep = txtCEP.Text; // Remove o traço e espaços
+            if (!string.IsNullOrEmpty(cep))
+            {
+                var endereco = await BuscaEndereco(cep);
+                if (endereco != null)
+                {
+                    txtLogradouro.Text = endereco.Logradouro;
+                    txtBairro.Text = endereco.Bairro;
+                    txtCidade.Text = endereco.Localidade;
+                    txtEstado.Text = endereco.Uf;
+                }
+                else
+                {
+                    MessageBox.Show("CEP não encontrado.");
+                }
+            }
         }
     }
 
