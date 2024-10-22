@@ -13,4 +13,6 @@ namespace SmLocaçõesLib
         public string Localidade { get; set; }
         public string Uf { get; set; }
     }
+
+
 }
