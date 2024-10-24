@@ -65,9 +65,10 @@ namespace SmLocações
 
         private void btnInsereEndereco_Click(object sender, EventArgs e)
         {
-        
+
             if (txtCEP.Text.Length > 0 && txtLogradouro.Text.Length > 0)
             {
+                string tipoendereco = cmbTipoEndereco.Text.Substring(0, 3);
 
                 Endereco endereco = new Endereco(
                     txtLogradouro.Text,
@@ -76,7 +77,7 @@ namespace SmLocações
                     txtCidade.Text,
                     txtEstado.Text,
                     Convert.ToInt32(txtCEP.Text),
-                    cmbTipoEndereco.SelectedValue.ToString()
+                    tipoendereco
                     );
                 endereco.Inserir();
                 txtLogradouro.Clear();
@@ -85,16 +86,22 @@ namespace SmLocações
                 txtEstado.Clear();
                 txtCEP.Clear();
                 this.tabControl1.SelectedTab = tabPage3;
+                txtIDFuncionárioTelefone.Text = txtIdFuncionário.Text;
+                MessageBox.Show("Endereço Cadastrado com Sucesso", "SmLocações");
             }
             else
             {
                 MessageBox.Show("Endereço inválido, insira um endereço válido para concluir o cadastro", "SmLocações");
-            } 
+            }
         }
 
         private void FrmFuncionarios_Load(object sender, EventArgs e)
         {
             carregacombobox();
+            TiposEnderecos tiposEnderecos = new();
+            cmbTipoEndereco.Items.AddRange(tiposEnderecos.tiposdeEnderecos);
+            Telefones telefones = new();
+            cmbTipoTelefone.Items.AddRange(telefones.TipodeTelefone);
 
         }
 
@@ -154,6 +161,29 @@ namespace SmLocações
         {
             txtIdFuncionário.ReadOnly = false;
             txtIdFuncionário.Focus();
+        }
+
+        private void btnInsereTelefone_Click(object sender, EventArgs e)
+        {
+
+            string tipotelefone = cmbTipoTelefone.Text.ToString();
+
+            msktxtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            Telefones telefones = new(
+                msktxtTelefone.Text,
+                tipotelefone
+                );
+            if (!string.IsNullOrWhiteSpace(msktxtTelefone.Text))
+            {
+                telefones.Inserir_Telefone(msktxtTelefone.Text, tipotelefone);
+                MessageBox.Show("Telefone cadastrado com Sucesso!", "SmLocações");
+            } 
+        }
+
+        private void btnEscoleFuncionarioTelefone_Click(object sender, EventArgs e)
+        {
+            txtIDFuncionárioTelefone.ReadOnly = false;
+            txtIDFuncionárioTelefone.Focus();
         }
     }
 

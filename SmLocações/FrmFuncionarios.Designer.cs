@@ -337,7 +337,6 @@
             // 
             cmbTipoEndereco.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoEndereco.FormattingEnabled = true;
-            cmbTipoEndereco.Items.AddRange(new object[] { "RES - Residencial", "COR - Corporativo", "ENT - Entrega" });
             cmbTipoEndereco.Location = new Point(273, 273);
             cmbTipoEndereco.Name = "cmbTipoEndereco";
             cmbTipoEndereco.Size = new Size(121, 23);
@@ -689,6 +688,7 @@
             btnEscoleFuncionarioTelefone.Size = new Size(122, 35);
             btnEscoleFuncionarioTelefone.TabIndex = 5;
             btnEscoleFuncionarioTelefone.Text = "&Escolher Funcionário";
+            btnEscoleFuncionarioTelefone.Click += btnEscoleFuncionarioTelefone_Click;
             // 
             // btnInsereTelefone
             // 
@@ -710,6 +710,7 @@
             btnInsereTelefone.Size = new Size(122, 23);
             btnInsereTelefone.TabIndex = 4;
             btnInsereTelefone.Text = "&inserir";
+            btnInsereTelefone.Click += btnInsereTelefone_Click;
             // 
             // btnCancelaTelefone
             // 
