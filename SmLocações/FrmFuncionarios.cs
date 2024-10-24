@@ -65,12 +65,37 @@ namespace SmLocações
 
         private void btnInsereEndereco_Click(object sender, EventArgs e)
         {
-            this.tabControl1.SelectedTab = tabPage3;
+        
+            if (txtCEP.Text.Length > 0 && txtLogradouro.Text.Length > 0)
+            {
+
+                Endereco endereco = new Endereco(
+                    txtLogradouro.Text,
+                    Convert.ToInt32(txtNumero.Text),
+                    txtBairro.Text,
+                    txtCidade.Text,
+                    txtEstado.Text,
+                    Convert.ToInt32(txtCEP.Text),
+                    cmbTipoEndereco.SelectedValue.ToString()
+                    );
+                endereco.Inserir();
+                txtLogradouro.Clear();
+                txtNumero.Clear();
+                txtCidade.Clear();
+                txtEstado.Clear();
+                txtCEP.Clear();
+                this.tabControl1.SelectedTab = tabPage3;
+            }
+            else
+            {
+                MessageBox.Show("Endereço inválido, insira um endereço válido para concluir o cadastro", "SmLocações");
+            } 
         }
 
         private void FrmFuncionarios_Load(object sender, EventArgs e)
         {
             carregacombobox();
+
         }
 
         public void carregacombobox()
@@ -123,6 +148,12 @@ namespace SmLocações
                     MessageBox.Show("CEP não encontrado.");
                 }
             }
+        }
+
+        private void btnEscolherFuncionarioEndereco_Click(object sender, EventArgs e)
+        {
+            txtIdFuncionário.ReadOnly = false;
+            txtIdFuncionário.Focus();
         }
     }
 

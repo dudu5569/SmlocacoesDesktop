@@ -67,6 +67,8 @@
             label3 = new Label();
             label2 = new Label();
             tabPage2 = new TabPage();
+            label19 = new Label();
+            cmbTipoEndereco = new ComboBox();
             txtBusca = new Guna.UI2.WinForms.Guna2Button();
             txtIdFuncionário = new Guna.UI2.WinForms.Guna2TextBox();
             txtBairro = new TextBox();
@@ -290,6 +292,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label19);
+            tabPage2.Controls.Add(cmbTipoEndereco);
             tabPage2.Controls.Add(txtBusca);
             tabPage2.Controls.Add(txtIdFuncionário);
             tabPage2.Controls.Add(txtBairro);
@@ -319,6 +323,25 @@
             tabPage2.Text = "Endereço";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(273, 255);
+            label19.Name = "label19";
+            label19.Size = new Size(30, 15);
+            label19.TabIndex = 26;
+            label19.Text = "Tipo";
+            // 
+            // cmbTipoEndereco
+            // 
+            cmbTipoEndereco.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipoEndereco.FormattingEnabled = true;
+            cmbTipoEndereco.Items.AddRange(new object[] { "RES - Residencial", "COR - Corporativo", "ENT - Entrega" });
+            cmbTipoEndereco.Location = new Point(273, 273);
+            cmbTipoEndereco.Name = "cmbTipoEndereco";
+            cmbTipoEndereco.Size = new Size(121, 23);
+            cmbTipoEndereco.TabIndex = 25;
             // 
             // txtBusca
             // 
@@ -518,6 +541,7 @@
             btnEscolherFuncionarioEndereco.Size = new Size(122, 35);
             btnEscolherFuncionarioEndereco.TabIndex = 10;
             btnEscolherFuncionarioEndereco.Text = "&Escolher Funcionário";
+            btnEscolherFuncionarioEndereco.Click += btnEscolherFuncionarioEndereco_Click;
             // 
             // btnInsereEndereco
             // 
@@ -781,5 +805,7 @@
         private Label label18;
         private TextBox txtCEP;
         private Guna.UI2.WinForms.Guna2Button txtBusca;
+        private Label label19;
+        private ComboBox cmbTipoEndereco;
     }
 }
