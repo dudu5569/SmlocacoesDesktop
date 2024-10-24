@@ -88,7 +88,7 @@ namespace SmLocações
         }
 
 
-        private async Task<Endereco> BuscaEndereco(string cep)
+        private async Task<EnderecoForCep> BuscaEndereco(string cep)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -96,7 +96,7 @@ namespace SmLocações
                 {
                     // Faz a requisição para a API ViaCEP
                     var response = await client.GetStringAsync($"https://viacep.com.br/ws/{cep}/json/");
-                    return Newtonsoft.Json.JsonConvert.DeserializeObject<Endereco>(response);
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<EnderecoForCep>(response);
                 }
                 catch
                 {
