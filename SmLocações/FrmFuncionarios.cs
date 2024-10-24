@@ -87,6 +87,8 @@ namespace SmLocações
                 txtCEP.Clear();
                 this.tabControl1.SelectedTab = tabPage3;
                 txtIDFuncionárioTelefone.Text = txtIdFuncionário.Text;
+
+                endereco.Endereco_Associado_Funcionario(Convert.ToInt32(txtIdFuncionário.Text), endereco.Id);
                 MessageBox.Show("Endereço Cadastrado com Sucesso", "SmLocações");
             }
             else
@@ -176,6 +178,8 @@ namespace SmLocações
             if (!string.IsNullOrWhiteSpace(msktxtTelefone.Text))
             {
                 telefones.Inserir_Telefone(msktxtTelefone.Text, tipotelefone);
+                telefones.Telefone_Associado_Funcionario(Convert.ToInt32(txtIDFuncionárioTelefone.Text), 
+                    telefones.Id);
                 MessageBox.Show("Telefone cadastrado com Sucesso!", "SmLocações");
             } 
         }

@@ -99,5 +99,15 @@ namespace SmLocaçõesLib
             return endereco;
         }
 
+        public void Endereco_Associado_Funcionario(int idfuncionario, int idendereco)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"Insert into funcionarios_enderecos (id_funcionario, id_endereco) values " +
+                $"('{idfuncionario}','{idendereco}')";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read()) Id = dr.GetInt32(0);
+        }
+
     }
 }

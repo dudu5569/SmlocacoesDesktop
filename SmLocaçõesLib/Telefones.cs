@@ -34,5 +34,15 @@ namespace SmLocaçõesLib
             var dr = cmd.ExecuteReader();
             if (dr.Read()) Id = dr.GetInt32(0);
         }
+
+        public void Telefone_Associado_Funcionario(int idfuncionario, int idtelefone)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"insert into funcionarios_telefones (id_funcionario, id_telefone) values" +
+                $"('{idfuncionario}','{idtelefone}')";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read()) Id = dr.GetInt32(0);
+        }
     }
 }
