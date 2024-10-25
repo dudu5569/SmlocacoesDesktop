@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
 using System.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace SmLocaçõesLib
 {
@@ -79,6 +80,53 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("ativo", Ativo);
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
+        }
+
+        public static Funcionario ObterporId(int id)
+        {
+            Funcionario funcionario = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"Select * from funcionarios where id = {id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                funcionario = new(
+                dr.GetInt32(0),
+                Niveis.ObterPorId(dr.GetInt32(1)),
+                dr.GetString(2),
+                dr.GetString(3),
+                dr.GetDateTime(4),
+                dr.GetDateTime(5),
+                dr.GetBoolean(6)
+                );
+            }
+            return funcionario;
+        }
+
+        public static List<Funcionario> ObterListaFuncionario()
+        {
+            List<Funcionario> lista = new List<Funcionario>();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "Select * from funcionarios";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(
+                    new(
+                dr.GetInt32(0),
+                Niveis.ObterPorId(dr.GetInt32(1)),
+                dr.GetString(2),
+                dr.GetString(3),
+                dr.GetDateTime(4),
+                dr.GetDateTime(5),
+                dr.GetBoolean(6)
+                        ));
+            }
+            cmd.Connection.Close();
+            return lista;
         }
     }
 }
