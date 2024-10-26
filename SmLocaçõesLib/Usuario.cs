@@ -57,26 +57,22 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spativo", Ativo);
             var dr = cmd.ExecuteReader();
             if (dr.Read()) Id = dr.GetInt32(0);
+            
         }
 
-        public static Usuario ObterIdFuncionario(int id)
+        public static bool ObterIdFuncionario(int id)
         {
-            Usuario usuario = new();
+            bool existe = false; 
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"Select * from usuarios_descktop where id_funcionario = {id}";
             var dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                usuario = new(
-                    dr.GetInt32(0),
-                    Funcionario.ObterporId(dr.GetInt32(1)),
-                    dr.GetString(2),
-                    dr.GetString(3),
-                    dr.GetBoolean(4)
-                    );
+                existe = true;
             }
-            return usuario;
+            dr.Close();
+            return existe;
         }
 
     }

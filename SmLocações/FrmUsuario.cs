@@ -36,20 +36,12 @@ namespace SmLocações
                 ativo
                 );
 
-            var usuarios = Usuario.ObterIdFuncionario(Convert.ToInt32(cmbFuncionarios.SelectedValue));
-            
-            
- 
-
-
-
-
-          /*  if (idfuncionario != )
+           if (!Usuario.ObterIdFuncionario(idfuncionario))
             {
               usuario.InserirUsuario();
                 if (usuario.Id > 0)
                 {
-                    MessageBox.Show($"O usuário {usuario.Login}, foi inserido com sucesso e \n Pertence ao funcionário {cmbFuncionarios.Text}");
+                    MessageBox.Show($"O usuário {usuario.Login}, foi inserido com sucesso e \n Pertence ao funcionário: {cmbFuncionarios.Text}");
                     txtUsuario.Clear();
                     txtSenha.Clear();
                 }
@@ -58,9 +50,6 @@ namespace SmLocações
             {
                 MessageBox.Show($"O funcionário {cmbFuncionarios.Text} já possui um usuário cadastrado", "SmLocações");
             } 
-          */
-
-
         }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
