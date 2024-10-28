@@ -22,7 +22,8 @@ namespace SmLocações
 
         private void btnCancelarFuncionario_Click(object sender, EventArgs e)
         {
-
+            txtNome.Clear();
+            msktxtCpf.Clear();
         }
 
         private void btnInserirFuncionario_Click(object sender, EventArgs e)
@@ -104,6 +105,7 @@ namespace SmLocações
             cmbTipoEndereco.Items.AddRange(tiposEnderecos.tiposdeEnderecos);
             Telefones telefones = new();
             cmbTipoTelefone.Items.AddRange(telefones.TipodeTelefone);
+            msktxtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
 
         }
 
@@ -178,16 +180,65 @@ namespace SmLocações
             if (!string.IsNullOrWhiteSpace(msktxtTelefone.Text))
             {
                 telefones.Inserir_Telefone(msktxtTelefone.Text, tipotelefone);
-                telefones.Telefone_Associado_Funcionario(Convert.ToInt32(txtIDFuncionárioTelefone.Text), 
+                telefones.Telefone_Associado_Funcionario(Convert.ToInt32(txtIDFuncionárioTelefone.Text),
                     telefones.Id);
                 MessageBox.Show("Telefone cadastrado com Sucesso!", "SmLocações");
-            } 
+                txtIdFuncionarioEmail.Text = txtIDFuncionárioTelefone.Text;
+            }
         }
 
         private void btnEscoleFuncionarioTelefone_Click(object sender, EventArgs e)
         {
             txtIDFuncionárioTelefone.ReadOnly = false;
             txtIDFuncionárioTelefone.Focus();
+        }
+
+        private void msktxtTelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            msktxtTelefone.Mask = "00,00000-0000";
+        }
+
+        private void btnCancelaEndereco_Click(object sender, EventArgs e)
+        {
+            txtCEP.Clear();
+            txtLogradouro.Clear();
+            txtNumero.Clear();
+            txtEstado.Clear();
+            txtBairro.Clear();
+            txtCidade.Clear();
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCancelaEmail_Click(object sender, EventArgs e)
+        {
+            txtEmail.Clear();
+        }
+
+        private void btnCancelaTelefone_Click(object sender, EventArgs e)
+        {
+            msktxtTelefone.Clear();
+        }
+
+        private void BtnInsereEmail_Click(object sender, EventArgs e)
+        {
+            Emails emails = new(
+                txtEmail.Text
+                );
+            emails.InserirEmail(txtEmail.Text);
+            if (emails.Id > 0)
+            {
+                MessageBox.Show("Email inserido com sucesso!", "SmLocações");
+            }
+        }
+
+        private void btnEscolhaFuncionarioEmail_Click(object sender, EventArgs e)
+        {
+            txtIdFuncionarioEmail.ReadOnly = false;
         }
     }
 

@@ -41,7 +41,7 @@ namespace SmLocações
               usuario.InserirUsuario();
                 if (usuario.Id > 0)
                 {
-                    MessageBox.Show($"O usuário {usuario.Login}, foi inserido com sucesso e \n Pertence ao funcionário: {cmbFuncionarios.Text}");
+                    MessageBox.Show($"O usuário {usuario.Login}, foi inserido com sucesso e \n Pertence ao funcionário: {cmbFuncionarios.Text}", "SmLocações");
                     txtUsuario.Clear();
                     txtSenha.Clear();
                 }

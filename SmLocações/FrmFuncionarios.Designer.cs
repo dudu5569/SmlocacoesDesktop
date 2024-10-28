@@ -50,6 +50,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
@@ -72,7 +80,7 @@
             txtBusca = new Guna.UI2.WinForms.Guna2Button();
             txtIdFuncionário = new Guna.UI2.WinForms.Guna2TextBox();
             txtBairro = new TextBox();
-            textBox2 = new TextBox();
+            txtComplemento = new TextBox();
             txtEstado = new TextBox();
             txtCidade = new TextBox();
             txtCEP = new TextBox();
@@ -100,10 +108,19 @@
             btnEscoleFuncionarioTelefone = new Guna.UI2.WinForms.Guna2Button();
             btnInsereTelefone = new Guna.UI2.WinForms.Guna2Button();
             btnCancelaTelefone = new Guna.UI2.WinForms.Guna2Button();
+            tabPage4 = new TabPage();
+            btnEscolhaFuncionarioEmail = new Guna.UI2.WinForms.Guna2Button();
+            BtnInsereEmail = new Guna.UI2.WinForms.Guna2Button();
+            BtnCancelaEmail = new Guna.UI2.WinForms.Guna2Button();
+            txtEmail = new TextBox();
+            txtIdFuncionarioEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            label21 = new Label();
+            label20 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
+            tabPage4.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -121,6 +138,7 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(87, 70);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -297,7 +315,7 @@
             tabPage2.Controls.Add(txtBusca);
             tabPage2.Controls.Add(txtIdFuncionário);
             tabPage2.Controls.Add(txtBairro);
-            tabPage2.Controls.Add(textBox2);
+            tabPage2.Controls.Add(txtComplemento);
             tabPage2.Controls.Add(txtEstado);
             tabPage2.Controls.Add(txtCidade);
             tabPage2.Controls.Add(txtCEP);
@@ -392,12 +410,13 @@
             txtBairro.Size = new Size(292, 23);
             txtBairro.TabIndex = 4;
             // 
-            // textBox2
+            // txtComplemento
             // 
-            textBox2.Location = new Point(124, 273);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 7;
+            txtComplemento.Location = new Point(124, 273);
+            txtComplemento.Name = "txtComplemento";
+            txtComplemento.Size = new Size(100, 23);
+            txtComplemento.TabIndex = 7;
+            txtComplemento.TextChanged += textBox2_TextChanged;
             // 
             // txtEstado
             // 
@@ -584,6 +603,7 @@
             btnCancelaEndereco.Size = new Size(122, 23);
             btnCancelaEndereco.TabIndex = 8;
             btnCancelaEndereco.Text = "&Cancelar";
+            btnCancelaEndereco.Click += btnCancelaEndereco_Click;
             // 
             // tabPage3
             // 
@@ -607,10 +627,11 @@
             // msktxtTelefone
             // 
             msktxtTelefone.Location = new Point(100, 154);
-            msktxtTelefone.Mask = "(00)00000-0000";
+            msktxtTelefone.Mask = "(99) 00000-0000";
             msktxtTelefone.Name = "msktxtTelefone";
             msktxtTelefone.Size = new Size(135, 23);
             msktxtTelefone.TabIndex = 1;
+            msktxtTelefone.MaskInputRejected += msktxtTelefone_MaskInputRejected;
             // 
             // txtIDFuncionárioTelefone
             // 
@@ -732,6 +753,135 @@
             btnCancelaTelefone.Size = new Size(122, 23);
             btnCancelaTelefone.TabIndex = 3;
             btnCancelaTelefone.Text = "&Cancelar";
+            btnCancelaTelefone.Click += btnCancelaTelefone_Click;
+            // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(btnEscolhaFuncionarioEmail);
+            tabPage4.Controls.Add(BtnInsereEmail);
+            tabPage4.Controls.Add(BtnCancelaEmail);
+            tabPage4.Controls.Add(txtEmail);
+            tabPage4.Controls.Add(txtIdFuncionarioEmail);
+            tabPage4.Controls.Add(label21);
+            tabPage4.Controls.Add(label20);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(622, 375);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Email";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // btnEscolhaFuncionarioEmail
+            // 
+            btnEscolhaFuncionarioEmail.Animated = true;
+            btnEscolhaFuncionarioEmail.AutoRoundedCorners = true;
+            btnEscolhaFuncionarioEmail.BorderRadius = 16;
+            btnEscolhaFuncionarioEmail.BorderThickness = 1;
+            btnEscolhaFuncionarioEmail.CustomizableEdges = customizableEdges23;
+            btnEscolhaFuncionarioEmail.DisabledState.BorderColor = Color.DarkGray;
+            btnEscolhaFuncionarioEmail.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEscolhaFuncionarioEmail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEscolhaFuncionarioEmail.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEscolhaFuncionarioEmail.Font = new Font("Segoe UI", 9F);
+            btnEscolhaFuncionarioEmail.ForeColor = Color.White;
+            btnEscolhaFuncionarioEmail.Location = new Point(409, 170);
+            btnEscolhaFuncionarioEmail.Name = "btnEscolhaFuncionarioEmail";
+            btnEscolhaFuncionarioEmail.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            btnEscolhaFuncionarioEmail.Size = new Size(122, 35);
+            btnEscolhaFuncionarioEmail.TabIndex = 8;
+            btnEscolhaFuncionarioEmail.Text = "&Escolher Funcionário";
+            btnEscolhaFuncionarioEmail.Click += btnEscolhaFuncionarioEmail_Click;
+            // 
+            // BtnInsereEmail
+            // 
+            BtnInsereEmail.Animated = true;
+            BtnInsereEmail.AutoRoundedCorners = true;
+            BtnInsereEmail.BorderRadius = 10;
+            BtnInsereEmail.BorderThickness = 1;
+            BtnInsereEmail.CustomizableEdges = customizableEdges25;
+            BtnInsereEmail.DisabledState.BorderColor = Color.DarkGray;
+            BtnInsereEmail.DisabledState.CustomBorderColor = Color.DarkGray;
+            BtnInsereEmail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BtnInsereEmail.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BtnInsereEmail.FillColor = Color.Green;
+            BtnInsereEmail.Font = new Font("Segoe UI", 9F);
+            BtnInsereEmail.ForeColor = Color.White;
+            BtnInsereEmail.Location = new Point(91, 178);
+            BtnInsereEmail.Name = "BtnInsereEmail";
+            BtnInsereEmail.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            BtnInsereEmail.Size = new Size(122, 23);
+            BtnInsereEmail.TabIndex = 7;
+            BtnInsereEmail.Text = "&inserir";
+            BtnInsereEmail.Click += BtnInsereEmail_Click;
+            // 
+            // BtnCancelaEmail
+            // 
+            BtnCancelaEmail.Animated = true;
+            BtnCancelaEmail.AutoRoundedCorners = true;
+            BtnCancelaEmail.BorderRadius = 10;
+            BtnCancelaEmail.BorderThickness = 1;
+            BtnCancelaEmail.CustomizableEdges = customizableEdges27;
+            BtnCancelaEmail.DisabledState.BorderColor = Color.DarkGray;
+            BtnCancelaEmail.DisabledState.CustomBorderColor = Color.DarkGray;
+            BtnCancelaEmail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            BtnCancelaEmail.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            BtnCancelaEmail.FillColor = Color.Red;
+            BtnCancelaEmail.Font = new Font("Segoe UI", 9F);
+            BtnCancelaEmail.ForeColor = Color.White;
+            BtnCancelaEmail.Location = new Point(252, 178);
+            BtnCancelaEmail.Name = "BtnCancelaEmail";
+            BtnCancelaEmail.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            BtnCancelaEmail.Size = new Size(122, 23);
+            BtnCancelaEmail.TabIndex = 6;
+            BtnCancelaEmail.Text = "&Cancelar";
+            BtnCancelaEmail.Click += BtnCancelaEmail_Click;
+            // 
+            // txtEmail
+            // 
+            txtEmail.Location = new Point(74, 126);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(342, 23);
+            txtEmail.TabIndex = 3;
+            // 
+            // txtIdFuncionarioEmail
+            // 
+            txtIdFuncionarioEmail.CustomizableEdges = customizableEdges29;
+            txtIdFuncionarioEmail.DefaultText = "";
+            txtIdFuncionarioEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtIdFuncionarioEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtIdFuncionarioEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtIdFuncionarioEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtIdFuncionarioEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIdFuncionarioEmail.Font = new Font("Segoe UI", 9F);
+            txtIdFuncionarioEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIdFuncionarioEmail.Location = new Point(74, 67);
+            txtIdFuncionarioEmail.Name = "txtIdFuncionarioEmail";
+            txtIdFuncionarioEmail.PasswordChar = '\0';
+            txtIdFuncionarioEmail.PlaceholderText = "";
+            txtIdFuncionarioEmail.ReadOnly = true;
+            txtIdFuncionarioEmail.SelectedText = "";
+            txtIdFuncionarioEmail.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            txtIdFuncionarioEmail.Size = new Size(65, 23);
+            txtIdFuncionarioEmail.TabIndex = 2;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(74, 108);
+            label21.Name = "label21";
+            label21.Size = new Size(36, 15);
+            label21.TabIndex = 1;
+            label21.Text = "Email";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(74, 49);
+            label20.Name = "label20";
+            label20.Size = new Size(18, 15);
+            label20.TabIndex = 0;
+            label20.Text = "ID";
             // 
             // FrmFuncionarios
             // 
@@ -751,6 +901,8 @@
             tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -800,7 +952,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtIDFuncionárioTelefone;
         private ComboBox cmbTipoTelefone;
         private TextBox txtEstado;
-        private TextBox textBox2;
+        private TextBox txtComplemento;
         private MaskedTextBox msktxtTelefone;
         private ComboBox cmbNivel;
         private Label label18;
@@ -808,5 +960,13 @@
         private Guna.UI2.WinForms.Guna2Button txtBusca;
         private Label label19;
         private ComboBox cmbTipoEndereco;
+        private TabPage tabPage4;
+        private Guna.UI2.WinForms.Guna2TextBox txtIdFuncionarioEmail;
+        private Label label21;
+        private Label label20;
+        private Guna.UI2.WinForms.Guna2Button btnEscolhaFuncionarioEmail;
+        private Guna.UI2.WinForms.Guna2Button BtnInsereEmail;
+        private Guna.UI2.WinForms.Guna2Button BtnCancelaEmail;
+        private TextBox txtEmail;
     }
 }
