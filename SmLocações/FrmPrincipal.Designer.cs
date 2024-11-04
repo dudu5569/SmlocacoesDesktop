@@ -42,6 +42,7 @@
             novoToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
             vizualizarToolStripMenuItem = new ToolStripMenuItem();
+            estoqueToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -127,23 +128,30 @@
             // novoToolStripMenuItem
             // 
             novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            novoToolStripMenuItem.Size = new Size(125, 22);
+            novoToolStripMenuItem.Size = new Size(180, 22);
             novoToolStripMenuItem.Text = "&Novo";
             novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
             // 
             // consultarToolStripMenuItem
             // 
             consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(125, 22);
+            consultarToolStripMenuItem.Size = new Size(180, 22);
             consultarToolStripMenuItem.Text = "&Consultar";
             consultarToolStripMenuItem.Click += consultarToolStripMenuItem_Click;
             // 
             // vizualizarToolStripMenuItem
             // 
+            vizualizarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { estoqueToolStripMenuItem });
             vizualizarToolStripMenuItem.Name = "vizualizarToolStripMenuItem";
             vizualizarToolStripMenuItem.Size = new Size(70, 20);
             vizualizarToolStripMenuItem.Text = "C&onsultar";
             vizualizarToolStripMenuItem.Click += vizualizarToolStripMenuItem_Click;
+            // 
+            // estoqueToolStripMenuItem
+            // 
+            estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
+            estoqueToolStripMenuItem.Size = new Size(180, 22);
+            estoqueToolStripMenuItem.Text = "&Estoque";
             // 
             // FrmPrincipal
             // 
@@ -180,5 +188,6 @@
         private ToolStripMenuItem novoToolStripMenuItem3;
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem nívelToolStripMenuItem;
+        private ToolStripMenuItem estoqueToolStripMenuItem;
     }
 }

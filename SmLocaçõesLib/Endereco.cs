@@ -108,6 +108,6 @@ namespace SmLocaçõesLib
             var dr = cmd.ExecuteReader();
             while (dr.Read()) Id = dr.GetInt32(0);
         }
-
+         
     }
 }

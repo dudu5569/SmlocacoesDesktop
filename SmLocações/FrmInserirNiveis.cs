@@ -20,6 +20,7 @@ namespace SmLocações
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            txtNomeNivel.Text = char.ToUpper(txtNomeNivel.Text[0]) + txtNomeNivel.Text.Substring(1);
             Niveis niveis = new(
                 txtNomeNivel.Text,
                 txtSiglaNivel.Text.ToUpper()
@@ -28,13 +29,13 @@ namespace SmLocações
             niveis.Inserir();
             if (niveis.ID > 0 )
             {
-                MessageBox.Show($"Nível {niveis.Nome} foi inserido com sucesso!");
+                MessageBox.Show($"Nível {niveis.Nome} foi inserido com sucesso!", "SmLocações");
                 txtNomeNivel.Clear();
                 txtSiglaNivel.Clear();
             }
             else
             {
-                MessageBox.Show("Falha ao gravar registro!");
+                MessageBox.Show("Falha ao gravar registro!", "SmLocações");
             }
         }
     }

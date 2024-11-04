@@ -65,6 +65,7 @@
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
+            tabPage3 = new TabPage();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -151,6 +152,7 @@
             // 
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
             tabControl1.Location = new Point(108, 121);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -392,6 +394,16 @@
             label6.TabIndex = 9;
             label6.Text = "ID";
             // 
+            // tabPage3
+            // 
+            tabPage3.Location = new Point(4, 24);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(707, 332);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Consultar Pedidos";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
             // FrmAgendarPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -441,5 +453,6 @@
         private Label label9;
         private Label label8;
         private Guna.UI2.WinForms.Guna2Button btnEscolherLocacao;
+        private TabPage tabPage3;
     }
 }
