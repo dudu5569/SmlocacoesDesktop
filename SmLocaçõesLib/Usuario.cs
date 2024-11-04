@@ -75,5 +75,35 @@ namespace SmLocaçõesLib
             return existe;
         }
 
+        public static List<Usuario> ObterListaUsuario(string? nome)
+        {
+            List<Usuario> lista = new List<Usuario>();
+            var cmd = Banco.Abrir();
+            cmd.CommandType= CommandType.Text;
+
+
+            if (nome == "")
+            {
+               cmd.CommandText = "Select * from usuarios_desktop order by usuario limit 10";
+            }
+            else
+            {
+                cmd.CommandText = $"Select * from usuarios_desktop where nome like '%{nome}%'order by usuario";
+            }
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new(
+                    dr.GetInt32(0),
+                    Funcionario.ObterporId(dr.GetInt32(1)),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetBoolean(4)
+                    ));
+            }
+            cmd.Connection.Close();
+            return lista;
+        }
+
     }
 }

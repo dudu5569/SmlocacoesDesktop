@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             groupBox1 = new GroupBox();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
@@ -46,6 +46,9 @@
             label3 = new Label();
             label5 = new Label();
             dgvUsuarios = new DataGridView();
+            funcionario = new DataGridViewTextBoxColumn();
+            usuario = new DataGridViewTextBoxColumn();
+            ativo = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
@@ -87,7 +90,7 @@
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges5;
+            btnCancelar.CustomizableEdges = customizableEdges1;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -97,7 +100,7 @@
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(368, 200);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 5;
             btnCancelar.Text = "&Cancelar";
@@ -108,7 +111,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges7;
+            btnInserir.CustomizableEdges = customizableEdges3;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -118,7 +121,7 @@
             btnInserir.ForeColor = Color.White;
             btnInserir.Location = new Point(218, 200);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 6;
             btnInserir.Text = "&inserir";
@@ -199,11 +202,39 @@
             // 
             // dgvUsuarios
             // 
+            dgvUsuarios.AllowUserToAddRows = false;
+            dgvUsuarios.AllowUserToDeleteRows = false;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { funcionario, usuario, ativo });
             dgvUsuarios.Location = new Point(10, 270);
             dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.ReadOnly = true;
+            dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.Size = new Size(689, 186);
             dgvUsuarios.TabIndex = 7;
+            // 
+            // funcionario
+            // 
+            funcionario.Frozen = true;
+            funcionario.HeaderText = "Funcoinário";
+            funcionario.Name = "funcionario";
+            funcionario.ReadOnly = true;
+            funcionario.Width = 300;
+            // 
+            // usuario
+            // 
+            usuario.Frozen = true;
+            usuario.HeaderText = "Usuário";
+            usuario.Name = "usuario";
+            usuario.ReadOnly = true;
+            usuario.Width = 300;
+            // 
+            // ativo
+            // 
+            ativo.Frozen = true;
+            ativo.HeaderText = "Ativo";
+            ativo.Name = "ativo";
+            ativo.ReadOnly = true;
             // 
             // FrmEditarUser
             // 
@@ -217,6 +248,7 @@
             Name = "FrmEditarUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmEditarUser";
+            Load += FrmEditarUser_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
@@ -240,5 +272,8 @@
         private DataGridView dgvUsuarios;
         private Guna.UI2.WinForms.Guna2Button btnInserir;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private DataGridViewTextBoxColumn funcionario;
+        private DataGridViewTextBoxColumn usuario;
+        private DataGridViewTextBoxColumn ativo;
     }
 }
