@@ -212,6 +212,7 @@
             dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.Size = new Size(689, 186);
             dgvUsuarios.TabIndex = 7;
+            dgvUsuarios.CellClick += dgvUsuarios_CellClick;
             // 
             // funcionario
             // 

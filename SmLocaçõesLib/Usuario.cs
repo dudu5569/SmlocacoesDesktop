@@ -6,6 +6,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data;
+using static Mysqlx.Notice.Warning.Types;
 
 namespace SmLocaçõesLib
 {
@@ -23,6 +24,11 @@ namespace SmLocaçõesLib
 
         public Usuario() {
             Id_funcionario = new();
+        }
+
+        public Usuario (string? login)
+        {
+            Login = login;
         }
         public Usuario(Funcionario id_funcionario, string? login, string? senha, bool ativo)
         {
@@ -75,6 +81,31 @@ namespace SmLocaçõesLib
             return existe;
         }
 
+        public static List<Usuario> ObterLista(string? nome = "")
+        {
+            List<Usuario> lista = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from usuarios where nome like '%{nome}%' order by nome";
+
+
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                lista.Add(
+                    new(
+                    dr.GetInt32(0),
+                    Funcionario.ObterporId(dr.GetInt32(1)),
+                    dr.GetString(2),
+                    dr.GetString(3),
+                    dr.GetBoolean(4)
+                        )
+                    );
+            }
+
+            return lista;
+        }
+
         public static List<Usuario> ObterListaUsuario(string? nome)
         {
             List<Usuario> lista = new List<Usuario>();
@@ -88,7 +119,7 @@ namespace SmLocaçõesLib
             }
             else
             {
-                cmd.CommandText = $"Select * from usuarios_desktop where nome like '%{nome}%'order by usuario";
+                cmd.CommandText = $"Select * from usuarios_desktop where usuario like '%{nome}%'order by usuario";
             }
             var dr = cmd.ExecuteReader();
             while (dr.Read())
