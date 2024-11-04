@@ -31,7 +31,10 @@ namespace SmLocaçõesLib
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"Insert into funcionarios_emails (id_funcionario, id_email) values ('{idfuncionario}','{idemail}')";
+            cmd.CommandText = $"Insert into funcionarios_emails (id_funcionario, id_email) values" +
+                $" ('{idfuncionario}','{idemail}')";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read() ) Id = dr.GetInt32(0);
         }
 
 

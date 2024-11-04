@@ -184,6 +184,7 @@ namespace SmLocações
                     telefones.Id);
                 MessageBox.Show("Telefone cadastrado com Sucesso!", "SmLocações");
                 txtIdFuncionarioEmail.Text = txtIDFuncionárioTelefone.Text;
+                this.tabControl1.SelectedTab = tabPage4;
             }
         }
 
@@ -232,13 +233,16 @@ namespace SmLocações
             emails.InserirEmail(txtEmail.Text);
             if (emails.Id > 0)
             {
+                emails.Email_Associado_Funcionario(Convert.ToInt32(txtIdFuncionarioEmail.Text),emails.Id);
                 MessageBox.Show("Email inserido com sucesso!", "SmLocações");
+                txtEmail.Clear();
             }
         }
 
         private void btnEscolhaFuncionarioEmail_Click(object sender, EventArgs e)
         {
             txtIdFuncionarioEmail.ReadOnly = false;
+            txtIdFuncionarioEmail.Focus();
         }
     }
 

@@ -49,8 +49,8 @@ namespace SmLocaçõesLib
         public void InserirUsuario()
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "sp_inserir_usuarios_descktop";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_inserir_usuarios_desktop";
             cmd.Parameters.AddWithValue("spid_funcionario",Id_funcionario.ID);
             cmd.Parameters.AddWithValue("spusuario", Login);
             cmd.Parameters.AddWithValue("spsenha", Senha);
@@ -65,7 +65,7 @@ namespace SmLocaçõesLib
             bool existe = false; 
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"Select * from usuarios_descktop where id_funcionario = {id}";
+            cmd.CommandText = $"Select * from usuarios_desktop where id_funcionario = {id}";
             var dr = cmd.ExecuteReader();
             if (dr.Read())
             {
