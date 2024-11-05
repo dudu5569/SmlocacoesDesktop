@@ -30,6 +30,18 @@ namespace SmLocaçõesLib
             Data_Cadastro = data_Cadastro;
         }
 
+        public void InserirCliente()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_insert_clientes";
+            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("spcpf", CPF);
+            cmd.Parameters.AddWithValue("spdata_nascimento", Data_Nascimento);
+            var dr = cmd.ExecuteReader();
+            if (dr.Read()) Id = dr.GetInt32(0);
+        }
+
 
     }
 }
