@@ -38,6 +38,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -49,6 +51,9 @@
             dataEntrega = new DateTimePicker();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btnEscolherCliente = new Guna.UI2.WinForms.Guna2Button();
+            txtIdCliente = new TextBox();
+            label11 = new Label();
             btnCancelarAgendamento = new Guna.UI2.WinForms.Guna2Button();
             btnInserirAgendamento = new Guna.UI2.WinForms.Guna2Button();
             tabPage2 = new TabPage();
@@ -66,9 +71,13 @@
             label7 = new Label();
             label6 = new Label();
             tabPage3 = new TabPage();
+            tabPage4 = new TabPage();
+            dataGridView1 = new DataGridView();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -121,6 +130,7 @@
             // 
             txtNomeCliente.Location = new Point(205, 35);
             txtNomeCliente.Name = "txtNomeCliente";
+            txtNomeCliente.ReadOnly = true;
             txtNomeCliente.Size = new Size(277, 23);
             txtNomeCliente.TabIndex = 0;
             // 
@@ -153,6 +163,7 @@
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
             tabControl1.Location = new Point(108, 121);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -161,6 +172,9 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btnEscolherCliente);
+            tabPage1.Controls.Add(txtIdCliente);
+            tabPage1.Controls.Add(label11);
             tabPage1.Controls.Add(btnCancelarAgendamento);
             tabPage1.Controls.Add(btnInserirAgendamento);
             tabPage1.Controls.Add(cmbFuncionario);
@@ -180,13 +194,52 @@
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
             // 
+            // btnEscolherCliente
+            // 
+            btnEscolherCliente.Animated = true;
+            btnEscolherCliente.AutoRoundedCorners = true;
+            btnEscolherCliente.BorderRadius = 10;
+            btnEscolherCliente.BorderThickness = 1;
+            btnEscolherCliente.CustomizableEdges = customizableEdges1;
+            btnEscolherCliente.DisabledState.BorderColor = Color.DarkGray;
+            btnEscolherCliente.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEscolherCliente.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEscolherCliente.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEscolherCliente.FillColor = Color.DodgerBlue;
+            btnEscolherCliente.Font = new Font("Segoe UI", 9F);
+            btnEscolherCliente.ForeColor = Color.White;
+            btnEscolherCliente.Location = new Point(502, 35);
+            btnEscolherCliente.Name = "btnEscolherCliente";
+            btnEscolherCliente.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnEscolherCliente.Size = new Size(122, 23);
+            btnEscolherCliente.TabIndex = 12;
+            btnEscolherCliente.Text = "&Escolher Cliente";
+            btnEscolherCliente.Click += btnEscolherCliente_Click;
+            // 
+            // txtIdCliente
+            // 
+            txtIdCliente.Location = new Point(108, 35);
+            txtIdCliente.Name = "txtIdCliente";
+            txtIdCliente.ReadOnly = true;
+            txtIdCliente.Size = new Size(53, 23);
+            txtIdCliente.TabIndex = 11;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(108, 17);
+            label11.Name = "label11";
+            label11.Size = new Size(58, 15);
+            label11.TabIndex = 10;
+            label11.Text = "ID Cliente";
+            // 
             // btnCancelarAgendamento
             // 
             btnCancelarAgendamento.Animated = true;
             btnCancelarAgendamento.AutoRoundedCorners = true;
             btnCancelarAgendamento.BorderRadius = 10;
             btnCancelarAgendamento.BorderThickness = 1;
-            btnCancelarAgendamento.CustomizableEdges = customizableEdges1;
+            btnCancelarAgendamento.CustomizableEdges = customizableEdges3;
             btnCancelarAgendamento.DisabledState.BorderColor = Color.DarkGray;
             btnCancelarAgendamento.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelarAgendamento.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -196,10 +249,11 @@
             btnCancelarAgendamento.ForeColor = Color.White;
             btnCancelarAgendamento.Location = new Point(380, 267);
             btnCancelarAgendamento.Name = "btnCancelarAgendamento";
-            btnCancelarAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCancelarAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelarAgendamento.Size = new Size(122, 23);
             btnCancelarAgendamento.TabIndex = 4;
             btnCancelarAgendamento.Text = "&Cancelar Pedido";
+            btnCancelarAgendamento.Click += btnCancelarAgendamento_Click;
             // 
             // btnInserirAgendamento
             // 
@@ -207,7 +261,7 @@
             btnInserirAgendamento.AutoRoundedCorners = true;
             btnInserirAgendamento.BorderRadius = 10;
             btnInserirAgendamento.BorderThickness = 1;
-            btnInserirAgendamento.CustomizableEdges = customizableEdges3;
+            btnInserirAgendamento.CustomizableEdges = customizableEdges5;
             btnInserirAgendamento.DisabledState.BorderColor = Color.DarkGray;
             btnInserirAgendamento.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserirAgendamento.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -217,7 +271,7 @@
             btnInserirAgendamento.ForeColor = Color.White;
             btnInserirAgendamento.Location = new Point(205, 267);
             btnInserirAgendamento.Name = "btnInserirAgendamento";
-            btnInserirAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnInserirAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnInserirAgendamento.Size = new Size(122, 23);
             btnInserirAgendamento.TabIndex = 5;
             btnInserirAgendamento.Text = "&inserir Pedido";
@@ -253,7 +307,7 @@
             btnEscolherLocacao.AutoRoundedCorners = true;
             btnEscolherLocacao.BorderRadius = 10;
             btnEscolherLocacao.BorderThickness = 1;
-            btnEscolherLocacao.CustomizableEdges = customizableEdges5;
+            btnEscolherLocacao.CustomizableEdges = customizableEdges7;
             btnEscolherLocacao.DisabledState.BorderColor = Color.DarkGray;
             btnEscolherLocacao.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEscolherLocacao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -263,7 +317,7 @@
             btnEscolherLocacao.ForeColor = Color.White;
             btnEscolherLocacao.Location = new Point(290, 220);
             btnEscolherLocacao.Name = "btnEscolherLocacao";
-            btnEscolherLocacao.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnEscolherLocacao.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnEscolherLocacao.Size = new Size(122, 23);
             btnEscolherLocacao.TabIndex = 7;
             btnEscolherLocacao.Text = "&Escolher Pedido";
@@ -274,7 +328,7 @@
             btnCancelarProduto.AutoRoundedCorners = true;
             btnCancelarProduto.BorderRadius = 10;
             btnCancelarProduto.BorderThickness = 1;
-            btnCancelarProduto.CustomizableEdges = customizableEdges7;
+            btnCancelarProduto.CustomizableEdges = customizableEdges9;
             btnCancelarProduto.DisabledState.BorderColor = Color.DarkGray;
             btnCancelarProduto.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelarProduto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -284,7 +338,7 @@
             btnCancelarProduto.ForeColor = Color.White;
             btnCancelarProduto.Location = new Point(424, 220);
             btnCancelarProduto.Name = "btnCancelarProduto";
-            btnCancelarProduto.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnCancelarProduto.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnCancelarProduto.Size = new Size(122, 23);
             btnCancelarProduto.TabIndex = 5;
             btnCancelarProduto.Text = "&Cancelar Pedido";
@@ -295,7 +349,7 @@
             btnInserirProduto.AutoRoundedCorners = true;
             btnInserirProduto.BorderRadius = 10;
             btnInserirProduto.BorderThickness = 1;
-            btnInserirProduto.CustomizableEdges = customizableEdges9;
+            btnInserirProduto.CustomizableEdges = customizableEdges11;
             btnInserirProduto.DisabledState.BorderColor = Color.DarkGray;
             btnInserirProduto.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserirProduto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -305,7 +359,7 @@
             btnInserirProduto.ForeColor = Color.White;
             btnInserirProduto.Location = new Point(156, 220);
             btnInserirProduto.Name = "btnInserirProduto";
-            btnInserirProduto.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnInserirProduto.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnInserirProduto.Size = new Size(122, 23);
             btnInserirProduto.TabIndex = 6;
             btnInserirProduto.Text = "&inserir Pedido";
@@ -404,6 +458,25 @@
             tabPage3.Text = "Consultar Pedidos";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(dataGridView1);
+            tabPage4.Location = new Point(4, 24);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Padding = new Padding(3);
+            tabPage4.Size = new Size(707, 332);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Clientes";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(6, 6);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(695, 323);
+            dataGridView1.TabIndex = 0;
+            // 
             // FrmAgendarPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -420,6 +493,8 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -454,5 +529,10 @@
         private Label label8;
         private Guna.UI2.WinForms.Guna2Button btnEscolherLocacao;
         private TabPage tabPage3;
+        private Guna.UI2.WinForms.Guna2Button btnEscolherCliente;
+        private TextBox txtIdCliente;
+        private Label label11;
+        private TabPage tabPage4;
+        private DataGridView dataGridView1;
     }
 }

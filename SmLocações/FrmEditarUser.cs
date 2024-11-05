@@ -74,6 +74,10 @@ namespace SmLocações
                 txtConfSenha.Clear();
                 CarregaDataGrid();
             }
+            else
+            {
+                MessageBox.Show("Insira uma senha para a conclusão da atualização de usuário!", "SmLocações");
+            }
             
         }
     }

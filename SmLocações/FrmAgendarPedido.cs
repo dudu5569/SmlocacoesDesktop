@@ -36,5 +36,15 @@ namespace SmLocações
         {
             this.tabControl1.SelectedTab = tabPage2;
         }
+
+        private void btnEscolherCliente_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabPage4;
+        }
+
+        private void btnCancelarAgendamento_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
