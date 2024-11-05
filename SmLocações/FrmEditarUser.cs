@@ -31,24 +31,49 @@ namespace SmLocações
             foreach (var usuario in lista)
             {
                 dgvUsuarios.Rows.Add();
-                dgvUsuarios.Rows[cont].Cells[0].Value = usuario.Id_funcionario.Nome;
-                dgvUsuarios.Rows[cont].Cells[1].Value = usuario.Login;
-                dgvUsuarios.Rows[cont].Cells[2].Value = usuario.Ativo;
+                dgvUsuarios.Rows[cont].Cells[0].Value = usuario.Id;
+                dgvUsuarios.Rows[cont].Cells[1].Value = usuario.Id_funcionario.Nome;
+                dgvUsuarios.Rows[cont].Cells[2].Value = usuario.Login;
+                dgvUsuarios.Rows[cont].Cells[3].Value = usuario.Ativo;
                 cont++;
             }
         }
 
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int posicaoLinha = 0;
+            int posicaoLinha = dgvUsuarios.CurrentRow.Index;
+            int id = 0;
             string nome = "";
-            nome = dgvUsuarios.Rows[posicaoLinha].Cells[0].Value.ToString();
-            Usuario.ObterListaUsuario(nome);
-            Usuario usuario = new(nome);
-            txtIdUsuario.Text = usuario.Id.ToString();
-            txtEmail.Text = usuario.Login;
-            txtSenha.Text = usuario.Senha;
-            txtConfSenha.Text = usuario.Senha;
+            string login = "";
+            bool ativo = false;
+            id = Convert.ToInt32(dgvUsuarios.Rows[posicaoLinha].Cells[0].Value);
+            nome = dgvUsuarios.Rows[posicaoLinha].Cells[1].Value.ToString();
+            login = dgvUsuarios.Rows[posicaoLinha].Cells[2].Value.ToString();
+            ativo = Convert.ToBoolean(dgvUsuarios.Rows[posicaoLinha].Cells[3].Value);
+            txtIdUsuario.Text = id.ToString();
+            txtEmail.Text = login;
+            if (ativo = true) chkAtivo.Checked = ativo;
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new(
+                Convert.ToInt32(txtIdUsuario.Text),
+                txtEmail.Text,
+                txtSenha.Text,
+                chkAtivo.Checked
+                );
+
+            if (txtSenha.Text != string.Empty && txtConfSenha.Text != string.Empty)
+            {
+                usuario.AtualizarUsuario();
+                MessageBox.Show($"Usuário: {usuario.Login} foi atualizado com sucesso!", "SmLocações");
+                txtIdUsuario.Clear();
+                txtEmail.Clear();
+                txtSenha.Clear();
+                txtConfSenha.Clear();
+                CarregaDataGrid();
+            }
             
         }
     }

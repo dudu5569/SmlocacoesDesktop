@@ -22,6 +22,13 @@ namespace SmLocaçõesLib
 
  
 
+        public Usuario (int id, string? login, string? senha, bool ativo)
+        {
+            Id = id;
+            Login = login;
+            Senha = senha;
+            Ativo = ativo;
+        }
         public Usuario() {
             Id_funcionario = new();
         }
@@ -52,6 +59,13 @@ namespace SmLocaçõesLib
             Id_funcionario = id_funcionario;
         }
 
+        public Usuario(string? login, string? senha, bool ativo)
+        {
+            Login = login;
+            Senha = senha;
+            Ativo = ativo;
+        }
+
         public void InserirUsuario()
         {
             var cmd = Banco.Abrir();
@@ -62,8 +76,20 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spsenha", Senha);
             cmd.Parameters.AddWithValue("spativo", Ativo);
             var dr = cmd.ExecuteReader();
-            if (dr.Read()) Id = dr.GetInt32(0);
-            
+            if (dr.Read()) Id = dr.GetInt32(0);   
+        }
+
+        public void AtualizarUsuario()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_update_usuarios_desktop";
+            cmd.Parameters.AddWithValue("spid", Id);
+            cmd.Parameters.AddWithValue("spusuario", Login);
+            cmd.Parameters.AddWithValue("spsenha", Senha);
+            cmd.Parameters.AddWithValue("spativo", Ativo);
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
 
         public static bool ObterIdFuncionario(int id)

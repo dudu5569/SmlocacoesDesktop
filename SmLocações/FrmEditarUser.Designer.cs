@@ -35,7 +35,7 @@
             label1 = new Label();
             groupBox1 = new GroupBox();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
-            btnInserir = new Guna.UI2.WinForms.Guna2Button();
+            btnAtualizar = new Guna.UI2.WinForms.Guna2Button();
             label7 = new Label();
             label4 = new Label();
             txtSenha = new TextBox();
@@ -46,6 +46,7 @@
             label3 = new Label();
             label5 = new Label();
             dgvUsuarios = new DataGridView();
+            id = new DataGridViewTextBoxColumn();
             funcionario = new DataGridViewTextBoxColumn();
             usuario = new DataGridViewTextBoxColumn();
             ativo = new DataGridViewTextBoxColumn();
@@ -66,7 +67,7 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(btnCancelar);
-            groupBox1.Controls.Add(btnInserir);
+            groupBox1.Controls.Add(btnAtualizar);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtSenha);
@@ -105,26 +106,27 @@
             btnCancelar.TabIndex = 5;
             btnCancelar.Text = "&Cancelar";
             // 
-            // btnInserir
+            // btnAtualizar
             // 
-            btnInserir.Animated = true;
-            btnInserir.AutoRoundedCorners = true;
-            btnInserir.BorderRadius = 10;
-            btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges3;
-            btnInserir.DisabledState.BorderColor = Color.DarkGray;
-            btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnInserir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnInserir.FillColor = Color.Green;
-            btnInserir.Font = new Font("Segoe UI", 9F);
-            btnInserir.ForeColor = Color.White;
-            btnInserir.Location = new Point(218, 200);
-            btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnInserir.Size = new Size(122, 23);
-            btnInserir.TabIndex = 6;
-            btnInserir.Text = "&inserir";
+            btnAtualizar.Animated = true;
+            btnAtualizar.AutoRoundedCorners = true;
+            btnAtualizar.BorderRadius = 10;
+            btnAtualizar.BorderThickness = 1;
+            btnAtualizar.CustomizableEdges = customizableEdges3;
+            btnAtualizar.DisabledState.BorderColor = Color.DarkGray;
+            btnAtualizar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAtualizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAtualizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAtualizar.FillColor = Color.Green;
+            btnAtualizar.Font = new Font("Segoe UI", 9F);
+            btnAtualizar.ForeColor = Color.White;
+            btnAtualizar.Location = new Point(218, 200);
+            btnAtualizar.Name = "btnAtualizar";
+            btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnAtualizar.Size = new Size(122, 23);
+            btnAtualizar.TabIndex = 6;
+            btnAtualizar.Text = "&Atualizar";
+            btnAtualizar.Click += btnInserir_Click;
             // 
             // label7
             // 
@@ -148,6 +150,7 @@
             // 
             txtSenha.Location = new Point(368, 148);
             txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(100, 23);
             txtSenha.TabIndex = 2;
             // 
@@ -162,6 +165,7 @@
             // 
             txtIdUsuario.Location = new Point(90, 148);
             txtIdUsuario.Name = "txtIdUsuario";
+            txtIdUsuario.ReadOnly = true;
             txtIdUsuario.Size = new Size(100, 23);
             txtIdUsuario.TabIndex = 0;
             // 
@@ -179,6 +183,7 @@
             // 
             txtConfSenha.Location = new Point(507, 148);
             txtConfSenha.Name = "txtConfSenha";
+            txtConfSenha.PasswordChar = '*';
             txtConfSenha.Size = new Size(100, 23);
             txtConfSenha.TabIndex = 3;
             // 
@@ -187,9 +192,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(229, 130);
             label3.Name = "label3";
-            label3.Size = new Size(36, 15);
+            label3.Size = new Size(47, 15);
             label3.TabIndex = 2;
-            label3.Text = "Email";
+            label3.Text = "Usuário";
             // 
             // label5
             // 
@@ -205,7 +210,7 @@
             dgvUsuarios.AllowUserToAddRows = false;
             dgvUsuarios.AllowUserToDeleteRows = false;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { funcionario, usuario, ativo });
+            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { id, funcionario, usuario, ativo });
             dgvUsuarios.Location = new Point(10, 270);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.ReadOnly = true;
@@ -213,6 +218,14 @@
             dgvUsuarios.Size = new Size(689, 186);
             dgvUsuarios.TabIndex = 7;
             dgvUsuarios.CellClick += dgvUsuarios_CellClick;
+            // 
+            // id
+            // 
+            id.Frozen = true;
+            id.HeaderText = "ID";
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Width = 50;
             // 
             // funcionario
             // 
@@ -228,7 +241,7 @@
             usuario.HeaderText = "Usuário";
             usuario.Name = "usuario";
             usuario.ReadOnly = true;
-            usuario.Width = 300;
+            usuario.Width = 250;
             // 
             // ativo
             // 
@@ -239,7 +252,7 @@
             // 
             // FrmEditarUser
             // 
-            AcceptButton = btnInserir;
+            AcceptButton = btnAtualizar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancelar;
@@ -271,8 +284,9 @@
         private Label label3;
         private Label label5;
         private DataGridView dgvUsuarios;
-        private Guna.UI2.WinForms.Guna2Button btnInserir;
+        private Guna.UI2.WinForms.Guna2Button btnAtualizar;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn funcionario;
         private DataGridViewTextBoxColumn usuario;
         private DataGridViewTextBoxColumn ativo;
