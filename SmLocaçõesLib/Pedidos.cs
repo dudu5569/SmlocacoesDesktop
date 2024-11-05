@@ -31,5 +31,18 @@ namespace SmLocaçõesLib
             Data_Entrega = data_Entrega;
         }
 
+        public void InserirPedido()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "sp_inserir_locacoes";
+            cmd.Parameters.AddWithValue("spid_cliente", Id_Cliente);
+            cmd.Parameters.AddWithValue("spid_funcionario", Id_Funcionario);
+            cmd.Parameters.AddWithValue("spdata_retirada", Data_Retirada);
+            cmd.Parameters.AddWithValue("spdata_entrega", Data_Entrega);
+            var dr = cmd.ExecuteReader();
+            if (dr.Read()) Id = dr.GetInt32(0);
+        }
+
     }
 }

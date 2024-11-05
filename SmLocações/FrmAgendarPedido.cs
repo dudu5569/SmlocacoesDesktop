@@ -46,5 +46,10 @@ namespace SmLocações
         {
 
         }
+
+        private void CarregaDataGrid()
+        {
+            
+        }
     }
 }
