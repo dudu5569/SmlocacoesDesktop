@@ -65,20 +65,20 @@ namespace SmLocações
                 );
             if (!string.IsNullOrWhiteSpace(mktxtTelefone.Text))
             {
-                if(txtIdClienteContato.Text == string.Empty)
+                if (txtIdClienteContato.Text == string.Empty)
                 {
                     MessageBox.Show("O telefone precisa estar associado à um cliente", "SmLocações");
                 }
                 else
                 {
-                telefones.Inserir_Telefone(mktxtTelefone.Text, tipotelefone);
-                    if(telefones.Id > 0)
+                    telefones.Inserir_Telefone(mktxtTelefone.Text, tipotelefone);
+                    if (telefones.Id > 0)
                     {
-                telefones.Telefone_Associado_Cliente(Convert.ToInt32(txtIdClienteContato.Text),
-                    telefones.Id);
-                MessageBox.Show("Telefone cadastrado com Sucesso!", "SmLocações");
+                        telefones.Telefone_Associado_Cliente(Convert.ToInt32(txtIdClienteContato.Text),
+                            telefones.Id);
+                        MessageBox.Show("Telefone cadastrado com Sucesso!", "SmLocações");
                         txtIdClienteEndereco.Text = txtIdClienteContato.Text;
-                this.tabControl1.SelectedTab = tabPage3;
+                        this.tabControl1.SelectedTab = tabPage3;
                     }
                 }
             }
@@ -158,13 +158,13 @@ namespace SmLocações
                 }
                 else
                 {
-                endereco.Inserir();
-                    if(endereco.Id > 0)
+                    endereco.Inserir();
+                    if (endereco.Id > 0)
                     {
-                endereco.Endereco_Associado_Cliente(int.Parse(txtIdClienteEndereco.Text), endereco.Id);
-                MessageBox.Show("Endereço Cadastrado com Sucesso", "SmLocações");
-                this.tabControl1.SelectedTab = tabPage4;
-                txtIdClienteEmail.Text = txtIdClienteEndereco.Text;
+                        endereco.Endereco_Associado_Cliente(int.Parse(txtIdClienteEndereco.Text), endereco.Id);
+                        MessageBox.Show("Endereço Cadastrado com Sucesso", "SmLocações");
+                        this.tabControl1.SelectedTab = tabPage4;
+                        txtIdClienteEmail.Text = txtIdClienteEndereco.Text;
                     }
                     else
                     {
@@ -196,29 +196,29 @@ namespace SmLocações
             Emails emails = new(
     txtEmail.Text
     );
-         if(txtEmail.Text != string.Empty)
-         {
-                if(txtIdClienteEmail.Text == string.Empty)
+            if (txtEmail.Text != string.Empty)
+            {
+                if (txtIdClienteEmail.Text == string.Empty)
                 {
                     MessageBox.Show("O email deve estar associado à um cliente", "SmLocações");
                 }
                 else
                 {
                     emails.InserirEmail(txtEmail.Text);
-                   if (emails.Id > 0)
+                    if (emails.Id > 0)
                     {
-                     emails.Email_Associado_Cliente(Convert.ToInt32(txtIdClienteEmail.Text), emails.Id);
-                     MessageBox.Show("Email inserido com sucesso!", "SmLocações");
-                     txtEmail.Clear();
+                        emails.Email_Associado_Cliente(Convert.ToInt32(txtIdClienteEmail.Text), emails.Id);
+                        MessageBox.Show("Email inserido com sucesso!", "SmLocações");
+                        txtEmail.Clear();
                     }
                 }
-         }
+            }
             else
             {
                 MessageBox.Show("Insira um email!", "SmLocações");
             }
 
-            
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -246,16 +246,34 @@ namespace SmLocações
         private void btnEscolherClienteContato_Click(object sender, EventArgs e)
         {
             txtIdClienteContato.ReadOnly = false;
+            txtIdClienteContato.Focus();
         }
 
         private void btnEscolerClienteEndereco_Click(object sender, EventArgs e)
         {
             txtIdClienteEndereco.ReadOnly = false;
+            txtIdClienteEndereco.Focus();
         }
 
         private void btnEscolhaFuncionarioEmail_Click(object sender, EventArgs e)
         {
             txtIdClienteEmail.ReadOnly = false;
+            txtIdClienteEmail.Focus();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

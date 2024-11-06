@@ -252,7 +252,7 @@
             // Data_Cadastro
             // 
             Data_Cadastro.Format = DateTimePickerFormat.Short;
-            Data_Cadastro.Location = new Point(259, 211);
+            Data_Cadastro.Location = new Point(266, 211);
             Data_Cadastro.Name = "Data_Cadastro";
             Data_Cadastro.Size = new Size(114, 23);
             Data_Cadastro.TabIndex = 4;
@@ -275,7 +275,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(259, 182);
+            label5.Location = new Point(266, 182);
             label5.Name = "label5";
             label5.Size = new Size(97, 15);
             label5.TabIndex = 0;
@@ -371,7 +371,7 @@
             txtBusca.FillColor = Color.Black;
             txtBusca.Font = new Font("Segoe UI", 9F);
             txtBusca.ForeColor = Color.White;
-            txtBusca.Location = new Point(373, 64);
+            txtBusca.Location = new Point(372, 64);
             txtBusca.Name = "txtBusca";
             txtBusca.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtBusca.Size = new Size(116, 23);
@@ -438,7 +438,7 @@
             // 
             // txtCEP
             // 
-            txtCEP.Location = new Point(220, 64);
+            txtCEP.Location = new Point(218, 64);
             txtCEP.Name = "txtCEP";
             txtCEP.Size = new Size(123, 23);
             txtCEP.TabIndex = 1;
@@ -471,7 +471,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(220, 46);
+            label12.Location = new Point(214, 46);
             label12.Name = "label12";
             label12.Size = new Size(28, 15);
             label12.TabIndex = 22;
@@ -534,7 +534,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(126, 100);
+            label6.Location = new Point(118, 100);
             label6.Name = "label6";
             label6.Size = new Size(69, 15);
             label6.TabIndex = 16;
@@ -747,7 +747,7 @@
             btnCancelaTelefone.FillColor = Color.Red;
             btnCancelaTelefone.Font = new Font("Segoe UI", 9F);
             btnCancelaTelefone.ForeColor = Color.White;
-            btnCancelaTelefone.Location = new Point(261, 222);
+            btnCancelaTelefone.Location = new Point(259, 222);
             btnCancelaTelefone.Name = "btnCancelaTelefone";
             btnCancelaTelefone.ShadowDecoration.CustomizableEdges = customizableEdges22;
             btnCancelaTelefone.Size = new Size(122, 23);
@@ -829,7 +829,7 @@
             BtnCancelaEmail.FillColor = Color.Red;
             BtnCancelaEmail.Font = new Font("Segoe UI", 9F);
             BtnCancelaEmail.ForeColor = Color.White;
-            BtnCancelaEmail.Location = new Point(252, 178);
+            BtnCancelaEmail.Location = new Point(250, 178);
             BtnCancelaEmail.Name = "BtnCancelaEmail";
             BtnCancelaEmail.ShadowDecoration.CustomizableEdges = customizableEdges28;
             BtnCancelaEmail.Size = new Size(122, 23);
