@@ -37,6 +37,16 @@ namespace SmLocaçõesLib
             if (dr.Read() ) Id = dr.GetInt32(0);
         }
 
+        public void Email_Associado_Cliente(int idcliente, int idemail)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"Insert into clientes_emails (id_cliente, id_email) values" +
+                $" ('{idcliente}','{idemail}')";
+            var dr = cmd.ExecuteReader();
+            if (dr.Read()) Id = dr.GetInt32(0);
+        }
+
 
     }
 }

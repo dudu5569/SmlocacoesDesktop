@@ -77,6 +77,8 @@
             btnEscolherClienteContato = new Guna.UI2.WinForms.Guna2Button();
             btnInserirContato = new Guna.UI2.WinForms.Guna2Button();
             tabPage3 = new TabPage();
+            label17 = new Label();
+            cmbTipoEndereco = new ComboBox();
             btnBuscaCep = new Guna.UI2.WinForms.Guna2Button();
             txtComplemento = new TextBox();
             label13 = new Label();
@@ -102,7 +104,7 @@
             BtnInsereEmail = new Guna.UI2.WinForms.Guna2Button();
             BtnCancelaEmail = new Guna.UI2.WinForms.Guna2Button();
             txtEmail = new TextBox();
-            txtIdFuncionarioEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            txtIdClienteEmail = new Guna.UI2.WinForms.Guna2TextBox();
             label21 = new Label();
             label20 = new Label();
             label5 = new Label();
@@ -166,6 +168,7 @@
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "&Cancelar";
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnInserir
             // 
@@ -279,13 +282,15 @@
             // mktxtTelefone
             // 
             mktxtTelefone.Location = new Point(84, 148);
-            mktxtTelefone.Mask = "(00)00000-0000";
+            mktxtTelefone.Mask = "(99)00000-0000";
             mktxtTelefone.Name = "mktxtTelefone";
             mktxtTelefone.Size = new Size(138, 23);
             mktxtTelefone.TabIndex = 1;
+            mktxtTelefone.MaskInputRejected += mktxtTelefone_MaskInputRejected;
             // 
             // cmbTipoTelefone
             // 
+            cmbTipoTelefone.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbTipoTelefone.FormattingEnabled = true;
             cmbTipoTelefone.Location = new Point(281, 148);
             cmbTipoTelefone.Name = "cmbTipoTelefone";
@@ -347,6 +352,7 @@
             btnCancelarContato.Size = new Size(122, 23);
             btnCancelarContato.TabIndex = 3;
             btnCancelarContato.Text = "&Cancelar";
+            btnCancelarContato.Click += btnCancelarContato_Click;
             // 
             // btnEscolherClienteContato
             // 
@@ -368,6 +374,7 @@
             btnEscolherClienteContato.Size = new Size(122, 23);
             btnEscolherClienteContato.TabIndex = 5;
             btnEscolherClienteContato.Text = "&Escolher Cliente";
+            btnEscolherClienteContato.Click += btnEscolherClienteContato_Click;
             // 
             // btnInserirContato
             // 
@@ -393,6 +400,8 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(label17);
+            tabPage3.Controls.Add(cmbTipoEndereco);
             tabPage3.Controls.Add(btnBuscaCep);
             tabPage3.Controls.Add(txtComplemento);
             tabPage3.Controls.Add(label13);
@@ -421,6 +430,24 @@
             tabPage3.Text = "Endereço";
             tabPage3.UseVisualStyleBackColor = true;
             tabPage3.Click += tabPage3_Click;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(53, 217);
+            label17.Name = "label17";
+            label17.Size = new Size(30, 15);
+            label17.TabIndex = 27;
+            label17.Text = "Tipo";
+            // 
+            // cmbTipoEndereco
+            // 
+            cmbTipoEndereco.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipoEndereco.FormattingEnabled = true;
+            cmbTipoEndereco.Location = new Point(54, 235);
+            cmbTipoEndereco.Name = "cmbTipoEndereco";
+            cmbTipoEndereco.Size = new Size(121, 23);
+            cmbTipoEndereco.TabIndex = 26;
             // 
             // btnBuscaCep
             // 
@@ -471,12 +498,13 @@
             btnEscolerClienteEndereco.FillColor = Color.DodgerBlue;
             btnEscolerClienteEndereco.Font = new Font("Segoe UI", 9F);
             btnEscolerClienteEndereco.ForeColor = Color.White;
-            btnEscolerClienteEndereco.Location = new Point(213, 244);
+            btnEscolerClienteEndereco.Location = new Point(345, 273);
             btnEscolerClienteEndereco.Name = "btnEscolerClienteEndereco";
             btnEscolerClienteEndereco.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnEscolerClienteEndereco.Size = new Size(122, 23);
             btnEscolerClienteEndereco.TabIndex = 10;
             btnEscolerClienteEndereco.Text = "&Escolher Cliente";
+            btnEscolerClienteEndereco.Click += btnEscolerClienteEndereco_Click;
             // 
             // btnCancelarEndereco
             // 
@@ -492,12 +520,13 @@
             btnCancelarEndereco.FillColor = Color.Red;
             btnCancelarEndereco.Font = new Font("Segoe UI", 9F);
             btnCancelarEndereco.ForeColor = Color.White;
-            btnCancelarEndereco.Location = new Point(373, 244);
+            btnCancelarEndereco.Location = new Point(345, 235);
             btnCancelarEndereco.Name = "btnCancelarEndereco";
             btnCancelarEndereco.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnCancelarEndereco.Size = new Size(122, 23);
             btnCancelarEndereco.TabIndex = 8;
             btnCancelarEndereco.Text = "&Cancelar";
+            btnCancelarEndereco.Click += btnCancelarEndereco_Click;
             // 
             // btnInserirEndereco
             // 
@@ -513,12 +542,13 @@
             btnInserirEndereco.FillColor = Color.Green;
             btnInserirEndereco.Font = new Font("Segoe UI", 9F);
             btnInserirEndereco.ForeColor = Color.White;
-            btnInserirEndereco.Location = new Point(54, 244);
+            btnInserirEndereco.Location = new Point(203, 235);
             btnInserirEndereco.Name = "btnInserirEndereco";
             btnInserirEndereco.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnInserirEndereco.Size = new Size(122, 23);
             btnInserirEndereco.TabIndex = 9;
             btnInserirEndereco.Text = "&inserir";
+            btnInserirEndereco.Click += btnInserirEndereco_Click;
             // 
             // label12
             // 
@@ -643,7 +673,7 @@
             tabPage4.Controls.Add(BtnInsereEmail);
             tabPage4.Controls.Add(BtnCancelaEmail);
             tabPage4.Controls.Add(txtEmail);
-            tabPage4.Controls.Add(txtIdFuncionarioEmail);
+            tabPage4.Controls.Add(txtIdClienteEmail);
             tabPage4.Controls.Add(label21);
             tabPage4.Controls.Add(label20);
             tabPage4.Location = new Point(4, 24);
@@ -674,6 +704,7 @@
             btnEscolhaFuncionarioEmail.Size = new Size(122, 23);
             btnEscolhaFuncionarioEmail.TabIndex = 15;
             btnEscolhaFuncionarioEmail.Text = "&Escolher Cliente";
+            btnEscolhaFuncionarioEmail.Click += btnEscolhaFuncionarioEmail_Click;
             // 
             // BtnInsereEmail
             // 
@@ -695,6 +726,7 @@
             BtnInsereEmail.Size = new Size(122, 23);
             BtnInsereEmail.TabIndex = 14;
             BtnInsereEmail.Text = "&inserir";
+            BtnInsereEmail.Click += BtnInsereEmail_Click;
             // 
             // BtnCancelaEmail
             // 
@@ -724,26 +756,26 @@
             txtEmail.Size = new Size(342, 23);
             txtEmail.TabIndex = 12;
             // 
-            // txtIdFuncionarioEmail
+            // txtIdClienteEmail
             // 
-            txtIdFuncionarioEmail.CustomizableEdges = customizableEdges25;
-            txtIdFuncionarioEmail.DefaultText = "";
-            txtIdFuncionarioEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtIdFuncionarioEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtIdFuncionarioEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtIdFuncionarioEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtIdFuncionarioEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIdFuncionarioEmail.Font = new Font("Segoe UI", 9F);
-            txtIdFuncionarioEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIdFuncionarioEmail.Location = new Point(65, 95);
-            txtIdFuncionarioEmail.Name = "txtIdFuncionarioEmail";
-            txtIdFuncionarioEmail.PasswordChar = '\0';
-            txtIdFuncionarioEmail.PlaceholderText = "";
-            txtIdFuncionarioEmail.ReadOnly = true;
-            txtIdFuncionarioEmail.SelectedText = "";
-            txtIdFuncionarioEmail.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            txtIdFuncionarioEmail.Size = new Size(65, 23);
-            txtIdFuncionarioEmail.TabIndex = 11;
+            txtIdClienteEmail.CustomizableEdges = customizableEdges25;
+            txtIdClienteEmail.DefaultText = "";
+            txtIdClienteEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtIdClienteEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtIdClienteEmail.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtIdClienteEmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtIdClienteEmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIdClienteEmail.Font = new Font("Segoe UI", 9F);
+            txtIdClienteEmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtIdClienteEmail.Location = new Point(65, 95);
+            txtIdClienteEmail.Name = "txtIdClienteEmail";
+            txtIdClienteEmail.PasswordChar = '\0';
+            txtIdClienteEmail.PlaceholderText = "";
+            txtIdClienteEmail.ReadOnly = true;
+            txtIdClienteEmail.SelectedText = "";
+            txtIdClienteEmail.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            txtIdClienteEmail.Size = new Size(65, 23);
+            txtIdClienteEmail.TabIndex = 11;
             // 
             // label21
             // 
@@ -783,6 +815,7 @@
             Name = "FrmClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmClientes";
+            Load += FrmClientes_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -846,9 +879,11 @@
         private Guna.UI2.WinForms.Guna2Button BtnInsereEmail;
         private Guna.UI2.WinForms.Guna2Button BtnCancelaEmail;
         private TextBox txtEmail;
-        private Guna.UI2.WinForms.Guna2TextBox txtIdFuncionarioEmail;
+        private Guna.UI2.WinForms.Guna2TextBox txtIdClienteEmail;
         private Label label21;
         private Label label20;
         private Guna.UI2.WinForms.Guna2Button btnBuscaCep;
+        private Label label17;
+        private ComboBox cmbTipoEndereco;
     }
 }

@@ -108,6 +108,16 @@ namespace SmLocaçõesLib
             var dr = cmd.ExecuteReader();
             while (dr.Read()) Id = dr.GetInt32(0);
         }
-         
+
+        public void Endereco_Associado_Cliente(int idcliente, int idendereco)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"Insert into clientes_enderecos (id_cliente, id_endereco) values " +
+                $"('{idcliente}','{idendereco}')";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read()) Id = dr.GetInt32(0);
+        }
+
     }
 }
