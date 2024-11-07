@@ -43,6 +43,9 @@
             consultarToolStripMenuItem = new ToolStripMenuItem();
             vizualizarToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
+            produtosToolStripMenuItem = new ToolStripMenuItem();
+            novoToolStripMenuItem4 = new ToolStripMenuItem();
+            editarToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +61,7 @@
             // 
             // cadastroToolStripMenuItem
             // 
-            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, funcionárioToolStripMenuItem, usuárioToolStripMenuItem, nívelToolStripMenuItem });
+            cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, funcionárioToolStripMenuItem, usuárioToolStripMenuItem, nívelToolStripMenuItem, produtosToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             cadastroToolStripMenuItem.Size = new Size(66, 19);
             cadastroToolStripMenuItem.Text = "&Cadastro";
@@ -67,7 +70,7 @@
             // 
             clienteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem1 });
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(137, 22);
+            clienteToolStripMenuItem.Size = new Size(180, 22);
             clienteToolStripMenuItem.Text = "&Cliente";
             // 
             // novoToolStripMenuItem1
@@ -81,7 +84,7 @@
             // 
             funcionárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem2 });
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(137, 22);
+            funcionárioToolStripMenuItem.Size = new Size(180, 22);
             funcionárioToolStripMenuItem.Text = "&Funcionário";
             // 
             // novoToolStripMenuItem2
@@ -95,7 +98,7 @@
             // 
             usuárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem3, editarToolStripMenuItem });
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(137, 22);
+            usuárioToolStripMenuItem.Size = new Size(180, 22);
             usuárioToolStripMenuItem.Text = "&Usuário";
             // 
             // novoToolStripMenuItem3
@@ -115,7 +118,7 @@
             // nívelToolStripMenuItem
             // 
             nívelToolStripMenuItem.Name = "nívelToolStripMenuItem";
-            nívelToolStripMenuItem.Size = new Size(137, 22);
+            nívelToolStripMenuItem.Size = new Size(180, 22);
             nívelToolStripMenuItem.Text = "Nível";
             nívelToolStripMenuItem.Click += nívelToolStripMenuItem_Click;
             // 
@@ -154,6 +157,25 @@
             estoqueToolStripMenuItem.Size = new Size(116, 22);
             estoqueToolStripMenuItem.Text = "&Estoque";
             // 
+            // produtosToolStripMenuItem
+            // 
+            produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem4, editarToolStripMenuItem1 });
+            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
+            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Text = "&Produtos";
+            // 
+            // novoToolStripMenuItem4
+            // 
+            novoToolStripMenuItem4.Name = "novoToolStripMenuItem4";
+            novoToolStripMenuItem4.Size = new Size(180, 22);
+            novoToolStripMenuItem4.Text = "&Novo";
+            // 
+            // editarToolStripMenuItem1
+            // 
+            editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
+            editarToolStripMenuItem1.Size = new Size(180, 22);
+            editarToolStripMenuItem1.Text = "&Editar";
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -190,5 +212,8 @@
         private ToolStripMenuItem editarToolStripMenuItem;
         private ToolStripMenuItem nívelToolStripMenuItem;
         private ToolStripMenuItem estoqueToolStripMenuItem;
+        private ToolStripMenuItem produtosToolStripMenuItem;
+        private ToolStripMenuItem novoToolStripMenuItem4;
+        private ToolStripMenuItem editarToolStripMenuItem1;
     }
 }
