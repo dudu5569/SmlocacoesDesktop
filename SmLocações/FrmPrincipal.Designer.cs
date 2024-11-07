@@ -49,9 +49,10 @@
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { cadastroToolStripMenuItem, pedidosToolStripMenuItem, vizualizarToolStripMenuItem });
+            menuStrip1.LayoutStyle = ToolStripLayoutStyle.Flow;
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1084, 24);
+            menuStrip1.Size = new Size(1084, 23);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -59,14 +60,14 @@
             // 
             cadastroToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clienteToolStripMenuItem, funcionárioToolStripMenuItem, usuárioToolStripMenuItem, nívelToolStripMenuItem });
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(66, 20);
+            cadastroToolStripMenuItem.Size = new Size(66, 19);
             cadastroToolStripMenuItem.Text = "&Cadastro";
             // 
             // clienteToolStripMenuItem
             // 
             clienteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem1 });
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(137, 22);
             clienteToolStripMenuItem.Text = "&Cliente";
             // 
             // novoToolStripMenuItem1
@@ -80,7 +81,7 @@
             // 
             funcionárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem2 });
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(180, 22);
+            funcionárioToolStripMenuItem.Size = new Size(137, 22);
             funcionárioToolStripMenuItem.Text = "&Funcionário";
             // 
             // novoToolStripMenuItem2
@@ -94,7 +95,7 @@
             // 
             usuárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem3, editarToolStripMenuItem });
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(180, 22);
+            usuárioToolStripMenuItem.Size = new Size(137, 22);
             usuárioToolStripMenuItem.Text = "&Usuário";
             // 
             // novoToolStripMenuItem3
@@ -114,7 +115,7 @@
             // nívelToolStripMenuItem
             // 
             nívelToolStripMenuItem.Name = "nívelToolStripMenuItem";
-            nívelToolStripMenuItem.Size = new Size(180, 22);
+            nívelToolStripMenuItem.Size = new Size(137, 22);
             nívelToolStripMenuItem.Text = "Nível";
             nívelToolStripMenuItem.Click += nívelToolStripMenuItem_Click;
             // 
@@ -122,20 +123,20 @@
             // 
             pedidosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, consultarToolStripMenuItem });
             pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            pedidosToolStripMenuItem.Size = new Size(61, 20);
+            pedidosToolStripMenuItem.Size = new Size(61, 19);
             pedidosToolStripMenuItem.Text = "&Pedidos";
             // 
             // novoToolStripMenuItem
             // 
             novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            novoToolStripMenuItem.Size = new Size(180, 22);
+            novoToolStripMenuItem.Size = new Size(125, 22);
             novoToolStripMenuItem.Text = "&Novo";
             novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
             // 
             // consultarToolStripMenuItem
             // 
             consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(180, 22);
+            consultarToolStripMenuItem.Size = new Size(125, 22);
             consultarToolStripMenuItem.Text = "&Consultar";
             consultarToolStripMenuItem.Click += consultarToolStripMenuItem_Click;
             // 
@@ -143,14 +144,14 @@
             // 
             vizualizarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { estoqueToolStripMenuItem });
             vizualizarToolStripMenuItem.Name = "vizualizarToolStripMenuItem";
-            vizualizarToolStripMenuItem.Size = new Size(70, 20);
+            vizualizarToolStripMenuItem.Size = new Size(70, 19);
             vizualizarToolStripMenuItem.Text = "C&onsultar";
             vizualizarToolStripMenuItem.Click += vizualizarToolStripMenuItem_Click;
             // 
             // estoqueToolStripMenuItem
             // 
             estoqueToolStripMenuItem.Name = "estoqueToolStripMenuItem";
-            estoqueToolStripMenuItem.Size = new Size(180, 22);
+            estoqueToolStripMenuItem.Size = new Size(116, 22);
             estoqueToolStripMenuItem.Text = "&Estoque";
             // 
             // FrmPrincipal

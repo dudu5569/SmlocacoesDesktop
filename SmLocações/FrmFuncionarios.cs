@@ -143,7 +143,7 @@ namespace SmLocações
 
         private async void txtBusca_Click(object sender, EventArgs e)
         {
-            string cep = txtCEP.Text; // Remove o traço e espaços
+            string cep = txtCEP.Text; 
             if (!string.IsNullOrEmpty(cep))
             {
                 var endereco = await BuscaEndereco(cep);

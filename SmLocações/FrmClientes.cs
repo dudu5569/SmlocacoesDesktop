@@ -1,4 +1,5 @@
-﻿using SmLocaçõesLib;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using SmLocaçõesLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SmLocações
 {
@@ -37,18 +39,18 @@ namespace SmLocações
                 cliente.InserirCliente();
                 if (cliente.Id > 0)
                 {
-                    MessageBox.Show($"Cliente {cliente.Nome} foi inserido com sucesso!", "SmLocações");
+                    MessageBox.Show($"Cliente {cliente.Nome} foi inserido com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtIdClienteContato.Text = cliente.Id.ToString();
                     this.tabControl1.SelectedTab = tabPage2;
                 }
                 else
                 {
-                    MessageBox.Show("Falha ao inserir registro!", "SmLocações");
+                    MessageBox.Show("Falha ao inserir registro!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("O cliente precisa ter um nome para concluir o registro", "SmLocações");
+                MessageBox.Show("O cliente precisa ter um nome para concluir o registro", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -67,7 +69,7 @@ namespace SmLocações
             {
                 if (txtIdClienteContato.Text == string.Empty)
                 {
-                    MessageBox.Show("O telefone precisa estar associado à um cliente", "SmLocações");
+                    MessageBox.Show("O telefone precisa estar associado à um cliente", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -76,7 +78,7 @@ namespace SmLocações
                     {
                         telefones.Telefone_Associado_Cliente(Convert.ToInt32(txtIdClienteContato.Text),
                             telefones.Id);
-                        MessageBox.Show("Telefone cadastrado com Sucesso!", "SmLocações");
+                        MessageBox.Show("Telefone cadastrado com Sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtIdClienteEndereco.Text = txtIdClienteContato.Text;
                         this.tabControl1.SelectedTab = tabPage3;
                     }
@@ -116,7 +118,7 @@ namespace SmLocações
                 }
                 else
                 {
-                    MessageBox.Show("CEP não encontrado.", "SmLocações");
+                    MessageBox.Show("CEP não encontrado.", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -154,7 +156,7 @@ namespace SmLocações
                 txtBairro.Clear();
                 if (txtIdClienteEndereco.Text == string.Empty)
                 {
-                    MessageBox.Show("O endereço precisa ter um cliente associado", "SmLocações");
+                    MessageBox.Show("O endereço precisa ter um cliente associado", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -162,19 +164,19 @@ namespace SmLocações
                     if (endereco.Id > 0)
                     {
                         endereco.Endereco_Associado_Cliente(int.Parse(txtIdClienteEndereco.Text), endereco.Id);
-                        MessageBox.Show("Endereço Cadastrado com Sucesso", "SmLocações");
+                        MessageBox.Show("Endereço Cadastrado com Sucesso", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.tabControl1.SelectedTab = tabPage4;
                         txtIdClienteEmail.Text = txtIdClienteEndereco.Text;
                     }
                     else
                     {
-                        MessageBox.Show("Falha ao inserir registro!", "SmLocações");
+                        MessageBox.Show("Falha ao inserir registro!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Endereço inválido, insira um endereço válido para concluir o cadastro", "SmLocações");
+                MessageBox.Show("Endereço inválido, insira um endereço válido para concluir o cadastro", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -200,7 +202,7 @@ namespace SmLocações
             {
                 if (txtIdClienteEmail.Text == string.Empty)
                 {
-                    MessageBox.Show("O email deve estar associado à um cliente", "SmLocações");
+                    MessageBox.Show("O email deve estar associado à um cliente", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -208,14 +210,14 @@ namespace SmLocações
                     if (emails.Id > 0)
                     {
                         emails.Email_Associado_Cliente(Convert.ToInt32(txtIdClienteEmail.Text), emails.Id);
-                        MessageBox.Show("Email inserido com sucesso!", "SmLocações");
+                        MessageBox.Show("Email inserido com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtEmail.Clear();
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Insira um email!", "SmLocações");
+                MessageBox.Show("Insira um email!", "SmLocações",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -275,5 +277,59 @@ namespace SmLocações
         {
 
         }
+
+        private void btnEscolherClienteCartao_Click(object sender, EventArgs e)
+        {
+            txtIdClienteCartao.ReadOnly = false;
+            txtIdClienteCartao.Focus();
+        }
+
+        private void btnInserirCartao_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.TextBox[] textBoxes = {txtIdClienteCartao, txtTitularCartao, txtBandeiraCartao, txtNumeroCartao, txtCvvCartao, txtTipoCartao, txtValidadeCartao};
+            bool preenchidos = true;
+            foreach (var textBox  in textBoxes)
+            {
+                if (string.IsNullOrEmpty(textBox.Text))
+                {
+                    preenchidos = false;
+                    break;
+                }
+            }
+
+            string cartao = txtNumeroCartao.Text;
+            bool isValido = Cartoes.ValidarNumeroCartao(cartao);
+
+            if (preenchidos)
+            {
+                if (isValido)
+                {
+                    Cartoes cartoes = new(
+                          Cliente.ObterPorId(Convert.ToInt32(txtIdClienteCartao.Text)),
+                          txtTitularCartao.Text,
+                          txtBandeiraCartao.Text,
+                          txtNumeroCartao.Text,
+                          txtValidadeCartao.Text,
+                          Convert.ToInt32(txtCvvCartao.Text),
+                          txtTipoCartao.Text
+                        );
+                    cartoes.InserirCartao();
+                    if (cartoes.ID > 0)
+                    {
+                        MessageBox.Show("Cartão registrado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Número do cartão inválido! Caracteres especiais ou letras detectados.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
+
+
