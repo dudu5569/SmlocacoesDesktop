@@ -16,5 +16,16 @@ namespace SmLocações
         {
             InitializeComponent();
         }
+
+        private void btnEscolherImagem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Escolha uma imagem(*.JPG;*.PNG) | *.jpg;*.png;";
+
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                ImagemProduto.Image = Image.FromFile(openFile.FileName);
+            }
+        }
     }
 }
