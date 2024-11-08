@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace SmLocaçõesLib
 
         public int ID { get; set; }
         
-        public string? Categoria { get; set; }
+        Categorias Categoria { get; set; }
         public string? Nome_Produto { get; set; }
         public string? Imagem { get; set; }
 
@@ -22,7 +23,7 @@ namespace SmLocaçõesLib
         public string? Destaque { get; set; }
 
         public Produtos() { }
-        public Produtos(string? categoria, string? nome_Produto, string? imagem, decimal? valor, string? unidade_Venda, DateTime? data_cadastro, string? descricao, string? destaque)
+        public Produtos(Categorias categoria, string? nome_Produto, string? imagem, decimal? valor, string? unidade_Venda, DateTime? data_cadastro, string? descricao, string? destaque)
         {
             Categoria = categoria;
             Nome_Produto = nome_Produto;
@@ -47,23 +48,30 @@ namespace SmLocaçõesLib
             return imagemBytes;
         }
 
-        public void InserirProduto(Produtos produtos, string caminhoImagem)
+        public void InserirProduto(string caminhoImagem)
         {
-            var cmd = Banco.Abrir();
-            byte[] imagembytes = ImagemParaArray(caminhoImagem);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "sp_inserir_produtos";
-            cmd.Parameters.AddWithValue("@spid_categoria", Categoria);
-            cmd.Parameters.AddWithValue("@spnome", Nome_Produto ?? (object)DBNull.Value);
-            cmd.Parameters.AddWithValue("@spimagem", imagembytes);
-            cmd.Parameters.AddWithValue("@spvalor_unit", Valor ?? (object)DBNull.Value);
-            cmd.Parameters.AddWithValue("@spunidade_venda", Unidade_Venda ?? (object)DBNull.Value);
-            cmd.Parameters.AddWithValue("@spdata_cad", Data_cadastro ?? (object)DBNull.Value);
-            cmd.Parameters.AddWithValue("@spdescricao", Descricao ?? (object)DBNull.Value);
-            cmd.Parameters.AddWithValue("@spdestaque", Destaque ?? (object)DBNull.Value);
-            var dr = cmd.ExecuteReader();
-            if (dr.Read()) ID = dr.GetInt32(0);
+            using (var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "sp_inserir_produtos";
+
+                byte[] imagembytes = ImagemParaArray(caminhoImagem);
+
+                cmd.Parameters.AddWithValue("@spid_categoria", Categoria.Id);
+                cmd.Parameters.AddWithValue("@spnome", Nome_Produto ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@spimagem", imagembytes);
+                cmd.Parameters.AddWithValue("@spvalor_unit", Valor ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@spunidade_venda", Unidade_Venda ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@spdata_cad", Data_cadastro ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@spdescricao", Descricao ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@spdestaque", Destaque ?? (object)DBNull.Value);
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read()) ID = dr.GetInt32(0);
+                } 
+            }
         }
+
         
     }
 }

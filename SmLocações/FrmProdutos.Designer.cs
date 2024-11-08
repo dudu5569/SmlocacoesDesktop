@@ -149,6 +149,7 @@
             // 
             // cmbCategoriaProduto
             // 
+            cmbCategoriaProduto.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCategoriaProduto.FormattingEnabled = true;
             cmbCategoriaProduto.Location = new Point(301, 137);
             cmbCategoriaProduto.Name = "cmbCategoriaProduto";
@@ -164,6 +165,7 @@
             // 
             // cmbUnidadeVenda
             // 
+            cmbUnidadeVenda.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbUnidadeVenda.FormattingEnabled = true;
             cmbUnidadeVenda.Location = new Point(542, 137);
             cmbUnidadeVenda.Name = "cmbUnidadeVenda";
@@ -187,6 +189,7 @@
             // 
             // cmbDestaqueProduto
             // 
+            cmbDestaqueProduto.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDestaqueProduto.FormattingEnabled = true;
             cmbDestaqueProduto.Location = new Point(451, 232);
             cmbDestaqueProduto.Name = "cmbDestaqueProduto";
@@ -223,6 +226,7 @@
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 12;
             btnInserir.Text = "&inserir";
+            btnInserir.Click += btnInserir_Click;
             // 
             // btnCancelar
             // 
@@ -303,6 +307,7 @@
             Controls.Add(label5);
             Name = "FrmProdutos";
             Text = "FrmProdutos";
+            Load += FrmProdutos_Load;
             ((System.ComponentModel.ISupportInitialize)ImagemProduto).EndInit();
             ResumeLayout(false);
             PerformLayout();
