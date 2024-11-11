@@ -14,11 +14,10 @@ namespace SmLocaçõesLib
 
         public string? Categoria { get; set; }
 
+        public string? Sigla { get; set; }
+
         public Categorias() { }
-        public Categorias(string? categoria)
-        {
-            Categoria = categoria;
-        }
+
 
         public Categorias(int id, string? categoria)
         {
@@ -26,18 +25,31 @@ namespace SmLocaçõesLib
             Categoria = categoria;
         }
 
+        public Categorias(int id)
+        {
+            Id = id;
+        }
+
+        public Categorias(int id, string? categoria, string? sigla)
+        {
+            Id = id;
+            Categoria = categoria;
+            Sigla = sigla;
+        }
+
         public static List<Categorias> ObterCategoria()
         {
             List<Categorias> lista = new List<Categorias>();
             var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             cmd.CommandText = "Select * from Categorias";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 lista.Add(new(
                 dr.GetInt32(0),
-                dr.GetString(1)
+                dr.GetString(1),
+                dr.GetString(2)
                     ));
             }
 
@@ -53,12 +65,19 @@ namespace SmLocaçõesLib
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"Select * from categorias where id = {id}";
             var dr = cmd.ExecuteReader();
-            while (dr.Read())
+
+            int indexId = dr.GetOrdinal("id");
+            int indexRotulo = dr.GetOrdinal("rotulo");
+            int indexSigla = dr.GetOrdinal("sigla");
+
+
+            if (dr.Read())
             {
-                categorias = new(
-                dr.GetInt32(0),
-                dr.GetString(1)
-                );
+                categorias = new Categorias(
+                    dr.GetInt32(indexId),
+                    dr.GetString(indexRotulo),
+                    dr.GetString(indexSigla)
+                    );
             }
             return categorias;
 

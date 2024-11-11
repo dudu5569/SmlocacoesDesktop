@@ -53,8 +53,8 @@
             ImagemProduto = new PictureBox();
             btnInserir = new Guna.UI2.WinForms.Guna2Button();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
-            btnEscolherImagem = new Guna.UI2.WinForms.Guna2Button();
             dateTimePicker1 = new DateTimePicker();
+            btnEscolherFuncionarioEndereco = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)ImagemProduto).BeginInit();
             SuspendLayout();
             // 
@@ -249,28 +249,6 @@
             btnCancelar.TabIndex = 13;
             btnCancelar.Text = "&Cancelar";
             // 
-            // btnEscolherImagem
-            // 
-            btnEscolherImagem.Animated = true;
-            btnEscolherImagem.AutoRoundedCorners = true;
-            btnEscolherImagem.BorderRadius = 10;
-            btnEscolherImagem.BorderThickness = 1;
-            btnEscolherImagem.CustomizableEdges = customizableEdges5;
-            btnEscolherImagem.DisabledState.BorderColor = Color.DarkGray;
-            btnEscolherImagem.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnEscolherImagem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnEscolherImagem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEscolherImagem.FillColor = Color.DodgerBlue;
-            btnEscolherImagem.Font = new Font("Segoe UI", 9F);
-            btnEscolherImagem.ForeColor = Color.White;
-            btnEscolherImagem.Location = new Point(598, 364);
-            btnEscolherImagem.Name = "btnEscolherImagem";
-            btnEscolherImagem.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnEscolherImagem.Size = new Size(122, 23);
-            btnEscolherImagem.TabIndex = 14;
-            btnEscolherImagem.Text = "&Escolher Imagem";
-            btnEscolherImagem.Click += btnEscolherImagem_Click;
-            // 
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
@@ -279,12 +257,33 @@
             dateTimePicker1.Size = new Size(103, 23);
             dateTimePicker1.TabIndex = 9;
             // 
+            // btnEscolherFuncionarioEndereco
+            // 
+            btnEscolherFuncionarioEndereco.Animated = true;
+            btnEscolherFuncionarioEndereco.AutoRoundedCorners = true;
+            btnEscolherFuncionarioEndereco.BorderRadius = 10;
+            btnEscolherFuncionarioEndereco.BorderThickness = 1;
+            btnEscolherFuncionarioEndereco.CustomizableEdges = customizableEdges5;
+            btnEscolherFuncionarioEndereco.DisabledState.BorderColor = Color.DarkGray;
+            btnEscolherFuncionarioEndereco.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEscolherFuncionarioEndereco.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEscolherFuncionarioEndereco.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEscolherFuncionarioEndereco.Font = new Font("Segoe UI", 9F);
+            btnEscolherFuncionarioEndereco.ForeColor = Color.White;
+            btnEscolherFuncionarioEndereco.Location = new Point(602, 364);
+            btnEscolherFuncionarioEndereco.Name = "btnEscolherFuncionarioEndereco";
+            btnEscolherFuncionarioEndereco.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnEscolherFuncionarioEndereco.Size = new Size(122, 23);
+            btnEscolherFuncionarioEndereco.TabIndex = 14;
+            btnEscolherFuncionarioEndereco.Text = "&Escolher Imagem";
+            btnEscolherFuncionarioEndereco.Click += btnEscolherFuncionarioEndereco_Click;
+            // 
             // FrmProdutos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnEscolherImagem);
+            Controls.Add(btnEscolherFuncionarioEndereco);
             Controls.Add(btnCancelar);
             Controls.Add(btnInserir);
             Controls.Add(ImagemProduto);
@@ -334,7 +333,7 @@
         private PictureBox ImagemProduto;
         private Guna.UI2.WinForms.Guna2Button btnInserir;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
-        private Guna.UI2.WinForms.Guna2Button btnEscolherImagem;
         private DateTimePicker dateTimePicker1;
+        private Guna.UI2.WinForms.Guna2Button btnEscolherFuncionarioEndereco;
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SmLocações
 {
@@ -18,60 +19,55 @@ namespace SmLocações
             InitializeComponent();
         }
 
-        private void btnEscolherImagem_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "Escolha uma imagem(*.JPG;*.PNG) | *.jpg;*.png;";
-
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                ImagemProduto.Image = Image.FromFile(openFile.FileName);
-            }
-        }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-
             System.Windows.Forms.TextBox[] textboxes = { txtDescricaoProduto, txtNomeProduto, txtValorProduto };
             bool Textospreenchidos = true;
+            MemoryStream ms = new MemoryStream();
+            ImagemProduto.Image.Save(ms, ImagemProduto.Image.RawFormat);
+            byte[] img = ms.ToArray();
 
-            if (ImagemProduto == null) MessageBox.Show("Insira uma imagem do produto", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            string caminhoImagem = "Imagens\\";
-            ImagemProduto.Image.Save(caminhoImagem);
-            Produtos produtos = new(
-                Categorias.ObterPorId(Convert.ToInt32(cmbCategoriaProduto.SelectedValue)),
-                txtNomeProduto.Text,
-                caminhoImagem,
-                Convert.ToDecimal(txtValorProduto.Text),
-                cmbUnidadeVenda.Text,
-                dataCadastro.Value = DateTime.Now,
-                txtDescricaoProduto.Text,
-                cmbDestaqueProduto.Text
-                );
+                    foreach (var text in textboxes)
+                    {
+                        if (string.IsNullOrEmpty(text.Text))
+                        {
+                            Textospreenchidos = false;
+                            break;
+                        }
+                    }
 
-            foreach (var text in textboxes)
-            {
-                if (string.IsNullOrEmpty(text.Text))
-                {
-                    Textospreenchidos = false;
-                    break;
-                }
-            }
+                    if (Textospreenchidos)
+                    {
+                        Produtos produtos = new(
+                            Categorias.ObterPorId(Convert.ToInt32(cmbCategoriaProduto.SelectedValue)),
+                            txtNomeProduto.Text,
+                            img.ToString(),
+                            Convert.ToDecimal(txtValorProduto.Text),
+                            cmbUnidadeVenda.Text,
+                            txtDescricaoProduto.Text,
+                            cmbDestaqueProduto.Text
+                        );
 
-            if (Textospreenchidos)
-            {
-                produtos.InserirProduto(ImagemProduto.Image.ToString());
-                if (produtos.ID > 0)
-                {
-                    MessageBox.Show($"{produtos.Nome_Produto} foi inserido com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Falha ao inserir produto", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+                        produtos.InserirProduto();
 
+                        if (produtos.ID > 0)
+                        {
+                            MessageBox.Show($"{produtos.Nome_Produto} foi inserido com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Falha ao inserir produto", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, preencha todos os campos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+              
+            
         }
+
 
         private void FrmProdutos_Load(object sender, EventArgs e)
         {
@@ -89,5 +85,24 @@ namespace SmLocações
             cmbCategoriaProduto.DisplayMember = "Categoria";
             cmbCategoriaProduto.ValueMember = "Id";
         }
+
+        private void btnEscolherFuncionarioEndereco_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Imagens (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif|Todos os arquivos (*.*)|*.*";
+                openFileDialog.Title = "Selecione uma imagem";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    ImagemProduto.Image = Image.FromFile(openFileDialog.FileName);
+
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma imagem foi selecionada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
-}
+} 
