@@ -131,6 +131,7 @@
             label19 = new Label();
             label18 = new Label();
             label5 = new Label();
+            cmbTipoCartao = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -822,6 +823,7 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(cmbTipoCartao);
             tabPage5.Controls.Add(btnEscolherClienteCartao);
             tabPage5.Controls.Add(btncancelarCartao);
             tabPage5.Controls.Add(btnInserirCartao);
@@ -930,7 +932,7 @@
             // 
             // txtValidadeCartao
             // 
-            txtValidadeCartao.Location = new Point(405, 138);
+            txtValidadeCartao.Location = new Point(441, 138);
             txtValidadeCartao.Name = "txtValidadeCartao";
             txtValidadeCartao.Size = new Size(36, 23);
             txtValidadeCartao.TabIndex = 13;
@@ -1016,7 +1018,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(401, 120);
+            label18.Location = new Point(437, 120);
             label18.Name = "label18";
             label18.Size = new Size(51, 15);
             label18.TabIndex = 0;
@@ -1031,6 +1033,15 @@
             label5.Size = new Size(137, 45);
             label5.TabIndex = 2;
             label5.Text = "Clientes";
+            // 
+            // cmbTipoCartao
+            // 
+            cmbTipoCartao.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipoCartao.FormattingEnabled = true;
+            cmbTipoCartao.Location = new Point(285, 138);
+            cmbTipoCartao.Name = "cmbTipoCartao";
+            cmbTipoCartao.Size = new Size(117, 23);
+            cmbTipoCartao.TabIndex = 18;
             // 
             // FrmClientes
             // 
@@ -1131,5 +1142,6 @@
         private Guna.UI2.WinForms.Guna2Button btnEscolherClienteCartao;
         private Guna.UI2.WinForms.Guna2Button btncancelarCartao;
         private TextBox txtIdClienteCartao;
+        private ComboBox cmbTipoCartao;
     }
 }

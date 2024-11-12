@@ -32,7 +32,7 @@ public class Produtos
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_inserir_produtos";
 
-            cmd.Parameters.AddWithValue("@spid_categoria", Id_Categoria);
+            cmd.Parameters.AddWithValue("@spid_categoria", Id_Categoria.Id);
             cmd.Parameters.AddWithValue("@spnome", Nome_Produto ?? "Produto Sem Nome");
             cmd.Parameters.AddWithValue("@spimagem", Imagem ?? "imagem_default.png");
             cmd.Parameters.AddWithValue("@spvalor_unit", Valor ?? 0.00m);
@@ -53,9 +53,11 @@ public class Produtos
         var cmd = Banco.Abrir();
         cmd.CommandType = System.Data.CommandType.Text;
 
+
+
         if (nome == "")
         {
-            cmd.CommandText = "SELECT * FROM produtos ORDER BY nome_produto LIMIT 20";
+            cmd.CommandText = "SELECT * FROM produtos ORDER BY nome_produto ";
         }
         else
         {

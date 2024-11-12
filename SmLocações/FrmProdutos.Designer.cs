@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label5 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -46,7 +46,6 @@
             txtNomeProduto = new TextBox();
             cmbCategoriaProduto = new ComboBox();
             txtValorProduto = new TextBox();
-            cmbUnidadeVenda = new ComboBox();
             dataCadastro = new DateTimePicker();
             txtDescricaoProduto = new TextBox();
             cmbDestaqueProduto = new ComboBox();
@@ -54,7 +53,8 @@
             btnInserir = new Guna.UI2.WinForms.Guna2Button();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             dateTimePicker1 = new DateTimePicker();
-            btnEscolherFuncionarioEndereco = new Guna.UI2.WinForms.Guna2Button();
+            btncolherImagem = new Guna.UI2.WinForms.Guna2Button();
+            txtUnidades = new TextBox();
             ((System.ComponentModel.ISupportInitialize)ImagemProduto).BeginInit();
             SuspendLayout();
             // 
@@ -163,15 +163,6 @@
             txtValorProduto.Size = new Size(72, 23);
             txtValorProduto.TabIndex = 7;
             // 
-            // cmbUnidadeVenda
-            // 
-            cmbUnidadeVenda.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbUnidadeVenda.FormattingEnabled = true;
-            cmbUnidadeVenda.Location = new Point(542, 137);
-            cmbUnidadeVenda.Name = "cmbUnidadeVenda";
-            cmbUnidadeVenda.Size = new Size(121, 23);
-            cmbUnidadeVenda.TabIndex = 8;
-            // 
             // dataCadastro
             // 
             dataCadastro.Format = DateTimePickerFormat.Short;
@@ -212,7 +203,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges1;
+            btnInserir.CustomizableEdges = customizableEdges7;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -222,7 +213,7 @@
             btnInserir.ForeColor = Color.White;
             btnInserir.Location = new Point(210, 308);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 12;
             btnInserir.Text = "&inserir";
@@ -234,7 +225,7 @@
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges3;
+            btnCancelar.CustomizableEdges = customizableEdges9;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -244,7 +235,7 @@
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(374, 308);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 13;
             btnCancelar.Text = "&Cancelar";
@@ -257,40 +248,47 @@
             dateTimePicker1.Size = new Size(103, 23);
             dateTimePicker1.TabIndex = 9;
             // 
-            // btnEscolherFuncionarioEndereco
+            // btncolherImagem
             // 
-            btnEscolherFuncionarioEndereco.Animated = true;
-            btnEscolherFuncionarioEndereco.AutoRoundedCorners = true;
-            btnEscolherFuncionarioEndereco.BorderRadius = 10;
-            btnEscolherFuncionarioEndereco.BorderThickness = 1;
-            btnEscolherFuncionarioEndereco.CustomizableEdges = customizableEdges5;
-            btnEscolherFuncionarioEndereco.DisabledState.BorderColor = Color.DarkGray;
-            btnEscolherFuncionarioEndereco.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnEscolherFuncionarioEndereco.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnEscolherFuncionarioEndereco.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEscolherFuncionarioEndereco.Font = new Font("Segoe UI", 9F);
-            btnEscolherFuncionarioEndereco.ForeColor = Color.White;
-            btnEscolherFuncionarioEndereco.Location = new Point(602, 364);
-            btnEscolherFuncionarioEndereco.Name = "btnEscolherFuncionarioEndereco";
-            btnEscolherFuncionarioEndereco.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnEscolherFuncionarioEndereco.Size = new Size(122, 23);
-            btnEscolherFuncionarioEndereco.TabIndex = 14;
-            btnEscolherFuncionarioEndereco.Text = "&Escolher Imagem";
-            btnEscolherFuncionarioEndereco.Click += btnEscolherFuncionarioEndereco_Click;
+            btncolherImagem.Animated = true;
+            btncolherImagem.AutoRoundedCorners = true;
+            btncolherImagem.BorderRadius = 10;
+            btncolherImagem.BorderThickness = 1;
+            btncolherImagem.CustomizableEdges = customizableEdges11;
+            btncolherImagem.DisabledState.BorderColor = Color.DarkGray;
+            btncolherImagem.DisabledState.CustomBorderColor = Color.DarkGray;
+            btncolherImagem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btncolherImagem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btncolherImagem.Font = new Font("Segoe UI", 9F);
+            btncolherImagem.ForeColor = Color.White;
+            btncolherImagem.Location = new Point(602, 364);
+            btncolherImagem.Name = "btncolherImagem";
+            btncolherImagem.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btncolherImagem.Size = new Size(122, 23);
+            btncolherImagem.TabIndex = 14;
+            btncolherImagem.Text = "&Escolher Imagem";
+            btncolherImagem.Click += btnEscolherFuncionarioEndereco_Click;
+            // 
+            // txtUnidades
+            // 
+            txtUnidades.Location = new Point(542, 137);
+            txtUnidades.Name = "txtUnidades";
+            txtUnidades.Size = new Size(79, 23);
+            txtUnidades.TabIndex = 15;
             // 
             // FrmProdutos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnEscolherFuncionarioEndereco);
+            Controls.Add(txtUnidades);
+            Controls.Add(btncolherImagem);
             Controls.Add(btnCancelar);
             Controls.Add(btnInserir);
             Controls.Add(ImagemProduto);
             Controls.Add(cmbDestaqueProduto);
             Controls.Add(dateTimePicker1);
             Controls.Add(dataCadastro);
-            Controls.Add(cmbUnidadeVenda);
             Controls.Add(txtValorProduto);
             Controls.Add(cmbCategoriaProduto);
             Controls.Add(txtDescricaoProduto);
@@ -326,7 +324,6 @@
         private TextBox txtNomeProduto;
         private ComboBox cmbCategoriaProduto;
         private TextBox txtValorProduto;
-        private ComboBox cmbUnidadeVenda;
         private DateTimePicker dataCadastro;
         private TextBox txtDescricaoProduto;
         private ComboBox cmbDestaqueProduto;
@@ -334,6 +331,7 @@
         private Guna.UI2.WinForms.Guna2Button btnInserir;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
         private DateTimePicker dateTimePicker1;
-        private Guna.UI2.WinForms.Guna2Button btnEscolherFuncionarioEndereco;
+        private Guna.UI2.WinForms.Guna2Button btncolherImagem;
+        private TextBox txtUnidades;
     }
 }

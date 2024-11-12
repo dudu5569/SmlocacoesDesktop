@@ -14,7 +14,7 @@ namespace SmLocaçõesLib
         public string[] produtoDestaque { get; set; }
 
         public DestaqueProdutos() {
-            produtoDestaque = new string[] { "Sim", "Não" };
+            produtoDestaque = new string[] { "Sim", "Nao" };
         }
     }
 }

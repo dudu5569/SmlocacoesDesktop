@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SmLocações
 {
-    public partial class FrmConsultar : Form
+    public partial class FrmConsultarEstoque : Form
     {
-        public FrmConsultar()
+        public FrmConsultarEstoque()
         {
             InitializeComponent();
         }
@@ -21,6 +21,8 @@ namespace SmLocações
         private void FrmConsultar_Load(object sender, EventArgs e)
         {
             CarregaGrid();
+            label1.Left = (this.ClientSize.Width - label1.Width) / 2;
+
         }
 
         private void CarregaGrid(string nome = "")
@@ -32,9 +34,7 @@ namespace SmLocações
             {
                 dgvProdutos.Rows.Add();
                 dgvProdutos.Rows[cont].Cells[0].Value = produto.Nome_Produto;
-
                 dgvProdutos.Rows[cont].Cells[1].Value = produto.Id_Categoria.Categoria; 
-
                 dgvProdutos.Rows[cont].Cells[2].Value = produto.Valor;
                 dgvProdutos.Rows[cont].Cells[3].Value = produto.Unidade_Venda;
                 dgvProdutos.Rows[cont].Cells[4].Value = produto.Descricao;

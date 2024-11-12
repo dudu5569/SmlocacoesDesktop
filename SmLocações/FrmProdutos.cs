@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SmLocações
 {
@@ -19,63 +19,72 @@ namespace SmLocações
             InitializeComponent();
         }
 
-
         private void btnInserir_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.TextBox[] textboxes = { txtDescricaoProduto, txtNomeProduto, txtValorProduto };
             bool Textospreenchidos = true;
-            MemoryStream ms = new MemoryStream();
-            ImagemProduto.Image.Save(ms, ImagemProduto.Image.RawFormat);
-            byte[] img = ms.ToArray();
 
-                    foreach (var text in textboxes)
-                    {
-                        if (string.IsNullOrEmpty(text.Text))
-                        {
-                            Textospreenchidos = false;
-                            break;
-                        }
-                    }
+            foreach (var text in textboxes)
+            {
+                if (string.IsNullOrEmpty(text.Text))
+                {
+                    Textospreenchidos = false;
+                    break;
+                }
+            }
 
-                    if (Textospreenchidos)
-                    {
-                        Produtos produtos = new(
-                            Categorias.ObterPorId(Convert.ToInt32(cmbCategoriaProduto.SelectedValue)),
-                            txtNomeProduto.Text,
-                            img.ToString(),
-                            Convert.ToDecimal(txtValorProduto.Text),
-                            cmbUnidadeVenda.Text,
-                            txtDescricaoProduto.Text,
-                            cmbDestaqueProduto.Text
-                        );
+            if (string.IsNullOrEmpty(ImagemProduto.ImageLocation))
+            {
+                MessageBox.Show("Por favor, selecione uma imagem.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                        produtos.InserirProduto();
+            if (Textospreenchidos)
+            {
+                string caminhoImagem = ImagemProduto.ImageLocation; 
 
-                        if (produtos.ID > 0)
-                        {
-                            MessageBox.Show($"{produtos.Nome_Produto} foi inserido com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Falha ao inserir produto", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Por favor, preencha todos os campos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-              
-            
+                Produtos produtos = new(
+                    Categorias.ObterPorId(Convert.ToInt32(cmbCategoriaProduto.SelectedValue)),
+                    txtNomeProduto.Text,
+                    caminhoImagem,  
+                    Convert.ToDecimal(txtValorProduto.Text),
+                    txtUnidades.Text,
+                    txtDescricaoProduto.Text,
+                    cmbDestaqueProduto.Text
+                );
+
+                produtos.InserirProduto();
+
+                if (produtos.ID > 0)
+                {
+                    MessageBox.Show($"{produtos.Nome_Produto} foi inserido com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimparCampos();       
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao inserir produto", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, preencha todos os campos.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        private void LimparCampos()
+        {
+            txtUnidades.Clear();
+            txtNomeProduto.Clear();
+            txtDescricaoProduto.Clear();
+            txtValorProduto.Clear();
+            ImagemProduto.Image = null; 
+        }
 
         private void FrmProdutos_Load(object sender, EventArgs e)
         {
             CarregaCategorias();
             DestaqueProdutos destaque = new();
-            UnidadeVenda unidadeVenda = new();
             cmbDestaqueProduto.Items.AddRange(destaque.produtoDestaque);
-            cmbUnidadeVenda.Items.AddRange(unidadeVenda.tipodeVenda);
         }
 
         private void CarregaCategorias()
@@ -95,8 +104,7 @@ namespace SmLocações
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ImagemProduto.Image = Image.FromFile(openFileDialog.FileName);
-
+                    ImagemProduto.ImageLocation = openFileDialog.FileName;
                 }
                 else
                 {
@@ -105,4 +113,4 @@ namespace SmLocações
             }
         }
     }
-} 
+}

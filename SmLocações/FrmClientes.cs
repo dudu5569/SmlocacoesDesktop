@@ -186,6 +186,8 @@ namespace SmLocações
             cmbTipoEndereco.Items.AddRange(tiposenderecos.tiposdeEnderecos);
             Telefones telefones = new();
             cmbTipoTelefone.Items.AddRange(telefones.TipodeTelefone);
+            TipoCartao tipoCartao = new ();
+            cmbTipoCartao.Items.AddRange(tipoCartao.TipodeCartao);
         }
 
         private void mktxtTelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -288,7 +290,7 @@ namespace SmLocações
 
         private void btnInserirCartao_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.TextBox[] textBoxes = {txtIdClienteCartao, txtTitularCartao, txtBandeiraCartao, txtNumeroCartao, txtCvvCartao, txtTipoCartao, txtValidadeCartao};
+            System.Windows.Forms.TextBox[] textBoxes = {txtIdClienteCartao, txtTitularCartao, txtBandeiraCartao, txtNumeroCartao, txtCvvCartao,  txtValidadeCartao};
             bool preenchidos = true;
             foreach (var textBox  in textBoxes)
             {
@@ -301,6 +303,7 @@ namespace SmLocações
 
             string cartao = txtNumeroCartao.Text;
             bool isValido = Cartoes.ValidarNumeroCartao(cartao);
+            string tipocartao = cmbTipoCartao.Text;
 
             if (preenchidos)
             {
@@ -313,7 +316,7 @@ namespace SmLocações
                           txtNumeroCartao.Text,
                           txtValidadeCartao.Text,
                           Convert.ToInt32(txtCvvCartao.Text),
-                          txtTipoCartao.Text
+                          tipocartao
                         );
                     cartoes.InserirCartao();
                     if (cartoes.ID > 0)
@@ -321,7 +324,6 @@ namespace SmLocações
                         MessageBox.Show("Cartão registrado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtIdClienteCartao.Clear();
                         txtCvvCartao.Clear();
-                        txtTipoCartao.Clear();
                         txtTitularCartao.Clear();
                         txtBandeiraCartao.Clear();
                         txtNumeroCartao.Clear();

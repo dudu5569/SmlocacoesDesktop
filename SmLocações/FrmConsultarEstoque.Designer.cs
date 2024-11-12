@@ -1,6 +1,6 @@
 ﻿namespace SmLocações
 {
-    partial class FrmConsultar
+    partial class FrmConsultarEstoque
     {
         /// <summary>
         /// Required designer variable.
@@ -34,19 +34,21 @@
             valor = new DataGridViewTextBoxColumn();
             unidadevenda = new DataGridViewTextBoxColumn();
             descricao = new DataGridViewTextBoxColumn();
-            imagem = new DataGridViewTextBoxColumn();
+            destaque = new DataGridViewTextBoxColumn();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             SuspendLayout();
             // 
             // dgvProdutos
             // 
+            dgvProdutos.AllowUserToAddRows = false;
             dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProdutos.Columns.AddRange(new DataGridViewColumn[] { produto, categoria, valor, unidadevenda, descricao, imagem });
-            dgvProdutos.Location = new Point(12, 12);
+            dgvProdutos.Columns.AddRange(new DataGridViewColumn[] { produto, categoria, valor, unidadevenda, descricao, destaque });
+            dgvProdutos.Location = new Point(6, 186);
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvProdutos.RowHeadersVisible = false;
-            dgvProdutos.Size = new Size(1040, 617);
+            dgvProdutos.Size = new Size(981, 438);
             dgvProdutos.TabIndex = 0;
             // 
             // produto
@@ -85,28 +87,40 @@
             descricao.HeaderText = "Descrição";
             descricao.Name = "descricao";
             descricao.ReadOnly = true;
-            descricao.Width = 300;
+            descricao.Width = 450;
             // 
-            // imagem
+            // destaque
             // 
-            imagem.Frozen = true;
-            imagem.HeaderText = "Imagem";
-            imagem.Name = "imagem";
-            imagem.ReadOnly = true;
-            imagem.Width = 300;
+            destaque.Frozen = true;
+            destaque.HeaderText = "Destaque";
+            destaque.Name = "destaque";
+            destaque.ReadOnly = true;
+            destaque.Width = 70;
             // 
-            // FrmConsultar
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(391, 47);
+            label1.Name = "label1";
+            label1.Size = new Size(139, 45);
+            label1.TabIndex = 4;
+            label1.Text = "Estoque";
+            // 
+            // FrmConsultarEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1064, 641);
+            ClientSize = new Size(992, 621);
+            Controls.Add(label1);
             Controls.Add(dgvProdutos);
-            Name = "FrmConsultar";
+            Name = "FrmConsultarEstoque";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Estoque";
             Load += FrmConsultar_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -117,6 +131,7 @@
         private DataGridViewTextBoxColumn valor;
         private DataGridViewTextBoxColumn unidadevenda;
         private DataGridViewTextBoxColumn descricao;
-        private DataGridViewTextBoxColumn imagem;
+        private DataGridViewTextBoxColumn destaque;
+        private Label label1;
     }
 }
