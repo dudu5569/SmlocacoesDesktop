@@ -38,7 +38,7 @@ namespace SmLocações
                 dgvProdutos.Rows[cont].Cells[2].Value = produto.Valor;
                 dgvProdutos.Rows[cont].Cells[3].Value = produto.Unidade_Venda;
                 dgvProdutos.Rows[cont].Cells[4].Value = produto.Descricao;
-                dgvProdutos.Rows[cont].Cells[5].Value = produto.Imagem;
+                dgvProdutos.Rows[cont].Cells[5].Value = produto.Destaque;
 
                 cont++;
             }

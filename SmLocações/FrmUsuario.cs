@@ -25,15 +25,15 @@ namespace SmLocações
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            
-            bool ativo = chkAtivo.Checked;
+            string isAtivo = "Nao";
+            if (chkAtivo.Checked) isAtivo = "Sim";
 
             int idfuncionario = Convert.ToInt32(cmbFuncionarios.SelectedValue);
             Usuario usuario = new(
                 Funcionario.ObterporId(idfuncionario),
                 txtUsuario.Text,
                 txtSenha.Text,
-                ativo
+                isAtivo
                 );
 
            if (!Usuario.ObterIdFuncionario(idfuncionario))

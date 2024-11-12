@@ -13,8 +13,8 @@ namespace SmLocaçõesLib
         public int Id { get; set; }
         public string? Nome { get; set; }
         public string? CPF { get; set; }
-        public DateTime? Data_Nascimento { get; set; } 
-        public DateTime? Data_Cadastro { get; set; }
+        public DateTime? Data_Nascimento { get; set; }
+        public DateTime? Data_Cadastro{ get; set; }
 
         public Cliente () { }
         public Cliente(int id, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro)
@@ -33,6 +33,11 @@ namespace SmLocaçõesLib
             Data_Cadastro = data_Cadastro;
         }
 
+        public Cliente(int id)
+        {
+            Id = id;
+        }
+
         public void InserirCliente()
         {
             var cmd = Banco.Abrir();
@@ -41,7 +46,8 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spnome", Nome);
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("spdata_nascimento", Data_Nascimento);
-            cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
+            cmd.Parameters.AddWithValue("spdata_cadastro", Data_Cadastro);
+
             var dr = cmd.ExecuteReader();
             if (dr.Read()) Id = dr.GetInt32(0);
         }
@@ -57,11 +63,7 @@ namespace SmLocaçõesLib
             while (dr.Read())
             {
                 cliente = new(
-                    dr.GetInt32(0),
-                    dr.GetString(1),
-                    dr.GetString(2),
-                    dr.GetDateTime(3),
-                    dr.GetDateTime(4)
+                    dr.GetInt32(0)
                     );
             }
             return cliente;

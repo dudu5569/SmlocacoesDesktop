@@ -45,23 +45,25 @@ namespace SmLocações
             int id = 0;
             string nome = "";
             string login = "";
-            bool ativo = false;
+            string ativo = "Nao";
             id = Convert.ToInt32(dgvUsuarios.Rows[posicaoLinha].Cells[0].Value);
             nome = dgvUsuarios.Rows[posicaoLinha].Cells[1].Value.ToString();
             login = dgvUsuarios.Rows[posicaoLinha].Cells[2].Value.ToString();
-            ativo = Convert.ToBoolean(dgvUsuarios.Rows[posicaoLinha].Cells[3].Value);
+            ativo = (dgvUsuarios.Rows[posicaoLinha].Cells[3].Value.ToString());
             txtIdUsuario.Text = id.ToString();
             txtEmail.Text = login;
-            if (ativo = true) chkAtivo.Checked = ativo;
+            if (chkAtivo.Checked) ativo = "Sim";
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            string ativo = "Nao";
+            if (chkAtivo.Checked) ativo = "Sim";
             Usuario usuario = new(
                 Convert.ToInt32(txtIdUsuario.Text),
                 txtEmail.Text,
                 txtSenha.Text,
-                chkAtivo.Checked
+                ativo
                 );
 
             if (txtSenha.Text != string.Empty && txtConfSenha.Text != string.Empty)

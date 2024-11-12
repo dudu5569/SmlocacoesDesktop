@@ -212,6 +212,8 @@ namespace SmLocações
                         emails.Email_Associado_Cliente(Convert.ToInt32(txtIdClienteEmail.Text), emails.Id);
                         MessageBox.Show("Email inserido com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         txtEmail.Clear();
+                        this.tabControl1.SelectedTab = tabPage5;
+                        txtIdClienteCartao.Text = txtIdClienteEmail.Text;
                     }
                 }
             }
@@ -317,6 +319,13 @@ namespace SmLocações
                     if (cartoes.ID > 0)
                     {
                         MessageBox.Show("Cartão registrado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtIdClienteCartao.Clear();
+                        txtCvvCartao.Clear();
+                        txtTipoCartao.Clear();
+                        txtTitularCartao.Clear();
+                        txtBandeiraCartao.Clear();
+                        txtNumeroCartao.Clear();
+                        txtValidadeCartao.Clear();
                     }
                 }
                 else

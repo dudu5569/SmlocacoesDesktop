@@ -24,12 +24,12 @@ namespace SmLocaçõesLib
 
         public DateTime? Data_Cadastro {  get; set; } = DateTime.Now;
 
-        bool? Ativo {  get; set; }
+         public string? Ativo {  get; set; }
 
         public Funcionario() {
             Nivel = new();
         }
-        public Funcionario(int id, Niveis? id_Nivel, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro, bool? ativo)
+        public Funcionario(int id, Niveis? id_Nivel, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro, string? ativo)
         {
             ID = id;
             Nivel = id_Nivel;
@@ -40,7 +40,7 @@ namespace SmLocaçõesLib
             Ativo = ativo;
         }
 
-        public Funcionario(Niveis? id_Nivel, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro, bool? ativo)
+        public Funcionario(Niveis? id_Nivel, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro, string? ativo)
         {
             Nivel = id_Nivel;
             Nome = nome;
@@ -48,6 +48,13 @@ namespace SmLocaçõesLib
             Data_Nascimento = data_Nascimento;
             Data_Cadastro = data_Cadastro;
             Ativo = ativo;
+        }
+
+        public Funcionario(int iD, Niveis? nivel, string? nome)
+        {
+            ID = iD;
+            Nivel = nivel;
+            Nome = nome;
         }
 
         public void Inserir()
@@ -60,7 +67,7 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("spdata_nasc", Data_Nascimento);
             cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
-            cmd.Parameters.AddWithValue("ativo", Ativo);
+            cmd.Parameters.AddWithValue("spativo", Ativo);
 
             ID = Convert.ToInt32(cmd.ExecuteScalar());
         }
@@ -99,7 +106,7 @@ namespace SmLocaçõesLib
                 dr.GetString(3),
                 dr.GetDateTime(4),
                 dr.GetDateTime(5),
-                dr.GetBoolean(6)
+                dr.GetString(6)
                 );
             }
             return funcionario;
@@ -116,13 +123,9 @@ namespace SmLocaçõesLib
             {
                 lista.Add(
                     new(
-                dr.GetInt32(0),
-                Niveis.ObterPorId(dr.GetInt32(1)),
-                dr.GetString(2),
-                dr.GetString(3),
-                dr.GetDateTime(4),
-                dr.GetDateTime(5),
-                dr.GetBoolean(6)
+                    dr.GetInt32(0),
+                    Niveis.ObterPorId(dr.GetInt32(1)),
+                    dr.GetString(2)
                         ));
             }
             cmd.Connection.Close();

@@ -28,7 +28,10 @@ namespace SmLocações
 
         private void btnInserirFuncionario_Click(object sender, EventArgs e)
         {
-            bool isAtivo = chkAivo.Checked;
+            string isAtivo = "Nao";
+            if (chkAivo.Checked) isAtivo = "Sim";
+
+
             msktxtCpf.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             Funcionario funcionario = new Funcionario(
                Niveis.ObterPorId(Convert.ToInt32(cmbNivel.SelectedValue)), // Passando o objeto Niveis

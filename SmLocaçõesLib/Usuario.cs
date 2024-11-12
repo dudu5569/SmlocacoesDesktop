@@ -18,11 +18,11 @@ namespace SmLocaçõesLib
          public string? Login { get; set; }
 
         public string? Senha { get; set; }
-        public bool Ativo { get; set; }
+        public string? Ativo { get; set; }
 
  
 
-        public Usuario (int id, string? login, string? senha, bool ativo)
+        public Usuario (int id, string? login, string? senha, string ativo)
         {
             Id = id;
             Login = login;
@@ -37,7 +37,7 @@ namespace SmLocaçõesLib
         {
             Login = login;
         }
-        public Usuario(Funcionario id_funcionario, string? login, string? senha, bool ativo)
+        public Usuario(Funcionario id_funcionario, string? login, string? senha, string ativo)
         {
             Id_funcionario = id_funcionario;
             Login = login;
@@ -45,7 +45,7 @@ namespace SmLocaçõesLib
             Ativo = ativo;
         }
 
-        public Usuario(int id, Funcionario id_funcionario, string? login, string? senha, bool ativo)
+        public Usuario(int id, Funcionario id_funcionario, string? login, string? senha, string ativo)
         {
             Id = id;
             Id_funcionario = id_funcionario;
@@ -59,7 +59,7 @@ namespace SmLocaçõesLib
             Id_funcionario = id_funcionario;
         }
 
-        public Usuario(string? login, string? senha, bool ativo)
+        public Usuario(string? login, string? senha, string ativo)
         {
             Login = login;
             Senha = senha;
@@ -124,7 +124,7 @@ namespace SmLocaçõesLib
                     Funcionario.ObterporId(dr.GetInt32(1)),
                     dr.GetString(2),
                     dr.GetString(3),
-                    dr.GetBoolean(4)
+                    dr.GetString(4)
                         )
                     );
             }
@@ -155,7 +155,7 @@ namespace SmLocaçõesLib
                     Funcionario.ObterporId(dr.GetInt32(1)),
                     dr.GetString(2),
                     dr.GetString(3),
-                    dr.GetBoolean(4)
+                    dr.GetString(4)
                     ));
             }
             cmd.Connection.Close();

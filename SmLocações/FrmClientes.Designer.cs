@@ -122,7 +122,6 @@
             txtValidadeCartao = new TextBox();
             txtNumeroCartao = new TextBox();
             txtBandeiraCartao = new TextBox();
-            txtTipoCartao = new TextBox();
             txtTitularCartao = new TextBox();
             label26 = new Label();
             label25 = new Label();
@@ -831,7 +830,6 @@
             tabPage5.Controls.Add(txtValidadeCartao);
             tabPage5.Controls.Add(txtNumeroCartao);
             tabPage5.Controls.Add(txtBandeiraCartao);
-            tabPage5.Controls.Add(txtTipoCartao);
             tabPage5.Controls.Add(txtTitularCartao);
             tabPage5.Controls.Add(label26);
             tabPage5.Controls.Add(label25);
@@ -952,13 +950,6 @@
             txtBandeiraCartao.Name = "txtBandeiraCartao";
             txtBandeiraCartao.Size = new Size(100, 23);
             txtBandeiraCartao.TabIndex = 13;
-            // 
-            // txtTipoCartao
-            // 
-            txtTipoCartao.Location = new Point(282, 138);
-            txtTipoCartao.Name = "txtTipoCartao";
-            txtTipoCartao.Size = new Size(100, 23);
-            txtTipoCartao.TabIndex = 13;
             // 
             // txtTitularCartao
             // 
@@ -1136,7 +1127,6 @@
         private TextBox txtCvvCartao;
         private TextBox txtNumeroCartao;
         private TextBox txtBandeiraCartao;
-        private TextBox txtTipoCartao;
         private Guna.UI2.WinForms.Guna2Button btnInserirCartao;
         private Guna.UI2.WinForms.Guna2Button btnEscolherClienteCartao;
         private Guna.UI2.WinForms.Guna2Button btncancelarCartao;

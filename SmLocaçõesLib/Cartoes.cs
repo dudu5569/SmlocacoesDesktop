@@ -61,7 +61,7 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spnumero_cartao", Numero_Cartao);
             cmd.Parameters.AddWithValue("spvalidade", Validade);
             cmd.Parameters.AddWithValue("spcvv", CVV);
-            cmd.Parameters.AddWithValue("sptipo", Tipo);
+            cmd.Parameters.AddWithValue("tipo", Tipo);
             var dr = cmd.ExecuteReader();
             if (dr.Read()) ID = dr.GetInt32(0);
         }

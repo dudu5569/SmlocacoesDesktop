@@ -39,7 +39,7 @@ namespace SmLocaçõesLib
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp_insert_niveis";
-            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("spcargo", Nome);
             cmd.Parameters.AddWithValue("spsigla", Sigla);
             var dr = cmd.ExecuteReader();
             while (dr.Read())
