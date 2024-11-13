@@ -1054,7 +1054,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmClientes";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = " ";
+            Text = "Inserir Clientes";
             Load += FrmClientes_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

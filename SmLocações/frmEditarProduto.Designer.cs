@@ -384,7 +384,7 @@
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmEditarProduto";
-            Text = "frmEditarProduto";
+            Text = "Editar Produtos";
             Load += frmEditarProduto_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
