@@ -3,7 +3,7 @@
 public class Produtos
 {
     public int ID { get; set; }
-    public Categorias Id_Categoria { get; set; }  
+    public Categorias? Id_Categoria { get; set; }  
     public string? Nome_Produto { get; set; }
     public string? Imagem { get; set; }
     public Decimal? Valor { get; set; }
@@ -12,7 +12,6 @@ public class Produtos
     public string? Destaque { get; set; }
 
 
-    // Construtor
     public Produtos(Categorias categoria, string? nome_Produto, string? imagem, decimal? valor, string? unidade_Venda, string? descricao, string? destaque)
     {
         Id_Categoria = categoria;
@@ -23,6 +22,30 @@ public class Produtos
         Descricao = descricao;
         Destaque = destaque;
     }
+
+    public Produtos(int iD, Categorias id_Categoria, string? nome_Produto, string? imagem, decimal? valor, string? unidade_Venda, string? descricao, string? destaque)
+    {
+        ID = iD;
+        Id_Categoria = id_Categoria;
+        Nome_Produto = nome_Produto;
+        Imagem = imagem;
+        Valor = valor;
+        Unidade_Venda = unidade_Venda;
+        Descricao = descricao;
+        Destaque = destaque;
+    }
+
+    public Produtos(int id, string? nome_Produto, string? imagem, decimal? valor, string? unidade_Venda, string? descricao, string? destaque)
+    {
+        ID = id;
+        Nome_Produto = nome_Produto;
+        Imagem = imagem;
+        Valor = valor;
+        Unidade_Venda = unidade_Venda;
+        Descricao = descricao;
+        Destaque = destaque;
+    }
+
 
     // Método para inserir um produto no banco
     public void InserirProduto()
@@ -67,6 +90,7 @@ public class Produtos
         var dr = cmd.ExecuteReader();
 
         // Obter os índices das colunas
+        int indexId = dr.GetOrdinal("id");
         int indexCategoria = dr.GetOrdinal("id_categoria");
         int indexNomeProduto = dr.GetOrdinal("nome_produto");
         int indexImagem = dr.GetOrdinal("imagem");
@@ -80,6 +104,7 @@ public class Produtos
 
             // Acessando as colunas de forma robusta
             lista.Add(new Produtos(
+                dr.GetInt32(indexId),
                 Categorias.ObterPorId(dr.GetInt32(indexCategoria)),   
                 dr.GetString(indexNomeProduto),                         
                 dr.GetString(indexImagem),                              
@@ -92,5 +117,21 @@ public class Produtos
 
         cmd.Connection.Close();
         return lista;
+    }
+
+    public void AtualizaProdutos()
+    {
+        var cmd = Banco.Abrir();
+        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        cmd.CommandText = "sp_update_produtos";
+        cmd.Parameters.AddWithValue("spid", ID);
+        cmd.Parameters.AddWithValue("spnome", Nome_Produto);
+        cmd.Parameters.AddWithValue("spimagem", Imagem);
+        cmd.Parameters.AddWithValue("spvalor", Valor);
+        cmd.Parameters.AddWithValue("spunidade_venda", Unidade_Venda);
+        cmd.Parameters.AddWithValue("spdescricao", Descricao);
+        cmd.Parameters.AddWithValue("spdestaque", Destaque);
+        cmd.ExecuteNonQuery();
+
     }
 }
