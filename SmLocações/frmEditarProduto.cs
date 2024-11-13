@@ -122,8 +122,14 @@ namespace SmLocações
                 cmbDestaqueProduto.Text
                 );
             produtos.AtualizaProdutos();
-            MessageBox.Show($"{produtos.Nome_Produto} foi atualizado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtArquivoImagem.Clear();
+            txtDescricao.Clear();
+            txtIdProduto.Clear();
+            txtNomeProduto.Clear();
+            txtUnidadesVenda.Clear();
+            txtValor.Clear();
             CarregaGrid();
+            MessageBox.Show($"{produtos.Nome_Produto} foi atualizado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             if (textBoxes.Length == 0)

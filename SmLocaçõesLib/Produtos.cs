@@ -65,14 +65,18 @@ public class Produtos
 
             using (var dr = cmd.ExecuteReader())
             {
-                if (dr.Read()) ID = dr.GetInt32(0);
+                if (dr.Read()){
+                    ID = dr.GetInt32(0);
+                    cmd.Connection.Close();
+                }
             }
         }
+
     }
 
     public static List<Produtos> ObterListaProdutos(string? nome)
     {
-        List<Produtos> lista = new List<Produtos>();
+        List<Produtos> lista = new();
         var cmd = Banco.Abrir();
         cmd.CommandType = System.Data.CommandType.Text;
 
@@ -80,7 +84,7 @@ public class Produtos
 
         if (nome == "")
         {
-            cmd.CommandText = "SELECT * FROM produtos ORDER BY nome_produto ";
+            cmd.CommandText = "SELECT * FROM produtos ORDER BY nome_produto";
         }
         else
         {
@@ -101,8 +105,6 @@ public class Produtos
 
         while (dr.Read())
         {
-
-            // Acessando as colunas de forma robusta
             lista.Add(new Produtos(
                 dr.GetInt32(indexId),
                 Categorias.ObterPorId(dr.GetInt32(indexCategoria)),   
@@ -132,6 +134,7 @@ public class Produtos
         cmd.Parameters.AddWithValue("spdescricao", Descricao);
         cmd.Parameters.AddWithValue("spdestaque", Destaque);
         cmd.ExecuteNonQuery();
+        cmd.Connection.Close();
 
     }
 }

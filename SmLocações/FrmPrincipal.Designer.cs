@@ -40,7 +40,6 @@
             nívelToolStripMenuItem = new ToolStripMenuItem();
             produtosToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem4 = new ToolStripMenuItem();
-            editarToolStripMenuItem1 = new ToolStripMenuItem();
             pedidosToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
@@ -124,7 +123,7 @@
             // 
             // produtosToolStripMenuItem
             // 
-            produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem4, editarToolStripMenuItem1 });
+            produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem4 });
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
             produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "&Produtos";
@@ -135,12 +134,6 @@
             novoToolStripMenuItem4.Size = new Size(180, 22);
             novoToolStripMenuItem4.Text = "&Novo";
             novoToolStripMenuItem4.Click += novoToolStripMenuItem4_Click;
-            // 
-            // editarToolStripMenuItem1
-            // 
-            editarToolStripMenuItem1.Name = "editarToolStripMenuItem1";
-            editarToolStripMenuItem1.Size = new Size(180, 22);
-            editarToolStripMenuItem1.Text = "&Editar";
             // 
             // pedidosToolStripMenuItem
             // 
@@ -216,6 +209,5 @@
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem novoToolStripMenuItem4;
-        private ToolStripMenuItem editarToolStripMenuItem1;
     }
 }
