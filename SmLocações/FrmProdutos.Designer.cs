@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProdutos));
             label5 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -203,7 +204,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges7;
+            btnInserir.CustomizableEdges = customizableEdges1;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -213,7 +214,7 @@
             btnInserir.ForeColor = Color.White;
             btnInserir.Location = new Point(210, 308);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 12;
             btnInserir.Text = "&inserir";
@@ -225,7 +226,7 @@
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges9;
+            btnCancelar.CustomizableEdges = customizableEdges3;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -235,7 +236,7 @@
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(374, 308);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 13;
             btnCancelar.Text = "&Cancelar";
@@ -254,7 +255,7 @@
             btncolherImagem.AutoRoundedCorners = true;
             btncolherImagem.BorderRadius = 10;
             btncolherImagem.BorderThickness = 1;
-            btncolherImagem.CustomizableEdges = customizableEdges11;
+            btncolherImagem.CustomizableEdges = customizableEdges5;
             btncolherImagem.DisabledState.BorderColor = Color.DarkGray;
             btncolherImagem.DisabledState.CustomBorderColor = Color.DarkGray;
             btncolherImagem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -263,7 +264,7 @@
             btncolherImagem.ForeColor = Color.White;
             btncolherImagem.Location = new Point(602, 364);
             btncolherImagem.Name = "btncolherImagem";
-            btncolherImagem.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btncolherImagem.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btncolherImagem.Size = new Size(122, 23);
             btncolherImagem.TabIndex = 14;
             btncolherImagem.Text = "&Escolher Imagem";
@@ -302,6 +303,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label5);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmProdutos";
             Text = "FrmProdutos";
             Load += FrmProdutos_Load;

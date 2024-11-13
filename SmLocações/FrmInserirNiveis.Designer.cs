@@ -32,6 +32,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInserirNiveis));
             groupBox1 = new GroupBox();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             btnInserir = new Guna.UI2.WinForms.Guna2Button();
@@ -150,6 +151,7 @@
             ClientSize = new Size(458, 350);
             Controls.Add(label1);
             Controls.Add(groupBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmInserirNiveis";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmInserirNiveis";

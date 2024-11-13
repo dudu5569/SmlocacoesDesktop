@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarPedidos));
             dgvVerPedidos = new DataGridView();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvVerPedidos).BeginInit();
@@ -58,6 +59,7 @@
             ClientSize = new Size(1136, 491);
             Controls.Add(label1);
             Controls.Add(dgvVerPedidos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmConsultarPedidos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ConsultarPedidos";

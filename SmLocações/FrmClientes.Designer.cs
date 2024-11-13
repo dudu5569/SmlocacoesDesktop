@@ -60,6 +60,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientes));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
@@ -114,6 +115,7 @@
             label21 = new Label();
             label20 = new Label();
             tabPage5 = new TabPage();
+            cmbTipoCartao = new ComboBox();
             btnEscolherClienteCartao = new Guna.UI2.WinForms.Guna2Button();
             btncancelarCartao = new Guna.UI2.WinForms.Guna2Button();
             btnInserirCartao = new Guna.UI2.WinForms.Guna2Button();
@@ -131,7 +133,6 @@
             label19 = new Label();
             label18 = new Label();
             label5 = new Label();
-            cmbTipoCartao = new ComboBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -848,6 +849,15 @@
             tabPage5.Text = "Cartão";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // cmbTipoCartao
+            // 
+            cmbTipoCartao.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbTipoCartao.FormattingEnabled = true;
+            cmbTipoCartao.Location = new Point(285, 138);
+            cmbTipoCartao.Name = "cmbTipoCartao";
+            cmbTipoCartao.Size = new Size(117, 23);
+            cmbTipoCartao.TabIndex = 18;
+            // 
             // btnEscolherClienteCartao
             // 
             btnEscolherClienteCartao.Animated = true;
@@ -1034,15 +1044,6 @@
             label5.TabIndex = 2;
             label5.Text = "Clientes";
             // 
-            // cmbTipoCartao
-            // 
-            cmbTipoCartao.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbTipoCartao.FormattingEnabled = true;
-            cmbTipoCartao.Location = new Point(285, 138);
-            cmbTipoCartao.Name = "cmbTipoCartao";
-            cmbTipoCartao.Size = new Size(117, 23);
-            cmbTipoCartao.TabIndex = 18;
-            // 
             // FrmClientes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1050,6 +1051,7 @@
             ClientSize = new Size(787, 472);
             Controls.Add(label5);
             Controls.Add(tabControl1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = " ";

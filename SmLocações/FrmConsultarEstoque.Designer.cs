@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarEstoque));
             dgvProdutos = new DataGridView();
             produto = new DataGridViewTextBoxColumn();
             categoria = new DataGridViewTextBoxColumn();
@@ -114,6 +115,7 @@
             ClientSize = new Size(992, 621);
             Controls.Add(label1);
             Controls.Add(dgvProdutos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmConsultarEstoque";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Estoque";

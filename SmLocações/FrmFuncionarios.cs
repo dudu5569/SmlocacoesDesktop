@@ -146,7 +146,7 @@ namespace SmLocações
 
         private async void txtBusca_Click(object sender, EventArgs e)
         {
-            string cep = txtCEP.Text; 
+            string cep = txtCEP.Text;
             if (!string.IsNullOrEmpty(cep))
             {
                 var endereco = await BuscaEndereco(cep);
@@ -236,7 +236,7 @@ namespace SmLocações
             emails.InserirEmail(txtEmail.Text);
             if (emails.Id > 0)
             {
-                emails.Email_Associado_Funcionario(Convert.ToInt32(txtIdFuncionarioEmail.Text),emails.Id);
+                emails.Email_Associado_Funcionario(Convert.ToInt32(txtIdFuncionarioEmail.Text), emails.Id);
                 MessageBox.Show("Email inserido com sucesso!", "SmLocações");
                 txtEmail.Clear();
             }
@@ -246,6 +246,11 @@ namespace SmLocações
         {
             txtIdFuncionarioEmail.ReadOnly = false;
             txtIdFuncionarioEmail.Focus();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -58,6 +58,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFuncionarios));
             label1 = new Label();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
@@ -521,6 +522,7 @@
             label8.Size = new Size(51, 15);
             label8.TabIndex = 18;
             label8.Text = "Número";
+            label8.Click += label8_Click;
             // 
             // label7
             // 
@@ -890,6 +892,7 @@
             ClientSize = new Size(790, 508);
             Controls.Add(tabControl1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmFuncionarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmFuncionarios";

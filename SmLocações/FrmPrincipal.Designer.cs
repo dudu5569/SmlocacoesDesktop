@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             menuStrip1 = new MenuStrip();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             clienteToolStripMenuItem = new ToolStripMenuItem();
@@ -69,7 +70,7 @@
             // 
             clienteToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem1 });
             clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            clienteToolStripMenuItem.Size = new Size(180, 22);
+            clienteToolStripMenuItem.Size = new Size(137, 22);
             clienteToolStripMenuItem.Text = "&Cliente";
             // 
             // novoToolStripMenuItem1
@@ -83,7 +84,7 @@
             // 
             funcionárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem2 });
             funcionárioToolStripMenuItem.Name = "funcionárioToolStripMenuItem";
-            funcionárioToolStripMenuItem.Size = new Size(180, 22);
+            funcionárioToolStripMenuItem.Size = new Size(137, 22);
             funcionárioToolStripMenuItem.Text = "&Funcionário";
             // 
             // novoToolStripMenuItem2
@@ -97,7 +98,7 @@
             // 
             usuárioToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem3, editarToolStripMenuItem });
             usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            usuárioToolStripMenuItem.Size = new Size(180, 22);
+            usuárioToolStripMenuItem.Size = new Size(137, 22);
             usuárioToolStripMenuItem.Text = "&Usuário";
             // 
             // novoToolStripMenuItem3
@@ -117,7 +118,7 @@
             // nívelToolStripMenuItem
             // 
             nívelToolStripMenuItem.Name = "nívelToolStripMenuItem";
-            nívelToolStripMenuItem.Size = new Size(180, 22);
+            nívelToolStripMenuItem.Size = new Size(137, 22);
             nívelToolStripMenuItem.Text = "&Nível";
             nívelToolStripMenuItem.Click += nívelToolStripMenuItem_Click;
             // 
@@ -125,13 +126,13 @@
             // 
             produtosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem4 });
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(180, 22);
+            produtosToolStripMenuItem.Size = new Size(137, 22);
             produtosToolStripMenuItem.Text = "&Produtos";
             // 
             // novoToolStripMenuItem4
             // 
             novoToolStripMenuItem4.Name = "novoToolStripMenuItem4";
-            novoToolStripMenuItem4.Size = new Size(180, 22);
+            novoToolStripMenuItem4.Size = new Size(103, 22);
             novoToolStripMenuItem4.Text = "&Novo";
             novoToolStripMenuItem4.Click += novoToolStripMenuItem4_Click;
             // 
@@ -178,6 +179,7 @@
             BackColor = Color.DimGray;
             ClientSize = new Size(1084, 623);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "FrmPrincipal";
