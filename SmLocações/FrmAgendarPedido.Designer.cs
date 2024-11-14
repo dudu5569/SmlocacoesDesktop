@@ -65,7 +65,7 @@
             txtQuantidade = new TextBox();
             txtIdPedido = new TextBox();
             cmbProduto = new ComboBox();
-            cmbCategoriaPedido = new ComboBox();
+            cmbCategoria = new ComboBox();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
@@ -73,12 +73,15 @@
             label6 = new Label();
             tabPage3 = new TabPage();
             tabPage4 = new TabPage();
-            dataGridView1 = new DataGridView();
+            dgvClientes = new DataGridView();
+            id = new DataGridViewTextBoxColumn();
+            cliente = new DataGridViewTextBoxColumn();
+            cpf = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -87,9 +90,9 @@
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(331, 56);
             label1.Name = "label1";
-            label1.Size = new Size(263, 45);
+            label1.Size = new Size(228, 45);
             label1.TabIndex = 0;
-            label1.Text = "Agendar Pedido";
+            label1.Text = "Nova Locação";
             // 
             // label2
             // 
@@ -137,6 +140,7 @@
             // 
             // cmbFuncionario
             // 
+            cmbFuncionario.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbFuncionario.FormattingEnabled = true;
             cmbFuncionario.Location = new Point(205, 94);
             cmbFuncionario.Name = "cmbFuncionario";
@@ -287,7 +291,7 @@
             tabPage2.Controls.Add(txtQuantidade);
             tabPage2.Controls.Add(txtIdPedido);
             tabPage2.Controls.Add(cmbProduto);
-            tabPage2.Controls.Add(cmbCategoriaPedido);
+            tabPage2.Controls.Add(cmbCategoria);
             tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(label8);
@@ -316,7 +320,7 @@
             btnEscolherLocacao.FillColor = Color.DodgerBlue;
             btnEscolherLocacao.Font = new Font("Segoe UI", 9F);
             btnEscolherLocacao.ForeColor = Color.White;
-            btnEscolherLocacao.Location = new Point(290, 220);
+            btnEscolherLocacao.Location = new Point(438, 220);
             btnEscolherLocacao.Name = "btnEscolherLocacao";
             btnEscolherLocacao.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnEscolherLocacao.Size = new Size(122, 23);
@@ -337,7 +341,7 @@
             btnCancelarProduto.FillColor = Color.Red;
             btnCancelarProduto.Font = new Font("Segoe UI", 9F);
             btnCancelarProduto.ForeColor = Color.White;
-            btnCancelarProduto.Location = new Point(424, 220);
+            btnCancelarProduto.Location = new Point(297, 220);
             btnCancelarProduto.Name = "btnCancelarProduto";
             btnCancelarProduto.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnCancelarProduto.Size = new Size(122, 23);
@@ -390,19 +394,23 @@
             // 
             // cmbProduto
             // 
+            cmbProduto.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbProduto.FormattingEnabled = true;
             cmbProduto.Location = new Point(408, 104);
             cmbProduto.Name = "cmbProduto";
             cmbProduto.Size = new Size(121, 23);
             cmbProduto.TabIndex = 2;
             // 
-            // cmbCategoriaPedido
+            // cmbCategoria
             // 
-            cmbCategoriaPedido.FormattingEnabled = true;
-            cmbCategoriaPedido.Location = new Point(255, 104);
-            cmbCategoriaPedido.Name = "cmbCategoriaPedido";
-            cmbCategoriaPedido.Size = new Size(121, 23);
-            cmbCategoriaPedido.TabIndex = 1;
+            cmbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Items.AddRange(new object[] { "" });
+            cmbCategoria.Location = new Point(255, 104);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(121, 23);
+            cmbCategoria.TabIndex = 1;
+            cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
             // 
             // label10
             // 
@@ -445,9 +453,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(156, 86);
             label6.Name = "label6";
-            label6.Size = new Size(18, 15);
+            label6.Size = new Size(75, 15);
             label6.TabIndex = 9;
-            label6.Text = "ID";
+            label6.Text = "ID do Pedido";
             // 
             // tabPage3
             // 
@@ -461,7 +469,7 @@
             // 
             // tabPage4
             // 
-            tabPage4.Controls.Add(dataGridView1);
+            tabPage4.Controls.Add(dgvClientes);
             tabPage4.Location = new Point(4, 24);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3);
@@ -470,13 +478,40 @@
             tabPage4.Text = "Clientes";
             tabPage4.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvClientes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(6, 6);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(695, 323);
-            dataGridView1.TabIndex = 0;
+            dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvClientes.Columns.AddRange(new DataGridViewColumn[] { id, cliente, cpf });
+            dgvClientes.Location = new Point(6, 6);
+            dgvClientes.Name = "dgvClientes";
+            dgvClientes.RowHeadersVisible = false;
+            dgvClientes.Size = new Size(695, 323);
+            dgvClientes.TabIndex = 0;
+            dgvClientes.CellClick += dgvClientes_CellClick;
+            // 
+            // id
+            // 
+            id.Frozen = true;
+            id.HeaderText = "ID";
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Width = 50;
+            // 
+            // cliente
+            // 
+            cliente.Frozen = true;
+            cliente.HeaderText = "Cliente";
+            cliente.Name = "cliente";
+            cliente.ReadOnly = true;
+            cliente.Width = 450;
+            // 
+            // cpf
+            // 
+            cpf.Frozen = true;
+            cpf.HeaderText = "CPF";
+            cpf.Name = "cpf";
+            cpf.ReadOnly = true;
+            cpf.Width = 200;
             // 
             // FrmAgendarPedido
             // 
@@ -488,7 +523,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmAgendarPedido";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AgendarPedido";
+            Text = "Agendar Pedido";
             Load += FrmAgendarPedido_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -496,7 +531,7 @@
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -525,7 +560,7 @@
         private TextBox txtQuantidade;
         private TextBox txtIdPedido;
         private ComboBox cmbProduto;
-        private ComboBox cmbCategoriaPedido;
+        private ComboBox cmbCategoria;
         private Label label10;
         private Label label9;
         private Label label8;
@@ -535,6 +570,9 @@
         private TextBox txtIdCliente;
         private Label label11;
         private TabPage tabPage4;
-        private DataGridView dataGridView1;
+        private DataGridView dgvClientes;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn cliente;
+        private DataGridViewTextBoxColumn cpf;
     }
 }

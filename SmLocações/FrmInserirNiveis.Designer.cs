@@ -154,7 +154,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmInserirNiveis";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmInserirNiveis";
+            Text = "Inserir Cargos";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

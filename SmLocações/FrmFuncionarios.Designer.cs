@@ -895,7 +895,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmFuncionarios";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmFuncionarios";
+            Text = "Inserir Dados dos Funcionários";
             Load += FrmFuncionarios_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

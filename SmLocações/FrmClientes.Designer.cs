@@ -28,49 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges49 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges50 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges51 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges52 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges53 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges54 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges55 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges56 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges57 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges58 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges59 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges60 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges61 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges62 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges63 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges64 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmClientes));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            dataCadastro = new DateTimePicker();
             btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             btnInserir = new Guna.UI2.WinForms.Guna2Button();
-            dataCadastro = new DateTimePicker();
             dataNascimento = new DateTimePicker();
             mktxtCPF = new MaskedTextBox();
             txtNomeCliente = new TextBox();
-            label4 = new Label();
             label3 = new Label();
+            label4 = new Label();
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
@@ -156,14 +156,14 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(dataCadastro);
             tabPage1.Controls.Add(btnCancelar);
             tabPage1.Controls.Add(btnInserir);
-            tabPage1.Controls.Add(dataCadastro);
             tabPage1.Controls.Add(dataNascimento);
             tabPage1.Controls.Add(mktxtCPF);
             tabPage1.Controls.Add(txtNomeCliente);
-            tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label2);
             tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 24);
@@ -175,13 +175,21 @@
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
             // 
+            // dataCadastro
+            // 
+            dataCadastro.Format = DateTimePickerFormat.Short;
+            dataCadastro.Location = new Point(298, 155);
+            dataCadastro.Name = "dataCadastro";
+            dataCadastro.Size = new Size(179, 23);
+            dataCadastro.TabIndex = 10;
+            // 
             // btnCancelar
             // 
             btnCancelar.Animated = true;
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges1;
+            btnCancelar.CustomizableEdges = customizableEdges33;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -191,7 +199,7 @@
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(293, 204);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges34;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "&Cancelar";
@@ -203,7 +211,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges3;
+            btnInserir.CustomizableEdges = customizableEdges35;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -213,19 +221,11 @@
             btnInserir.ForeColor = Color.White;
             btnInserir.Location = new Point(144, 204);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges36;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 5;
             btnInserir.Text = "&inserir";
             btnInserir.Click += btnInserir_Click;
-            // 
-            // dataCadastro
-            // 
-            dataCadastro.Format = DateTimePickerFormat.Short;
-            dataCadastro.Location = new Point(298, 155);
-            dataCadastro.Name = "dataCadastro";
-            dataCadastro.Size = new Size(179, 23);
-            dataCadastro.TabIndex = 3;
             // 
             // dataNascimento
             // 
@@ -251,6 +251,15 @@
             txtNomeCliente.Size = new Size(249, 23);
             txtNomeCliente.TabIndex = 0;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(298, 137);
+            label3.Name = "label3";
+            label3.Size = new Size(97, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Data de Cadastro";
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -259,15 +268,6 @@
             label4.Size = new Size(114, 15);
             label4.TabIndex = 9;
             label4.Text = "Data de Nascimento";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(298, 137);
-            label3.Name = "label3";
-            label3.Size = new Size(97, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Data de Cadastro";
             // 
             // label2
             // 
@@ -365,7 +365,7 @@
             btnCancelarContato.AutoRoundedCorners = true;
             btnCancelarContato.BorderRadius = 10;
             btnCancelarContato.BorderThickness = 1;
-            btnCancelarContato.CustomizableEdges = customizableEdges5;
+            btnCancelarContato.CustomizableEdges = customizableEdges37;
             btnCancelarContato.DisabledState.BorderColor = Color.DarkGray;
             btnCancelarContato.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelarContato.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -375,7 +375,7 @@
             btnCancelarContato.ForeColor = Color.White;
             btnCancelarContato.Location = new Point(374, 196);
             btnCancelarContato.Name = "btnCancelarContato";
-            btnCancelarContato.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnCancelarContato.ShadowDecoration.CustomizableEdges = customizableEdges38;
             btnCancelarContato.Size = new Size(122, 23);
             btnCancelarContato.TabIndex = 3;
             btnCancelarContato.Text = "&Cancelar";
@@ -387,7 +387,7 @@
             btnEscolherClienteContato.AutoRoundedCorners = true;
             btnEscolherClienteContato.BorderRadius = 10;
             btnEscolherClienteContato.BorderThickness = 1;
-            btnEscolherClienteContato.CustomizableEdges = customizableEdges7;
+            btnEscolherClienteContato.CustomizableEdges = customizableEdges39;
             btnEscolherClienteContato.DisabledState.BorderColor = Color.DarkGray;
             btnEscolherClienteContato.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEscolherClienteContato.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -397,7 +397,7 @@
             btnEscolherClienteContato.ForeColor = Color.White;
             btnEscolherClienteContato.Location = new Point(229, 196);
             btnEscolherClienteContato.Name = "btnEscolherClienteContato";
-            btnEscolherClienteContato.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnEscolherClienteContato.ShadowDecoration.CustomizableEdges = customizableEdges40;
             btnEscolherClienteContato.Size = new Size(122, 23);
             btnEscolherClienteContato.TabIndex = 5;
             btnEscolherClienteContato.Text = "&Escolher Cliente";
@@ -409,7 +409,7 @@
             btnInserirContato.AutoRoundedCorners = true;
             btnInserirContato.BorderRadius = 10;
             btnInserirContato.BorderThickness = 1;
-            btnInserirContato.CustomizableEdges = customizableEdges9;
+            btnInserirContato.CustomizableEdges = customizableEdges41;
             btnInserirContato.DisabledState.BorderColor = Color.DarkGray;
             btnInserirContato.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserirContato.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -419,7 +419,7 @@
             btnInserirContato.ForeColor = Color.White;
             btnInserirContato.Location = new Point(84, 196);
             btnInserirContato.Name = "btnInserirContato";
-            btnInserirContato.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnInserirContato.ShadowDecoration.CustomizableEdges = customizableEdges42;
             btnInserirContato.Size = new Size(122, 23);
             btnInserirContato.TabIndex = 4;
             btnInserirContato.Text = "&inserir";
@@ -479,7 +479,7 @@
             // btnBuscaCep
             // 
             btnBuscaCep.BorderRadius = 16;
-            btnBuscaCep.CustomizableEdges = customizableEdges11;
+            btnBuscaCep.CustomizableEdges = customizableEdges43;
             btnBuscaCep.DisabledState.BorderColor = Color.DarkGray;
             btnBuscaCep.DisabledState.CustomBorderColor = Color.DarkGray;
             btnBuscaCep.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -489,7 +489,7 @@
             btnBuscaCep.ForeColor = Color.White;
             btnBuscaCep.Location = new Point(298, 61);
             btnBuscaCep.Name = "btnBuscaCep";
-            btnBuscaCep.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnBuscaCep.ShadowDecoration.CustomizableEdges = customizableEdges44;
             btnBuscaCep.Size = new Size(116, 23);
             btnBuscaCep.TabIndex = 25;
             btnBuscaCep.Text = "&Buscar Cep";
@@ -517,7 +517,7 @@
             btnEscolerClienteEndereco.AutoRoundedCorners = true;
             btnEscolerClienteEndereco.BorderRadius = 10;
             btnEscolerClienteEndereco.BorderThickness = 1;
-            btnEscolerClienteEndereco.CustomizableEdges = customizableEdges13;
+            btnEscolerClienteEndereco.CustomizableEdges = customizableEdges45;
             btnEscolerClienteEndereco.DisabledState.BorderColor = Color.DarkGray;
             btnEscolerClienteEndereco.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEscolerClienteEndereco.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -527,7 +527,7 @@
             btnEscolerClienteEndereco.ForeColor = Color.White;
             btnEscolerClienteEndereco.Location = new Point(345, 273);
             btnEscolerClienteEndereco.Name = "btnEscolerClienteEndereco";
-            btnEscolerClienteEndereco.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnEscolerClienteEndereco.ShadowDecoration.CustomizableEdges = customizableEdges46;
             btnEscolerClienteEndereco.Size = new Size(122, 23);
             btnEscolerClienteEndereco.TabIndex = 10;
             btnEscolerClienteEndereco.Text = "&Escolher Cliente";
@@ -539,7 +539,7 @@
             btnCancelarEndereco.AutoRoundedCorners = true;
             btnCancelarEndereco.BorderRadius = 10;
             btnCancelarEndereco.BorderThickness = 1;
-            btnCancelarEndereco.CustomizableEdges = customizableEdges15;
+            btnCancelarEndereco.CustomizableEdges = customizableEdges47;
             btnCancelarEndereco.DisabledState.BorderColor = Color.DarkGray;
             btnCancelarEndereco.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelarEndereco.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -549,7 +549,7 @@
             btnCancelarEndereco.ForeColor = Color.White;
             btnCancelarEndereco.Location = new Point(345, 235);
             btnCancelarEndereco.Name = "btnCancelarEndereco";
-            btnCancelarEndereco.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnCancelarEndereco.ShadowDecoration.CustomizableEdges = customizableEdges48;
             btnCancelarEndereco.Size = new Size(122, 23);
             btnCancelarEndereco.TabIndex = 8;
             btnCancelarEndereco.Text = "&Cancelar";
@@ -561,7 +561,7 @@
             btnInserirEndereco.AutoRoundedCorners = true;
             btnInserirEndereco.BorderRadius = 10;
             btnInserirEndereco.BorderThickness = 1;
-            btnInserirEndereco.CustomizableEdges = customizableEdges17;
+            btnInserirEndereco.CustomizableEdges = customizableEdges49;
             btnInserirEndereco.DisabledState.BorderColor = Color.DarkGray;
             btnInserirEndereco.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserirEndereco.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -571,7 +571,7 @@
             btnInserirEndereco.ForeColor = Color.White;
             btnInserirEndereco.Location = new Point(199, 235);
             btnInserirEndereco.Name = "btnInserirEndereco";
-            btnInserirEndereco.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            btnInserirEndereco.ShadowDecoration.CustomizableEdges = customizableEdges50;
             btnInserirEndereco.Size = new Size(122, 23);
             btnInserirEndereco.TabIndex = 9;
             btnInserirEndereco.Text = "&inserir";
@@ -717,7 +717,7 @@
             btnEscolhaFuncionarioEmail.AutoRoundedCorners = true;
             btnEscolhaFuncionarioEmail.BorderRadius = 10;
             btnEscolhaFuncionarioEmail.BorderThickness = 1;
-            btnEscolhaFuncionarioEmail.CustomizableEdges = customizableEdges19;
+            btnEscolhaFuncionarioEmail.CustomizableEdges = customizableEdges51;
             btnEscolhaFuncionarioEmail.DisabledState.BorderColor = Color.DarkGray;
             btnEscolhaFuncionarioEmail.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEscolhaFuncionarioEmail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -727,7 +727,7 @@
             btnEscolhaFuncionarioEmail.ForeColor = Color.White;
             btnEscolhaFuncionarioEmail.Location = new Point(396, 206);
             btnEscolhaFuncionarioEmail.Name = "btnEscolhaFuncionarioEmail";
-            btnEscolhaFuncionarioEmail.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnEscolhaFuncionarioEmail.ShadowDecoration.CustomizableEdges = customizableEdges52;
             btnEscolhaFuncionarioEmail.Size = new Size(122, 23);
             btnEscolhaFuncionarioEmail.TabIndex = 15;
             btnEscolhaFuncionarioEmail.Text = "&Escolher Cliente";
@@ -739,7 +739,7 @@
             BtnInsereEmail.AutoRoundedCorners = true;
             BtnInsereEmail.BorderRadius = 10;
             BtnInsereEmail.BorderThickness = 1;
-            BtnInsereEmail.CustomizableEdges = customizableEdges21;
+            BtnInsereEmail.CustomizableEdges = customizableEdges53;
             BtnInsereEmail.DisabledState.BorderColor = Color.DarkGray;
             BtnInsereEmail.DisabledState.CustomBorderColor = Color.DarkGray;
             BtnInsereEmail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -749,7 +749,7 @@
             BtnInsereEmail.ForeColor = Color.White;
             BtnInsereEmail.Location = new Point(82, 206);
             BtnInsereEmail.Name = "BtnInsereEmail";
-            BtnInsereEmail.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            BtnInsereEmail.ShadowDecoration.CustomizableEdges = customizableEdges54;
             BtnInsereEmail.Size = new Size(122, 23);
             BtnInsereEmail.TabIndex = 14;
             BtnInsereEmail.Text = "&inserir";
@@ -761,7 +761,7 @@
             BtnCancelaEmail.AutoRoundedCorners = true;
             BtnCancelaEmail.BorderRadius = 10;
             BtnCancelaEmail.BorderThickness = 1;
-            BtnCancelaEmail.CustomizableEdges = customizableEdges23;
+            BtnCancelaEmail.CustomizableEdges = customizableEdges55;
             BtnCancelaEmail.DisabledState.BorderColor = Color.DarkGray;
             BtnCancelaEmail.DisabledState.CustomBorderColor = Color.DarkGray;
             BtnCancelaEmail.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -771,7 +771,7 @@
             BtnCancelaEmail.ForeColor = Color.White;
             BtnCancelaEmail.Location = new Point(239, 206);
             BtnCancelaEmail.Name = "BtnCancelaEmail";
-            BtnCancelaEmail.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            BtnCancelaEmail.ShadowDecoration.CustomizableEdges = customizableEdges56;
             BtnCancelaEmail.Size = new Size(122, 23);
             BtnCancelaEmail.TabIndex = 13;
             BtnCancelaEmail.Text = "&Cancelar";
@@ -785,7 +785,7 @@
             // 
             // txtIdClienteEmail
             // 
-            txtIdClienteEmail.CustomizableEdges = customizableEdges25;
+            txtIdClienteEmail.CustomizableEdges = customizableEdges57;
             txtIdClienteEmail.DefaultText = "";
             txtIdClienteEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtIdClienteEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -800,7 +800,7 @@
             txtIdClienteEmail.PlaceholderText = "";
             txtIdClienteEmail.ReadOnly = true;
             txtIdClienteEmail.SelectedText = "";
-            txtIdClienteEmail.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            txtIdClienteEmail.ShadowDecoration.CustomizableEdges = customizableEdges58;
             txtIdClienteEmail.Size = new Size(65, 23);
             txtIdClienteEmail.TabIndex = 11;
             // 
@@ -864,7 +864,7 @@
             btnEscolherClienteCartao.AutoRoundedCorners = true;
             btnEscolherClienteCartao.BorderRadius = 10;
             btnEscolherClienteCartao.BorderThickness = 1;
-            btnEscolherClienteCartao.CustomizableEdges = customizableEdges27;
+            btnEscolherClienteCartao.CustomizableEdges = customizableEdges59;
             btnEscolherClienteCartao.DisabledState.BorderColor = Color.DarkGray;
             btnEscolherClienteCartao.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEscolherClienteCartao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -874,7 +874,7 @@
             btnEscolherClienteCartao.ForeColor = Color.White;
             btnEscolherClienteCartao.Location = new Point(347, 210);
             btnEscolherClienteCartao.Name = "btnEscolherClienteCartao";
-            btnEscolherClienteCartao.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnEscolherClienteCartao.ShadowDecoration.CustomizableEdges = customizableEdges60;
             btnEscolherClienteCartao.Size = new Size(122, 23);
             btnEscolherClienteCartao.TabIndex = 17;
             btnEscolherClienteCartao.Text = "&Escolher Cliente";
@@ -886,7 +886,7 @@
             btncancelarCartao.AutoRoundedCorners = true;
             btncancelarCartao.BorderRadius = 10;
             btncancelarCartao.BorderThickness = 1;
-            btncancelarCartao.CustomizableEdges = customizableEdges29;
+            btncancelarCartao.CustomizableEdges = customizableEdges61;
             btncancelarCartao.DisabledState.BorderColor = Color.DarkGray;
             btncancelarCartao.DisabledState.CustomBorderColor = Color.DarkGray;
             btncancelarCartao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -896,7 +896,7 @@
             btncancelarCartao.ForeColor = Color.White;
             btncancelarCartao.Location = new Point(207, 210);
             btncancelarCartao.Name = "btncancelarCartao";
-            btncancelarCartao.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            btncancelarCartao.ShadowDecoration.CustomizableEdges = customizableEdges62;
             btncancelarCartao.Size = new Size(122, 23);
             btncancelarCartao.TabIndex = 16;
             btncancelarCartao.Text = "&Cancelar";
@@ -907,7 +907,7 @@
             btnInserirCartao.AutoRoundedCorners = true;
             btnInserirCartao.BorderRadius = 10;
             btnInserirCartao.BorderThickness = 1;
-            btnInserirCartao.CustomizableEdges = customizableEdges31;
+            btnInserirCartao.CustomizableEdges = customizableEdges63;
             btnInserirCartao.DisabledState.BorderColor = Color.DarkGray;
             btnInserirCartao.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserirCartao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -917,7 +917,7 @@
             btnInserirCartao.ForeColor = Color.White;
             btnInserirCartao.Location = new Point(67, 210);
             btnInserirCartao.Name = "btnInserirCartao";
-            btnInserirCartao.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            btnInserirCartao.ShadowDecoration.CustomizableEdges = customizableEdges64;
             btnInserirCartao.Size = new Size(122, 23);
             btnInserirCartao.TabIndex = 15;
             btnInserirCartao.Text = "&Registrar";
@@ -1054,7 +1054,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmClientes";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Inserir Clientes";
+            Text = "Inserir Dados dos Clientes";
             Load += FrmClientes_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -1077,12 +1077,10 @@
         private TabPage tabPage1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private Label label3;
         private Label label2;
         private Label label1;
         private TextBox txtNomeCliente;
         private Label label4;
-        private DateTimePicker dataCadastro;
         private DateTimePicker dataNascimento;
         private MaskedTextBox mktxtCPF;
         private Label label5;
@@ -1145,5 +1143,7 @@
         private Guna.UI2.WinForms.Guna2Button btncancelarCartao;
         private TextBox txtIdClienteCartao;
         private ComboBox cmbTipoCartao;
+        private DateTimePicker dataCadastro;
+        private Label label3;
     }
 }

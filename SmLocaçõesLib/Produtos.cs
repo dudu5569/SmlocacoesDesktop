@@ -11,6 +11,8 @@ public class Produtos
     public string? Descricao { get; set; }
     public string? Destaque { get; set; }
 
+    public Produtos () { }
+
 
     public Produtos(Categorias categoria, string? nome_Produto, string? imagem, decimal? valor, string? unidade_Venda, string? descricao, string? destaque)
     {
@@ -44,6 +46,28 @@ public class Produtos
         Unidade_Venda = unidade_Venda;
         Descricao = descricao;
         Destaque = destaque;
+    }
+
+    public Produtos(Categorias? id_Categoria)
+    {
+        Id_Categoria = id_Categoria;
+    }
+
+    public Produtos(string? nome_Produto)
+    {
+        Nome_Produto = nome_Produto;
+    }
+
+    public Produtos(int iD, string? nome_Produto)
+    {
+        ID = iD;        
+        Nome_Produto = nome_Produto;
+    }
+
+    public Produtos(Categorias? id_Categoria, string? nome_Produto)
+    {
+        Id_Categoria = id_Categoria;
+        Nome_Produto = nome_Produto;
     }
 
 
@@ -137,4 +161,23 @@ public class Produtos
         cmd.Connection.Close();
 
     }
+
+    public void ObterIdProdutosporCategoria(int rotulo)
+    {
+        Produtos produtos = new();
+        var cmd = Banco.Abrir();
+        cmd.CommandType = System.Data.CommandType.Text; 
+        cmd.CommandText = $"Select * from produtos where id_categoria = {rotulo}";
+        var dr = cmd.ExecuteReader();
+        while (dr.Read())
+        {
+            produtos = new(
+               Categorias.ObterPorId(dr.GetInt32(0)),
+               dr.GetString(1)
+                );
+
+        }
+    }
+
+
 }

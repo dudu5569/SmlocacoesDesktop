@@ -62,7 +62,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmConsultarPedidos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ConsultarPedidos";
+            Text = "Consultar Pedidos";
             Load += ConsultarPedidos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvVerPedidos).EndInit();
             ResumeLayout(false);

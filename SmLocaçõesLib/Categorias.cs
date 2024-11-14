@@ -57,6 +57,25 @@ namespace SmLocaçõesLib
             return lista;
         }
 
+
+        public static List<Categorias> ObterCategoriaID(int id)
+        {
+            List<Categorias> lista = new List<Categorias>();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"Select * from Categorias where id = {id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new(
+                dr.GetInt32(0)
+                    ));
+            }
+
+            cmd.Connection.Close();
+            return lista;
+        }
+
         public static Categorias ObterPorId(int id)
         {
             Categorias categorias = new ();
@@ -82,5 +101,6 @@ namespace SmLocaçõesLib
             return categorias;
 
         }
+
     }
 }

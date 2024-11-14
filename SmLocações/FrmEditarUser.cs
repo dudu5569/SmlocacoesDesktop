@@ -80,7 +80,12 @@ namespace SmLocações
             {
                 MessageBox.Show("Insira uma senha para a conclusão da atualização de usuário!", "SmLocações");
             }
-            
+
+        }
+
+        private void dgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

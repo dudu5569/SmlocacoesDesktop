@@ -68,6 +68,30 @@ namespace SmLocaçõesLib
             }
             return cliente;
         }
+        public static List<Cliente> ObterLista(string? nome = "")
+        {
+            List<Cliente> lista = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from clientes where nome like '%{nome}%' order by nome";
+
+
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                lista.Add(
+                    new(
+                        dr.GetInt32(0),
+                        dr.GetString(1),
+                        dr.GetString(2),
+                        dr.GetDateTime(3),
+                        dr.GetDateTime(4)                        
+                        )
+                    );
+            }
+
+            return lista;
+        }
 
 
     }

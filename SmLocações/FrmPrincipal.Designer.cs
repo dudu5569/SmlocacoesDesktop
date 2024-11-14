@@ -184,7 +184,7 @@
             MainMenuStrip = menuStrip1;
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmPrincipal";
+            Text = "Página Principal";
             WindowState = FormWindowState.Maximized;
             Load += FrmPrincipal_Load;
             menuStrip1.ResumeLayout(false);

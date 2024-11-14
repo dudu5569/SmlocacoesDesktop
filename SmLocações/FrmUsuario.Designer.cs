@@ -193,7 +193,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmUsuario";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmUsuario";
+            Text = "Inserir Usuários";
             Load += FrmUsuario_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

@@ -219,6 +219,7 @@
             dgvUsuarios.Size = new Size(689, 186);
             dgvUsuarios.TabIndex = 7;
             dgvUsuarios.CellClick += dgvUsuarios_CellClick;
+            dgvUsuarios.CellContentClick += dgvUsuarios_CellContentClick;
             // 
             // id
             // 
@@ -263,7 +264,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmEditarUser";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmEditarUser";
+            Text = "Editar Usuários";
             Load += FrmEditarUser_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

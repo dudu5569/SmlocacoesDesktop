@@ -305,7 +305,7 @@
             Controls.Add(label5);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmProdutos";
-            Text = "FrmProdutos";
+            Text = "Inserir Produtos";
             Load += FrmProdutos_Load;
             ((System.ComponentModel.ISupportInitialize)ImagemProduto).EndInit();
             ResumeLayout(false);

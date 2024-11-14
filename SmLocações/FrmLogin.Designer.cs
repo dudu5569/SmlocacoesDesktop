@@ -140,7 +140,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmLogin";
+            Text = "Login";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
