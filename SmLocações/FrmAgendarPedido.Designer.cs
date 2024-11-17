@@ -65,7 +65,7 @@
             btnEscolherLocacao = new Guna.UI2.WinForms.Guna2Button();
             btnCancelarProduto = new Guna.UI2.WinForms.Guna2Button();
             btnInserirProduto = new Guna.UI2.WinForms.Guna2Button();
-            txtValor = new TextBox();
+            txtValorTotal = new TextBox();
             txtQuantidade = new TextBox();
             txtIdPedido = new TextBox();
             label9 = new Label();
@@ -300,7 +300,7 @@
             tabPage2.Controls.Add(btnEscolherLocacao);
             tabPage2.Controls.Add(btnCancelarProduto);
             tabPage2.Controls.Add(btnInserirProduto);
-            tabPage2.Controls.Add(txtValor);
+            tabPage2.Controls.Add(txtValorTotal);
             tabPage2.Controls.Add(txtQuantidade);
             tabPage2.Controls.Add(txtIdPedido);
             tabPage2.Controls.Add(label9);
@@ -407,14 +407,15 @@
             btnInserirProduto.Size = new Size(122, 23);
             btnInserirProduto.TabIndex = 6;
             btnInserirProduto.Text = "&inserir Pedido";
+            btnInserirProduto.Click += btnInserirProduto_Click;
             // 
-            // txtValor
+            // txtValorTotal
             // 
-            txtValor.Location = new Point(276, 165);
-            txtValor.Name = "txtValor";
-            txtValor.ReadOnly = true;
-            txtValor.Size = new Size(100, 23);
-            txtValor.TabIndex = 4;
+            txtValorTotal.Location = new Point(276, 165);
+            txtValorTotal.Name = "txtValorTotal";
+            txtValorTotal.ReadOnly = true;
+            txtValorTotal.Size = new Size(100, 23);
+            txtValorTotal.TabIndex = 4;
             // 
             // txtQuantidade
             // 
@@ -422,6 +423,7 @@
             txtQuantidade.Name = "txtQuantidade";
             txtQuantidade.Size = new Size(100, 23);
             txtQuantidade.TabIndex = 3;
+            txtQuantidade.TextChanged += txtQuantidade_TextChanged;
             // 
             // txtIdPedido
             // 
@@ -630,7 +632,7 @@
         private Label label6;
         private Guna.UI2.WinForms.Guna2Button btnCancelarProduto;
         private Guna.UI2.WinForms.Guna2Button btnInserirProduto;
-        private TextBox txtValor;
+        private TextBox txtValorTotal;
         private TextBox txtQuantidade;
         private TextBox txtIdPedido;
         private Label label9;

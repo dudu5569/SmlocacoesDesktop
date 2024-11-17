@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SmLocações
 {
@@ -134,6 +136,52 @@ namespace SmLocações
         }
 
         private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int posicaoLinha = dgvProdutos.CurrentRow.Index;
+            txtNomeProduto.Text = dgvProdutos.Rows[posicaoLinha].Cells[1].Value.ToString();
+            txtValorTotal.Text = dgvProdutos.Rows[posicaoLinha].Cells[4].Value.ToString();
+
+
+        }
+
+        private void txtQuantidade_TextChanged(object sender, EventArgs e)
+        {
+            int posicaolinha = 0;
+            if (txtQuantidade.Text == string.Empty) txtValorTotal.Text = dgvProdutos.Rows[posicaolinha].Cells[4].Value.ToString();
+
+            try
+            {
+                string valorTexto = txtValorTotal.Text.Trim();
+                string quantidadeTexto = txtQuantidade.Text.Trim();
+
+                if (string.IsNullOrEmpty(valorTexto) || string.IsNullOrEmpty(quantidadeTexto))
+                {
+                    txtValorTotal.Text = "Preencha ambos os campos.";
+                    return; // Se algum campo estiver vazio, não faz o cálculo
+                }
+
+                Console.WriteLine($"Valor inserido: '{valorTexto}', Quantidade inserida: '{quantidadeTexto}'");
+
+                if (decimal.TryParse(valorTexto, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal valorProduto) &&
+                    decimal.TryParse(quantidadeTexto, out decimal quantidade))
+                {
+                    decimal valorTotal = quantidade * valorProduto;
+
+                    txtValorTotal.Text = valorTotal.ToString("F2");
+                }
+                else
+                {
+                    txtValorTotal.Text = "Valor inválido";
+                }
+            }
+            catch (Exception ex)
+            {
+                txtValorTotal.Text = "Erro: " + ex.Message;
+            }
+        }
+
+        private void btnInserirProduto_Click(object sender, EventArgs e)
         {
 
         }
