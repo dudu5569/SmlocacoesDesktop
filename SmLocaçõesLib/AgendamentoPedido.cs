@@ -40,8 +40,8 @@ namespace SmLocaçõesLib
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_inserir_locacoes";
-            cmd.Parameters.AddWithValue("spid_cliente", cliente);
-            cmd.Parameters.AddWithValue("spid_funcionario", funcionario);
+            cmd.Parameters.AddWithValue("spid_cliente", cliente.Id);
+            cmd.Parameters.AddWithValue("spid_funcionario", funcionario.ID);
             cmd.Parameters.AddWithValue("spdata_retirada", Data_Retirada);
             cmd.Parameters.AddWithValue("spdata_entrega", Data_Entrega);
             var dr = cmd.ExecuteReader();

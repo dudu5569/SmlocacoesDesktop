@@ -23,7 +23,7 @@ namespace SmLocações
         {
             carregaGrid();
             CarregaFuncionario();
-            CarregaComboboxCategoria();
+            CarregaProdutos();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace SmLocações
         {
             AgendamentoPedido agendar = new(
                Cliente.ObterPorId(int.Parse(txtIdCliente.Text)),
-                Funcionario.ObterporId(int.Parse(cmbFuncionario.ValueMember)),
+                Funcionario.ObterporId(Convert.ToInt32(cmbFuncionario.SelectedValue)),
                 dataRetirada.Value,
                 dataEntrega.Value
                 );
@@ -104,29 +104,38 @@ namespace SmLocações
 
         }
 
-        private void CarregaComboboxCategoria()
+        private void CarregaProdutos(string nome = "")
         {
-            var categorias = Categorias.ObterCategoria();
-            cmbCategoria.DataSource = categorias;
-            cmbCategoria.DisplayMember = "Categoria";
-            cmbCategoria.ValueMember = "Id";
-
-        }
-
-        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Produtos produtos = new Produtos();
-            if (cmbCategoria.SelectedValue != null)
+            var lista = Produtos.ObterListaProdutos(nome);
+            dgvProdutos.Rows.Clear();
+            int cont = 0;
+            foreach (var produto in lista)
             {
-                produtos.ObterIdProdutosporCategoria(Convert.ToInt32(cmbCategoria.SelectedValue));
-                MessageBox.Show(cmbCategoria.SelectedValue.ToString());
-                cmbProduto.DataSource = produtos;
-                cmbProduto.DisplayMember = "Nome_Produto";
-                cmbProduto.ValueMember = "Id";  
+                dgvProdutos.Rows.Add();
+                dgvProdutos.Rows[cont].Cells[0].Value = produto.ID.ToString();
+                dgvProdutos.Rows[cont].Cells[1].Value = produto.Nome_Produto.ToString();
+                dgvProdutos.Rows[cont].Cells[2].Value = produto.Id_Categoria.Categoria.ToString();
+                dgvProdutos.Rows[cont].Cells[3].Value = produto.Unidade_Venda.ToString();
+                dgvProdutos.Rows[cont].Cells[4].Value = produto.Valor.ToString();
+                cont++;
             }
-
         }
 
 
+
+        private void btnEscolherProduto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

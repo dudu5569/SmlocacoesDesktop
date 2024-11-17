@@ -91,6 +91,7 @@ namespace SmLocaçõesLib
             }
 
             return lista;
+            cmd.Connection.Close();
         }
 
 

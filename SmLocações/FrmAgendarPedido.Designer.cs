@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgendarPedido));
             label1 = new Label();
             label2 = new Label();
@@ -58,15 +60,14 @@
             btnCancelarAgendamento = new Guna.UI2.WinForms.Guna2Button();
             btnInserirAgendamento = new Guna.UI2.WinForms.Guna2Button();
             tabPage2 = new TabPage();
+            btnEscolherProduto = new Guna.UI2.WinForms.Guna2Button();
+            txtNomeProduto = new TextBox();
             btnEscolherLocacao = new Guna.UI2.WinForms.Guna2Button();
             btnCancelarProduto = new Guna.UI2.WinForms.Guna2Button();
             btnInserirProduto = new Guna.UI2.WinForms.Guna2Button();
             txtValor = new TextBox();
             txtQuantidade = new TextBox();
             txtIdPedido = new TextBox();
-            cmbProduto = new ComboBox();
-            cmbCategoria = new ComboBox();
-            label10 = new Label();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
@@ -77,11 +78,20 @@
             id = new DataGridViewTextBoxColumn();
             cliente = new DataGridViewTextBoxColumn();
             cpf = new DataGridViewTextBoxColumn();
+            tabPage5 = new TabPage();
+            dgvProdutos = new DataGridView();
+            identificador = new DataGridViewTextBoxColumn();
+            produto = new DataGridViewTextBoxColumn();
+            categoria = new DataGridViewTextBoxColumn();
+            quantidade = new DataGridViewTextBoxColumn();
+            valor = new DataGridViewTextBoxColumn();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -169,6 +179,7 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
             tabControl1.Location = new Point(108, 121);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -284,15 +295,14 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btnEscolherProduto);
+            tabPage2.Controls.Add(txtNomeProduto);
             tabPage2.Controls.Add(btnEscolherLocacao);
             tabPage2.Controls.Add(btnCancelarProduto);
             tabPage2.Controls.Add(btnInserirProduto);
             tabPage2.Controls.Add(txtValor);
             tabPage2.Controls.Add(txtQuantidade);
             tabPage2.Controls.Add(txtIdPedido);
-            tabPage2.Controls.Add(cmbProduto);
-            tabPage2.Controls.Add(cmbCategoria);
-            tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(label8);
             tabPage2.Controls.Add(label7);
@@ -306,13 +316,42 @@
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
             // 
+            // btnEscolherProduto
+            // 
+            btnEscolherProduto.Animated = true;
+            btnEscolherProduto.AutoRoundedCorners = true;
+            btnEscolherProduto.BorderRadius = 10;
+            btnEscolherProduto.BorderThickness = 1;
+            btnEscolherProduto.CustomizableEdges = customizableEdges7;
+            btnEscolherProduto.DisabledState.BorderColor = Color.DarkGray;
+            btnEscolherProduto.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEscolherProduto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEscolherProduto.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEscolherProduto.FillColor = Color.DodgerBlue;
+            btnEscolherProduto.Font = new Font("Segoe UI", 9F);
+            btnEscolherProduto.ForeColor = Color.White;
+            btnEscolherProduto.Location = new Point(468, 104);
+            btnEscolherProduto.Name = "btnEscolherProduto";
+            btnEscolherProduto.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnEscolherProduto.Size = new Size(122, 23);
+            btnEscolherProduto.TabIndex = 14;
+            btnEscolherProduto.Text = "&Escolher Produto";
+            btnEscolherProduto.Click += btnEscolherProduto_Click;
+            // 
+            // txtNomeProduto
+            // 
+            txtNomeProduto.Location = new Point(276, 104);
+            txtNomeProduto.Name = "txtNomeProduto";
+            txtNomeProduto.Size = new Size(171, 23);
+            txtNomeProduto.TabIndex = 13;
+            // 
             // btnEscolherLocacao
             // 
             btnEscolherLocacao.Animated = true;
             btnEscolherLocacao.AutoRoundedCorners = true;
             btnEscolherLocacao.BorderRadius = 10;
             btnEscolherLocacao.BorderThickness = 1;
-            btnEscolherLocacao.CustomizableEdges = customizableEdges7;
+            btnEscolherLocacao.CustomizableEdges = customizableEdges9;
             btnEscolherLocacao.DisabledState.BorderColor = Color.DarkGray;
             btnEscolherLocacao.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEscolherLocacao.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -322,7 +361,7 @@
             btnEscolherLocacao.ForeColor = Color.White;
             btnEscolherLocacao.Location = new Point(438, 220);
             btnEscolherLocacao.Name = "btnEscolherLocacao";
-            btnEscolherLocacao.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnEscolherLocacao.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnEscolherLocacao.Size = new Size(122, 23);
             btnEscolherLocacao.TabIndex = 7;
             btnEscolherLocacao.Text = "&Escolher Pedido";
@@ -333,7 +372,7 @@
             btnCancelarProduto.AutoRoundedCorners = true;
             btnCancelarProduto.BorderRadius = 10;
             btnCancelarProduto.BorderThickness = 1;
-            btnCancelarProduto.CustomizableEdges = customizableEdges9;
+            btnCancelarProduto.CustomizableEdges = customizableEdges11;
             btnCancelarProduto.DisabledState.BorderColor = Color.DarkGray;
             btnCancelarProduto.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelarProduto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -343,7 +382,7 @@
             btnCancelarProduto.ForeColor = Color.White;
             btnCancelarProduto.Location = new Point(297, 220);
             btnCancelarProduto.Name = "btnCancelarProduto";
-            btnCancelarProduto.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnCancelarProduto.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnCancelarProduto.Size = new Size(122, 23);
             btnCancelarProduto.TabIndex = 5;
             btnCancelarProduto.Text = "&Cancelar Pedido";
@@ -354,7 +393,7 @@
             btnInserirProduto.AutoRoundedCorners = true;
             btnInserirProduto.BorderRadius = 10;
             btnInserirProduto.BorderThickness = 1;
-            btnInserirProduto.CustomizableEdges = customizableEdges11;
+            btnInserirProduto.CustomizableEdges = customizableEdges13;
             btnInserirProduto.DisabledState.BorderColor = Color.DarkGray;
             btnInserirProduto.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserirProduto.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -364,7 +403,7 @@
             btnInserirProduto.ForeColor = Color.White;
             btnInserirProduto.Location = new Point(156, 220);
             btnInserirProduto.Name = "btnInserirProduto";
-            btnInserirProduto.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnInserirProduto.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnInserirProduto.Size = new Size(122, 23);
             btnInserirProduto.TabIndex = 6;
             btnInserirProduto.Text = "&inserir Pedido";
@@ -392,39 +431,10 @@
             txtIdPedido.Size = new Size(72, 23);
             txtIdPedido.TabIndex = 0;
             // 
-            // cmbProduto
-            // 
-            cmbProduto.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbProduto.FormattingEnabled = true;
-            cmbProduto.Location = new Point(408, 104);
-            cmbProduto.Name = "cmbProduto";
-            cmbProduto.Size = new Size(121, 23);
-            cmbProduto.TabIndex = 2;
-            // 
-            // cmbCategoria
-            // 
-            cmbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Items.AddRange(new object[] { "" });
-            cmbCategoria.Location = new Point(255, 104);
-            cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(121, 23);
-            cmbCategoria.TabIndex = 1;
-            cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(254, 84);
-            label10.Name = "label10";
-            label10.Size = new Size(58, 15);
-            label10.TabIndex = 10;
-            label10.Text = "Categoria";
-            // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(408, 86);
+            label9.Location = new Point(276, 86);
             label9.Name = "label9";
             label9.Size = new Size(50, 15);
             label9.TabIndex = 11;
@@ -513,6 +523,68 @@
             cpf.ReadOnly = true;
             cpf.Width = 200;
             // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(dgvProdutos);
+            tabPage5.Location = new Point(4, 24);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(707, 332);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Produtos";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dgvProdutos
+            // 
+            dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProdutos.Columns.AddRange(new DataGridViewColumn[] { identificador, produto, categoria, quantidade, valor });
+            dgvProdutos.Location = new Point(6, 6);
+            dgvProdutos.Name = "dgvProdutos";
+            dgvProdutos.RowHeadersVisible = false;
+            dgvProdutos.Size = new Size(695, 320);
+            dgvProdutos.TabIndex = 0;
+            dgvProdutos.CellClick += dgvProdutos_CellClick;
+            dgvProdutos.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // identificador
+            // 
+            identificador.Frozen = true;
+            identificador.HeaderText = "ID";
+            identificador.Name = "identificador";
+            identificador.ReadOnly = true;
+            identificador.Width = 50;
+            // 
+            // produto
+            // 
+            produto.Frozen = true;
+            produto.HeaderText = "Produto";
+            produto.Name = "produto";
+            produto.ReadOnly = true;
+            produto.Width = 270;
+            // 
+            // categoria
+            // 
+            categoria.Frozen = true;
+            categoria.HeaderText = "Categoria";
+            categoria.Name = "categoria";
+            categoria.ReadOnly = true;
+            categoria.Width = 150;
+            // 
+            // quantidade
+            // 
+            quantidade.Frozen = true;
+            quantidade.HeaderText = "Estoque Disp.";
+            quantidade.Name = "quantidade";
+            quantidade.ReadOnly = true;
+            quantidade.Width = 123;
+            // 
+            // valor
+            // 
+            valor.Frozen = true;
+            valor.HeaderText = "Valor";
+            valor.Name = "valor";
+            valor.ReadOnly = true;
+            // 
             // FrmAgendarPedido
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -532,6 +604,8 @@
             tabPage2.PerformLayout();
             tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
+            tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -559,9 +633,6 @@
         private TextBox txtValor;
         private TextBox txtQuantidade;
         private TextBox txtIdPedido;
-        private ComboBox cmbProduto;
-        private ComboBox cmbCategoria;
-        private Label label10;
         private Label label9;
         private Label label8;
         private Guna.UI2.WinForms.Guna2Button btnEscolherLocacao;
@@ -574,5 +645,14 @@
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn cliente;
         private DataGridViewTextBoxColumn cpf;
+        private Guna.UI2.WinForms.Guna2Button btnEscolherProduto;
+        private TextBox txtNomeProduto;
+        private TabPage tabPage5;
+        private DataGridView dgvProdutos;
+        private DataGridViewTextBoxColumn identificador;
+        private DataGridViewTextBoxColumn produto;
+        private DataGridViewTextBoxColumn categoria;
+        private DataGridViewTextBoxColumn quantidade;
+        private DataGridViewTextBoxColumn valor;
     }
 }
