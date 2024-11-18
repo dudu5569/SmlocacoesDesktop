@@ -123,6 +123,7 @@ id INT(8) AUTO_INCREMENT NOT NULL,
 id_funcionario INT(8) NOT NULL,
 id_email INT(8) NOT NULL,
 CONSTRAINT FK_funcionarios_emails_funcionarios FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id),
+CONSTRAINT FK_funcionarios_emails_emails FOREIGN KEY (id_email) REFERENCES emails(id),
 PRIMARY KEY(id)
 );
 
@@ -130,7 +131,7 @@ create table usuarios_desktop(
 id INT(8) AUTO_INCREMENT NOT NULL,
 id_funcionario INT(8) NOT NULL,
 usuario VARCHAR(70) NOT NULL,
-senha VARCHAR(20) NOT NULL,
+senha VARCHAR(32) NOT NULL,
 ativo ENUM('Sim', 'Nao') NOT NULL DEFAULT 'Sim',
 CONSTRAINT FK_usuarios_descktop_funcionarios FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id),
 PRIMARY KEY(id)
@@ -140,9 +141,8 @@ create table usuarios_clientes_web(
 id INT(8) AUTO_INCREMENT NOT NULL,
 id_cliente INT(8) NOT NULL,
 usuario VARCHAR(70) NOT NULL,
-senha VARCHAR(20) NOT NULL,
+senha VARCHAR(32) NOT NULL,
 ativo ENUM('Sim', 'Nao') NOT NULL DEFAULT 'Sim',
-tipo ENUM ('cli','fun') NOT NULL DEFAULT 'cli',
 CONSTRAINT FK_usuarios_web_clientes FOREIGN KEY (id_cliente) REFERENCES clientes(id),
 PRIMARY KEY(id)
 );
@@ -151,11 +151,12 @@ PRIMARY KEY(id)
 create table usuarios_funcionarios_web(
 id INT(8) AUTO_INCREMENT NOT NULL,
 id_funcionario INT(8) NOT NULL,
+id_nivel INT(8) NOT NULL,
 usuario VARCHAR(70) NOT NULL,
-senha VARCHAR(20) NOT NULL,
+senha VARCHAR(32) NOT NULL,
 ativo ENUM('Sim', 'Nao') NOT NULL DEFAULT 'Sim',
-tipo ENUM ('cli','fun') NOT NULL DEFAULT 'fun',
 CONSTRAINT FK_usuarios_web_funcionarios FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id),
+CONSTRAINT FK_usuarios_web_niveis FOREIGN KEY (id_nivel) REFERENCES niveis(id),
 PRIMARY KEY(id)
 );
 
@@ -166,7 +167,7 @@ nome_produto VARCHAR(50) NOT NULL,
 imagem VARCHAR(255) NOT NULL,
 valor DECIMAL(10,2) NOT NULL,
 unidade_venda VARCHAR(12) NOT NULL,
-descricao VARCHAR(50) NOT NULL,
+descricao VARCHAR(255) NOT NULL,
 destaque ENUM('Sim', 'Nao') NOT NULL DEFAULT 'Sim',
 CONSTRAINT FK_produtos_categorias FOREIGN KEY (id_categoria) REFERENCES categorias(id),
 PRIMARY KEY(id)
@@ -490,7 +491,7 @@ sprotulo
 );
  select  last_insert_id();
 end$$
-DELIMITER ;
+DELIMITER $$
 
 
 -- -----------------------------------------------------
@@ -502,7 +503,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_inserir_usuarios_desktop`(
 spid int(8),
 spid_funcionario int(8),
 spusuario varchar(40),
-spsenha varchar(20),
+spsenha varchar(32),
 spativo ENUM('Sim', 'Nao')
 )
 begin
@@ -515,7 +516,7 @@ spativo
 );
  select last_insert_id();
 end$$
-DELIMITER ;
+DELIMITER $$
 
 -- -----------------------------------------------------
 -- procedure sp_update_usuarios_desktop
@@ -525,18 +526,108 @@ USE `smlocacoesdb`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_usuarios_desktop`(
 spid int(8),
 spusuario varchar(40),
-spsenha varchar(20),
+spsenha varchar(32),
 spativo ENUM('Sim', 'Nao')
 )
 begin 
-update usuarios_desctop set usuario = spusuario,
+update usuarios_desktop set usuario = spusuario,
 senha = spsenha,
 ativo = spativo
 where id = spid;
 end$$
-DELIMITER ;
-
 DELIMITER $$
+
+-- -----------------------------------------------------
+-- procedure sp_inserir_usuarios_clientes_web
+-- -----------------------------------------------------
+DELIMITER $$
+USE `smlocacoesdb`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_inserir_usuarios_clientes_web`( 
+spid int(8),
+spid_cliente int(8),
+spusuario varchar(40),
+spsenha varchar(32),
+spativo ENUM('Sim', 'Nao')
+)
+begin
+insert into usuarios_clientes_web
+values (0,
+spid_cliente,
+spusuario,
+md5(spsenha),
+spativo
+);
+ select last_insert_id();
+end$$
+DELIMITER $$
+
+-- -----------------------------------------------------
+-- procedure sp_update_usuarios_clientes_web
+-- -----------------------------------------------------
+DELIMITER $$
+USE `smlocacoesdb`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_usuarios_clientes_web`(
+spid int(8),
+spusuario varchar(40),
+spsenha varchar(32),
+spativo ENUM('Sim', 'Nao')
+)
+begin 
+update usuarios_clientes_web set usuario = spusuario,
+senha = spsenha,
+ativo = spativo
+where id = spid;
+end$$
+DELIMITER $$
+
+-- -----------------------------------------------------
+-- procedure sp_inserir_usuarios_funcionarios_web
+-- -----------------------------------------------------
+DELIMITER $$
+USE `smlocacoesdb`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_inserir_usuarios_funcionarios_web`( 
+spid int(8),
+spid_funcionario int(8),
+spid_nivel int(8),
+spusuario varchar(40),
+spsenha varchar(32),
+spativo ENUM('Sim', 'Nao')
+)
+begin
+insert into usuarios_funcionarios_web
+values (0,
+spid_funcionario,
+spid_nivel,
+spusuario,
+md5(spsenha),
+spativo
+);
+ select last_insert_id();
+end$$
+DELIMITER $$
+
+
+-- -----------------------------------------------------
+-- procedure sp_update_usuarios_funcionarios_web
+-- -----------------------------------------------------
+DELIMITER $$
+USE `smlocacoesdb`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_usuarios_funcionarios_web`(
+spid int(8),
+spusuario varchar(40),
+spsenha varchar(32),
+spativo ENUM('Sim', 'Nao')
+)
+begin 
+update usuarios_funcionarios_web set usuario = spusuario,
+senha = spsenha,
+ativo = spativo
+where id = spid;
+end$$
+DELIMITER $$
+
+
+
 
 -- -----------------------------------------------------
 -- procedure sp_inserir_produtos
@@ -550,7 +641,7 @@ spnome varchar(40),
 spimagem varchar(255),
 spvalor_unit decimal(10,2),
 spunidade_venda varchar(12),
-spdescricao varchar(50),
+spdescricao varchar(255),
 spdestaque ENUM('Sim', 'Nao')
 )
 begin
@@ -579,7 +670,7 @@ spnome varchar(40),
 spimagem varchar(255),
 spvalor decimal(10,2),
 spunidade_venda varchar(12),
-spdescricao varchar(50),
+spdescricao varchar(255),
 spdestaque ENUM('Sim', 'Nao')
 )
 begin 
@@ -629,11 +720,9 @@ VIEW `smlocacoesdb`.`vw_usuarios_web` AS
         `usu_cli`.`usuario` AS `usuario_cli`,
         `usu_cli`.`senha` AS `senha_cli`,
         `usu_cli`.`ativo` AS `ativo_cli`,
-	`usu_cli`.`tipo` AS `tipo_cli`,  
         `usu_func`.`usuario` AS `usuario_func`,
         `usu_func`.`senha` AS `senha_func`,
-        `usu_func`.`ativo` AS `ativo_func`,
-	`usu_func`.`tipo` AS `tipo_func`  
+        `usu_func`.`ativo` AS `ativo_func`
     FROM
         `smlocacoesdb`.`usuarios_clientes_web` `usu_cli`
     JOIN 
@@ -1060,8 +1149,17 @@ INSERT INTO formas_pagamentos (forma) VALUES
 ('Débito'),
 ('Pix');
 
+-- -----------------------------------------------------
+--  inserindo usuarios_clientes_web
+-- -----------------------------------------------------
+Insert INTO usuarios_clientes_web(id_cliente,usuario,senha,ativo)
+VALUES(1,'joao_silva',md5('123'),'Sim');
 
-
+-- -----------------------------------------------------
+--  inserindo usuarios_funcionarios_web
+-- -----------------------------------------------------
+Insert INTO usuarios_funcionarios_web(id_funcionario,id_nivel,usuario,senha,ativo)
+VALUES(1,1,'carlos pereira',md5('123'),'Sim');
 
 
 

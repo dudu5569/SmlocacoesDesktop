@@ -46,7 +46,10 @@
             consultarToolStripMenuItem = new ToolStripMenuItem();
             vizualizarToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
+            statusStrip1 = new StatusStrip();
+            toolStripStatusLabel1 = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -172,6 +175,21 @@
             estoqueToolStripMenuItem.Text = "&Consultar";
             estoqueToolStripMenuItem.Click += estoqueToolStripMenuItem_Click;
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
+            statusStrip1.Location = new Point(0, 601);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1084, 22);
+            statusStrip1.TabIndex = 8;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            toolStripStatusLabel1.Size = new Size(118, 17);
+            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -180,6 +198,7 @@
             BackgroundImage = Properties.Resources.SMLocações_Fundo;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1084, 623);
+            Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -192,6 +211,8 @@
             Load += FrmPrincipal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -214,5 +235,7 @@
         private ToolStripMenuItem estoqueToolStripMenuItem;
         private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripMenuItem novoToolStripMenuItem4;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

@@ -56,9 +56,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(46, 98);
             label2.Name = "label2";
-            label2.Size = new Size(36, 15);
+            label2.Size = new Size(37, 15);
             label2.TabIndex = 6;
-            label2.Text = "Email";
+            label2.Text = "Login";
             // 
             // label3
             // 
@@ -92,6 +92,7 @@
             btnEntrar.TabIndex = 3;
             btnEntrar.Text = "&Entrar";
             btnEntrar.UseVisualStyleBackColor = true;
+            btnEntrar.Click += btnEntrar_Click;
             // 
             // btnCancelar
             // 
@@ -101,6 +102,7 @@
             btnCancelar.TabIndex = 2;
             btnCancelar.Text = "&Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // groupBox1
             // 

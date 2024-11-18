@@ -165,7 +165,7 @@ namespace SmLocaçõesLib
             Usuario login = new ();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from usuarios_desktop where email = '{usuario}' and senha = md5('{senha}')";
+            cmd.CommandText = $"select * from usuarios_desktop where usuario = '{usuario}' and senha = md5('{senha}')";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
