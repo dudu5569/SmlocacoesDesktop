@@ -9,10 +9,12 @@ namespace SmLocaçõesLib
     public class Pedidos
     {
         public int Id { get; set; }
-        Cliente Id_Cliente { get; set; }
-        Funcionario Id_Funcionario { get; set; }
-        DateTime? Data_Retirada { get; set; }
-        DateTime? Data_Entrega { get; set; }
+       public Cliente Id_Cliente { get; set; }
+        public Funcionario Id_Funcionario { get; set; }
+        public DateTime? Data_Retirada { get; set; }
+        public DateTime? Data_Entrega { get; set; }
+
+        public Pedidos () { }
 
         public Pedidos(Cliente id_Cliente, Funcionario id_Funcionario, DateTime? data_Retirada, DateTime? data_Entrega)
         {
@@ -42,6 +44,61 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spdata_entrega", Data_Entrega);
             var dr = cmd.ExecuteReader();
             if (dr.Read()) Id = dr.GetInt32(0);
+        }
+
+
+        public static Pedidos ObterIdPedido(int id)
+        {
+            Pedidos pedido = new();
+
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = $"Select * from locacoes where id = {id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read() )
+            {
+                pedido = new(
+                    dr.GetInt32(0),
+                    Cliente.ObterPorId(dr.GetInt32(1)),
+                    Funcionario.ObterporId(dr.GetInt32(2)),
+                    dr.GetDateTime(3),
+                    dr.GetDateTime(4)
+                    );
+            }
+            return pedido;
+        }
+
+        public static List<Pedidos> ListarPedidos()
+        {
+            List<Pedidos> lista = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+
+                cmd.CommandText = "Select * from locacoes order by id";
+            
+
+
+            var dr = cmd.ExecuteReader();
+
+            int indexId = dr.GetOrdinal("id");
+            int indexCliente = dr.GetOrdinal("id_cliente");
+            int indexFuncionario = dr.GetOrdinal("id_funcionario");
+            int indexRetirada = dr.GetOrdinal("data_retirada");
+            int indexEntrega = dr.GetOrdinal("data_entrega");
+
+            while (dr.Read() )
+            {
+                lista.Add(new Pedidos(
+                    dr.GetInt32(indexId),
+                    Cliente.ObterPorId(dr.GetInt32(indexCliente)),
+                    Funcionario.ObterporId(dr.GetInt32(indexFuncionario)),
+                    dr.GetDateTime(indexRetirada),
+                    dr.GetDateTime(indexEntrega)
+                    ));
+            }
+
+            cmd.Connection.Close();
+            return lista;
         }
 
     }

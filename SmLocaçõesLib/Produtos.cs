@@ -71,7 +71,6 @@ public class Produtos
     }
 
 
-    // Método para inserir um produto no banco
     public void InserirProduto()
     {
         using (var cmd = Banco.Abrir())
@@ -97,6 +96,31 @@ public class Produtos
         }
 
     }
+
+    public static Produtos ObterIdProduto(int id)
+    {
+        Produtos produto = new();
+
+        var cmd = Banco.Abrir();
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.CommandText = $"Select * from produtos where id = {id}";
+        var dr = cmd.ExecuteReader();
+        while (dr.Read())
+        {
+            produto = new(
+                dr.GetInt32(0),
+                 Categorias.ObterPorId(dr.GetInt32(1)),
+                 dr.GetString(2),
+                 dr.GetString(3),
+                 dr.GetDecimal(4),
+                 dr.GetString(5),
+                 dr.GetString(6),
+                 dr.GetString(7)
+                );
+        }
+        return produto;
+    }
+
 
     public static List<Produtos> ObterListaProdutos(string? nome)
     {

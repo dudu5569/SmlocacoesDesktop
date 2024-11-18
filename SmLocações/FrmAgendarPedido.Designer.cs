@@ -60,6 +60,8 @@
             btnCancelarAgendamento = new Guna.UI2.WinForms.Guna2Button();
             btnInserirAgendamento = new Guna.UI2.WinForms.Guna2Button();
             tabPage2 = new TabPage();
+            label10 = new Label();
+            txtIdProduto = new TextBox();
             btnEscolherProduto = new Guna.UI2.WinForms.Guna2Button();
             txtNomeProduto = new TextBox();
             btnEscolherLocacao = new Guna.UI2.WinForms.Guna2Button();
@@ -73,6 +75,12 @@
             label7 = new Label();
             label6 = new Label();
             tabPage3 = new TabPage();
+            dgvPedidos = new DataGridView();
+            ident = new DataGridViewTextBoxColumn();
+            aaaaa = new DataGridViewTextBoxColumn();
+            bbbbbbbbb = new DataGridViewTextBoxColumn();
+            data_ret = new DataGridViewTextBoxColumn();
+            data_ent = new DataGridViewTextBoxColumn();
             tabPage4 = new TabPage();
             dgvClientes = new DataGridView();
             id = new DataGridViewTextBoxColumn();
@@ -88,6 +96,8 @@
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
             tabPage5.SuspendLayout();
@@ -295,6 +305,8 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(label10);
+            tabPage2.Controls.Add(txtIdProduto);
             tabPage2.Controls.Add(btnEscolherProduto);
             tabPage2.Controls.Add(txtNomeProduto);
             tabPage2.Controls.Add(btnEscolherLocacao);
@@ -316,6 +328,22 @@
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(260, 86);
+            label10.Name = "label10";
+            label10.Size = new Size(63, 15);
+            label10.TabIndex = 16;
+            label10.Text = "Id Produto";
+            // 
+            // txtIdProduto
+            // 
+            txtIdProduto.Location = new Point(260, 104);
+            txtIdProduto.Name = "txtIdProduto";
+            txtIdProduto.Size = new Size(49, 23);
+            txtIdProduto.TabIndex = 15;
+            // 
             // btnEscolherProduto
             // 
             btnEscolherProduto.Animated = true;
@@ -330,7 +358,7 @@
             btnEscolherProduto.FillColor = Color.DodgerBlue;
             btnEscolherProduto.Font = new Font("Segoe UI", 9F);
             btnEscolherProduto.ForeColor = Color.White;
-            btnEscolherProduto.Location = new Point(468, 104);
+            btnEscolherProduto.Location = new Point(537, 104);
             btnEscolherProduto.Name = "btnEscolherProduto";
             btnEscolherProduto.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnEscolherProduto.Size = new Size(122, 23);
@@ -340,7 +368,7 @@
             // 
             // txtNomeProduto
             // 
-            txtNomeProduto.Location = new Point(276, 104);
+            txtNomeProduto.Location = new Point(345, 104);
             txtNomeProduto.Name = "txtNomeProduto";
             txtNomeProduto.Size = new Size(171, 23);
             txtNomeProduto.TabIndex = 13;
@@ -365,6 +393,7 @@
             btnEscolherLocacao.Size = new Size(122, 23);
             btnEscolherLocacao.TabIndex = 7;
             btnEscolherLocacao.Text = "&Escolher Pedido";
+            btnEscolherLocacao.Click += btnEscolherLocacao_Click;
             // 
             // btnCancelarProduto
             // 
@@ -436,7 +465,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(276, 86);
+            label9.Location = new Point(345, 86);
             label9.Name = "label9";
             label9.Size = new Size(50, 15);
             label9.TabIndex = 11;
@@ -471,13 +500,65 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(dgvPedidos);
             tabPage3.Location = new Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(707, 332);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "Consultar Pedidos";
+            tabPage3.Text = "Pedidos";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dgvPedidos
+            // 
+            dgvPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPedidos.Columns.AddRange(new DataGridViewColumn[] { ident, aaaaa, bbbbbbbbb, data_ret, data_ent });
+            dgvPedidos.Location = new Point(6, 6);
+            dgvPedidos.Name = "dgvPedidos";
+            dgvPedidos.RowHeadersVisible = false;
+            dgvPedidos.Size = new Size(698, 323);
+            dgvPedidos.TabIndex = 0;
+            dgvPedidos.CellClick += dgvPedidos_CellClick;
+            // 
+            // ident
+            // 
+            ident.Frozen = true;
+            ident.HeaderText = "ID";
+            ident.Name = "ident";
+            ident.ReadOnly = true;
+            ident.Width = 50;
+            // 
+            // aaaaa
+            // 
+            aaaaa.Frozen = true;
+            aaaaa.HeaderText = "Cliente";
+            aaaaa.Name = "aaaaa";
+            aaaaa.ReadOnly = true;
+            aaaaa.Width = 200;
+            // 
+            // bbbbbbbbb
+            // 
+            bbbbbbbbb.Frozen = true;
+            bbbbbbbbb.HeaderText = "Funcionário";
+            bbbbbbbbb.Name = "bbbbbbbbb";
+            bbbbbbbbb.ReadOnly = true;
+            bbbbbbbbb.Width = 200;
+            // 
+            // data_ret
+            // 
+            data_ret.Frozen = true;
+            data_ret.HeaderText = "Retirada";
+            data_ret.Name = "data_ret";
+            data_ret.ReadOnly = true;
+            data_ret.Width = 125;
+            // 
+            // data_ent
+            // 
+            data_ent.Frozen = true;
+            data_ent.HeaderText = "Entrega";
+            data_ent.Name = "data_ent";
+            data_ent.ReadOnly = true;
+            data_ent.Width = 125;
             // 
             // tabPage4
             // 
@@ -604,6 +685,8 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).EndInit();
             tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
             tabPage5.ResumeLayout(false);
@@ -656,5 +739,13 @@
         private DataGridViewTextBoxColumn categoria;
         private DataGridViewTextBoxColumn quantidade;
         private DataGridViewTextBoxColumn valor;
+        private Label label10;
+        private TextBox txtIdProduto;
+        private DataGridView dgvPedidos;
+        private DataGridViewTextBoxColumn ident;
+        private DataGridViewTextBoxColumn aaaaa;
+        private DataGridViewTextBoxColumn bbbbbbbbb;
+        private DataGridViewTextBoxColumn data_ret;
+        private DataGridViewTextBoxColumn data_ent;
     }
 }

@@ -17,6 +17,11 @@ namespace SmLocaçõesLib
         public DateTime? Data_Cadastro{ get; set; }
 
         public Cliente () { }
+
+        public override string ToString()
+        {
+            return Nome; // Ou você pode personalizar para exibir mais informações, como: Nome + " (" + Id + ")"
+        }
         public Cliente(int id, string? nome, string? cpf, DateTime? data_Nascimento, DateTime? data_Cadastro)
         {
             Id = id;
@@ -54,20 +59,28 @@ namespace SmLocaçõesLib
 
         public static Cliente ObterPorId(int id)
         {
-            Cliente cliente = new();
+            Cliente cliente = null;  
 
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"Select * from clientes where id = {id}";
+            cmd.CommandText = $"SELECT * FROM clientes WHERE id = {id}";
             var dr = cmd.ExecuteReader();
-            while (dr.Read())
+
+            if (dr.Read())  
             {
-                cliente = new(
-                    dr.GetInt32(0)
-                    );
+                cliente = new Cliente(
+                    dr.GetInt32(0),       
+                    dr.GetString(1),     
+                    dr.GetString(2),       
+                    dr.GetDateTime(3),     
+                    dr.GetDateTime(4)      
+                );
             }
+
+            cmd.Connection.Close();
             return cliente;
         }
+
         public static List<Cliente> ObterLista(string? nome = "")
         {
             List<Cliente> lista = new();

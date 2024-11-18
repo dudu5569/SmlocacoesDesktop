@@ -47,5 +47,7 @@ namespace SmLocaçõesLib
             var dr = cmd.ExecuteReader();
             if (dr.Read()) ID = dr.GetInt32(0);
         }
+
+
     }
 }

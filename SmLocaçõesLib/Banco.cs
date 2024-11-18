@@ -11,7 +11,7 @@ namespace SmLocaçõesLib
     {
         public static MySqlCommand Abrir()
         {
-            string strconn = @"server=127.0.0.1;database=smlocacoesdb;user=root;password=;";
+            string strconn = @"server=127.0.0.1;database=smlocacoesdb;user=root;password=;Max pool size =900";
             MySqlConnection cn = new MySqlConnection(strconn);
             MySqlCommand cmd = new();
 

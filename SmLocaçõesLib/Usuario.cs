@@ -20,7 +20,8 @@ namespace SmLocaçõesLib
         public string? Senha { get; set; }
         public string? Ativo { get; set; }
 
- 
+        
+        public Usuario() { }
 
         public Usuario (int id, string? login, string? senha, string ativo)
         {
@@ -28,9 +29,6 @@ namespace SmLocaçõesLib
             Login = login;
             Senha = senha;
             Ativo = ativo;
-        }
-        public Usuario() {
-            Id_funcionario = new();
         }
 
         public Usuario (string? login)
@@ -128,7 +126,7 @@ namespace SmLocaçõesLib
                         )
                     );
             }
-
+            cmd.Connection.Close ();
             return lista;
         }
 
@@ -162,5 +160,26 @@ namespace SmLocaçõesLib
             return lista;
         }
 
+        public static Usuario EfetuarLogin(string usuario, string senha)
+        {
+            Usuario login = new ();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"select * from usuarios_desktop where email = '{usuario}' and senha = md5('{senha}')";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                   login = new(
+                       dr.GetInt32(0),
+                       Funcionario.ObterporId(dr.GetInt32(1)),
+                       dr.GetString(2),
+                       dr.GetString(3),
+                       dr.GetString(4)
+                       );
+            }
+            return login;
+
+        }
+        
     }
 }

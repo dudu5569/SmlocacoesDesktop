@@ -26,6 +26,7 @@ namespace SmLocações
             carregaGrid();
             CarregaFuncionario();
             CarregaProdutos();
+            CarregaPedidos();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -123,11 +124,30 @@ namespace SmLocações
             }
         }
 
+        private void CarregaPedidos()
+        {
+            var lista = Pedidos.ListarPedidos();
+            dgvPedidos.Rows.Clear();
+            int cont = 0;
+            foreach (var pedido in lista)
+            {
+                dgvPedidos.Rows.Add();
+                dgvPedidos.Rows[cont].Cells[0].Value = pedido.Id;
+                dgvPedidos.Rows[cont].Cells[1].Value = pedido.Id_Cliente.Nome;
+                dgvPedidos.Rows[cont].Cells[2].Value = pedido.Id_Funcionario.Nome;
+                dgvPedidos.Rows[cont].Cells[3].Value = pedido.Data_Retirada;
+                dgvPedidos.Rows[cont].Cells[4].Value = pedido.Data_Entrega;
+
+                cont++;
+            }
+        }
+
+
 
 
         private void btnEscolherProduto_Click(object sender, EventArgs e)
         {
-
+            this.tabControl1.SelectedTab = tabPage5;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -139,8 +159,10 @@ namespace SmLocações
         {
 
             int posicaoLinha = dgvProdutos.CurrentRow.Index;
+            txtIdProduto.Text = dgvProdutos.Rows[posicaoLinha].Cells[0].Value.ToString();
             txtNomeProduto.Text = dgvProdutos.Rows[posicaoLinha].Cells[1].Value.ToString();
             txtValorTotal.Text = dgvProdutos.Rows[posicaoLinha].Cells[4].Value.ToString();
+            this.tabControl1.SelectedTab = tabPage2;
 
 
         }
@@ -183,7 +205,41 @@ namespace SmLocações
 
         private void btnInserirProduto_Click(object sender, EventArgs e)
         {
+            ItensPedido itensPedido = new(
+                Pedidos.ObterIdPedido(int.Parse(txtIdPedido.Text)),
+                Produtos.ObterIdProduto(int.Parse(txtIdProduto.Text)),
+                Convert.ToDecimal(txtValorTotal.Text),
+                int.Parse(txtQuantidade.Text)
+                );
 
+            itensPedido.InserirItemPedido();
+            if (itensPedido.ID > 0)
+            {
+                MessageBox.Show("Item adicionado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Falha ao adicionar item!", "SmLocações", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+
+            txtIdPedido.Clear();
+            txtValorTotal.Clear();
+            txtQuantidade.Clear();
+            txtValorTotal.Clear();
+            txtIdProduto.Clear();
+            txtNomeProduto.Clear();
+        }
+
+        private void btnEscolherLocacao_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabPage3;
+        }
+
+        private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int posicaolinha = dgvPedidos.CurrentRow.Index;
+            txtIdPedido.Text = dgvPedidos.Rows[posicaolinha].Cells[0].Value.ToString();
+            this.tabControl1.SelectedTab = tabPage2;
         }
     }
 }
