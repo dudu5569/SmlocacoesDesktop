@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             txtEmail = new TextBox();
             txtSenha = new TextBox();
-            btnEntrar = new Button();
-            btnCancelar = new Button();
             groupBox1 = new GroupBox();
-            linkLabel1 = new LinkLabel();
+            btnLogar = new Guna.UI2.WinForms.Guna2Button();
+            btnCancelar = new Guna.UI2.WinForms.Guna2Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,32 +87,11 @@
             txtSenha.Size = new Size(203, 23);
             txtSenha.TabIndex = 1;
             // 
-            // btnEntrar
-            // 
-            btnEntrar.Location = new Point(46, 216);
-            btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(100, 23);
-            btnEntrar.TabIndex = 3;
-            btnEntrar.Text = "&Entrar";
-            btnEntrar.UseVisualStyleBackColor = true;
-            btnEntrar.Click += btnEntrar_Click;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(174, 216);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(100, 23);
-            btnCancelar.TabIndex = 2;
-            btnCancelar.Text = "&Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(linkLabel1);
+            groupBox1.Controls.Add(btnLogar);
             groupBox1.Controls.Add(btnCancelar);
             groupBox1.Controls.Add(txtEmail);
-            groupBox1.Controls.Add(btnEntrar);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(txtSenha);
             groupBox1.Controls.Add(label2);
@@ -121,28 +103,61 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Login";
             // 
-            // linkLabel1
+            // btnLogar
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(46, 259);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(106, 15);
-            linkLabel1.TabIndex = 4;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Esqueceu a Senha?";
+            btnLogar.Animated = true;
+            btnLogar.AutoRoundedCorners = true;
+            btnLogar.BorderRadius = 10;
+            btnLogar.BorderThickness = 1;
+            btnLogar.CustomizableEdges = customizableEdges1;
+            btnLogar.DisabledState.BorderColor = Color.DarkGray;
+            btnLogar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLogar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLogar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLogar.FillColor = Color.Green;
+            btnLogar.Font = new Font("Segoe UI", 9F);
+            btnLogar.ForeColor = Color.White;
+            btnLogar.Location = new Point(46, 216);
+            btnLogar.Name = "btnLogar";
+            btnLogar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnLogar.Size = new Size(122, 23);
+            btnLogar.TabIndex = 8;
+            btnLogar.Text = "&Entrar";
+            btnLogar.Click += btnLogar_Click;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Animated = true;
+            btnCancelar.AutoRoundedCorners = true;
+            btnCancelar.BorderRadius = 10;
+            btnCancelar.BorderThickness = 1;
+            btnCancelar.CustomizableEdges = customizableEdges3;
+            btnCancelar.DisabledState.BorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCancelar.FillColor = Color.Red;
+            btnCancelar.Font = new Font("Segoe UI", 9F);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(194, 216);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCancelar.Size = new Size(122, 23);
+            btnCancelar.TabIndex = 7;
+            btnCancelar.Text = "&Cancelar";
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
             // FrmLogin
             // 
-            AcceptButton = btnEntrar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            CancelButton = btnCancelar;
             ClientSize = new Size(460, 344);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += FrmLogin_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -156,8 +171,8 @@
         private TextBox txtEmail;
         private TextBox txtSenha;
         private Button btnEntrar;
-        private Button btnCancelar;
         private GroupBox groupBox1;
-        private LinkLabel linkLabel1;
+        private Guna.UI2.WinForms.Guna2Button btnCancelar;
+        private Guna.UI2.WinForms.Guna2Button btnLogar;
     }
 }

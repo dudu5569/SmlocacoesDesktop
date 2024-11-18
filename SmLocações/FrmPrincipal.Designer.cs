@@ -177,6 +177,7 @@
             // 
             // statusStrip1
             // 
+            statusStrip1.BackColor = Color.Transparent;
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
             statusStrip1.Location = new Point(0, 601);
             statusStrip1.Name = "statusStrip1";
@@ -186,6 +187,7 @@
             // 
             // toolStripStatusLabel1
             // 
+            toolStripStatusLabel1.DisplayStyle = ToolStripItemDisplayStyle.Text;
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(118, 17);
             toolStripStatusLabel1.Text = "toolStripStatusLabel1";

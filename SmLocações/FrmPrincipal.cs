@@ -22,7 +22,7 @@ namespace SmLocações
             
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
-            Text += $" ({Program.UsuarioLogado.Login} -  {Program.UsuarioLogado.Id_funcionario.Nivel.Nome})";
+            Text += $" ({Program.UsuarioLogado.Login})";
             toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Id_funcionario.Nome} - {Program.UsuarioLogado.Id_funcionario.Nivel.Nome}"; 
         }
 
