@@ -66,6 +66,10 @@ namespace SmLocações
             Pedidos pedidos = new();
             pedidos.AtualizarStatusPedido(int.Parse(txtIdPedido.Text), cmbStatus.Text);
             MessageBox.Show("Status atualizado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            controleEstoque.ConsultaItensPedido(int.Parse(txtIdPedido.Text));
+            
+            while (controleEstoque.Quantidade > 0) MessageBox.Show(controleEstoque.Quantidade.ToString());
             if (cmbStatus.Text == "Concluído")
             {
                 
