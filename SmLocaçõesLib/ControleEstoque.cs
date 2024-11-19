@@ -30,15 +30,30 @@ namespace SmLocaçõesLib
             cmd.Connection.Close();
         }
 
-        public void ConsultaItensPedido(int id)
+        public List<int> ConsultaItensPedido(int id)
         {
             var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"Select quantidade from items_locacoes where id_locacao = {id}";
-            var dr = cmd.ExecuteReader();
-            while (dr.Read()) Quantidade = dr.GetInt32(0);
-            cmd.Connection.Close();
+            var quantidades = new List<int>(); // Lista para armazenar as quantidades
+
+            try
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"SELECT quantidade FROM items_locacoes WHERE id_locacao = {id}";
+                var dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    quantidades.Add(dr.GetInt32(0)); // Adiciona cada valor de quantidade encontrado
+                }
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+
+            return quantidades; // Retorna a lista com as quantidades
         }
+
 
 
         public void DevolverEstoque(int idproduto, int quantidade)
