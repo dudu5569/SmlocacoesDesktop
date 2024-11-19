@@ -36,24 +36,25 @@
             funcionario = new DataGridViewTextBoxColumn();
             Dataret = new DataGridViewTextBoxColumn();
             dataent = new DataGridViewTextBoxColumn();
+            stati = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
             SuspendLayout();
             // 
             // dgvPedidos
             // 
             dgvPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPedidos.Columns.AddRange(new DataGridViewColumn[] { id, cliente, funcionario, Dataret, dataent });
+            dgvPedidos.Columns.AddRange(new DataGridViewColumn[] { id, cliente, funcionario, Dataret, dataent, stati });
             dgvPedidos.Location = new Point(12, 123);
             dgvPedidos.Name = "dgvPedidos";
             dgvPedidos.RowHeadersVisible = false;
-            dgvPedidos.Size = new Size(1054, 356);
+            dgvPedidos.Size = new Size(1050, 356);
             dgvPedidos.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(414, 47);
+            label1.Location = new Point(365, 43);
             label1.Name = "label1";
             label1.Size = new Size(291, 45);
             label1.TabIndex = 1;
@@ -89,7 +90,7 @@
             Dataret.HeaderText = "Data Retirada";
             Dataret.Name = "Dataret";
             Dataret.ReadOnly = true;
-            Dataret.Width = 200;
+            Dataret.Width = 150;
             // 
             // dataent
             // 
@@ -97,7 +98,14 @@
             dataent.HeaderText = "Data Entrega";
             dataent.Name = "dataent";
             dataent.ReadOnly = true;
-            dataent.Width = 200;
+            dataent.Width = 150;
+            // 
+            // stati
+            // 
+            stati.Frozen = true;
+            stati.HeaderText = "Status";
+            stati.Name = "stati";
+            stati.ReadOnly = true;
             // 
             // FrmConsultarPedidos
             // 
@@ -125,5 +133,6 @@
         private DataGridViewTextBoxColumn funcionario;
         private DataGridViewTextBoxColumn Dataret;
         private DataGridViewTextBoxColumn dataent;
+        private DataGridViewTextBoxColumn stati;
     }
 }

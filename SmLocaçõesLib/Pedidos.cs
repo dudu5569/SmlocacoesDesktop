@@ -14,23 +14,27 @@ namespace SmLocaçõesLib
         public DateTime? Data_Retirada { get; set; }
         public DateTime? Data_Entrega { get; set; }
 
+        public string? Status_Pedido { get; set; }
+
         public Pedidos () { }
 
-        public Pedidos(Cliente id_Cliente, Funcionario id_Funcionario, DateTime? data_Retirada, DateTime? data_Entrega)
+        public Pedidos(Cliente id_Cliente, Funcionario id_Funcionario, DateTime? data_Retirada, DateTime? data_Entrega, string? status_Pedido)
         {
             Id_Cliente = id_Cliente;
             Id_Funcionario = id_Funcionario;
             Data_Retirada = data_Retirada;
             Data_Entrega = data_Entrega;
+            Status_Pedido = status_Pedido;
         }
 
-        public Pedidos(int id, Cliente id_Cliente, Funcionario id_Funcionario, DateTime? data_Retirada, DateTime? data_Entrega)
+        public Pedidos(int id, Cliente id_Cliente, Funcionario id_Funcionario, DateTime? data_Retirada, DateTime? data_Entrega, string? status_Pedido)
         {
             Id = id;
             Id_Cliente = id_Cliente;
             Id_Funcionario = id_Funcionario;
             Data_Retirada = data_Retirada;
             Data_Entrega = data_Entrega;
+            Status_Pedido = status_Pedido;
         }
 
         public void InserirPedido()
@@ -42,6 +46,7 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spid_funcionario", Id_Funcionario);
             cmd.Parameters.AddWithValue("spdata_retirada", Data_Retirada);
             cmd.Parameters.AddWithValue("spdata_entrega", Data_Entrega);
+            cmd.Parameters.AddWithValue("spstatus_pedido", Status_Pedido);
             var dr = cmd.ExecuteReader();
             if (dr.Read()) Id = dr.GetInt32(0);
         }
@@ -62,7 +67,8 @@ namespace SmLocaçõesLib
                     Cliente.ObterPorId(dr.GetInt32(1)),
                     Funcionario.ObterporId(dr.GetInt32(2)),
                     dr.GetDateTime(3),
-                    dr.GetDateTime(4)
+                    dr.GetDateTime(4),
+                    dr.GetString(5)
                     );
             }
             return pedido;
@@ -85,6 +91,7 @@ namespace SmLocaçõesLib
             int indexFuncionario = dr.GetOrdinal("id_funcionario");
             int indexRetirada = dr.GetOrdinal("data_retirada");
             int indexEntrega = dr.GetOrdinal("data_entrega");
+            int indexStatus = dr.GetOrdinal("status_pedido");
 
             while (dr.Read() )
             {
@@ -93,7 +100,8 @@ namespace SmLocaçõesLib
                     Cliente.ObterPorId(dr.GetInt32(indexCliente)),
                     Funcionario.ObterporId(dr.GetInt32(indexFuncionario)),
                     dr.GetDateTime(indexRetirada),
-                    dr.GetDateTime(indexEntrega)
+                    dr.GetDateTime(indexEntrega),
+                    dr.GetString(indexStatus)
                     ));
             }
 

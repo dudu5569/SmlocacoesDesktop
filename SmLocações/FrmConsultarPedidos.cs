@@ -21,6 +21,8 @@ namespace SmLocações
         private void ConsultarPedidos_Load(object sender, EventArgs e)
         {
             CarregaPedidos();
+            label1.Left = (this.ClientSize.Width - label1.Width) / 2;
+
         }
         private void CarregaPedidos()
         {
@@ -35,6 +37,7 @@ namespace SmLocações
                 dgvPedidos.Rows[cont].Cells[2].Value = pedido.Id_Funcionario.Nome;
                 dgvPedidos.Rows[cont].Cells[3].Value = pedido.Data_Retirada;
                 dgvPedidos.Rows[cont].Cells[4].Value = pedido.Data_Entrega;
+                dgvPedidos.Rows[cont].Cells[5].Value = pedido.;
 
                 cont++;
             }
