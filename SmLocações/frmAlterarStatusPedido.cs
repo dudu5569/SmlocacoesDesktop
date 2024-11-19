@@ -48,5 +48,28 @@ namespace SmLocações
         {
 
         }
+
+        private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int posicaolinha = dgvPedidos.CurrentRow.Index;
+
+            txtIdPedido.Text = dgvPedidos.Rows[posicaolinha].Cells[0].Value.ToString();
+            txtCliente.Text = dgvPedidos.Rows[posicaolinha].Cells[1].Value.ToString();
+            txtFuncionario.Text = dgvPedidos.Rows[posicaolinha].Cells[2].Value.ToString();
+            txtDataRetirada.Text = dgvPedidos.Rows[posicaolinha].Cells[3].Value.ToString();
+            txtDataEntrega.Text = dgvPedidos.Rows[posicaolinha].Cells[4].Value.ToString();
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            ControleEstoque controleEstoque = new ();
+            Pedidos pedidos = new();
+            pedidos.AtualizarStatusPedido(int.Parse(txtIdPedido.Text), cmbStatus.Text);
+            MessageBox.Show("Status atualizado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (cmbStatus.Text == "Concluído")
+            {
+                
+            }           
+        }
     }
 }

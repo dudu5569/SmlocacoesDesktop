@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            cmbStatus = new ComboBox();
+            txtDataEntrega = new TextBox();
+            txtDataRetirada = new TextBox();
+            label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
+            txtCliente = new TextBox();
+            txtFuncionario = new TextBox();
+            txtIdPedido = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            btnCancelar = new Guna.UI2.WinForms.Guna2Button();
+            btnInserir = new Guna.UI2.WinForms.Guna2Button();
             tabPage2 = new TabPage();
             dgvPedidos = new DataGridView();
-            label1 = new Label();
             id = new DataGridViewTextBoxColumn();
             cliente = new DataGridViewTextBoxColumn();
             FUncionario = new DataGridViewTextBoxColumn();
             retirada = new DataGridViewTextBoxColumn();
             entrega = new DataGridViewTextBoxColumn();
             status = new DataGridViewTextBoxColumn();
-            btnInserir = new Guna.UI2.WinForms.Guna2Button();
-            btnCancelar = new Guna.UI2.WinForms.Guna2Button();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            comboBox1 = new ComboBox();
+            label1 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -75,15 +75,15 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(comboBox1);
-            tabPage1.Controls.Add(textBox5);
-            tabPage1.Controls.Add(textBox4);
+            tabPage1.Controls.Add(cmbStatus);
+            tabPage1.Controls.Add(txtDataEntrega);
+            tabPage1.Controls.Add(txtDataRetirada);
             tabPage1.Controls.Add(label7);
             tabPage1.Controls.Add(label6);
             tabPage1.Controls.Add(label5);
-            tabPage1.Controls.Add(textBox3);
-            tabPage1.Controls.Add(textBox2);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(txtCliente);
+            tabPage1.Controls.Add(txtFuncionario);
+            tabPage1.Controls.Add(txtIdPedido);
             tabPage1.Controls.Add(label4);
             tabPage1.Controls.Add(label3);
             tabPage1.Controls.Add(label2);
@@ -96,6 +96,153 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Alterar Status";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cmbStatus
+            // 
+            cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbStatus.FormattingEnabled = true;
+            cmbStatus.Items.AddRange(new object[] { "Para Enviar", "Para Receber", "Concluído" });
+            cmbStatus.Location = new Point(497, 163);
+            cmbStatus.Name = "cmbStatus";
+            cmbStatus.Size = new Size(121, 23);
+            cmbStatus.TabIndex = 19;
+            // 
+            // txtDataEntrega
+            // 
+            txtDataEntrega.Location = new Point(333, 163);
+            txtDataEntrega.Name = "txtDataEntrega";
+            txtDataEntrega.ReadOnly = true;
+            txtDataEntrega.Size = new Size(125, 23);
+            txtDataEntrega.TabIndex = 18;
+            // 
+            // txtDataRetirada
+            // 
+            txtDataRetirada.Location = new Point(177, 163);
+            txtDataRetirada.Name = "txtDataRetirada";
+            txtDataRetirada.ReadOnly = true;
+            txtDataRetirada.Size = new Size(125, 23);
+            txtDataRetirada.TabIndex = 17;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(497, 145);
+            label7.Name = "label7";
+            label7.Size = new Size(39, 15);
+            label7.TabIndex = 16;
+            label7.Text = "Status";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(329, 145);
+            label6.Name = "label6";
+            label6.Size = new Size(74, 15);
+            label6.TabIndex = 15;
+            label6.Text = "Data Entrega";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(177, 145);
+            label5.Name = "label5";
+            label5.Size = new Size(77, 15);
+            label5.TabIndex = 14;
+            label5.Text = "Data Retirada";
+            // 
+            // txtCliente
+            // 
+            txtCliente.Location = new Point(497, 100);
+            txtCliente.Name = "txtCliente";
+            txtCliente.ReadOnly = true;
+            txtCliente.Size = new Size(192, 23);
+            txtCliente.TabIndex = 13;
+            // 
+            // txtFuncionario
+            // 
+            txtFuncionario.Location = new Point(248, 100);
+            txtFuncionario.Name = "txtFuncionario";
+            txtFuncionario.ReadOnly = true;
+            txtFuncionario.Size = new Size(192, 23);
+            txtFuncionario.TabIndex = 12;
+            // 
+            // txtIdPedido
+            // 
+            txtIdPedido.Location = new Point(92, 95);
+            txtIdPedido.Name = "txtIdPedido";
+            txtIdPedido.ReadOnly = true;
+            txtIdPedido.Size = new Size(92, 23);
+            txtIdPedido.TabIndex = 11;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(497, 82);
+            label4.Name = "label4";
+            label4.Size = new Size(44, 15);
+            label4.TabIndex = 10;
+            label4.Text = "Cliente";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(248, 82);
+            label3.Name = "label3";
+            label3.Size = new Size(70, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Funcionário";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(92, 77);
+            label2.Name = "label2";
+            label2.Size = new Size(75, 15);
+            label2.TabIndex = 8;
+            label2.Text = "ID do Pedido";
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Animated = true;
+            btnCancelar.AutoRoundedCorners = true;
+            btnCancelar.BorderRadius = 10;
+            btnCancelar.BorderThickness = 1;
+            btnCancelar.CustomizableEdges = customizableEdges1;
+            btnCancelar.DisabledState.BorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCancelar.FillColor = Color.Red;
+            btnCancelar.Font = new Font("Segoe UI", 9F);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(407, 268);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCancelar.Size = new Size(122, 23);
+            btnCancelar.TabIndex = 7;
+            btnCancelar.Text = "&Cancelar";
+            // 
+            // btnInserir
+            // 
+            btnInserir.Animated = true;
+            btnInserir.AutoRoundedCorners = true;
+            btnInserir.BorderRadius = 10;
+            btnInserir.BorderThickness = 1;
+            btnInserir.CustomizableEdges = customizableEdges3;
+            btnInserir.DisabledState.BorderColor = Color.DarkGray;
+            btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnInserir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnInserir.FillColor = Color.Green;
+            btnInserir.Font = new Font("Segoe UI", 9F);
+            btnInserir.ForeColor = Color.White;
+            btnInserir.Location = new Point(248, 268);
+            btnInserir.Name = "btnInserir";
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnInserir.Size = new Size(122, 23);
+            btnInserir.TabIndex = 6;
+            btnInserir.Text = "&Atualizar";
+            btnInserir.Click += btnInserir_Click;
             // 
             // tabPage2
             // 
@@ -117,17 +264,7 @@
             dgvPedidos.RowHeadersVisible = false;
             dgvPedidos.Size = new Size(798, 357);
             dgvPedidos.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(320, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(338, 45);
-            label1.TabIndex = 1;
-            label1.Text = "Alterar Status Pedido";
-            label1.Click += label1_Click;
+            dgvPedidos.CellClick += dgvPedidos_CellClick;
             // 
             // id
             // 
@@ -176,146 +313,16 @@
             status.Name = "status";
             status.ReadOnly = true;
             // 
-            // btnInserir
+            // label1
             // 
-            btnInserir.Animated = true;
-            btnInserir.AutoRoundedCorners = true;
-            btnInserir.BorderRadius = 10;
-            btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges7;
-            btnInserir.DisabledState.BorderColor = Color.DarkGray;
-            btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnInserir.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnInserir.FillColor = Color.Green;
-            btnInserir.Font = new Font("Segoe UI", 9F);
-            btnInserir.ForeColor = Color.White;
-            btnInserir.Location = new Point(248, 268);
-            btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnInserir.Size = new Size(122, 23);
-            btnInserir.TabIndex = 6;
-            btnInserir.Text = "&Atualizar";
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Animated = true;
-            btnCancelar.AutoRoundedCorners = true;
-            btnCancelar.BorderRadius = 10;
-            btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges5;
-            btnCancelar.DisabledState.BorderColor = Color.DarkGray;
-            btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnCancelar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnCancelar.FillColor = Color.Red;
-            btnCancelar.Font = new Font("Segoe UI", 9F);
-            btnCancelar.ForeColor = Color.White;
-            btnCancelar.Location = new Point(407, 268);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnCancelar.Size = new Size(122, 23);
-            btnCancelar.TabIndex = 7;
-            btnCancelar.Text = "&Cancelar";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(92, 77);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 15);
-            label2.TabIndex = 8;
-            label2.Text = "ID do Pedido";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(248, 82);
-            label3.Name = "label3";
-            label3.Size = new Size(70, 15);
-            label3.TabIndex = 9;
-            label3.Text = "Funcionário";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(497, 82);
-            label4.Name = "label4";
-            label4.Size = new Size(44, 15);
-            label4.TabIndex = 10;
-            label4.Text = "Cliente";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(92, 95);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(92, 23);
-            textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(248, 100);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(192, 23);
-            textBox2.TabIndex = 12;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(497, 100);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(192, 23);
-            textBox3.TabIndex = 13;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(92, 145);
-            label5.Name = "label5";
-            label5.Size = new Size(77, 15);
-            label5.TabIndex = 14;
-            label5.Text = "Data Retirada";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(244, 145);
-            label6.Name = "label6";
-            label6.Size = new Size(74, 15);
-            label6.TabIndex = 15;
-            label6.Text = "Data Entrega";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(497, 145);
-            label7.Name = "label7";
-            label7.Size = new Size(39, 15);
-            label7.TabIndex = 16;
-            label7.Text = "Status";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(92, 163);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 23);
-            textBox4.TabIndex = 17;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(248, 163);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 23);
-            textBox5.TabIndex = 18;
-            // 
-            // comboBox1
-            // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Para Enviar", "Para Receber", "Concluído" });
-            comboBox1.Location = new Point(497, 163);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 19;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(320, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(338, 45);
+            label1.TabIndex = 1;
+            label1.Text = "Alterar Status Pedido";
+            label1.Click += label1_Click;
             // 
             // frmAlterarStatusPedido
             // 
@@ -352,16 +359,16 @@
         private Guna.UI2.WinForms.Guna2Button btnInserir;
         private Label label6;
         private Label label5;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox txtCliente;
+        private TextBox txtFuncionario;
+        private TextBox txtIdPedido;
         private Label label4;
         private Label label3;
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button btnCancelar;
-        private ComboBox comboBox1;
-        private TextBox textBox5;
-        private TextBox textBox4;
+        private ComboBox cmbStatus;
+        private TextBox txtDataEntrega;
+        private TextBox txtDataRetirada;
         private Label label7;
     }
 }

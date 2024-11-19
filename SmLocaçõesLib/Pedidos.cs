@@ -109,5 +109,16 @@ namespace SmLocaçõesLib
             return lista;
         }
 
+        public void AtualizarStatusPedido(int id,string status)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "UPDATE locacoes SET status_pedido = @status WHERE id = @id";
+            cmd.Parameters.AddWithValue("@status", status);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
+        }
+
     }
 }
