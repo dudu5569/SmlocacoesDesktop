@@ -29,18 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarPedidos));
-            dgvVerPedidos = new DataGridView();
+            dgvPedidos = new DataGridView();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvVerPedidos).BeginInit();
+            id = new DataGridViewTextBoxColumn();
+            cliente = new DataGridViewTextBoxColumn();
+            funcionario = new DataGridViewTextBoxColumn();
+            Dataret = new DataGridViewTextBoxColumn();
+            dataent = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
             SuspendLayout();
             // 
-            // dgvVerPedidos
+            // dgvPedidos
             // 
-            dgvVerPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVerPedidos.Location = new Point(12, 123);
-            dgvVerPedidos.Name = "dgvVerPedidos";
-            dgvVerPedidos.Size = new Size(1112, 356);
-            dgvVerPedidos.TabIndex = 0;
+            dgvPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPedidos.Columns.AddRange(new DataGridViewColumn[] { id, cliente, funcionario, Dataret, dataent });
+            dgvPedidos.Location = new Point(12, 123);
+            dgvPedidos.Name = "dgvPedidos";
+            dgvPedidos.RowHeadersVisible = false;
+            dgvPedidos.Size = new Size(1054, 356);
+            dgvPedidos.TabIndex = 0;
             // 
             // label1
             // 
@@ -52,26 +59,71 @@
             label1.TabIndex = 1;
             label1.Text = "Consultar Pedidos";
             // 
+            // id
+            // 
+            id.Frozen = true;
+            id.HeaderText = "ID";
+            id.Name = "id";
+            id.ReadOnly = true;
+            id.Width = 50;
+            // 
+            // cliente
+            // 
+            cliente.Frozen = true;
+            cliente.HeaderText = "Cliente";
+            cliente.Name = "cliente";
+            cliente.ReadOnly = true;
+            cliente.Width = 300;
+            // 
+            // funcionario
+            // 
+            funcionario.Frozen = true;
+            funcionario.HeaderText = "Funcionário";
+            funcionario.Name = "funcionario";
+            funcionario.ReadOnly = true;
+            funcionario.Width = 300;
+            // 
+            // Dataret
+            // 
+            Dataret.Frozen = true;
+            Dataret.HeaderText = "Data Retirada";
+            Dataret.Name = "Dataret";
+            Dataret.ReadOnly = true;
+            Dataret.Width = 200;
+            // 
+            // dataent
+            // 
+            dataent.Frozen = true;
+            dataent.HeaderText = "Data Entrega";
+            dataent.Name = "dataent";
+            dataent.ReadOnly = true;
+            dataent.Width = 200;
+            // 
             // FrmConsultarPedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1136, 491);
+            ClientSize = new Size(1074, 491);
             Controls.Add(label1);
-            Controls.Add(dgvVerPedidos);
+            Controls.Add(dgvPedidos);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmConsultarPedidos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Consultar Pedidos";
             Load += ConsultarPedidos_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvVerPedidos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dgvVerPedidos;
+        private DataGridView dgvPedidos;
         private Label label1;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn cliente;
+        private DataGridViewTextBoxColumn funcionario;
+        private DataGridViewTextBoxColumn Dataret;
+        private DataGridViewTextBoxColumn dataent;
     }
 }
