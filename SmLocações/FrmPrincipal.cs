@@ -20,10 +20,10 @@ namespace SmLocações
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             
-           /* FrmLogin frmLogin = new FrmLogin();
+            FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
             Text += $" ({Program.UsuarioLogado.Login})";
-            toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Id_funcionario.Nome} - {Program.UsuarioLogado.Id_funcionario.Nivel.Nome}"; */
+            toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Id_funcionario.Nome} - {Program.UsuarioLogado.Id_funcionario.Nivel.Nome}"; 
         }
 
 

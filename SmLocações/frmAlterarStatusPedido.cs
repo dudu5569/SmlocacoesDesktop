@@ -63,15 +63,24 @@ namespace SmLocações
         private void btnInserir_Click(object sender, EventArgs e)
         {
             ControleEstoque controleEstoque = new();
+            Pedidos pedidos = new ();
+            pedidos.AtualizarStatusPedido(int.Parse(txtIdPedido.Text), cmbStatus.Text);
+            MessageBox.Show("Status do pedido atualizado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Consulta as quantidades
+            
+
             List<int> quantidades = controleEstoque.ConsultaItensPedido(int.Parse(txtIdPedido.Text));
 
-            // Exibe cada quantidade separadamente
             foreach (var quantidade in quantidades)
             {
                 MessageBox.Show(quantidade.ToString());
             }
+
+            txtIdPedido.Clear();
+            txtFuncionario.Clear();
+            txtDataRetirada.Clear();
+            txtDataEntrega.Clear();
+            txtCliente.Clear();
         }
 
     }
