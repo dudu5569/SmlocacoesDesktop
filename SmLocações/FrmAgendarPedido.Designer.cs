@@ -300,7 +300,7 @@
             btnInserirAgendamento.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnInserirAgendamento.Size = new Size(122, 23);
             btnInserirAgendamento.TabIndex = 5;
-            btnInserirAgendamento.Text = "&inserir Pedido";
+            btnInserirAgendamento.Text = "&Inserir Pedido";
             btnInserirAgendamento.Click += btnInserir_Click;
             // 
             // tabPage2
@@ -435,7 +435,7 @@
             btnInserirProduto.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnInserirProduto.Size = new Size(122, 23);
             btnInserirProduto.TabIndex = 6;
-            btnInserirProduto.Text = "&inserir Pedido";
+            btnInserirProduto.Text = "&Inserir Item";
             btnInserirProduto.Click += btnInserirProduto_Click;
             // 
             // txtValorTotal

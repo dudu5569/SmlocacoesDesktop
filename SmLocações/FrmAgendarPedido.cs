@@ -217,6 +217,18 @@ namespace SmLocações
             itensPedido.InserirItemPedido();
             if (itensPedido.ID > 0)
             {
+                int posicaolinha = dgvProdutos.CurrentRow.Index;
+                int quantidadePedido = int.Parse(txtQuantidade.Text);
+                string produto = dgvProdutos.Rows[posicaolinha].Cells[3].Value.ToString();
+
+                int quantidadeProduto = Convert.ToInt32(produto);
+
+                int valor_a_ser_descontado = quantidadeProduto - quantidadePedido;
+
+
+
+                ControleEstoque controleEstoque = new();
+                controleEstoque.DescontaEstoque(int.Parse(txtIdProduto.Text), valor_a_ser_descontado);
                 MessageBox.Show("Item adicionado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
