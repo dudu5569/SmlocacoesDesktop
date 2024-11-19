@@ -16,23 +16,27 @@ namespace SmLocaçõesLib
         public DateTime Data_Retirada { get; set; }
         public DateTime Data_Entrega { get; set; }
 
+        public string? Status_Pedido { get; set; }
+
         public AgendamentoPedido() { }
 
-        public AgendamentoPedido(int iD, Cliente cliente, Funcionario funcionario, DateTime data_Retirada, DateTime data_Entrega)
+        public AgendamentoPedido(int iD, Cliente cliente, Funcionario funcionario, DateTime data_Retirada, DateTime data_Entrega, string? status_Pedido)
         {
             ID = iD;
             this.cliente = cliente;
             this.funcionario = funcionario;
             Data_Retirada = data_Retirada;
             Data_Entrega = data_Entrega;
+            Status_Pedido = status_Pedido;
         }
 
-        public AgendamentoPedido(Cliente cliente, Funcionario funcionario, DateTime data_Retirada, DateTime data_Entrega)
+        public AgendamentoPedido(Cliente cliente, Funcionario funcionario, DateTime data_Retirada, DateTime data_Entrega, string? status_Pedido)
         {
             this.cliente = cliente;
             this.funcionario = funcionario;
             Data_Retirada = data_Retirada;
             Data_Entrega = data_Entrega;
+            Status_Pedido= status_Pedido;
         }
 
         public void InserirPedido()
@@ -44,6 +48,7 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spid_funcionario", funcionario.ID);
             cmd.Parameters.AddWithValue("spdata_retirada", Data_Retirada);
             cmd.Parameters.AddWithValue("spdata_entrega", Data_Entrega);
+            cmd.Parameters.AddWithValue("spstatus_pedido", Status_Pedido);
             var dr = cmd.ExecuteReader();
             if (dr.Read()) ID = dr.GetInt32(0);
         }

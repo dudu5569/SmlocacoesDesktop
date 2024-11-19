@@ -41,11 +41,13 @@ namespace SmLocações
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
+            string agendamento = "Para Enviar";
             AgendamentoPedido agendar = new(
                Cliente.ObterPorId(int.Parse(txtIdCliente.Text)),
                 Funcionario.ObterporId(Convert.ToInt32(cmbFuncionario.SelectedValue)),
                 dataRetirada.Value,
-                dataEntrega.Value
+                dataEntrega.Value,
+                agendamento
                 );
 
             agendar.InserirPedido();

@@ -179,7 +179,7 @@ id_cliente INT(8) NOT NULL,
 id_funcionario INT(8) NOT NULL,
 data_retirada DATETIME NOT NULL,
 data_entrega DATETIME NOT NULL,
-status_produto VARCHAR(1) NOT NULL,
+status_pedido VARCHAR(50) NOT NULL,
 CONSTRAINT FK_locacoes_clientes FOREIGN KEY (id_cliente) REFERENCES clientes(id),
 CONSTRAINT FK_locacoes_funcionarios FOREIGN KEY (id_funcionario) REFERENCES funcionarios(id),
 PRIMARY KEY(id)
@@ -195,6 +195,9 @@ CONSTRAINT FK_pedidos_funcionarios FOREIGN KEY (id_funcionario) REFERENCES funci
 CONSTRAINT FK_pedidos_clientes FOREIGN KEY (id_cliente ) REFERENCES clientes(id),
 PRIMARY KEY(id)
 );
+
+
+
 
 create table estoques(
 id_produto INT(8)AUTO_INCREMENT NOT NULL,
@@ -729,7 +732,123 @@ VIEW `smlocacoesdb`.`vw_usuarios_web` AS
         `smlocacoesdb`.`usuarios_funcionarios_web` `usu_func` 
         ON `usu_cli`.`id` = `usu_func`.`id`;
 
+-- ---------------------------------------------------
+-- view vw_dados_clientes
+-- -----------------------------------------------------
+CREATE 
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `smlocacoesdb`.`vw_dados_clientes` AS
+    SELECT 
+        cli.id AS id_cliente,
+        cli.nome AS nome_cliente,
+        cli.cpf AS cpf,
+        cli.data_nascimento AS data_nascimento,
+        cli.data_cad AS data_cad,
+        
+        -- Telefone
+        t.telefone AS telefone,
+        t.tipo AS tipo_telefone,
+        
+        -- Email
+        e.email AS email,
+        
+        -- Endereço
+        ender.logradouro AS logradouro,
+        ender.numero AS numero,
+        ender.bairro AS bairro,
+        ender.cidade AS cidade,
+        ender.uf AS uf,
+        ender.cep AS cep,
+        ender.tipo AS tipo_endereco,
+        
+        -- Dados de login
+        uc.usuario AS usuario_web,
+        uc.senha AS senha,
+        uc.ativo AS conta_ativa
 
+    FROM
+        smlocacoesdb.clientes cli
+        
+    -- Relacionamento com Telefones
+    LEFT JOIN smlocacoesdb.clientes_telefones cli_t ON cli.id = cli_t.id_cliente
+    LEFT JOIN smlocacoesdb.telefones t ON cli_t.id_telefone = t.id
+    
+    -- Relacionamento com Emails
+    LEFT JOIN smlocacoesdb.clientes_emails cli_e ON cli.id = cli_e.id_cliente
+    LEFT JOIN smlocacoesdb.emails e ON cli_e.id_email = e.id
+
+    -- Relacionamento com Endereços
+    LEFT JOIN smlocacoesdb.clientes_enderecos cli_ender ON cli.id = cli_ender.id_cliente
+    LEFT JOIN smlocacoesdb.enderecos ender ON cli_ender.id_endereco = ender.id
+    
+    -- Relacionamento com Usuários Web
+    LEFT JOIN smlocacoesdb.usuarios_clientes_web uc ON cli.id = uc.id_cliente;
+
+-- ---------------------------------------------------
+-- view vw_dados_funcionarios
+-- -----------------------------------------------------
+CREATE 
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`localhost`
+    SQL SECURITY DEFINER
+VIEW `smlocacoesdb`.`vw_dados_funcionarios` AS
+    SELECT 
+        -- Informações do Funcionário
+        fun.id AS id_funcionario,
+        fun.nome AS nome_funcionario,
+        fun.cpf AS cpf,
+        fun.data_nasc AS data_nascimento,
+        fun.data_cad AS data_cadastro,
+        fun.ativo AS funcionario_ativo,
+        
+        -- Telefone
+        t.telefone AS telefone,
+        t.tipo AS tipo_telefone,
+        
+        -- Email
+        e.email AS email,
+        
+        -- Endereço
+        ender.logradouro AS logradouro,
+        ender.numero AS numero,
+        ender.bairro AS bairro,
+        ender.cidade AS cidade,
+        ender.uf AS uf,
+        ender.cep AS cep,
+        ender.tipo AS tipo_endereco,
+        
+        -- Usuário Desktop
+        usu_desk.usuario AS usuario_desktop,
+        usu_desk.senha AS senha_desktop,
+        usu_desk.ativo AS conta_desktop_ativa,
+        
+        -- Usuário Web
+        usu_web.usuario AS usuario_web,
+        usu_web.senha AS senha_web,
+        usu_web.ativo AS conta_web_ativa
+
+    FROM
+        smlocacoesdb.funcionarios fun
+        
+    -- Relacionamento com Telefones
+    LEFT JOIN smlocacoesdb.funcionarios_telefones f_t ON fun.id = f_t.id_funcionario
+    LEFT JOIN smlocacoesdb.telefones t ON f_t.id_telefone = t.id
+    
+    -- Relacionamento com Emails
+    LEFT JOIN smlocacoesdb.funcionarios_emails f_e ON fun.id = f_e.id_funcionario
+    LEFT JOIN smlocacoesdb.emails e ON f_e.id_email = e.id
+
+    -- Relacionamento com Endereços
+    LEFT JOIN smlocacoesdb.funcionarios_enderecos f_ender ON fun.id = f_ender.id_funcionario
+    LEFT JOIN smlocacoesdb.enderecos ender ON f_ender.id_endereco = ender.id
+    
+    -- Relacionamento com Usuários Desktop
+    LEFT JOIN smlocacoesdb.usuarios_desktop usu_desk ON fun.id = usu_desk.id_funcionario
+
+    -- Relacionamento com Usuários Web
+    LEFT JOIN smlocacoesdb.usuarios_funcionarios_web usu_web ON fun.id = usu_web.id_funcionario;
 
 -- -----------------------------------------------------
 -- procedure sp_inserir_locacoes
