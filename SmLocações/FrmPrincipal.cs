@@ -19,11 +19,11 @@ namespace SmLocações
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            
+
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
             Text += $" ({Program.UsuarioLogado.Login})";
-            toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Id_funcionario.Nome} - {Program.UsuarioLogado.Id_funcionario.Nivel.Nome}"; 
+            toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Id_funcionario.Nome} - {Program.UsuarioLogado.Id_funcionario.Nivel.Nome}";
         }
 
 
@@ -81,8 +81,14 @@ namespace SmLocações
 
         private void novoToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            FrmProdutos frmProdutos = new ();
+            FrmProdutos frmProdutos = new();
             frmProdutos.ShowDialog();
+        }
+
+        private void alterarStatusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAlterarStatusPedido frmAlterarStatusPedido = new();
+            frmAlterarStatusPedido.ShowDialog();
         }
     }
 }

@@ -48,6 +48,7 @@
             estoqueToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            alterarStatusToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -141,7 +142,7 @@
             // 
             // pedidosToolStripMenuItem
             // 
-            pedidosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, consultarToolStripMenuItem });
+            pedidosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem, consultarToolStripMenuItem, alterarStatusToolStripMenuItem });
             pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
             pedidosToolStripMenuItem.Size = new Size(61, 19);
             pedidosToolStripMenuItem.Text = "&Pedidos";
@@ -149,14 +150,14 @@
             // novoToolStripMenuItem
             // 
             novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            novoToolStripMenuItem.Size = new Size(125, 22);
+            novoToolStripMenuItem.Size = new Size(180, 22);
             novoToolStripMenuItem.Text = "&Novo";
             novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
             // 
             // consultarToolStripMenuItem
             // 
             consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(125, 22);
+            consultarToolStripMenuItem.Size = new Size(180, 22);
             consultarToolStripMenuItem.Text = "&Consultar";
             consultarToolStripMenuItem.Click += consultarToolStripMenuItem_Click;
             // 
@@ -191,6 +192,13 @@
             toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             toolStripStatusLabel1.Size = new Size(118, 17);
             toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // alterarStatusToolStripMenuItem
+            // 
+            alterarStatusToolStripMenuItem.Name = "alterarStatusToolStripMenuItem";
+            alterarStatusToolStripMenuItem.Size = new Size(180, 22);
+            alterarStatusToolStripMenuItem.Text = "&Alterar Status";
+            alterarStatusToolStripMenuItem.Click += alterarStatusToolStripMenuItem_Click;
             // 
             // FrmPrincipal
             // 
@@ -239,5 +247,6 @@
         private ToolStripMenuItem novoToolStripMenuItem4;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripMenuItem alterarStatusToolStripMenuItem;
     }
 }

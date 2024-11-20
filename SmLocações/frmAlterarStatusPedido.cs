@@ -63,25 +63,40 @@ namespace SmLocações
         private void btnInserir_Click(object sender, EventArgs e)
         {
             ControleEstoque controleEstoque = new();
-            Pedidos pedidos = new ();
+            Pedidos pedidos = new();
+
+            // Atualiza o status do pedido
             pedidos.AtualizarStatusPedido(int.Parse(txtIdPedido.Text), cmbStatus.Text);
             MessageBox.Show("Status do pedido atualizado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            
-
-            List<int> quantidades = controleEstoque.ConsultaItensPedido(int.Parse(txtIdPedido.Text));
-
-            foreach (var quantidade in quantidades)
+            // Verifica se o status é "Concluído"
+            if (cmbStatus.Text == "Concluído")
             {
-                MessageBox.Show(quantidade.ToString());
+                // Lista de quantidades de itens no pedido
+                List<int> quantidades = controleEstoque.ConsultaItensPedido(int.Parse(txtIdPedido.Text));
+                // Lista de IDs dos produtos relacionados ao pedido
+                List<int> produtos = controleEstoque.ConsultaProdutosDoPedido(int.Parse(txtIdPedido.Text));
+
+                // Devolve os produtos ao estoque
+                for (int i = 0; i < produtos.Count; i++)
+                {
+                    int produtoId = produtos[i];
+                    int quantidade = quantidades[i];
+
+                    controleEstoque.DevolverEstoque(produtoId, quantidade);
+                }
+
+                MessageBox.Show("Estoque atualizado com a devolução dos itens!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+            // Limpa os campos após a operação
             txtIdPedido.Clear();
             txtFuncionario.Clear();
             txtDataRetirada.Clear();
             txtDataEntrega.Clear();
             txtCliente.Clear();
         }
+
 
     }
 }

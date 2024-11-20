@@ -60,10 +60,39 @@ namespace SmLocaçõesLib
         {
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"Update produtos set unidade_venda = {quantidade} where id = {idproduto}";
+
+            // Atualiza o estoque somando a quantidade devolvida
+            cmd.CommandText = $"UPDATE produtos SET unidade_venda = unidade_venda + {quantidade} WHERE id = {idproduto}";
+
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }
+
+        public List<int> ConsultaProdutosDoPedido(int idPedido)
+        {
+            var cmd = Banco.Abrir();
+            var produtos = new List<int>();
+
+            try
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"SELECT id_produto FROM items_locacoes WHERE id_locacao = {idPedido}";
+                var dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    produtos.Add(dr.GetInt32(0));
+                }
+            }
+            finally
+            {
+                cmd.Connection.Close();
+            }
+
+            return produtos;
+        }
+
+
 
     }
 }
