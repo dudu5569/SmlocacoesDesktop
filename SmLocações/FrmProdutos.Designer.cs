@@ -304,6 +304,7 @@
             Controls.Add(label2);
             Controls.Add(label5);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmProdutos";
             Text = "Inserir Produtos";
             Load += FrmProdutos_Load;

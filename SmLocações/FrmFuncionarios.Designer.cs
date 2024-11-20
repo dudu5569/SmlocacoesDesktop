@@ -893,6 +893,7 @@
             Controls.Add(tabControl1);
             Controls.Add(label1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmFuncionarios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inserir Dados dos Funcionários";

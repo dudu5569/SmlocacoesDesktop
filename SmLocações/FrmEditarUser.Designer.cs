@@ -262,6 +262,7 @@
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmEditarUser";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Editar Usuários";

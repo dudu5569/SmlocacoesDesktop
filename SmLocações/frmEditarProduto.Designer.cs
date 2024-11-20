@@ -384,6 +384,7 @@
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "frmEditarProduto";
             Text = "Editar Produtos";
             Load += frmEditarProduto_Load;

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarPedidos));
             dgvPedidos = new DataGridView();
-            label1 = new Label();
             id = new DataGridViewTextBoxColumn();
             cliente = new DataGridViewTextBoxColumn();
             funcionario = new DataGridViewTextBoxColumn();
             Dataret = new DataGridViewTextBoxColumn();
             dataent = new DataGridViewTextBoxColumn();
             stati = new DataGridViewTextBoxColumn();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
             SuspendLayout();
             // 
@@ -49,16 +49,6 @@
             dgvPedidos.RowHeadersVisible = false;
             dgvPedidos.Size = new Size(1050, 356);
             dgvPedidos.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(365, 43);
-            label1.Name = "label1";
-            label1.Size = new Size(291, 45);
-            label1.TabIndex = 1;
-            label1.Text = "Consultar Pedidos";
             // 
             // id
             // 
@@ -107,6 +97,16 @@
             stati.Name = "stati";
             stati.ReadOnly = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(365, 43);
+            label1.Name = "label1";
+            label1.Size = new Size(291, 45);
+            label1.TabIndex = 1;
+            label1.Text = "Consultar Pedidos";
+            // 
             // FrmConsultarPedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -115,6 +115,7 @@
             Controls.Add(label1);
             Controls.Add(dgvPedidos);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmConsultarPedidos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Consultar Pedidos";

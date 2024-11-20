@@ -116,6 +116,7 @@
             Controls.Add(label1);
             Controls.Add(dgvProdutos);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmConsultarEstoque";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Estoque";

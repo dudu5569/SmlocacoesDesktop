@@ -22,8 +22,16 @@ namespace SmLocações
 
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
+            if (Program.UsuarioLogado.Id > 0)
+            {
             Text += $" ({Program.UsuarioLogado.Login})";
             toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Id_funcionario.Nome} - {Program.UsuarioLogado.Id_funcionario.Nivel.Nome}";
+            }
+            else
+            {
+                Application.Exit();
+            }
+
         }
 
 

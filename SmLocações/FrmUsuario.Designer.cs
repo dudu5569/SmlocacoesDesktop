@@ -191,6 +191,7 @@
             ClientSize = new Size(453, 374);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmUsuario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inserir Usuários";

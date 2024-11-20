@@ -152,6 +152,7 @@
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmInserirNiveis";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inserir Cargos";

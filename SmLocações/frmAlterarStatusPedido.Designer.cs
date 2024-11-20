@@ -357,6 +357,7 @@
             ClientSize = new Size(1018, 504);
             Controls.Add(label1);
             Controls.Add(tabControl1);
+            MaximizeBox = false;
             Name = "frmAlterarStatusPedido";
             Text = "frmAlterarStatusPedido";
             Load += frmAlterarStatusPedido_Load;

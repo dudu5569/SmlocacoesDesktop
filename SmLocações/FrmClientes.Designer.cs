@@ -1052,6 +1052,7 @@
             Controls.Add(label5);
             Controls.Add(tabControl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FrmClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inserir Dados dos Clientes";
