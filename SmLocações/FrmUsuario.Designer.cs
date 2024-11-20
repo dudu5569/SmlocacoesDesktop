@@ -134,7 +134,7 @@
             chkAtivo.Location = new Point(310, 225);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
-            chkAtivo.TabIndex = 9;
+            chkAtivo.TabIndex = 3;
             chkAtivo.Text = "Ativo";
             chkAtivo.UseVisualStyleBackColor = true;
             // 
@@ -156,7 +156,7 @@
             btnInserir.Name = "btnInserir";
             btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnInserir.Size = new Size(122, 23);
-            btnInserir.TabIndex = 4;
+            btnInserir.TabIndex = 5;
             btnInserir.Text = "&inserir";
             btnInserir.Click += btnInserir_Click;
             // 
@@ -178,7 +178,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelar.Size = new Size(122, 23);
-            btnCancelar.TabIndex = 3;
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "&Cancelar";
             btnCancelar.Click += btnCancelar_Click;
             // 

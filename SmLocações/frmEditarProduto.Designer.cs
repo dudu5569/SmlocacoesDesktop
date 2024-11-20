@@ -106,6 +106,7 @@
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Editar Produtos";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // txtArquivoImagem
             // 
@@ -122,14 +123,14 @@
             cmbDestaqueProduto.Location = new Point(709, 196);
             cmbDestaqueProduto.Name = "cmbDestaqueProduto";
             cmbDestaqueProduto.Size = new Size(106, 23);
-            cmbDestaqueProduto.TabIndex = 22;
+            cmbDestaqueProduto.TabIndex = 5;
             // 
             // txtNomeProduto
             // 
             txtNomeProduto.Location = new Point(232, 196);
             txtNomeProduto.Name = "txtNomeProduto";
             txtNomeProduto.Size = new Size(195, 23);
-            txtNomeProduto.TabIndex = 21;
+            txtNomeProduto.TabIndex = 2;
             txtNomeProduto.TextChanged += txtNomeProdut_TextChanged;
             // 
             // label9
@@ -168,7 +169,7 @@
             btnEscolherImagem.Name = "btnEscolherImagem";
             btnEscolherImagem.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEscolherImagem.Size = new Size(122, 23);
-            btnEscolherImagem.TabIndex = 17;
+            btnEscolherImagem.TabIndex = 6;
             btnEscolherImagem.Text = "&Escolher Imagem";
             btnEscolherImagem.Click += btnEscolherImagem_Click;
             // 
@@ -177,21 +178,21 @@
             txtUnidadesVenda.Location = new Point(574, 196);
             txtUnidadesVenda.Name = "txtUnidadesVenda";
             txtUnidadesVenda.Size = new Size(100, 23);
-            txtUnidadesVenda.TabIndex = 13;
+            txtUnidadesVenda.TabIndex = 4;
             // 
             // txtValor
             // 
             txtValor.Location = new Point(446, 196);
             txtValor.Name = "txtValor";
             txtValor.Size = new Size(100, 23);
-            txtValor.TabIndex = 12;
+            txtValor.TabIndex = 3;
             // 
             // txtDescricao
             // 
             txtDescricao.Location = new Point(301, 132);
             txtDescricao.Name = "txtDescricao";
             txtDescricao.Size = new Size(327, 23);
-            txtDescricao.TabIndex = 10;
+            txtDescricao.TabIndex = 1;
             // 
             // btnCancelar
             // 
@@ -211,7 +212,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelar.Size = new Size(122, 23);
-            btnCancelar.TabIndex = 5;
+            btnCancelar.TabIndex = 7;
             btnCancelar.Text = "&Cancelar";
             // 
             // btnAtualizar
@@ -232,7 +233,7 @@
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnAtualizar.Size = new Size(122, 23);
-            btnAtualizar.TabIndex = 6;
+            btnAtualizar.TabIndex = 8;
             btnAtualizar.Text = "&Atualizar";
             btnAtualizar.Click += btnAtualizar_Click;
             // 

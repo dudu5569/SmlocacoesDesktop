@@ -121,7 +121,7 @@
             btnLogar.Name = "btnLogar";
             btnLogar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnLogar.Size = new Size(122, 23);
-            btnLogar.TabIndex = 8;
+            btnLogar.TabIndex = 3;
             btnLogar.Text = "&Entrar";
             btnLogar.Click += btnLogar_Click;
             // 
@@ -143,7 +143,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelar.Size = new Size(122, 23);
-            btnCancelar.TabIndex = 7;
+            btnCancelar.TabIndex = 2;
             btnCancelar.Text = "&Cancelar";
             btnCancelar.Click += btnCancelar_Click_1;
             // 

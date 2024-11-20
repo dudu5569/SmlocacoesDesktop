@@ -44,11 +44,11 @@
             pedidosToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem = new ToolStripMenuItem();
             consultarToolStripMenuItem = new ToolStripMenuItem();
+            alterarStatusToolStripMenuItem = new ToolStripMenuItem();
             vizualizarToolStripMenuItem = new ToolStripMenuItem();
             estoqueToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            alterarStatusToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -150,16 +150,23 @@
             // novoToolStripMenuItem
             // 
             novoToolStripMenuItem.Name = "novoToolStripMenuItem";
-            novoToolStripMenuItem.Size = new Size(180, 22);
+            novoToolStripMenuItem.Size = new Size(144, 22);
             novoToolStripMenuItem.Text = "&Novo";
             novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
             // 
             // consultarToolStripMenuItem
             // 
             consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            consultarToolStripMenuItem.Size = new Size(180, 22);
+            consultarToolStripMenuItem.Size = new Size(144, 22);
             consultarToolStripMenuItem.Text = "&Consultar";
             consultarToolStripMenuItem.Click += consultarToolStripMenuItem_Click;
+            // 
+            // alterarStatusToolStripMenuItem
+            // 
+            alterarStatusToolStripMenuItem.Name = "alterarStatusToolStripMenuItem";
+            alterarStatusToolStripMenuItem.Size = new Size(144, 22);
+            alterarStatusToolStripMenuItem.Text = "&Alterar Status";
+            alterarStatusToolStripMenuItem.Click += alterarStatusToolStripMenuItem_Click;
             // 
             // vizualizarToolStripMenuItem
             // 
@@ -193,20 +200,13 @@
             toolStripStatusLabel1.Size = new Size(118, 17);
             toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // alterarStatusToolStripMenuItem
-            // 
-            alterarStatusToolStripMenuItem.Name = "alterarStatusToolStripMenuItem";
-            alterarStatusToolStripMenuItem.Size = new Size(180, 22);
-            alterarStatusToolStripMenuItem.Text = "&Alterar Status";
-            alterarStatusToolStripMenuItem.Click += alterarStatusToolStripMenuItem_Click;
-            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DimGray;
-            BackgroundImage = Properties.Resources.SMLocações_Fundo;
-            BackgroundImageLayout = ImageLayout.Center;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1084, 623);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);

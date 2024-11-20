@@ -32,8 +32,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            btnEscolherPedido = new Guna.UI2.WinForms.Guna2Button();
             cmbStatus = new ComboBox();
             txtDataEntrega = new TextBox();
             txtDataRetirada = new TextBox();
@@ -75,6 +78,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btnEscolherPedido);
             tabPage1.Controls.Add(cmbStatus);
             tabPage1.Controls.Add(txtDataEntrega);
             tabPage1.Controls.Add(txtDataRetirada);
@@ -97,6 +101,28 @@
             tabPage1.Text = "Alterar Status";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnEscolherPedido
+            // 
+            btnEscolherPedido.Animated = true;
+            btnEscolherPedido.AutoRoundedCorners = true;
+            btnEscolherPedido.BorderRadius = 10;
+            btnEscolherPedido.BorderThickness = 1;
+            btnEscolherPedido.CustomizableEdges = customizableEdges1;
+            btnEscolherPedido.DisabledState.BorderColor = Color.DarkGray;
+            btnEscolherPedido.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEscolherPedido.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEscolherPedido.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEscolherPedido.FillColor = Color.DodgerBlue;
+            btnEscolherPedido.Font = new Font("Segoe UI", 9F);
+            btnEscolherPedido.ForeColor = Color.White;
+            btnEscolherPedido.Location = new Point(567, 268);
+            btnEscolherPedido.Name = "btnEscolherPedido";
+            btnEscolherPedido.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnEscolherPedido.Size = new Size(122, 23);
+            btnEscolherPedido.TabIndex = 8;
+            btnEscolherPedido.Text = "&Escolher Pedido";
+            btnEscolherPedido.Click += btnEscolherPedido_Click;
+            // 
             // cmbStatus
             // 
             cmbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -105,7 +131,7 @@
             cmbStatus.Location = new Point(497, 163);
             cmbStatus.Name = "cmbStatus";
             cmbStatus.Size = new Size(121, 23);
-            cmbStatus.TabIndex = 19;
+            cmbStatus.TabIndex = 5;
             // 
             // txtDataEntrega
             // 
@@ -113,7 +139,7 @@
             txtDataEntrega.Name = "txtDataEntrega";
             txtDataEntrega.ReadOnly = true;
             txtDataEntrega.Size = new Size(125, 23);
-            txtDataEntrega.TabIndex = 18;
+            txtDataEntrega.TabIndex = 4;
             // 
             // txtDataRetirada
             // 
@@ -121,7 +147,7 @@
             txtDataRetirada.Name = "txtDataRetirada";
             txtDataRetirada.ReadOnly = true;
             txtDataRetirada.Size = new Size(125, 23);
-            txtDataRetirada.TabIndex = 17;
+            txtDataRetirada.TabIndex = 3;
             // 
             // label7
             // 
@@ -156,7 +182,7 @@
             txtCliente.Name = "txtCliente";
             txtCliente.ReadOnly = true;
             txtCliente.Size = new Size(192, 23);
-            txtCliente.TabIndex = 13;
+            txtCliente.TabIndex = 2;
             // 
             // txtFuncionario
             // 
@@ -164,7 +190,7 @@
             txtFuncionario.Name = "txtFuncionario";
             txtFuncionario.ReadOnly = true;
             txtFuncionario.Size = new Size(192, 23);
-            txtFuncionario.TabIndex = 12;
+            txtFuncionario.TabIndex = 1;
             // 
             // txtIdPedido
             // 
@@ -172,7 +198,7 @@
             txtIdPedido.Name = "txtIdPedido";
             txtIdPedido.ReadOnly = true;
             txtIdPedido.Size = new Size(92, 23);
-            txtIdPedido.TabIndex = 11;
+            txtIdPedido.TabIndex = 0;
             // 
             // label4
             // 
@@ -207,7 +233,7 @@
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges1;
+            btnCancelar.CustomizableEdges = customizableEdges3;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -217,9 +243,9 @@
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(407, 268);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelar.Size = new Size(122, 23);
-            btnCancelar.TabIndex = 7;
+            btnCancelar.TabIndex = 6;
             btnCancelar.Text = "&Cancelar";
             // 
             // btnInserir
@@ -228,7 +254,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges3;
+            btnInserir.CustomizableEdges = customizableEdges5;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -238,9 +264,9 @@
             btnInserir.ForeColor = Color.White;
             btnInserir.Location = new Point(248, 268);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnInserir.Size = new Size(122, 23);
-            btnInserir.TabIndex = 6;
+            btnInserir.TabIndex = 7;
             btnInserir.Text = "&Atualizar";
             btnInserir.Click += btnInserir_Click;
             // 
@@ -370,5 +396,6 @@
         private TextBox txtDataEntrega;
         private TextBox txtDataRetirada;
         private Label label7;
+        private Guna.UI2.WinForms.Guna2Button btnEscolherPedido;
     }
 }

@@ -66,7 +66,7 @@
             label5.Location = new Point(285, 37);
             label5.Name = "label5";
             label5.Size = new Size(158, 45);
-            label5.TabIndex = 3;
+            label5.TabIndex = 19;
             label5.Text = "Produtos";
             // 
             // label2
@@ -75,7 +75,7 @@
             label2.Location = new Point(301, 119);
             label2.Name = "label2";
             label2.Size = new Size(58, 15);
-            label2.TabIndex = 4;
+            label2.TabIndex = 14;
             label2.Text = "Categoria";
             // 
             // label3
@@ -84,7 +84,7 @@
             label3.Location = new Point(125, 119);
             label3.Name = "label3";
             label3.Size = new Size(103, 15);
-            label3.TabIndex = 4;
+            label3.TabIndex = 13;
             label3.Text = "Nome do Produto";
             // 
             // label4
@@ -93,7 +93,7 @@
             label4.Location = new Point(629, 212);
             label4.Name = "label4";
             label4.Size = new Size(51, 15);
-            label4.TabIndex = 4;
+            label4.TabIndex = 18;
             label4.Text = "Imagem";
             // 
             // label6
@@ -102,7 +102,7 @@
             label6.Location = new Point(431, 119);
             label6.Name = "label6";
             label6.Size = new Size(33, 15);
-            label6.TabIndex = 4;
+            label6.TabIndex = 16;
             label6.Text = "Valor";
             // 
             // label7
@@ -111,7 +111,7 @@
             label7.Location = new Point(542, 119);
             label7.Name = "label7";
             label7.Size = new Size(102, 15);
-            label7.TabIndex = 4;
+            label7.TabIndex = 17;
             label7.Text = "Unidade de Venda";
             // 
             // label8
@@ -120,7 +120,7 @@
             label8.Location = new Point(125, 214);
             label8.Name = "label8";
             label8.Size = new Size(97, 15);
-            label8.TabIndex = 4;
+            label8.TabIndex = 11;
             label8.Text = "Data de Cadastro";
             // 
             // label9
@@ -129,7 +129,7 @@
             label9.Location = new Point(274, 214);
             label9.Name = "label9";
             label9.Size = new Size(58, 15);
-            label9.TabIndex = 4;
+            label9.TabIndex = 12;
             label9.Text = "Descrição";
             // 
             // label10
@@ -138,7 +138,7 @@
             label10.Location = new Point(457, 214);
             label10.Name = "label10";
             label10.Size = new Size(56, 15);
-            label10.TabIndex = 4;
+            label10.TabIndex = 15;
             label10.Text = "Destaque";
             // 
             // txtNomeProduto
@@ -146,7 +146,7 @@
             txtNomeProduto.Location = new Point(125, 137);
             txtNomeProduto.Name = "txtNomeProduto";
             txtNomeProduto.Size = new Size(137, 23);
-            txtNomeProduto.TabIndex = 5;
+            txtNomeProduto.TabIndex = 0;
             // 
             // cmbCategoriaProduto
             // 
@@ -155,14 +155,14 @@
             cmbCategoriaProduto.Location = new Point(301, 137);
             cmbCategoriaProduto.Name = "cmbCategoriaProduto";
             cmbCategoriaProduto.Size = new Size(91, 23);
-            cmbCategoriaProduto.TabIndex = 6;
+            cmbCategoriaProduto.TabIndex = 1;
             // 
             // txtValorProduto
             // 
             txtValorProduto.Location = new Point(431, 137);
             txtValorProduto.Name = "txtValorProduto";
             txtValorProduto.Size = new Size(72, 23);
-            txtValorProduto.TabIndex = 7;
+            txtValorProduto.TabIndex = 2;
             // 
             // dataCadastro
             // 
@@ -186,7 +186,7 @@
             cmbDestaqueProduto.Location = new Point(451, 232);
             cmbDestaqueProduto.Name = "cmbDestaqueProduto";
             cmbDestaqueProduto.Size = new Size(82, 23);
-            cmbDestaqueProduto.TabIndex = 10;
+            cmbDestaqueProduto.TabIndex = 6;
             // 
             // ImagemProduto
             // 
@@ -216,7 +216,7 @@
             btnInserir.Name = "btnInserir";
             btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnInserir.Size = new Size(122, 23);
-            btnInserir.TabIndex = 12;
+            btnInserir.TabIndex = 9;
             btnInserir.Text = "&inserir";
             btnInserir.Click += btnInserir_Click;
             // 
@@ -238,7 +238,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelar.Size = new Size(122, 23);
-            btnCancelar.TabIndex = 13;
+            btnCancelar.TabIndex = 8;
             btnCancelar.Text = "&Cancelar";
             // 
             // dateTimePicker1
@@ -247,7 +247,7 @@
             dateTimePicker1.Location = new Point(125, 232);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(103, 23);
-            dateTimePicker1.TabIndex = 9;
+            dateTimePicker1.TabIndex = 4;
             // 
             // btncolherImagem
             // 
@@ -266,7 +266,7 @@
             btncolherImagem.Name = "btncolherImagem";
             btncolherImagem.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btncolherImagem.Size = new Size(122, 23);
-            btncolherImagem.TabIndex = 14;
+            btncolherImagem.TabIndex = 7;
             btncolherImagem.Text = "&Escolher Imagem";
             btncolherImagem.Click += btnEscolherFuncionarioEndereco_Click;
             // 
@@ -275,7 +275,7 @@
             txtUnidades.Location = new Point(542, 137);
             txtUnidades.Name = "txtUnidades";
             txtUnidades.Size = new Size(79, 23);
-            txtUnidades.TabIndex = 15;
+            txtUnidades.TabIndex = 3;
             // 
             // FrmProdutos
             // 

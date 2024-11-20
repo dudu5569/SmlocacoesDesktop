@@ -359,7 +359,7 @@
             cmbTipoEndereco.Location = new Point(273, 273);
             cmbTipoEndereco.Name = "cmbTipoEndereco";
             cmbTipoEndereco.Size = new Size(121, 23);
-            cmbTipoEndereco.TabIndex = 25;
+            cmbTipoEndereco.TabIndex = 5;
             // 
             // txtBusca
             // 
@@ -376,7 +376,7 @@
             txtBusca.Name = "txtBusca";
             txtBusca.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtBusca.Size = new Size(116, 23);
-            txtBusca.TabIndex = 24;
+            txtBusca.TabIndex = 2;
             txtBusca.Text = "&Buscar Cep";
             txtBusca.Click += txtBusca_Click;
             // 
@@ -409,14 +409,14 @@
             txtBairro.Name = "txtBairro";
             txtBairro.ReadOnly = true;
             txtBairro.Size = new Size(292, 23);
-            txtBairro.TabIndex = 4;
+            txtBairro.TabIndex = 9;
             // 
             // txtComplemento
             // 
             txtComplemento.Location = new Point(124, 273);
             txtComplemento.Name = "txtComplemento";
             txtComplemento.Size = new Size(100, 23);
-            txtComplemento.TabIndex = 7;
+            txtComplemento.TabIndex = 4;
             txtComplemento.TextChanged += textBox2_TextChanged;
             // 
             // txtEstado
@@ -426,7 +426,7 @@
             txtEstado.Name = "txtEstado";
             txtEstado.ReadOnly = true;
             txtEstado.Size = new Size(58, 23);
-            txtEstado.TabIndex = 5;
+            txtEstado.TabIndex = 10;
             // 
             // txtCidade
             // 
@@ -435,7 +435,7 @@
             txtCidade.Name = "txtCidade";
             txtCidade.ReadOnly = true;
             txtCidade.Size = new Size(292, 23);
-            txtCidade.TabIndex = 2;
+            txtCidade.TabIndex = 8;
             // 
             // txtCEP
             // 
@@ -449,7 +449,7 @@
             txtNumero.Location = new Point(427, 226);
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(82, 23);
-            txtNumero.TabIndex = 6;
+            txtNumero.TabIndex = 3;
             // 
             // txtLogradouro
             // 
@@ -458,7 +458,7 @@
             txtLogradouro.Name = "txtLogradouro";
             txtLogradouro.ReadOnly = true;
             txtLogradouro.Size = new Size(359, 23);
-            txtLogradouro.TabIndex = 3;
+            txtLogradouro.TabIndex = 7;
             // 
             // label13
             // 
@@ -559,7 +559,7 @@
             btnEscolherFuncionarioEndereco.Name = "btnEscolherFuncionarioEndereco";
             btnEscolherFuncionarioEndereco.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnEscolherFuncionarioEndereco.Size = new Size(122, 35);
-            btnEscolherFuncionarioEndereco.TabIndex = 10;
+            btnEscolherFuncionarioEndereco.TabIndex = 8;
             btnEscolherFuncionarioEndereco.Text = "&Escolher Funcionário";
             btnEscolherFuncionarioEndereco.Click += btnEscolherFuncionarioEndereco_Click;
             // 
@@ -581,7 +581,7 @@
             btnInsereEndereco.Name = "btnInsereEndereco";
             btnInsereEndereco.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnInsereEndereco.Size = new Size(122, 23);
-            btnInsereEndereco.TabIndex = 9;
+            btnInsereEndereco.TabIndex = 7;
             btnInsereEndereco.Text = "&inserir";
             btnInsereEndereco.Click += btnInsereEndereco_Click;
             // 
@@ -603,7 +603,7 @@
             btnCancelaEndereco.Name = "btnCancelaEndereco";
             btnCancelaEndereco.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnCancelaEndereco.Size = new Size(122, 23);
-            btnCancelaEndereco.TabIndex = 8;
+            btnCancelaEndereco.TabIndex = 6;
             btnCancelaEndereco.Text = "&Cancelar";
             btnCancelaEndereco.Click += btnCancelaEndereco_Click;
             // 
@@ -791,7 +791,7 @@
             btnEscolhaFuncionarioEmail.Name = "btnEscolhaFuncionarioEmail";
             btnEscolhaFuncionarioEmail.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnEscolhaFuncionarioEmail.Size = new Size(122, 35);
-            btnEscolhaFuncionarioEmail.TabIndex = 8;
+            btnEscolhaFuncionarioEmail.TabIndex = 4;
             btnEscolhaFuncionarioEmail.Text = "&Escolher Funcionário";
             btnEscolhaFuncionarioEmail.Click += btnEscolhaFuncionarioEmail_Click;
             // 
@@ -813,7 +813,7 @@
             BtnInsereEmail.Name = "BtnInsereEmail";
             BtnInsereEmail.ShadowDecoration.CustomizableEdges = customizableEdges26;
             BtnInsereEmail.Size = new Size(122, 23);
-            BtnInsereEmail.TabIndex = 7;
+            BtnInsereEmail.TabIndex = 3;
             BtnInsereEmail.Text = "&inserir";
             BtnInsereEmail.Click += BtnInsereEmail_Click;
             // 
@@ -835,7 +835,7 @@
             BtnCancelaEmail.Name = "BtnCancelaEmail";
             BtnCancelaEmail.ShadowDecoration.CustomizableEdges = customizableEdges28;
             BtnCancelaEmail.Size = new Size(122, 23);
-            BtnCancelaEmail.TabIndex = 6;
+            BtnCancelaEmail.TabIndex = 2;
             BtnCancelaEmail.Text = "&Cancelar";
             BtnCancelaEmail.Click += BtnCancelaEmail_Click;
             // 
@@ -844,7 +844,7 @@
             txtEmail.Location = new Point(74, 126);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(342, 23);
-            txtEmail.TabIndex = 3;
+            txtEmail.TabIndex = 1;
             // 
             // txtIdFuncionarioEmail
             // 
@@ -865,7 +865,7 @@
             txtIdFuncionarioEmail.SelectedText = "";
             txtIdFuncionarioEmail.ShadowDecoration.CustomizableEdges = customizableEdges30;
             txtIdFuncionarioEmail.Size = new Size(65, 23);
-            txtIdFuncionarioEmail.TabIndex = 2;
+            txtIdFuncionarioEmail.TabIndex = 0;
             // 
             // label21
             // 
@@ -882,7 +882,7 @@
             label20.Location = new Point(74, 49);
             label20.Name = "label20";
             label20.Size = new Size(18, 15);
-            label20.TabIndex = 0;
+            label20.TabIndex = 6;
             label20.Text = "ID";
             // 
             // FrmFuncionarios

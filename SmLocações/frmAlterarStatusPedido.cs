@@ -58,6 +58,7 @@ namespace SmLocações
             txtFuncionario.Text = dgvPedidos.Rows[posicaolinha].Cells[2].Value.ToString();
             txtDataRetirada.Text = dgvPedidos.Rows[posicaolinha].Cells[3].Value.ToString();
             txtDataEntrega.Text = dgvPedidos.Rows[posicaolinha].Cells[4].Value.ToString();
+            this.tabControl1.SelectedTab = tabPage1;
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
@@ -97,6 +98,9 @@ namespace SmLocações
             txtCliente.Clear();
         }
 
-
+        private void btnEscolherPedido_Click(object sender, EventArgs e)
+        {
+            this.tabControl1.SelectedTab = tabPage2;
+        }
     }
 }
