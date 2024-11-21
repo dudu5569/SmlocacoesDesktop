@@ -99,7 +99,7 @@
             btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 3;
-            btnInserir.Text = "&inserir";
+            btnInserir.Text = "&Inserir";
             btnInserir.Click += btnInserir_Click;
             // 
             // txtSiglaNivel
@@ -156,6 +156,7 @@
             Name = "FrmInserirNiveis";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inserir Cargos";
+            Load += FrmInserirNiveis_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

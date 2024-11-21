@@ -188,6 +188,7 @@ namespace SmLocações
             cmbTipoTelefone.Items.AddRange(telefones.TipodeTelefone);
             TipoCartao tipoCartao = new ();
             cmbTipoCartao.Items.AddRange(tipoCartao.TipodeCartao);
+            Text += $" ({Program.UsuarioLogado.Login})";
         }
 
         private void mktxtTelefone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)

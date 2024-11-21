@@ -21,6 +21,7 @@ namespace SmLocações
         private void FrmEditarUser_Load(object sender, EventArgs e)
         {
             CarregaDataGrid();
+            Text += $" ({Program.UsuarioLogado.Login})";
         }
 
         private void CarregaDataGrid(string nome = "")

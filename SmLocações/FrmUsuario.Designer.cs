@@ -157,7 +157,7 @@
             btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 5;
-            btnInserir.Text = "&inserir";
+            btnInserir.Text = "&Inserir";
             btnInserir.Click += btnInserir_Click;
             // 
             // btnCancelar

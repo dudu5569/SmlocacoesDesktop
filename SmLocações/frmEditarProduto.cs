@@ -21,6 +21,7 @@ namespace SmLocações
         private void frmEditarProduto_Load(object sender, EventArgs e)
         {
             CarregaGrid();
+            Text += $" ({Program.UsuarioLogado.Login})";
             DestaqueProdutos destaque = new();
             cmbDestaqueProduto.Items.AddRange(destaque.produtoDestaque);
         }

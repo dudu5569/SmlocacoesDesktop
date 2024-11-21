@@ -22,6 +22,7 @@ namespace SmLocações
         {
             label1.Left = (this.ClientSize.Width - label1.Width) / 2;
             CarregaPedidos();
+            Text += $" ({Program.UsuarioLogado.Login})";
 
         }
 

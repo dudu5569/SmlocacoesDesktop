@@ -24,8 +24,8 @@ namespace SmLocações
             frmLogin.ShowDialog();
             if (Program.UsuarioLogado.Id > 0)
             {
-            Text += $" ({Program.UsuarioLogado.Login})";
-            toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Id_funcionario.Nome} - {Program.UsuarioLogado.Id_funcionario.Nivel.Nome}";
+                Text += $" ({Program.UsuarioLogado.Login})";
+                toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Id_funcionario.Nome} - {Program.UsuarioLogado.Id_funcionario.Nivel.Nome}";
             }
             else
             {
@@ -97,6 +97,12 @@ namespace SmLocações
         {
             frmAlterarStatusPedido frmAlterarStatusPedido = new();
             frmAlterarStatusPedido.ShowDialog();
+        }
+
+        private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmEditarProduto frmEditarProduto = new();
+            frmEditarProduto.ShowDialog();
         }
     }
 }

@@ -85,6 +85,7 @@ namespace SmLocações
             CarregaCategorias();
             DestaqueProdutos destaque = new();
             cmbDestaqueProduto.Items.AddRange(destaque.produtoDestaque);
+            Text += $" ({Program.UsuarioLogado.Login})";
         }
 
         private void CarregaCategorias()

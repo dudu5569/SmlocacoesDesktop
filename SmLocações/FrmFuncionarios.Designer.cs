@@ -237,7 +237,7 @@
             btnInserirFuncionario.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnInserirFuncionario.Size = new Size(122, 23);
             btnInserirFuncionario.TabIndex = 7;
-            btnInserirFuncionario.Text = "&inserir";
+            btnInserirFuncionario.Text = "&Inserir";
             btnInserirFuncionario.Click += btnInserirFuncionario_Click;
             // 
             // chkAivo

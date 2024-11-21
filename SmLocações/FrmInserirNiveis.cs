@@ -27,7 +27,7 @@ namespace SmLocações
                 );
 
             niveis.Inserir();
-            if (niveis.ID > 0 )
+            if (niveis.ID > 0)
             {
                 MessageBox.Show($"Nível {niveis.Nome} foi inserido com sucesso!", "SmLocações");
                 txtNomeNivel.Clear();
@@ -37,6 +37,11 @@ namespace SmLocações
             {
                 MessageBox.Show("Falha ao gravar registro!", "SmLocações");
             }
+        }
+
+        private void FrmInserirNiveis_Load(object sender, EventArgs e)
+        {
+            Text += $" ({Program.UsuarioLogado.Login})";
         }
     }
 }

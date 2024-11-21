@@ -27,6 +27,7 @@ namespace SmLocações
             CarregaFuncionario();
             CarregaProdutos();
             CarregaPedidos();
+            Text += $"({Program.UsuarioLogado.Login})";
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -237,7 +238,6 @@ namespace SmLocações
             txtValorTotal.Clear();
             txtQuantidade.Clear();
             txtValorTotal.Clear();
-            txtIdProduto.Clear();
             txtNomeProduto.Clear();
         }
 

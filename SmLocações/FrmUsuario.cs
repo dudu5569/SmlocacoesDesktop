@@ -55,6 +55,7 @@ namespace SmLocações
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             CarregaComboBox();
+            Text += $" ({Program.UsuarioLogado.Login})";
         }
 
         public void CarregaComboBox()
