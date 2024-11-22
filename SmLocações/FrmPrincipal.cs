@@ -30,7 +30,7 @@ namespace SmLocações
             else
             {
                 Application.Exit();
-            }
+            } 
 
         }
 
