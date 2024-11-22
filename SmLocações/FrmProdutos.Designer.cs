@@ -306,6 +306,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FrmProdutos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inserir Produtos";
             Load += FrmProdutos_Load;
             ((System.ComponentModel.ISupportInitialize)ImagemProduto).EndInit();

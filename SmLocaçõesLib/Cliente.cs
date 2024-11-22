@@ -103,8 +103,8 @@ namespace SmLocaçõesLib
                     );
             }
 
-            return lista;
             cmd.Connection.Close();
+            return lista;
         }
 
 

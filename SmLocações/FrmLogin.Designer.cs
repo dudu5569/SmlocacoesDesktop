@@ -162,7 +162,7 @@
             Name = "FrmLogin";
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            Text = "SmLocações Login";
             Load += FrmLogin_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

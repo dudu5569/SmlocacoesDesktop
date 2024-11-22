@@ -89,6 +89,7 @@ namespace SmLocações
                 }
 
                 MessageBox.Show("Estoque atualizado com a devolução dos itens!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CarregaPedidos();
             }
 
             // Limpa os campos após a operação
