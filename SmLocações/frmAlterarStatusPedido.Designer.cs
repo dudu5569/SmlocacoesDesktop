@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlterarStatusPedido));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
@@ -108,7 +108,7 @@
             btnEscolherPedido.AutoRoundedCorners = true;
             btnEscolherPedido.BorderRadius = 10;
             btnEscolherPedido.BorderThickness = 1;
-            btnEscolherPedido.CustomizableEdges = customizableEdges7;
+            btnEscolherPedido.CustomizableEdges = customizableEdges1;
             btnEscolherPedido.DisabledState.BorderColor = Color.DarkGray;
             btnEscolherPedido.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEscolherPedido.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -118,7 +118,7 @@
             btnEscolherPedido.ForeColor = Color.White;
             btnEscolherPedido.Location = new Point(567, 268);
             btnEscolherPedido.Name = "btnEscolherPedido";
-            btnEscolherPedido.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnEscolherPedido.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEscolherPedido.Size = new Size(122, 23);
             btnEscolherPedido.TabIndex = 8;
             btnEscolherPedido.Text = "&Escolher Pedido";
@@ -234,7 +234,7 @@
             btnCancelar.AutoRoundedCorners = true;
             btnCancelar.BorderRadius = 10;
             btnCancelar.BorderThickness = 1;
-            btnCancelar.CustomizableEdges = customizableEdges9;
+            btnCancelar.CustomizableEdges = customizableEdges3;
             btnCancelar.DisabledState.BorderColor = Color.DarkGray;
             btnCancelar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCancelar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -244,7 +244,7 @@
             btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(407, 268);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnCancelar.Size = new Size(122, 23);
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "&Cancelar";
@@ -255,7 +255,7 @@
             btnInserir.AutoRoundedCorners = true;
             btnInserir.BorderRadius = 10;
             btnInserir.BorderThickness = 1;
-            btnInserir.CustomizableEdges = customizableEdges11;
+            btnInserir.CustomizableEdges = customizableEdges5;
             btnInserir.DisabledState.BorderColor = Color.DarkGray;
             btnInserir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnInserir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -265,7 +265,7 @@
             btnInserir.ForeColor = Color.White;
             btnInserir.Location = new Point(248, 268);
             btnInserir.Name = "btnInserir";
-            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnInserir.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnInserir.Size = new Size(122, 23);
             btnInserir.TabIndex = 7;
             btnInserir.Text = "&Atualizar";
@@ -279,14 +279,14 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(807, 363);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Pedidos";
+            tabPage2.Text = "Locações";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // dgvPedidos
             // 
             dgvPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPedidos.Columns.AddRange(new DataGridViewColumn[] { id, cliente, FUncionario, retirada, entrega, status });
-            dgvPedidos.Location = new Point(6, 3);
+            dgvPedidos.Location = new Point(3, 3);
             dgvPedidos.Name = "dgvPedidos";
             dgvPedidos.RowHeadersVisible = false;
             dgvPedidos.Size = new Size(798, 357);
@@ -346,9 +346,9 @@
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(320, 41);
             label1.Name = "label1";
-            label1.Size = new Size(338, 45);
+            label1.Size = new Size(353, 45);
             label1.TabIndex = 1;
-            label1.Text = "Alterar Status Pedido";
+            label1.Text = "Alterar Status Locação";
             label1.Click += label1_Click;
             // 
             // frmAlterarStatusPedido
@@ -362,7 +362,7 @@
             MaximizeBox = false;
             Name = "frmAlterarStatusPedido";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAlterarStatusPedido";
+            Text = "Alterar Status da Locação";
             Load += frmAlterarStatusPedido_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

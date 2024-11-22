@@ -234,7 +234,7 @@ namespace SmLocações
                 MessageBox.Show("Falha ao adicionar item!", "SmLocações", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
 
-            txtIdPedido.Clear();
+            txtIdProduto.Clear();
             txtValorTotal.Clear();
             txtQuantidade.Clear();
             txtValorTotal.Clear();

@@ -51,7 +51,7 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spnome", Nome);
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("spdata_nascimento", Data_Nascimento);
-            cmd.Parameters.AddWithValue("spdata_cadastro", Data_Cadastro);
+            cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
 
             var dr = cmd.ExecuteReader();
             if (dr.Read()) Id = dr.GetInt32(0);

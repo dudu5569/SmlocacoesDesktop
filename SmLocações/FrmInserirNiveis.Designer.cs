@@ -155,7 +155,7 @@
             MaximizeBox = false;
             Name = "FrmInserirNiveis";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Inserir Cargos";
+            Text = "INserir Níveis";
             Load += FrmInserirNiveis_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

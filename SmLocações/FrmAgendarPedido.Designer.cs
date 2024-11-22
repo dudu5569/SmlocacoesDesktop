@@ -216,7 +216,7 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(707, 332);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Agendar Pedido";
+            tabPage1.Text = "Nova Locação";
             tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
             // 
@@ -324,7 +324,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(707, 332);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Itens Pedido";
+            tabPage2.Text = "Itens da Locação";
             tabPage2.UseVisualStyleBackColor = true;
             tabPage2.Click += tabPage2_Click;
             // 
@@ -506,7 +506,7 @@
             tabPage3.Padding = new Padding(3);
             tabPage3.Size = new Size(707, 332);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "Pedidos";
+            tabPage3.Text = "Locações";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // dgvPedidos
@@ -679,7 +679,7 @@
             MaximizeBox = false;
             Name = "FrmAgendarPedido";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Agendar Pedido";
+            Text = "Nova Locação";
             Load += FrmAgendarPedido_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

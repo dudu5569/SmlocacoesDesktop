@@ -102,7 +102,7 @@
             groupBox1.Controls.Add(dgvProdutos);
             groupBox1.Location = new Point(12, 38);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1083, 503);
+            groupBox1.Size = new Size(1102, 509);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Editar Produtos";
@@ -310,7 +310,7 @@
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.ReadOnly = true;
             dgvProdutos.RowHeadersVisible = false;
-            dgvProdutos.Size = new Size(1071, 186);
+            dgvProdutos.Size = new Size(1073, 192);
             dgvProdutos.TabIndex = 7;
             dgvProdutos.CellClick += dgvProdutos_CellClick;
             // 
@@ -380,12 +380,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1107, 553);
+            ClientSize = new Size(1126, 568);
             Controls.Add(label1);
             Controls.Add(groupBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "frmEditarProduto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Editar Produtos";
             Load += frmEditarProduto_Load;
             groupBox1.ResumeLayout(false);
