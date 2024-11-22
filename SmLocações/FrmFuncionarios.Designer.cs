@@ -582,7 +582,7 @@
             btnInsereEndereco.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnInsereEndereco.Size = new Size(122, 23);
             btnInsereEndereco.TabIndex = 7;
-            btnInsereEndereco.Text = "&inserir";
+            btnInsereEndereco.Text = "&Inserir";
             btnInsereEndereco.Click += btnInsereEndereco_Click;
             // 
             // btnCancelaEndereco
@@ -732,7 +732,7 @@
             btnInsereTelefone.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnInsereTelefone.Size = new Size(122, 23);
             btnInsereTelefone.TabIndex = 4;
-            btnInsereTelefone.Text = "&inserir";
+            btnInsereTelefone.Text = "&Inserir";
             btnInsereTelefone.Click += btnInsereTelefone_Click;
             // 
             // btnCancelaTelefone
@@ -814,7 +814,7 @@
             BtnInsereEmail.ShadowDecoration.CustomizableEdges = customizableEdges26;
             BtnInsereEmail.Size = new Size(122, 23);
             BtnInsereEmail.TabIndex = 3;
-            BtnInsereEmail.Text = "&inserir";
+            BtnInsereEmail.Text = "&Inserir";
             BtnInsereEmail.Click += BtnInsereEmail_Click;
             // 
             // BtnCancelaEmail
