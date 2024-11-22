@@ -67,11 +67,9 @@ namespace SmLocações
             ControleEstoque controleEstoque = new();
             Pedidos pedidos = new();
 
-            // Atualiza o status do pedido
             pedidos.AtualizarStatusPedido(int.Parse(txtIdPedido.Text), cmbStatus.Text);
             MessageBox.Show("Status do pedido atualizado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Verifica se o status é "Concluído"
             if (cmbStatus.Text == "Concluído")
             {
                 // Lista de quantidades de itens no pedido
@@ -92,7 +90,6 @@ namespace SmLocações
                 CarregaPedidos();
             }
 
-            // Limpa os campos após a operação
             txtIdPedido.Clear();
             txtFuncionario.Clear();
             txtDataRetirada.Clear();
