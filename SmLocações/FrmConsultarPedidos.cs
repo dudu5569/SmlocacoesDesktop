@@ -43,5 +43,16 @@ namespace SmLocações
                 cont++;
             }
         }
+
+        private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int posicaoLinha = dgvPedidos.CurrentRow.Index;
+            string id = "";
+
+            id = dgvPedidos.Rows[posicaoLinha].Cells[0].Value.ToString();
+            MessageBox.Show(id);
+
+
+        }
     }
 }

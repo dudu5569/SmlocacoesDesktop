@@ -20,7 +20,7 @@ namespace SmLocações
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 
-            FrmLogin frmLogin = new FrmLogin();
+           FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
             if (Program.UsuarioLogado.Id > 0)
             {

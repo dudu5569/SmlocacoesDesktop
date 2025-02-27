@@ -37,7 +37,11 @@
             dataent = new DataGridViewTextBoxColumn();
             stati = new DataGridViewTextBoxColumn();
             label1 = new Label();
+            dgvProdutos = new DataGridView();
+            Idlocacao = new DataGridViewTextBoxColumn();
+            idproduto = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             SuspendLayout();
             // 
             // dgvPedidos
@@ -47,8 +51,9 @@
             dgvPedidos.Location = new Point(12, 123);
             dgvPedidos.Name = "dgvPedidos";
             dgvPedidos.RowHeadersVisible = false;
-            dgvPedidos.Size = new Size(1050, 356);
+            dgvPedidos.Size = new Size(1050, 107);
             dgvPedidos.TabIndex = 0;
+            dgvPedidos.CellClick += dgvPedidos_CellClick;
             // 
             // id
             // 
@@ -107,11 +112,37 @@
             label1.TabIndex = 1;
             label1.Text = "Consultar Pedidos";
             // 
+            // dgvProdutos
+            // 
+            dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProdutos.Columns.AddRange(new DataGridViewColumn[] { Idlocacao, idproduto });
+            dgvProdutos.Location = new Point(198, 249);
+            dgvProdutos.Name = "dgvProdutos";
+            dgvProdutos.RowHeadersVisible = false;
+            dgvProdutos.Size = new Size(704, 150);
+            dgvProdutos.TabIndex = 2;
+            // 
+            // Idlocacao
+            // 
+            Idlocacao.Frozen = true;
+            Idlocacao.HeaderText = "Id Pedido";
+            Idlocacao.Name = "Idlocacao";
+            Idlocacao.ReadOnly = true;
+            // 
+            // idproduto
+            // 
+            idproduto.Frozen = true;
+            idproduto.HeaderText = "Produto";
+            idproduto.Name = "idproduto";
+            idproduto.ReadOnly = true;
+            idproduto.Width = 600;
+            // 
             // FrmConsultarPedidos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1074, 491);
+            Controls.Add(dgvProdutos);
             Controls.Add(label1);
             Controls.Add(dgvPedidos);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -121,6 +152,7 @@
             Text = "Consultar Pedidos";
             Load += ConsultarPedidos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvPedidos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -135,5 +167,8 @@
         private DataGridViewTextBoxColumn Dataret;
         private DataGridViewTextBoxColumn dataent;
         private DataGridViewTextBoxColumn stati;
+        private DataGridView dgvProdutos;
+        private DataGridViewTextBoxColumn Idlocacao;
+        private DataGridViewTextBoxColumn idproduto;
     }
 }

@@ -35,7 +35,7 @@ namespace SmLocações
             {
                 dgvProdutos.Rows.Add();
                 dgvProdutos.Rows[cont].Cells[0].Value = produto.Nome_Produto;
-                dgvProdutos.Rows[cont].Cells[1].Value = produto.Id_Categoria.Categoria; 
+                dgvProdutos.Rows[cont].Cells[1].Value = produto.Id_Categoria.Categoria;
                 dgvProdutos.Rows[cont].Cells[2].Value = produto.Valor;
                 dgvProdutos.Rows[cont].Cells[3].Value = produto.Unidade_Venda;
                 dgvProdutos.Rows[cont].Cells[4].Value = produto.Descricao;
@@ -45,5 +45,9 @@ namespace SmLocações
             }
         }
 
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace SmLocações
 
         private void FrmInserirNiveis_Load(object sender, EventArgs e)
         {
-            Text += $" ({Program.UsuarioLogado.Login})";
+            //Text += $" ({Program.UsuarioLogado.Login})";
         }
     }
 }

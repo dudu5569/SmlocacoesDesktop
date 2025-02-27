@@ -16,6 +16,8 @@ namespace SmLocaçõesLib
         public decimal? valor_total { get; set; }
 
         public int? Quantidade{ get; set; }
+
+        public ItensPedido() { }
         public ItensPedido(Pedidos id_pedido, Produtos id_produtos, decimal? valor_total, int? quantidade)
         {
             Id_pedido = id_pedido;
@@ -33,6 +35,12 @@ namespace SmLocaçõesLib
             Quantidade = quantidade;
         }
 
+        public ItensPedido(int iD, Produtos id_produtos)
+        {
+            ID = iD;
+            Id_produtos = id_produtos;
+        }
+
         public void InserirItemPedido()
         {
             var cmd = Banco.Abrir();
@@ -44,6 +52,11 @@ namespace SmLocaçõesLib
             cmd.Parameters.AddWithValue("spquantidade", Quantidade);
             var dr = cmd.ExecuteReader();
             if (dr.Read()) ID = dr.GetInt32(0);
+        }
+        
+        public static List<ItensPedido> ObterListaItensPedido(int id)
+        {
+
         }
 
     }

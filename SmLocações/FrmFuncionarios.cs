@@ -109,7 +109,7 @@ namespace SmLocações
             Telefones telefones = new();
             cmbTipoTelefone.Items.AddRange(telefones.TipodeTelefone);
             msktxtTelefone.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            Text += $" ({Program.UsuarioLogado.Login})";
+            Text += $" ({Program.UsuarioLogado.Login})"; 
 
         }
 

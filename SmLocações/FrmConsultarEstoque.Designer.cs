@@ -51,6 +51,7 @@
             dgvProdutos.RowHeadersVisible = false;
             dgvProdutos.Size = new Size(981, 438);
             dgvProdutos.TabIndex = 0;
+            dgvProdutos.CellContentClick += dgvProdutos_CellContentClick;
             // 
             // produto
             // 
