@@ -1,4 +1,5 @@
-﻿using SmLocaçõesLib;
+﻿using Accessibility;
+using SmLocaçõesLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,12 +48,18 @@ namespace SmLocações
         private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int posicaoLinha = dgvPedidos.CurrentRow.Index;
-            string id = "";
+            int id = 0;
+            var lista = ItensPedido.ObterListaItensPedido(id);
+            int cont = 0;
 
-            id = dgvPedidos.Rows[posicaoLinha].Cells[0].Value.ToString();
-            MessageBox.Show(id);
-
-
+            foreach (var produtos in lista)
+            {
+                dgvProdutos.Rows.Add();
+                dgvProdutos.Rows[cont].Cells[0].Value = produtos.Id_pedido;
+                dgvProdutos.Rows[cont].Cells[1].Value = produtos.Id_produtos.Descricao;
+                dgvProdutos.Rows[cont].Cells[2].Value = produtos.Quantidade;
+                dgvProdutos.Rows[cont].Cells[3].Value = produtos.valor_total;
+            }
         }
     }
 }

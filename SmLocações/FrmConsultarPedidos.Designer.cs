@@ -40,6 +40,8 @@
             dgvProdutos = new DataGridView();
             Idlocacao = new DataGridViewTextBoxColumn();
             idproduto = new DataGridViewTextBoxColumn();
+            qntd = new DataGridViewTextBoxColumn();
+            valor = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).BeginInit();
             SuspendLayout();
@@ -115,11 +117,11 @@
             // dgvProdutos
             // 
             dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProdutos.Columns.AddRange(new DataGridViewColumn[] { Idlocacao, idproduto });
+            dgvProdutos.Columns.AddRange(new DataGridViewColumn[] { Idlocacao, idproduto, qntd, valor });
             dgvProdutos.Location = new Point(198, 249);
             dgvProdutos.Name = "dgvProdutos";
             dgvProdutos.RowHeadersVisible = false;
-            dgvProdutos.Size = new Size(704, 150);
+            dgvProdutos.Size = new Size(603, 150);
             dgvProdutos.TabIndex = 2;
             // 
             // Idlocacao
@@ -135,7 +137,21 @@
             idproduto.HeaderText = "Produto";
             idproduto.Name = "idproduto";
             idproduto.ReadOnly = true;
-            idproduto.Width = 600;
+            idproduto.Width = 300;
+            // 
+            // qntd
+            // 
+            qntd.Frozen = true;
+            qntd.HeaderText = "Quantidade";
+            qntd.Name = "qntd";
+            qntd.ReadOnly = true;
+            // 
+            // valor
+            // 
+            valor.Frozen = true;
+            valor.HeaderText = "Valor Total";
+            valor.Name = "valor";
+            valor.ReadOnly = true;
             // 
             // FrmConsultarPedidos
             // 
@@ -170,5 +186,7 @@
         private DataGridView dgvProdutos;
         private DataGridViewTextBoxColumn Idlocacao;
         private DataGridViewTextBoxColumn idproduto;
+        private DataGridViewTextBoxColumn qntd;
+        private DataGridViewTextBoxColumn valor;
     }
 }
