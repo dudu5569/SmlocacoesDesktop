@@ -208,53 +208,28 @@ namespace SmLocações
 
         private void btnInserirProduto_Click(object sender, EventArgs e)
         {
-            // Obter o valor de txtValorTotal e substituir a vírgula por ponto
-            string valorTotalTexto = txtValorTotal.Text.Replace(",", ".");
-
-            // Converter para decimal
-            decimal valorTotalDecimal;
-            if (decimal.TryParse(valorTotalTexto, out valorTotalDecimal))
-            {
-                // Criar o objeto ItensPedido com os valores apropriados
-                ItensPedido itensPedido = new(
-                    Pedidos.ObterIdPedido(int.Parse(txtIdPedido.Text)),
-                    Produtos.ObterIdProduto(int.Parse(txtIdProduto.Text)),
-                    valorTotalDecimal,  // Passar o valor já convertido
-                    int.Parse(txtQuantidade.Text)
+            ItensPedido itenspedido = new(
+                Pedidos.ObterIdPedido(int.Parse(txtIdPedido.Text)),
+                Produtos.ObterIdProduto(int.Parse(txtIdProduto.Text)),
+                decimal.Parse(txtValorTotal.Text),
+                int.Parse(txtQuantidade.Text)
                 );
-
-                itensPedido.InserirItemPedido();
-
-                if (itensPedido.ID > 0)
-                {
-                    int posicaolinha = dgvProdutos.CurrentRow.Index;
-                    int quantidadePedido = int.Parse(txtQuantidade.Text);
-                    string produto = dgvProdutos.Rows[posicaolinha].Cells[3].Value.ToString();
-                    int quantidadeProduto = Convert.ToInt32(produto);
-                    int valor_a_ser_descontado = quantidadeProduto - quantidadePedido;
-
-                    ControleEstoque controleEstoque = new();
-                    controleEstoque.DescontaEstoque(int.Parse(txtIdProduto.Text), valor_a_ser_descontado);
-
-                    MessageBox.Show("Item adicionado com sucesso!", "SmLocações", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CarregaProdutos();
-                }
-                else
-                {
-                    MessageBox.Show("Falha ao adicionar item!", "SmLocações", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
-
-                // Limpar os campos
+            itenspedido.InserirItemPedido();
+            if(itenspedido.ID > 0)
+            {
+                MessageBox.Show("Item inserido com sucesso!", "SmLocações", MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
                 txtIdProduto.Clear();
-                txtValorTotal.Clear();
+                txtIdPedido.Clear();
                 txtQuantidade.Clear();
+                txtValorTotal.Clear();
                 txtNomeProduto.Clear();
             }
             else
             {
-                // Caso a conversão falhe, exiba uma mensagem de erro
-                MessageBox.Show("Valor total inválido. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Falha ao gravar item!", "SmLocações", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
+
+
         }
 
 

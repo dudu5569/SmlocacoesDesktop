@@ -161,18 +161,18 @@ namespace SmLocaçõesLib
             cmd.CommandType = System.Data.CommandType.Text;
             if (id != 0)
             {
-                cmd.CommandText = $"SELECT * FROM ITENS_LOCACOES WHERE ID_PEDIDO = {id}";
+                cmd.CommandText = $"SELECT * FROM ITENS_LOCACOES WHERE ID_LOCACAO = {id}";
 
             }
             else
             {
-                cmd.CommandText = $"SELECT * FROM ITENS_LOCACOES WHERE ID_PEDIDO = {id}";
+                cmd.CommandText = $"SELECT * FROM ITENS_LOCACOES WHERE ID_LOCACAO = {id}";
 
             }
 
             var dr = cmd.ExecuteReader();
             int indexId = dr.GetOrdinal("id");
-            int indexId_pedido = dr.GetOrdinal("id_pedido");
+            int indexId_pedido = dr.GetOrdinal("id_locacao");
             int indexId_produto = dr.GetOrdinal("id_produto");
             int indexId_valor_unit = dr.GetOrdinal("valor_unit");
             int indexId_quantidade = dr.GetOrdinal("quantidade");

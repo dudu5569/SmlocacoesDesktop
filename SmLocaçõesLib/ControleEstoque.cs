@@ -38,7 +38,7 @@ namespace SmLocaçõesLib
             try
             {
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT quantidade FROM items_locacoes WHERE id_locacao = {id}";
+                cmd.CommandText = $"SELECT quantidade FROM itens_locacoes WHERE id_locacao = {id}";
                 var dr = cmd.ExecuteReader();
 
                 while (dr.Read())
@@ -76,7 +76,7 @@ namespace SmLocaçõesLib
             try
             {
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_produto FROM items_locacoes WHERE id_locacao = {idPedido}";
+                cmd.CommandText = $"SELECT id_produto FROM itens_locacoes WHERE id_locacao = {idPedido}";
                 var dr = cmd.ExecuteReader();
 
                 while (dr.Read())

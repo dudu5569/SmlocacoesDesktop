@@ -43,5 +43,10 @@ namespace SmLocações
         {
             //Text += $" ({Program.UsuarioLogado.Login})";
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
