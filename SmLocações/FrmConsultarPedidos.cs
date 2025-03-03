@@ -47,19 +47,27 @@ namespace SmLocações
 
         private void dgvPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int posicaoLinha = dgvPedidos.CurrentRow.Index;
+            int posicaolinha = dgvPedidos.CurrentRow.Index;
             int id = 0;
+            id = Convert.ToInt32(dgvPedidos.Rows[posicaolinha].Cells[0].Value);
             var lista = ItensPedido.ObterListaItensPedido(id);
+            dgvProdutos.Rows.Clear();
             int cont = 0;
-
-            foreach (var produtos in lista)
+            foreach(var produtos in lista)
             {
                 dgvProdutos.Rows.Add();
-                dgvProdutos.Rows[cont].Cells[0].Value = produtos.Id_pedido;
+                dgvProdutos.Rows[cont].Cells[0].Value = produtos.Id_pedido.Id;
                 dgvProdutos.Rows[cont].Cells[1].Value = produtos.Id_produtos.Descricao;
                 dgvProdutos.Rows[cont].Cells[2].Value = produtos.Quantidade;
-                dgvProdutos.Rows[cont].Cells[3].Value = produtos.valor_total;
+                dgvProdutos.Rows[cont].Cells[3].Value = produtos.valor_total.ToString();
+                cont++;
             }
+        }
+
+
+        private void dgvPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

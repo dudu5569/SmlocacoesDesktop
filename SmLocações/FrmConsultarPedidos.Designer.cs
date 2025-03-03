@@ -56,6 +56,7 @@
             dgvPedidos.Size = new Size(1050, 107);
             dgvPedidos.TabIndex = 0;
             dgvPedidos.CellClick += dgvPedidos_CellClick;
+            dgvPedidos.CellContentClick += dgvPedidos_CellContentClick;
             // 
             // id
             // 
