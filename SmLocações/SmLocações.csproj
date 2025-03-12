@@ -7,6 +7,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+	
+	<PropertyGroup>
+  <ApplicationIcon>C:\Users\Duh\source\repos\dudu5569\SmlocacoesDesktop\icones c#\5.ico</ApplicationIcon>
+</PropertyGroup>
+
 
   <ItemGroup>
     <Compile Remove="FakesAssemblies\**" />
