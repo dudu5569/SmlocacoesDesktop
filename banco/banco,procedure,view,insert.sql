@@ -1,5 +1,5 @@
 
-drop database smlocacoesdb;
+
 
 create database smlocacoesdb;
 

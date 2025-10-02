@@ -67,12 +67,12 @@ namespace SmLocaçõesLib
             cmd.CommandType = System.Data.CommandType.Text;
             if (id != 0)
             {
-                cmd.CommandText = $"SELECT * FROM ITENS_LOCACOES WHERE ID_LOCACAO = {id}";
+                cmd.CommandText = $"SELECT * FROM ITEMS_LOCACOES WHERE ID_LOCACAO = {id}";
 
             }
             else
             {
-                cmd.CommandText = $"SELECT * FROM ITENS_LOCACOES WHERE ID_LOCACAO = {id}";
+                cmd.CommandText = $"SELECT * FROM ITEMS_LOCACOES WHERE ID_LOCACAO = {id}";
 
             }
 
