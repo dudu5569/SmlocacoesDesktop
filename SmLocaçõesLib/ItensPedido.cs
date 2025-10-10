@@ -49,52 +49,60 @@ namespace SmLocaçõesLib
 
         public void InserirItemPedido()
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "sp_inserir_items_locacoes";
-            cmd.Parameters.AddWithValue("spid_locacao", Id_pedido.Id);
-            cmd.Parameters.AddWithValue("spid_produto", Id_produtos.ID);
-            cmd.Parameters.AddWithValue("spvalor_unit", valor_total);
-            cmd.Parameters.AddWithValue("spquantidade", Quantidade);
-            var dr = cmd.ExecuteReader();
-            if (dr.Read()) ID = dr.GetInt32(0);
+            using(var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "sp_inserir_items_locacoes";
+                cmd.Parameters.AddWithValue("spid_locacao", Id_pedido.Id);
+                cmd.Parameters.AddWithValue("spid_produto", Id_produtos.ID);
+                cmd.Parameters.AddWithValue("spvalor_unit", valor_total);
+                cmd.Parameters.AddWithValue("spquantidade", Quantidade);
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read()) ID = dr.GetInt32(0);
+                }
+            }
         }
         
         public static List<ItensPedido> ObterListaItensPedido(int id)
         {
-            List<ItensPedido> lista = new();
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.Text;
-            if (id != 0)
+            using(var cmd = Banco.Abrir())
             {
-                cmd.CommandText = $"SELECT * FROM ITEMS_LOCACOES WHERE ID_LOCACAO = {id}";
+                List<ItensPedido> lista = new();
+                cmd.CommandType = System.Data.CommandType.Text;
+                if (id != 0)
+                {
+                    cmd.CommandText = $"SELECT * FROM ITENS_LOCACOES WHERE ID_LOCACAO = {id}";
 
+                }
+                else
+                {
+                    cmd.CommandText = $"SELECT * FROM ITENS_LOCACOES WHERE ID_LOCACAO = {id}";
+
+                }
+
+                using (var dr = cmd.ExecuteReader())
+                {
+                int indexId = dr.GetOrdinal("id");
+                int indexId_pedido = dr.GetOrdinal("id_locacao");
+                int indexId_produto = dr.GetOrdinal("id_produto");
+                int indexId_valor_unit = dr.GetOrdinal("valor_unit");
+                int indexId_quantidade = dr.GetOrdinal("quantidade");
+
+
+                while (dr.Read())
+                {
+                    lista.Add(new ItensPedido(
+                        dr.GetInt32(indexId),
+                        Pedidos.ObterIdPedido(dr.GetInt32(indexId_pedido)),
+                        Produtos.ObterIdProduto(dr.GetInt32(indexId_produto)),
+                        dr.GetDecimal(indexId_valor_unit),
+                        dr.GetInt32(indexId_quantidade)
+                        ));
+                }
+                }
+                return lista;
             }
-            else
-            {
-                cmd.CommandText = $"SELECT * FROM ITEMS_LOCACOES WHERE ID_LOCACAO = {id}";
-
-            }
-
-            var dr = cmd.ExecuteReader();
-            int indexId = dr.GetOrdinal("id");
-            int indexId_pedido = dr.GetOrdinal("id_locacao");
-            int indexId_produto = dr.GetOrdinal("id_produto");
-            int indexId_valor_unit = dr.GetOrdinal("valor_unit");
-            int indexId_quantidade = dr.GetOrdinal("quantidade");
-
-
-            while (dr.Read())
-            {
-                lista.Add(new ItensPedido(
-                    dr.GetInt32(indexId),
-                    Pedidos.ObterIdPedido(dr.GetInt32(indexId_pedido)),
-                    Produtos.ObterIdProduto(dr.GetInt32(indexId_produto)),
-                    dr.GetDecimal(indexId_valor_unit),
-                    dr.GetInt32(indexId_quantidade)
-                    ));
-            }
-            return lista;
 
         }
 

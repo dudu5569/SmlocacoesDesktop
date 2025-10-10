@@ -59,77 +59,87 @@ namespace SmLocaçõesLib
 
         public void Inserir()
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_insert_funcionarios";
-            cmd.Parameters.AddWithValue("spid_nivel", Nivel.ID);
-            cmd.Parameters.AddWithValue("spnome", Nome);
-            cmd.Parameters.AddWithValue("spcpf", CPF);
-            cmd.Parameters.AddWithValue("spdata_nasc", Data_Nascimento);
-            cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
-            cmd.Parameters.AddWithValue("spativo", Ativo);
+            using(var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_insert_funcionarios";
+                cmd.Parameters.AddWithValue("spid_nivel", Nivel.ID);
+                cmd.Parameters.AddWithValue("spnome", Nome);
+                cmd.Parameters.AddWithValue("spcpf", CPF);
+                cmd.Parameters.AddWithValue("spdata_nasc", Data_Nascimento);
+                cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
+                cmd.Parameters.AddWithValue("spativo", Ativo);
 
-            ID = Convert.ToInt32(cmd.ExecuteScalar());
+                ID = Convert.ToInt32(cmd.ExecuteScalar());
+            }
         }
 
 
 
         public void Atualizar()
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_update_funcionarios";
-            cmd.Parameters.AddWithValue("spid_nivel", Nivel);
-            cmd.Parameters.AddWithValue("spnome", Nome);
-            cmd.Parameters.AddWithValue("spcpf", CPF);
-            cmd.Parameters.AddWithValue("spdata_nasc", Data_Nascimento);
-            cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
-            cmd.Parameters.AddWithValue("ativo", Ativo);
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
+            using(var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_update_funcionarios";
+                cmd.Parameters.AddWithValue("spid_nivel", Nivel);
+                cmd.Parameters.AddWithValue("spnome", Nome);
+                cmd.Parameters.AddWithValue("spcpf", CPF);
+                cmd.Parameters.AddWithValue("spdata_nasc", Data_Nascimento);
+                cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
+                cmd.Parameters.AddWithValue("ativo", Ativo);
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
         }
 
         public static Funcionario ObterporId(int id)
         {
-            Funcionario funcionario = new();
-
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"Select * from funcionarios where id = {id}";
-            var dr = cmd.ExecuteReader();
-            while (dr.Read())
+            using(var cmd = Banco.Abrir())
             {
-                funcionario = new(
-                dr.GetInt32(0),
-                Niveis.ObterPorId(dr.GetInt32(1)),
-                dr.GetString(2),
-                dr.GetString(3),
-                dr.GetDateTime(4),
-                dr.GetDateTime(5),
-                dr.GetString(6)
-                );
-            }
+                Funcionario funcionario = new();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"Select * from funcionarios where id = {id}";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        funcionario = new(
+                        dr.GetInt32(0),
+                        Niveis.ObterPorId(dr.GetInt32(1)),
+                        dr.GetString(2),
+                        dr.GetString(3),
+                        dr.GetDateTime(4),
+                        dr.GetDateTime(5),
+                        dr.GetString(6)
+                        );
+                    }
+                }
             return funcionario;
+            }
         }
 
         public static List<Funcionario> ObterListaFuncionario()
         {
-            List<Funcionario> lista = new List<Funcionario>();
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select * from funcionarios";
-            var dr = cmd.ExecuteReader();
-            while (dr.Read())
+            using(var cmd = Banco.Abrir())
             {
-                lista.Add(
-                    new(
-                    dr.GetInt32(0),
-                    Niveis.ObterPorId(dr.GetInt32(1)),
-                    dr.GetString(2)
-                        ));
-            }
-            cmd.Connection.Close();
+                List<Funcionario> lista = new List<Funcionario>();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "Select * from funcionarios";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(
+                            new(
+                            dr.GetInt32(0),
+                            Niveis.ObterPorId(dr.GetInt32(1)),
+                            dr.GetString(2)
+                                ));
+                    }
+                }
             return lista;
+            }
         }
     }
 }

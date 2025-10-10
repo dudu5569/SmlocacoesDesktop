@@ -40,85 +40,94 @@ namespace SmLocaçõesLib
 
         public void InserirPedido()
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "sp_inserir_locacoes";
-            cmd.Parameters.AddWithValue("spid_cliente", Id_Cliente);
-            cmd.Parameters.AddWithValue("spid_funcionario", Id_Funcionario);
-            cmd.Parameters.AddWithValue("spdata_retirada", Data_Retirada);
-            cmd.Parameters.AddWithValue("spdata_entrega", Data_Entrega);
-            cmd.Parameters.AddWithValue("spstatus_pedido", Status_Pedido);
-            var dr = cmd.ExecuteReader();
-            if (dr.Read()) Id = dr.GetInt32(0);
+            using(var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "sp_inserir_locacoes";
+                cmd.Parameters.AddWithValue("spid_cliente", Id_Cliente);
+                cmd.Parameters.AddWithValue("spid_funcionario", Id_Funcionario);
+                cmd.Parameters.AddWithValue("spdata_retirada", Data_Retirada);
+                cmd.Parameters.AddWithValue("spdata_entrega", Data_Entrega);
+                cmd.Parameters.AddWithValue("spstatus_pedido", Status_Pedido);
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read()) Id = dr.GetInt32(0);
+                }
+            }
         }
 
 
         public static Pedidos ObterIdPedido(int id)
         {
-            Pedidos pedido = new();
-
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"Select * from locacoes where id = {id}";
-            var dr = cmd.ExecuteReader();
-            while (dr.Read() )
+            using(var cmd = Banco.Abrir())
             {
-                pedido = new(
-                    dr.GetInt32(0),
-                    Cliente.ObterPorId(dr.GetInt32(1)),
-                    Funcionario.ObterporId(dr.GetInt32(2)),
-                    dr.GetDateTime(3),
-                    dr.GetDateTime(4),
-                    dr.GetString(5)
-                    );
+                Pedidos pedido = new();
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = $"Select * from locacoes where id = {id}";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        pedido = new(
+                            dr.GetInt32(0),
+                            Cliente.ObterPorId(dr.GetInt32(1)),
+                            Funcionario.ObterporId(dr.GetInt32(2)),
+                            dr.GetDateTime(3),
+                            dr.GetDateTime(4),
+                            dr.GetString(5)
+                            );
+                    }
+                }
+                return pedido;
             }
-            return pedido;
         }
 
         public static List<Pedidos> ListarPedidos()
         {
-            List<Pedidos> lista = new();
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.Text;
+            using (var cmd = Banco.Abrir())
+            {
+                List<Pedidos> lista = new();
+                cmd.CommandType = System.Data.CommandType.Text;
 
                 cmd.CommandText = "Select * from locacoes order by id";
-            
 
 
-            var dr = cmd.ExecuteReader();
 
-            int indexId = dr.GetOrdinal("id");
-            int indexCliente = dr.GetOrdinal("id_cliente");
-            int indexFuncionario = dr.GetOrdinal("id_funcionario");
-            int indexRetirada = dr.GetOrdinal("data_retirada");
-            int indexEntrega = dr.GetOrdinal("data_entrega");
-            int indexStatus = dr.GetOrdinal("status_pedido");
+                using (var dr = cmd.ExecuteReader())
+                {
+                int indexId = dr.GetOrdinal("id");
+                int indexCliente = dr.GetOrdinal("id_cliente");
+                int indexFuncionario = dr.GetOrdinal("id_funcionario");
+                int indexRetirada = dr.GetOrdinal("data_retirada");
+                int indexEntrega = dr.GetOrdinal("data_entrega");
+                int indexStatus = dr.GetOrdinal("status_pedido");
 
-            while (dr.Read() )
-            {
-                lista.Add(new Pedidos(
-                    dr.GetInt32(indexId),
-                    Cliente.ObterPorId(dr.GetInt32(indexCliente)),
-                    Funcionario.ObterporId(dr.GetInt32(indexFuncionario)),
-                    dr.GetDateTime(indexRetirada),
-                    dr.GetDateTime(indexEntrega),
-                    dr.GetString(indexStatus)
-                    ));
+                while (dr.Read())
+                {
+                    lista.Add(new Pedidos(
+                        dr.GetInt32(indexId),
+                        Cliente.ObterPorId(dr.GetInt32(indexCliente)),
+                        Funcionario.ObterporId(dr.GetInt32(indexFuncionario)),
+                        dr.GetDateTime(indexRetirada),
+                        dr.GetDateTime(indexEntrega),
+                        dr.GetString(indexStatus)
+                        ));
+                }
+                }
+
+                return lista;
             }
-
-            cmd.Connection.Close();
-            return lista;
         }
 
         public void AtualizarStatusPedido(int id,string status)
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = "UPDATE locacoes SET status_pedido = @status WHERE id = @id";
-            cmd.Parameters.AddWithValue("@status", status);
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
+            using(var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = $"Update locacoes set status_pedido = '{status}' where id = {id}";
+                cmd.ExecuteNonQuery();
+            }
         }
 
 

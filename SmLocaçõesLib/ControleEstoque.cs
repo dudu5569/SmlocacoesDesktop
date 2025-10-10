@@ -23,73 +23,77 @@ namespace SmLocaçõesLib
 
         public void DescontaEstoque(int id, int quantidade)
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"Update produtos set unidade_venda = {quantidade} where id = {id}";
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
+            using (var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"Update produtos set unidade_venda = {quantidade} where id = {id}";
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
         }
 
         public List<int> ConsultaItensPedido(int id)
         {
-            var cmd = Banco.Abrir();
-            var quantidades = new List<int>(); // Lista para armazenar as quantidades
-
-            try
+            using (var cmd = Banco.Abrir())
             {
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT quantidade FROM itens_locacoes WHERE id_locacao = {id}";
-                var dr = cmd.ExecuteReader();
+                var quantidades = new List<int>(); // Lista para armazenar as quantidades
 
-                while (dr.Read())
+                try
                 {
-                    quantidades.Add(dr.GetInt32(0)); // Adiciona cada valor de quantidade encontrado
-                }
-            }
-            finally
-            {
-                cmd.Connection.Close();
-            }
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = $"SELECT quantidade FROM itens_locacoes WHERE id_locacao = {id}";
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read()) quantidades.Add(dr.GetInt32(0)); // Adiciona cada valor de quantidade encontrado
 
-            return quantidades; // Retorna a lista com as quantidades
+                    }
+                }
+                finally
+                {
+                }
+
+                return quantidades; // Retorna a lista com as quantidades
+            }
         }
 
 
 
         public void DevolverEstoque(int idproduto, int quantidade)
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
+            using (var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = CommandType.Text;
 
-            // Atualiza o estoque somando a quantidade devolvida
-            cmd.CommandText = $"UPDATE produtos SET unidade_venda = unidade_venda + {quantidade} WHERE id = {idproduto}";
+                // Atualiza o estoque somando a quantidade devolvida
+                cmd.CommandText = $"UPDATE produtos SET unidade_venda = unidade_venda + {quantidade} WHERE id = {idproduto}";
 
-            cmd.ExecuteNonQuery();
-            cmd.Connection.Close();
+                cmd.ExecuteNonQuery();
+            }
         }
 
         public List<int> ConsultaProdutosDoPedido(int idPedido)
         {
-            var cmd = Banco.Abrir();
-            var produtos = new List<int>();
-
-            try
+            using (var cmd = Banco.Abrir())
             {
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = $"SELECT id_produto FROM itens_locacoes WHERE id_locacao = {idPedido}";
-                var dr = cmd.ExecuteReader();
+                var produtos = new List<int>();
 
-                while (dr.Read())
+                try
                 {
-                    produtos.Add(dr.GetInt32(0));
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = $"SELECT id_produto FROM itens_locacoes WHERE id_locacao = {idPedido}";
+                    using (var dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read()) produtos.Add(dr.GetInt32(0));
+                    }
+
                 }
-            }
-            finally
-            {
-                cmd.Connection.Close();
+                finally
+                {
+
+                }
+            return produtos;
             }
 
-            return produtos;
         }
 
 

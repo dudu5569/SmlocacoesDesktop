@@ -52,18 +52,22 @@ namespace SmLocaçõesLib
 
         public void InserirCartao()
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.CommandText = "sp_inserir_cartoes";
-            cmd.Parameters.AddWithValue("spid_cliente", Id_cliente.Id);
-            cmd.Parameters.AddWithValue("spnome_cartao", Nome_Cartao);
-            cmd.Parameters.AddWithValue("spbandeira", Bandeira);
-            cmd.Parameters.AddWithValue("spnumero_cartao", Numero_Cartao);
-            cmd.Parameters.AddWithValue("spvalidade", Validade);
-            cmd.Parameters.AddWithValue("spcvv", CVV);
-            cmd.Parameters.AddWithValue("tipo", Tipo);
-            var dr = cmd.ExecuteReader();
-            if (dr.Read()) ID = dr.GetInt32(0);
+            using (var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.CommandText = "sp_inserir_cartoes";
+                cmd.Parameters.AddWithValue("spid_cliente", Id_cliente.Id);
+                cmd.Parameters.AddWithValue("spnome_cartao", Nome_Cartao);
+                cmd.Parameters.AddWithValue("spbandeira", Bandeira);
+                cmd.Parameters.AddWithValue("spnumero_cartao", Numero_Cartao);
+                cmd.Parameters.AddWithValue("spvalidade", Validade);
+                cmd.Parameters.AddWithValue("spcvv", CVV);
+                cmd.Parameters.AddWithValue("tipo", Tipo);
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read()) ID = dr.GetInt32(0);
+                }
+            }    
         }
 
         public static bool ValidarNumeroCartao(string numeroCartao)

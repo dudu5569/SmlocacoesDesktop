@@ -28,31 +28,43 @@ namespace SmLocaçõesLib
 
         public void Inserir_Telefone(string telefone, string tipo)
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"Insert into telefones (telefone, tipo) values ('{telefone}','{tipo}'); select last_insert_id();";
-            var dr = cmd.ExecuteReader();
-            if (dr.Read()) Id = dr.GetInt32(0);
+            using(var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = $"Insert into telefones (telefone, tipo) values ('{telefone}','{tipo}'); select last_insert_id();";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read()) Id = dr.GetInt32(0);
+                }
+            }
         }
 
         public void Telefone_Associado_Funcionario(int idfuncionario, int idtelefone)
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"insert into funcionarios_telefones (id_funcionario, id_telefone) values" +
-                $"('{idfuncionario}','{idtelefone}')";
-            var dr = cmd.ExecuteReader();
-            if (dr.Read()) Id = dr.GetInt32(0);
+            using(var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = $"insert into funcionarios_telefones (id_funcionario, id_telefone) values" +
+                    $"('{idfuncionario}','{idtelefone}')";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read()) Id = dr.GetInt32(0);
+                }
+            }
         }
 
         public void Telefone_Associado_Cliente(int idcliente, int idtelefone)
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.CommandText = $"insert into clientes_telefones (id_cliente, id_telefone) values" +
-                $"('{idcliente}','{idtelefone}')";
-            var dr = cmd.ExecuteReader();
-            if (dr.Read()) Id = dr.GetInt32(0);
+            using(var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = $"insert into clientes_telefones (id_cliente, id_telefone) values" +
+                    $"('{idcliente}','{idtelefone}')";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read()) Id = dr.GetInt32(0);
+                }
+            }
         }
     }
 }

@@ -59,6 +59,7 @@ namespace SmLocações
                 txtIdCliente.Clear();
                 txtNomeCliente.Clear();
                 txtIdPedido.Text = agendar.ID.ToString();
+                CarregaPedidos();
 
             }
             else
@@ -90,6 +91,7 @@ namespace SmLocações
                 dgvClientes.Rows[cont].Cells[0].Value = cliente.Id;
                 dgvClientes.Rows[cont].Cells[1].Value = cliente.Nome;
                 dgvClientes.Rows[cont].Cells[2].Value = cliente.CPF;
+                cont++;
             }
         }
 
@@ -215,11 +217,10 @@ namespace SmLocações
                 int.Parse(txtQuantidade.Text)
                 );
             itenspedido.InserirItemPedido();
-            if(itenspedido.ID > 0)
+            if (itenspedido.ID > 0)
             {
-                MessageBox.Show("Item inserido com sucesso!", "SmLocações", MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
+                MessageBox.Show("Item inserido com sucesso!", "SmLocações", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 txtIdProduto.Clear();
-                txtIdPedido.Clear();
                 txtQuantidade.Clear();
                 txtValorTotal.Clear();
                 txtNomeProduto.Clear();
@@ -245,5 +246,6 @@ namespace SmLocações
             txtIdPedido.Text = dgvPedidos.Rows[posicaolinha].Cells[0].Value.ToString();
             this.tabControl1.SelectedTab = tabPage2;
         }
+
     }
 }

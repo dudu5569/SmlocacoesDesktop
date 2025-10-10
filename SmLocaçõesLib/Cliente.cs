@@ -45,66 +45,75 @@ namespace SmLocaçõesLib
 
         public void InserirCliente()
         {
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "sp_insert_clientes";
-            cmd.Parameters.AddWithValue("spnome", Nome);
-            cmd.Parameters.AddWithValue("spcpf", CPF);
-            cmd.Parameters.AddWithValue("spdata_nascimento", Data_Nascimento);
-            cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
+            using (var cmd = Banco.Abrir())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "sp_insert_clientes";
+                cmd.Parameters.AddWithValue("spnome", Nome);
+                cmd.Parameters.AddWithValue("spcpf", CPF);
+                cmd.Parameters.AddWithValue("spdata_nascimento", Data_Nascimento);
+                cmd.Parameters.AddWithValue("spdata_cad", Data_Cadastro);
 
-            var dr = cmd.ExecuteReader();
-            if (dr.Read()) Id = dr.GetInt32(0);
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read()) Id = dr.GetInt32(0);
+                }
+            }
         }
 
         public static Cliente ObterPorId(int id)
         {
-            Cliente cliente = null;  
-
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"SELECT * FROM clientes WHERE id = {id}";
-            var dr = cmd.ExecuteReader();
-
-            if (dr.Read())  
+            using (var cmd = Banco.Abrir())
             {
-                cliente = new Cliente(
-                    dr.GetInt32(0),       
-                    dr.GetString(1),     
-                    dr.GetString(2),       
-                    dr.GetDateTime(3),     
-                    dr.GetDateTime(4)      
-                );
-            }
+                Cliente cliente = null;
 
-            cmd.Connection.Close();
-            return cliente;
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"SELECT * FROM clientes WHERE id = {id}";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        cliente = new Cliente(
+                            dr.GetInt32(0),
+                            dr.GetString(1),
+                            dr.GetString(2),
+                            dr.GetDateTime(3),
+                            dr.GetDateTime(4)
+                        );
+                    }
+                }
+
+                return cliente;
+            }
         }
 
         public static List<Cliente> ObterLista(string? nome = "")
         {
-            List<Cliente> lista = new();
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from clientes where nome like '%{nome}%' order by nome";
-
-
-            var dr = cmd.ExecuteReader();
-            if (dr.Read())
+            using (var cmd = Banco.Abrir())
             {
-                lista.Add(
-                    new(
-                        dr.GetInt32(0),
-                        dr.GetString(1),
-                        dr.GetString(2),
-                        dr.GetDateTime(3),
-                        dr.GetDateTime(4)                        
-                        )
-                    );
+                List<Cliente> lista = new();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"select * from clientes where nome like '%{nome}%' order by nome";
+
+
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(
+                            new(
+                                dr.GetInt32(0),
+                                dr.GetString(1),
+                                dr.GetString(2),
+                                dr.GetDateTime(3),
+                                dr.GetDateTime(4)
+                                )
+                            );
+                    }
+                }
+            return lista;
             }
 
-            cmd.Connection.Close();
-            return lista;
         }
 
 

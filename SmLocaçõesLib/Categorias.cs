@@ -39,66 +39,77 @@ namespace SmLocaçõesLib
 
         public static List<Categorias> ObterCategoria()
         {
-            List<Categorias> lista = new List<Categorias>();
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "Select * from Categorias";
-            var dr = cmd.ExecuteReader();
-            while (dr.Read())
+            using (Banco.Abrir())
             {
-                lista.Add(new(
-                dr.GetInt32(0),
-                dr.GetString(1),
-                dr.GetString(2)
-                    ));
-            }
+                List<Categorias> lista = new List<Categorias>();
+                var cmd = Banco.Abrir();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "Select * from Categorias";
+                var dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    lista.Add(new(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2)
+                        ));
+                }
 
-            cmd.Connection.Close();
-            return lista;
+                return lista;
+            }
         }
 
 
         public static List<Categorias> ObterCategoriaID(int id)
         {
-            List<Categorias> lista = new List<Categorias>();
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"Select * from Categorias where id = {id}";
-            var dr = cmd.ExecuteReader();
-            while (dr.Read())
+            using (Banco.Abrir())
             {
-                lista.Add(new(
-                dr.GetInt32(0)
-                    ));
-            }
+                List<Categorias> lista = new List<Categorias>();
+                var cmd = Banco.Abrir();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"Select * from Categorias where id = {id}";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        lista.Add(new(
+                        dr.GetInt32(0)
+                            ));
+                    }
 
-            cmd.Connection.Close();
-            return lista;
+                cmd.Connection.Close();
+                return lista;
+                }
+            }
         }
 
         public static Categorias ObterPorId(int id)
         {
-            Categorias categorias = new ();
-
-            var cmd = Banco.Abrir();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"Select * from categorias where id = {id}";
-            var dr = cmd.ExecuteReader();
-
-            int indexId = dr.GetOrdinal("id");
-            int indexRotulo = dr.GetOrdinal("rotulo");
-            int indexSigla = dr.GetOrdinal("sigla");
-
-
-            if (dr.Read())
+            using (Banco.Abrir())
             {
-                categorias = new Categorias(
-                    dr.GetInt32(indexId),
-                    dr.GetString(indexRotulo),
-                    dr.GetString(indexSigla)
-                    );
+                Categorias categorias = new();
+
+                var cmd = Banco.Abrir();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = $"Select * from categorias where id = {id}";
+                using (var dr = cmd.ExecuteReader())
+                {
+                    int indexId = dr.GetOrdinal("id");
+                    int indexRotulo = dr.GetOrdinal("rotulo");
+                    int indexSigla = dr.GetOrdinal("sigla");
+
+
+                    if (dr.Read())
+                    {
+                        categorias = new Categorias(
+                            dr.GetInt32(indexId),
+                            dr.GetString(indexRotulo),
+                            dr.GetString(indexSigla)
+                            );
+                    }
+                    return categorias;
+                }
             }
-            return categorias;
 
         }
 
