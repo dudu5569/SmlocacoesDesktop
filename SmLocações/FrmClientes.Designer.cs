@@ -337,7 +337,7 @@
             label16.AutoSize = true;
             label16.Location = new Point(281, 128);
             label16.Name = "label16";
-            label16.Size = new Size(30, 15);
+            label16.Size = new Size(31, 15);
             label16.TabIndex = 21;
             label16.Text = "Tipo";
             // 
@@ -346,7 +346,7 @@
             label15.AutoSize = true;
             label15.Location = new Point(84, 128);
             label15.Name = "label15";
-            label15.Size = new Size(51, 15);
+            label15.Size = new Size(52, 15);
             label15.TabIndex = 20;
             label15.Text = "Telefone";
             // 
@@ -463,7 +463,7 @@
             label17.AutoSize = true;
             label17.Location = new Point(53, 217);
             label17.Name = "label17";
-            label17.Size = new Size(30, 15);
+            label17.Size = new Size(31, 15);
             label17.TabIndex = 27;
             label17.Text = "Tipo";
             // 
@@ -984,7 +984,7 @@
             label25.AutoSize = true;
             label25.Location = new Point(171, 63);
             label25.Name = "label25";
-            label25.Size = new Size(40, 15);
+            label25.Size = new Size(41, 15);
             label25.TabIndex = 5;
             label25.Text = "Titular";
             // 
@@ -1011,7 +1011,7 @@
             label22.AutoSize = true;
             label22.Location = new Point(285, 120);
             label22.Name = "label22";
-            label22.Size = new Size(30, 15);
+            label22.Size = new Size(31, 15);
             label22.TabIndex = 2;
             label22.Text = "Tipo";
             label22.Click += label22_Click;

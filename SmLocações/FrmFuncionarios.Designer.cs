@@ -348,7 +348,7 @@
             label19.AutoSize = true;
             label19.Location = new Point(273, 255);
             label19.Name = "label19";
-            label19.Size = new Size(30, 15);
+            label19.Size = new Size(31, 15);
             label19.TabIndex = 26;
             label19.Text = "Tipo";
             // 
@@ -670,7 +670,7 @@
             label17.AutoSize = true;
             label17.Location = new Point(262, 136);
             label17.Name = "label17";
-            label17.Size = new Size(30, 15);
+            label17.Size = new Size(31, 15);
             label17.TabIndex = 18;
             label17.Text = "Tipo";
             // 
@@ -679,7 +679,7 @@
             label16.AutoSize = true;
             label16.Location = new Point(100, 136);
             label16.Name = "label16";
-            label16.Size = new Size(51, 15);
+            label16.Size = new Size(52, 15);
             label16.TabIndex = 17;
             label16.Text = "Telefone";
             // 

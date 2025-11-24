@@ -12,7 +12,7 @@
   </PropertyGroup>
 	
 	<PropertyGroup>
-  <ApplicationIcon>C:\Users\Duh\source\repos\dudu5569\SmlocacoesDesktop\icones c#\5.ico</ApplicationIcon>
+  <ApplicationIcon>5.ico</ApplicationIcon>
 </PropertyGroup>
 
 
@@ -31,6 +31,10 @@
 
   <ItemGroup>
     <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="5.ico" />
   </ItemGroup>
 
   <ItemGroup>
